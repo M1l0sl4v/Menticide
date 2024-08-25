@@ -16,7 +16,7 @@ public class obstaclespawner : MonoBehaviour
     public List<GameObject> enemytype2;
     
     public float rareenemychance;
-
+ 
  
 
     void Update()

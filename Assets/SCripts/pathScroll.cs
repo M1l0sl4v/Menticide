@@ -1,22 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class pathScroll : MonoBehaviour
+public class pathscroll : MonoBehaviour
 {
-    public float Scroll;
-    private Material path;
-    private MeshRenderer _meshRenderer;
+    public float scrollSpeed = 0.5f;
+    private Vector2 savedOffset;
+    private Material material;
+
     void Start()
     {
-        //finds the local meshrenderer
-        _meshRenderer = GetComponent<MeshRenderer>();
-
+        material = GetComponent<SpriteRenderer>().material;
+        savedOffset = material.mainTextureOffset;
     }
+
     void Update()
     {
-        //just moves the texture a litle bit every frame
-        _meshRenderer.material.mainTextureOffset = new Vector2(0, Scroll * Time.time);
+        float y = Mathf.Repeat(Time.time * scrollSpeed, 1);
+        Vector2 offset = new Vector2(savedOffset.x, y);
+        material.mainTextureOffset = offset;
+    }
+
+    void OnDisable()
+    {
+        material.mainTextureOffset = savedOffset;
     }
 }

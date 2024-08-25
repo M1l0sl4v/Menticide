@@ -44,8 +44,6 @@ public class treeSpawner : MonoBehaviour
             int prefabIndex = Random.Range(0, Tree.Count);
             //calling the pool
             ObjectPoolManager.SpawnObject(Tree[prefabIndex], spawnposition, ObjectPoolManager.PoolType.Tree);
-
-            Debug.Log("rare enemy spawned, number was " + spawnChance);
         }
         else
         {
