@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-
 public class playermovement : MonoBehaviour
 {
     // Movement speed of the player
@@ -30,7 +29,7 @@ public class playermovement : MonoBehaviour
             speed -= speedDecayRate * Time.deltaTime;
             if (speed < _originalSpeed)
             {
-                speed = _originalSpeed;
+                speed = Mathf.Clamp(_originalSpeed,5,100);
             }
         }
 

@@ -59,6 +59,7 @@ public class Draw : MonoBehaviour
         currentLine.material = wallMaterial;
         currentLine.startWidth = wallWidth;
         currentLine.endWidth = wallWidth;
+        currentLine.textureMode = LineTextureMode.Tile;
 
         lineObject.tag = wallTag;
 
