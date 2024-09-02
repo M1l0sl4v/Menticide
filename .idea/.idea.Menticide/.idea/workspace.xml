@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="181a9b39-c2d7-40b0-b7bc-d00f50f0c591" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Draw.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Draw.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayArea.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayArea.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCripts/obstaclespawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/obstaclespawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCripts/pathScroll.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/pathScroll.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCripts/pathScroll.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/pathScroll.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCripts/treespawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/treespawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/pathscroll.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/pathscroll.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Menticide/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Menticide/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/seasons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/seasons.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,18 +16,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "M1l0sl4v"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;M1l0sl4v&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/M1l0sl4v/Menticide.git",
-    "accountId": "6e13dfb5-335d-4f0c-af17-fa290611b963"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/M1l0sl4v/Menticide.git&quot;,
+    &quot;accountId&quot;: &quot;6e13dfb5-335d-4f0c-af17-fa290611b963&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -44,19 +36,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2022.3.16f1/Unity.app/Contents/MacOS/Unity" />
@@ -105,6 +97,7 @@
       <updated>1724605224190</updated>
       <workItem from="1724605226080" duration="7000" />
       <workItem from="1724605256665" duration="3174000" />
+      <workItem from="1725310680198" duration="53000" />
     </task>
     <servers />
   </component>

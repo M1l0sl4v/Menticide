@@ -6,7 +6,6 @@ public class points : MonoBehaviour
 {
     //points
     public TMP_Text pointAmount;
-    public seasons seasonScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,15 +18,15 @@ public class points : MonoBehaviour
         pointAmount.text = ((int)transform.position.y).ToString();
         if (transform.position.y >= 600)
         {
-            seasonScript.spring();
+            seasons.instance.spring();
         }
         else if (transform.position.y >= 400)
         {
-            seasonScript.winter();
+            seasons.instance.winter();
         }
         else if (transform.position.y >= 200)
         {
-            seasonScript.fall();
+            seasons.instance.fall();
         }
     }
 }

@@ -6147,7 +6147,7 @@ GameObject:
   - component: {fileID: 1587748123}
   - component: {fileID: 1587748122}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: score UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6450,7 +6450,6 @@ GameObject:
   - component: {fileID: 1675774499}
   - component: {fileID: 1675774498}
   - component: {fileID: 1675774497}
-  - component: {fileID: 1675774503}
   - component: {fileID: 1675774500}
   - component: {fileID: 1675774502}
   - component: {fileID: 1675774501}
@@ -6476,6 +6475,7 @@ MonoBehaviour:
   speed: 5
   speedMultiplier: 1.5
   speedDecayRate: 1
+  pointAmount: {fileID: 1587748122}
 --- !u!212 &1675774498
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6628,20 +6628,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1675774503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675774496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c47813e2a1d4b4c28930dcb273a9509e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointAmount: {fileID: 1587748122}
-  seasonScript: {fileID: 1696491821}
 --- !u!4 &1692410231 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8694563177075922044, guid: 9524131c9971f43eba0e2ee130f3a754, type: 3}
@@ -6677,6 +6663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraMain: {fileID: 1626794938}
+  season: 0
 --- !u!4 &1696491822
 Transform:
   m_ObjectHideFlags: 0

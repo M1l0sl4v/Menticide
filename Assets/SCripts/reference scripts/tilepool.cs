@@ -33,7 +33,6 @@ public class tilepool : MonoBehaviour
     {
         //instantiating the correct about of objects
         pooledObjects = new List<GameObject>();
-        GameObject tmp;
         for(int i = 0;i < amountToPool; i++)
         {
           //  tmp = Instantiate(objectsToPool);

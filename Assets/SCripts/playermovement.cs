@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using TMPro;
 public class playermovement : MonoBehaviour
 {
     // Movement speed of the player
@@ -14,6 +15,9 @@ public class playermovement : MonoBehaviour
     private float _originalSpeed; // Store the initial speed
     private Vector2 _direction = Vector2.up; // Current movement direction
     private bool _isCollidingWithWall = false; // Flag to check if the player is colliding with a wall
+    
+    public TMP_Text pointAmount;
+
 
     private void Start()
     {
@@ -35,8 +39,23 @@ public class playermovement : MonoBehaviour
 
         // Move the player in the current direction
         transform.Translate(_direction * speed * Time.deltaTime);
+        
+        pointAmount.text = ((int)transform.position.y).ToString();
+        //this checks at certain intervuls, this will be changed later depending on what we want.
+        if (transform.position.y >= 600 && transform.position.y <= 650)
+        {
+            seasons.instance.seasonChange();
+        }
+        else if (transform.position.y >= 400)
+        {
+            seasons.instance.seasonChange();
+        }
+        else if (transform.position.y >= 200 && transform.position.y <= 210)
+        {
+            seasons.instance.seasonChange();
+        }
     }
-
+  
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Handle collision with walls
