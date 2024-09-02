@@ -42,20 +42,22 @@ public class playermovement : MonoBehaviour
         
         pointAmount.text = ((int)transform.position.y).ToString();
         //this checks at certain intervuls, this will be changed later depending on what we want.
-        if (transform.position.y >= 600 && transform.position.y <= 650)
+        if (transform.position.y >= 60)
         {
-            seasons.instance.seasonChange();
+            playerReset();
+            tilemanager.instance.backToZero();
         }
-        else if (transform.position.y >= 400)
-        {
-            seasons.instance.seasonChange();
-        }
-        else if (transform.position.y >= 200 && transform.position.y <= 210)
-        {
-            seasons.instance.seasonChange();
-        }
+       
     }
-  
+
+    void playerReset()
+    {
+        float startposition = 0;
+        Vector3 newPosition = transform.position;
+        newPosition.y = startposition;  
+        transform.position = newPosition;
+        seasons.instance.seasonChange();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Handle collision with walls

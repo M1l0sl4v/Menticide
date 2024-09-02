@@ -9,11 +9,13 @@ public class tilemanager : MonoBehaviour
 {
     public float scrollspeed;
     public float tileresetdistance;
-    void Update()
+    public static tilemanager instance;
+
+    private void Start()
     {
-        //transform.Translate(new Vector2(0, -scrollspeed) * Time.deltaTime);
+        instance = this;
     }
-    
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "cullingField")
@@ -22,5 +24,13 @@ public class tilemanager : MonoBehaviour
             newPosition.y += tileresetdistance;  
             transform.position = newPosition;
         }
+    }
+
+    public void backToZero()
+    {
+        float startposition = 0;
+        Vector3 newPosition = transform.position;
+        newPosition.y = startposition;  
+        transform.position = newPosition;
     }
 }
