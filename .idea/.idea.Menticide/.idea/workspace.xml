@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="181a9b39-c2d7-40b0-b7bc-d00f50f0c591" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Menticide/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Menticide/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/ObjectPoolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/ObjectPoolManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SCripts/playermovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/playermovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCripts/tree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/tree.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/main.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +30,9 @@
     &quot;accountId&quot;: &quot;6e13dfb5-335d-4f0c-af17-fa290611b963&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/SCripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -99,7 +103,7 @@
       <workItem from="1724605226080" duration="7000" />
       <workItem from="1724605256665" duration="3174000" />
       <workItem from="1725310680198" duration="53000" />
-      <workItem from="1725333256865" duration="2751000" />
+      <workItem from="1725333256865" duration="5893000" />
     </task>
     <servers />
   </component>

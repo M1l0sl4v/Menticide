@@ -5019,6 +5019,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8694563177075922044, guid: 9524131c9971f43eba0e2ee130f3a754, type: 3}
   m_PrefabInstance: {fileID: 107567876}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1282427979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1282427980}
+  m_Layer: 0
+  m_Name: Object to be Reset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1282427980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282427979}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.701538, y: -4.3380404, z: -0.42186964}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1288525228 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1156041488495160514, guid: 9dbee7961e05845a49d18704086786b7, type: 3}
@@ -5122,6 +5153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1332601553}
   - component: {fileID: 1332601554}
+  - component: {fileID: 1332601555}
   m_Layer: 0
   m_Name: game controller
   m_TagString: Untagged
@@ -5154,6 +5186,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 631491a905815d7468931bf512a8a61f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1332601555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332601551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac64a31737240a88794733b64a0c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1337525772
@@ -6476,6 +6520,7 @@ MonoBehaviour:
   speed: 5
   speedMultiplier: 1.5
   speedDecayRate: 1
+  resetTriggerDistance: 100
   pointAmount: {fileID: 1587748122}
 --- !u!212 &1675774498
 SpriteRenderer:
@@ -8286,3 +8331,4 @@ SceneRoots:
   - {fileID: 122295377}
   - {fileID: 1696491822}
   - {fileID: 1969046016}
+  - {fileID: 1282427980}

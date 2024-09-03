@@ -17,7 +17,7 @@ public class playermovement : MonoBehaviour
     private Vector2 _direction = Vector2.up; // Current movement direction
     private bool _isCollidingWithWall = false; // Flag to check if the player is colliding with a wall
 
-    public float resetTriggerDistance = 100;
+    public float resetTriggerDistance;
     //distance at which the player is reset
     
     public TMP_Text pointAmount;
@@ -56,15 +56,14 @@ public class playermovement : MonoBehaviour
 //i am using this method to move everything else back, but it is not working great
     void playerReset()
     {
-        float startposition = 0;
-        Vector3 newPosition = transform.position;
-        newPosition.y = startposition;  
-        transform.position = newPosition;
+       GameManager.instance.backToZero();
         seasons.instance.seasonChange();
-        tilemanager.instance.backToZero();
-        tree.instance.MovedBack(resetTriggerDistance);
+        
 
     }
+    
+    
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Handle collision with walls

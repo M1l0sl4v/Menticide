@@ -12,9 +12,10 @@ public class ObjectPoolManager : MonoBehaviour
 
     private static GameObject Enemytype1empty;
     private static GameObject Enemytype2empty;
-    private static GameObject obejectPoolEmptyHolder;
+    private static GameObject objectPoolEmptyHolder;
     private static GameObject pathEmpty;
     private static GameObject treeEmpty;
+    public GameObject parent;
 
     //setting up the empty objects in the hierarchy
     public enum PoolType
@@ -35,19 +36,20 @@ public class ObjectPoolManager : MonoBehaviour
     //creates a single parent, then subcatagories under that
     private void SetupEmpties()
     {
-        obejectPoolEmptyHolder = new GameObject("pooled objects");
+        objectPoolEmptyHolder = new GameObject("pooled objects"); 
+        objectPoolEmptyHolder.transform.SetParent(parent.transform);
         //setting up the original empties
         Enemytype1empty = new GameObject("commonenemies");
-        Enemytype1empty.transform.SetParent(obejectPoolEmptyHolder.transform);
+        Enemytype1empty.transform.SetParent(objectPoolEmptyHolder.transform);
 
         Enemytype2empty = new GameObject("rareenemies");
-        Enemytype2empty.transform.SetParent(obejectPoolEmptyHolder.transform);
+        Enemytype2empty.transform.SetParent(objectPoolEmptyHolder.transform);
 
         pathEmpty = new GameObject(("pathTiles "));
-        pathEmpty.transform.SetParent((obejectPoolEmptyHolder.transform));
+        pathEmpty.transform.SetParent((objectPoolEmptyHolder.transform));
 
         treeEmpty = new GameObject(("treetiles"));
-        treeEmpty.transform.SetParent((obejectPoolEmptyHolder.transform));
+        treeEmpty.transform.SetParent((objectPoolEmptyHolder.transform));
     }
 
     private static GameObject SetParentObject(PoolType poolType)
