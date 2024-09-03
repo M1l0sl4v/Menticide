@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Diagnostics.Contracts;
 using UnityEngine;
 using TMPro;
 public class playermovement : MonoBehaviour
@@ -15,6 +16,9 @@ public class playermovement : MonoBehaviour
     private float _originalSpeed; // Store the initial speed
     private Vector2 _direction = Vector2.up; // Current movement direction
     private bool _isCollidingWithWall = false; // Flag to check if the player is colliding with a wall
+
+    public float resetTriggerDistance = 100;
+    //distance at which the player is reset
     
     public TMP_Text pointAmount;
 
@@ -42,13 +46,14 @@ public class playermovement : MonoBehaviour
         
         pointAmount.text = ((int)transform.position.y).ToString();
         //this checks at certain intervuls, this will be changed later depending on what we want.
-        if (transform.position.y >= 100)
+        if (transform.position.y >= resetTriggerDistance)
         {
             playerReset();
         }
        
     }
 //this sets the player back to zero
+//i am using this method to move everything else back, but it is not working great
     void playerReset()
     {
         float startposition = 0;
@@ -57,6 +62,7 @@ public class playermovement : MonoBehaviour
         transform.position = newPosition;
         seasons.instance.seasonChange();
         tilemanager.instance.backToZero();
+        tree.instance.MovedBack(resetTriggerDistance);
 
     }
     private void OnCollisionEnter2D(Collision2D collision)

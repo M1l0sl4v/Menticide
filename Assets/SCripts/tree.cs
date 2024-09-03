@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +7,17 @@ public class tree : MonoBehaviour
 {
     public float treespeed;
     public float despawnDistanceTree = 10;
+    public static tree instance;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        instance = this;
+    }
+
     void Update()
     {
-       // transform.Translate(new Vector2(0, -treespeed) * Time.deltaTime);
         //checks distance to player and despawns when it gets too far away.
+        
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         Vector3 playerPos = player.transform.position;
         Vector3 currentPos = transform.position;
@@ -28,5 +34,14 @@ public class tree : MonoBehaviour
         {
             ObjectPoolManager.ReturnObjectToPool(gameObject);
         }
+    }
+
+    //what I am using to move the trees back when the player moves. It does not work lol
+    public void MovedBack(float resetTriggerDistance)
+    {
+        Vector3 newPosition = transform.position;
+        newPosition.y -= resetTriggerDistance;  
+        transform.position = newPosition;
+        Debug.Log("moved");
     }
 }
