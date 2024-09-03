@@ -5,9 +5,8 @@ using UnityEngine;
 public class enemy : MonoBehaviour
 {
     public float enemyspeed;
-   
-
-    // Update is called once per frame
+    public float despawnTime = .2f;
+    
     void Update()
     {
         transform.Translate(new Vector2(0, enemyspeed) * Time.deltaTime);
@@ -20,6 +19,8 @@ public class enemy : MonoBehaviour
             ObjectPoolManager.ReturnObjectToPool(gameObject);
         }
     }
+
+    
 
 
 }
