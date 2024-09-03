@@ -5,7 +5,7 @@ using UnityEngine;
 public class tree : MonoBehaviour
 {
     public float treespeed;
-    public float despawnDistance = 2;
+    public float despawnDistance = 10;
 
     // Update is called once per frame
     void Update()
