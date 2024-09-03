@@ -5,12 +5,13 @@ using UnityEngine;
 public class enemy : MonoBehaviour
 {
     public float enemyspeed;
-    public float despawnDistance = 10;
+    public float despawnDistance = 50;
     
     void Update()
     {
         transform.Translate(new Vector2(0, enemyspeed) * Time.deltaTime);
         
+        //this measures the distance to the player and returns the object to the pool when it gets too far away
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         Vector3 playerPos = player.transform.position;
         Vector3 currentPos = transform.position;

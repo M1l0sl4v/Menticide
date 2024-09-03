@@ -76,10 +76,10 @@ public class ObjectPoolManager : MonoBehaviour
                                                                                                                             //it makes it search through the empties to pull from
     {
         //tells us how many objects are in each pool
-        Debug.Log("amount in common pool " + Enemytype1empty.transform.childCount);
+        /*Debug.Log("amount in common pool " + Enemytype1empty.transform.childCount);
         Debug.Log( "amount in rare pool " + Enemytype2empty.transform.childCount);
         Debug.Log("amount in path pool " + pathEmpty.transform.childCount);
-        Debug.Log("amount in tree pool " + treeEmpty.transform.childCount);
+        Debug.Log("amount in tree pool " + treeEmpty.transform.childCount);*/
         
         PooledObjectInfo pool = null;
         

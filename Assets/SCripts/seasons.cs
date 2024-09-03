@@ -19,7 +19,7 @@ public class seasons : MonoBehaviour
     void Update()
     {
     }
-
+//switch statement cycles through the seasons and calls their methods. just calling this method changes the season.
     public void seasonChange()
     {
             switch (season)

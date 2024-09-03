@@ -5,18 +5,18 @@ using UnityEngine;
 public class tree : MonoBehaviour
 {
     public float treespeed;
-    public float despawnDistance = 10;
+    public float despawnDistanceTree = 10;
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector2(0, -treespeed) * Time.deltaTime);
-        
+       // transform.Translate(new Vector2(0, -treespeed) * Time.deltaTime);
+        //checks distance to player and despawns when it gets too far away.
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         Vector3 playerPos = player.transform.position;
         Vector3 currentPos = transform.position;
         float dist = Vector3.Distance(currentPos, playerPos);
-        if (dist > despawnDistance)
+        if (dist > despawnDistanceTree)
         {
             ObjectPoolManager.ReturnObjectToPool(gameObject);
         }

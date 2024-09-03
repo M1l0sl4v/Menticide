@@ -48,7 +48,7 @@ public class playermovement : MonoBehaviour
         }
        
     }
-
+//this sets the player back to zero
     void playerReset()
     {
         float startposition = 0;

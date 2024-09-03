@@ -49,7 +49,7 @@ public class obstaclespawner : MonoBehaviour
             //calling the pool
             ObjectPoolManager.SpawnObject(enemytype2[prefabIndex], transform.position + new Vector3(randomY, randomX), ObjectPoolManager.PoolType.Enemytype2);
             
-            Debug.Log("rare enemy spawned, number was " + spawnChance);
+           // Debug.Log("rare enemy spawned, number was " + spawnChance);
         }
         else 
         {
