@@ -42,10 +42,9 @@ public class playermovement : MonoBehaviour
         
         pointAmount.text = ((int)transform.position.y).ToString();
         //this checks at certain intervuls, this will be changed later depending on what we want.
-        if (transform.position.y >= 60)
+        if (transform.position.y >= 100)
         {
             playerReset();
-            tilemanager.instance.backToZero();
         }
        
     }
@@ -57,6 +56,8 @@ public class playermovement : MonoBehaviour
         newPosition.y = startposition;  
         transform.position = newPosition;
         seasons.instance.seasonChange();
+        tilemanager.instance.backToZero();
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -10,6 +10,7 @@ public class tilemanager : MonoBehaviour
     public float scrollspeed;
     public float tileresetdistance;
     public static tilemanager instance;
+    public float restart;
 
     private void Start()
     {
@@ -28,9 +29,8 @@ public class tilemanager : MonoBehaviour
 
     public void backToZero()
     {
-        float startposition = 0;
         Vector3 newPosition = transform.position;
-        newPosition.y = startposition;  
+        newPosition.y = restart;  
         transform.position = newPosition;
     }
 }
