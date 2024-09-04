@@ -56,7 +56,7 @@ public class playermovement : MonoBehaviour
 //i am using this method to move everything else back, but it is not working great
     void playerReset()
     {
-       GameManager.instance.backToZero();
+       GameManager.instance.backToZero(resetTriggerDistance);
         seasons.instance.seasonChange();
         
 

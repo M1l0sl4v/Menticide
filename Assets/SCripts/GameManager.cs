@@ -12,12 +12,8 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-    public void backToZero()
+    public void backToZero(float backtozero)
     {
-        all.transform.position = Vector3.zero;
-        foreach (Transform child in all.transform)
-        {
-            child.localPosition = Vector3.zero;
-        }
+        all.transform.position = new Vector3(all.transform.position.x, all.transform.position.y - backtozero, all.transform.position.z);
     }
 }
