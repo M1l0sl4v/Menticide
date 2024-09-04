@@ -42,6 +42,7 @@ public class seasons : MonoBehaviour
         Debug.Log("seasoncahnged");
     }
     
+    //each season has a method here, its set up so we should be able to kinda go ham with the seasons.
     public void summer()
     {
         cameraMain.backgroundColor = new Color(14f / 255,48f / 255, 7f / 255, 1);//we devide by 255 to get the rgb value

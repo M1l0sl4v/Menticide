@@ -35,13 +35,5 @@ public class tree : MonoBehaviour
             ObjectPoolManager.ReturnObjectToPool(gameObject);
         }
     }
-
-    //what I am using to move the trees back when the player moves. It does not work lol
-    public void MovedBack(float resetTriggerDistance)
-    {
-        Vector3 newPosition = transform.position;
-        newPosition.y -= resetTriggerDistance;  
-        transform.position = newPosition;
-        Debug.Log("moved");
-    }
+    
 }

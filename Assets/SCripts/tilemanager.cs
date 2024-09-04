@@ -17,6 +17,7 @@ public class tilemanager : MonoBehaviour
         instance = this;
     }
 
+    //moves the tiles forward whenever the tiles hit the culling field.
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "cullingField")
@@ -26,11 +27,5 @@ public class tilemanager : MonoBehaviour
             transform.position = newPosition;
         }
     }
-
-    public void backToZero()
-    {
-        Vector3 newPosition = transform.position;
-        newPosition.y = restart;  
-        transform.position = newPosition;
-    }
+    
 }

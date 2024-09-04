@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    //moves the master object that has all of the relevant items back to zero at a set intervul (resetTriggerDistance)
     public void backToZero(float backtozero)
     {
         all.transform.position = new Vector3(all.transform.position.x, all.transform.position.y - backtozero, all.transform.position.z);
