@@ -3423,6 +3423,7 @@ MonoBehaviour:
   - {fileID: 7551915027467779421, guid: 2f9d8087f63104f27afa63dbf6ace478, type: 3}
   - {fileID: 1058148774892358400, guid: 4c95cf5adb2304af1a16a5cc0bfe4903, type: 3}
   - {fileID: 8855932229808728011, guid: 2b1e19f8cb61a4877a457e39ee83cb1b, type: 3}
+  - {fileID: 7649570133389269571, guid: 1a9deb5e71879416fab2f486156f48fe, type: 3}
   treeChance: 0
   tilemap: {fileID: 1836558848}
 --- !u!1001 &805539287
@@ -3981,6 +3982,7 @@ MonoBehaviour:
   - {fileID: 7551915027467779421, guid: 2f9d8087f63104f27afa63dbf6ace478, type: 3}
   - {fileID: 1058148774892358400, guid: 4c95cf5adb2304af1a16a5cc0bfe4903, type: 3}
   - {fileID: 8855932229808728011, guid: 2b1e19f8cb61a4877a457e39ee83cb1b, type: 3}
+  - {fileID: 7649570133389269571, guid: 1a9deb5e71879416fab2f486156f48fe, type: 3}
   treeChance: 0
   tilemap: {fileID: 1836558848}
 --- !u!4 &1007118043
