@@ -20,7 +20,7 @@ public class playermovement : MonoBehaviour
     public float resetTriggerDistance;
     //distance at which the player is reset
     
-    public TMP_Text pointAmount;
+    //public TMP_Text pointAmount;
 
 
     private void Start()
@@ -44,17 +44,17 @@ public class playermovement : MonoBehaviour
         // Move the player in the current direction
         transform.Translate(_direction * speed * Time.deltaTime);
         
-        pointAmount.text = ((int)transform.position.y).ToString();
+        //pointAmount.text = ((int)transform.position.y).ToString();
         //this checks at certain intervuls, this will be changed later depending on what we want.
-        if (transform.position.y >= resetTriggerDistance)
-        {
-            playerReset();
-        }
+        //if (transform.position.y >= resetTriggerDistance)
+        //{
+        //    playerReset();
+        //}
        
     }
 //this sets the player back to zero
 //i am using this method to move everything else back, but it is not working great
-    void playerReset()
+    public void playerReset()
     {
        GameManager.instance.backToZero(resetTriggerDistance);
         seasons.instance.seasonChange();
