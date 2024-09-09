@@ -3891,8 +3891,8 @@ MonoBehaviour:
   xMax: 10
   yMin: 8
   yMax: 10
-  spawnmin: 1
-  spawnmax: 2
+  spawnmin: 0.5
+  spawnmax: 4
   Tree:
   - {fileID: 7249441000127401223, guid: e2ecd55b15db646e7a45fac442f60b92, type: 3}
   - {fileID: 3470831779439197005, guid: c6f8e8fc8a2d54866ab3042a67f530d5, type: 3}
@@ -4586,8 +4586,8 @@ MonoBehaviour:
   xMax: 10
   yMin: 8
   yMax: 10
-  spawnmin: 1
-  spawnmax: 2
+  spawnmin: 0.5
+  spawnmax: 4
   Tree:
   - {fileID: 7249441000127401223, guid: e2ecd55b15db646e7a45fac442f60b92, type: 3}
   - {fileID: 3470831779439197005, guid: c6f8e8fc8a2d54866ab3042a67f530d5, type: 3}
