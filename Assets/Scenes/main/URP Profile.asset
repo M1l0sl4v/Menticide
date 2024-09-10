@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: URP Profile
   m_EditorClassIdentifier: 
   components:
-  - {fileID: 6388994106195715863}
   - {fileID: 7343719774583111178}
---- !u!114 &6388994106195715863
+  - {fileID: 1562635861293201519}
+--- !u!114 &1562635861293201519
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -24,22 +24,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29fa0085f50d5e54f8144f766051a691, type: 3}
-  m_Name: FilmGrain
+  m_Script: {fileID: 11500000, guid: c5e1dc532bcb41949b58bc4f2abfbb7e, type: 3}
+  m_Name: LensDistortion
   m_EditorClassIdentifier: 
-  active: 0
-  type:
-    m_OverrideState: 1
-    m_Value: 10
+  active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.963
-  response:
+    m_Value: 0.1
+  xMultiplier:
     m_OverrideState: 1
     m_Value: 1
-  texture:
+  yMultiplier:
     m_OverrideState: 1
-    m_Value: {fileID: 2800000, guid: 6f8eaa575299b4554a6eb7e2b24c58fa, type: 3}
+    m_Value: 1
+  center:
+    m_OverrideState: 1
+    m_Value: {x: 0.5, y: 0.5}
+  scale:
+    m_OverrideState: 1
+    m_Value: 1
 --- !u!114 &7343719774583111178
 MonoBehaviour:
   m_ObjectHideFlags: 3
