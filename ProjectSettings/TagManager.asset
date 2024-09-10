@@ -14,7 +14,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
+  - Tree
   - CullingField
   - Enemies
   - 
@@ -42,4 +42,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Path
+    uniqueID: 1290651643
+    locked: 0
+  - name: Tree
+    uniqueID: 4261067525
     locked: 0

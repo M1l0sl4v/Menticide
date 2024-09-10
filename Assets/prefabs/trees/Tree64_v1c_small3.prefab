@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -5564086952145768555}
   - component: {fileID: -7744283974160120017}
   - component: {fileID: -5942348104327227794}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Tree64_v1c_small3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -33899771
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ca6aad51e85bd49b68ea0f5b92703aa6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
