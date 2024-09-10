@@ -101,22 +101,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShadowGroup: 0
   m_ComponentVersion: 1
-  m_HasRenderer: 0
+  m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
-  - {x: -1, y: -1, z: 0}
-  - {x: -1, y: 1, z: 0}
-  - {x: 1, y: 1, z: 0}
-  - {x: 1, y: -1, z: 0}
-  m_ShapePathHash: 0
+  - {x: -0.27963257, y: -1, z: 0}
+  - {x: -0.09323907, y: -0.78423, z: 0}
+  - {x: -0.09834814, y: -0.5083444, z: 0}
+  - {x: -0.35379744, y: -0.14049721, z: 0}
+  - {x: -0.5734842, y: 0.13538814, z: 0}
+  - {x: -0.59392, y: 0.40105557, z: 0}
+  - {x: -0.59392, y: 0.69737697, z: 0}
+  - {x: -0.38692117, y: 0.8416214, z: 0}
+  - {x: 0.003831625, y: 0.8710828, z: 0}
+  - {x: 0.3563521, y: 0.83531976, z: 0}
+  - {x: 0.49931908, y: 0.6781337, z: 0}
+  - {x: 0.6220195, y: 0.36018372, z: 0}
+  - {x: 0.6577823, y: -0.03320837, z: 0}
+  - {x: 0.44831395, y: -0.28354883, z: 0}
+  - {x: 0.17753744, y: -0.47258162, z: 0}
+  - {x: 0.17753744, y: -0.8302109, z: 0}
+  - {x: 0.31028652, y: -0.9948909, z: 0}
+  m_ShapePathHash: 234303339
   m_Mesh: {fileID: 0}
-  m_InstanceId: -87402
+  m_InstanceId: 52342
   m_LocalBounds:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 1, y: 1, z: 0}
+    m_Center: {x: 0.031931162, y: -0.06445861, z: 0}
+    m_Extent: {x: 0.62585115, y: 0.9355414, z: 0}
 --- !u!61 &-5824367987554396630
 BoxCollider2D:
   m_ObjectHideFlags: 0
