@@ -19,8 +19,8 @@ public class playermovement : MonoBehaviour
 
     public float resetTriggerDistance;
     //distance at which the player is reset
-    
-    static public int maxHealth=3;
+
+    static public int maxHealth = 3;
     static public int health;
     public uiHearts uiHearts;
 
