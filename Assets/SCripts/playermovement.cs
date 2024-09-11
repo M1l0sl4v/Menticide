@@ -20,13 +20,26 @@ public class playermovement : MonoBehaviour
     public float resetTriggerDistance;
     //distance at which the player is reset
     
-    //public TMP_Text pointAmount;
-
+    static public int maxHealth=3;
+    static public int health;
+    public uiHearts uiHearts;
 
     private void Start()
     {
         // Initialize the original speed value
         _originalSpeed = speed;
+        health = maxHealth;
+        uiHearts.StartHealth(health);
+    }
+    
+    public void TakeDamage(int amount)
+    {
+        health -= amount;
+        uiHearts.updateHealth(health);
+        if (health <= 0)
+        {
+            return;
+        }
     }
 
     private void Update()

@@ -18,7 +18,7 @@ public class enemyDog : MonoBehaviour
     public SpriteRenderer sp;
     private GameObject player;
 
-    public healthPlayer healthPlayer;
+    public playermovement playermovement;
 
     public GameObject exlimation;
     private bool surprised = true;
@@ -47,7 +47,7 @@ public class enemyDog : MonoBehaviour
         }
         if (collision.gameObject.tag == "Player")
         {
-            healthPlayer.TakeDamage(1);
+            playermovement.TakeDamage(1);
         }
     }
 
