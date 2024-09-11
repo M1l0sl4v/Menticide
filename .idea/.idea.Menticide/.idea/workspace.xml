@@ -6,9 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="181a9b39-c2d7-40b0-b7bc-d00f50f0c591" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Menticide/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Menticide/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCripts/playermovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/playermovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/renderers/New Universal Render Pipeline Asset_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/renderers/New Universal Render Pipeline Asset_Renderer.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art/Tiles/Path/path.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/Tiles/Path/path.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art/sprites/Ment_DirtTileset_v4d-Sheet (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art/sprites/Ment_DirtTileset_v4d-Sheet (1).png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/Tree64_v1c_small1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/trees/Tree64_v1c_small1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/Tree64_v1c_small2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/trees/Tree64_v1c_small2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/Tree64_v1c_small3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/trees/Tree64_v1c_small3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/Tree64_v1c_small4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/trees/Tree64_v1c_small4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/Tree64_v1c_small5.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/trees/Tree64_v1c_small5.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/Tree64_v1c_small6.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/trees/Tree64_v1c_small6.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/Tree64_v1c_small7.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/trees/Tree64_v1c_small7.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/Tree64_v1c_small8.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/trees/Tree64_v1c_small8.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/Tree64_v1c_small9.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/trees/Tree64_v1c_small9.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
