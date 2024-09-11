@@ -12,6 +12,8 @@ public class tilemanager : MonoBehaviour
     public static tilemanager instance;
     public float restart;
 
+    public static TileQueue tileQueue;
+
     private void Start()
     {
         instance = this;
@@ -25,6 +27,11 @@ public class tilemanager : MonoBehaviour
             Vector3 newPosition = transform.position;
             newPosition.y += tileresetdistance;  
             transform.position = newPosition;
+
+
+            // Add culled tiles to the TileQueue
+            //tileQueue.EnqueueTile(collision.gameObject
+
         }
     }
     

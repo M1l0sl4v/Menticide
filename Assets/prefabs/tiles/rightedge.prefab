@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -9219870191737787706}
   - component: {fileID: 1990040957587953448}
   - component: {fileID: -8964309606618713303}
+  - component: {fileID: -579430542951642155}
   m_Layer: 0
   m_Name: rightedge
   m_TagString: Untagged
@@ -100,6 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollspeed: 3
+  tileresetdistance: 0
+  restart: 0
 --- !u!61 &1990040957587953448
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -172,3 +175,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-579430542951642155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5460102821974849753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2cfde1e0704a5b49810e9a3f5cd5fac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
