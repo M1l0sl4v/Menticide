@@ -13,6 +13,8 @@ public class Draw : MonoBehaviour
     private Vector3 initialPoint;
     private AudioSource audioSource;
 
+    private PauseMenu pauseMenu;
+
     void Start()
     {
         // Get or add an AudioSource component to this GameObject
@@ -23,6 +25,8 @@ public class Draw : MonoBehaviour
         }
         audioSource.clip = drawingSoundClip;
         audioSource.loop = true; // Loop the audio while drawing
+
+        pauseMenu = FindAnyObjectByType<PauseMenu>();
     }
 
     void Update()
@@ -32,7 +36,7 @@ public class Draw : MonoBehaviour
 
     void HandleInput()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !pauseMenu.paused)
         {
             StartDrawing();
         }
