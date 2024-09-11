@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="181a9b39-c2d7-40b0-b7bc-d00f50f0c591" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/test tiles/wall Material.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/test tiles/wall Material.mat.meta" beforeDir="false" />
-    </list>
+    <list default="true" id="181a9b39-c2d7-40b0-b7bc-d00f50f0c591" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
