@@ -12058,7 +12058,7 @@ PrefabInstance:
     - target: {fileID: 7846294198139788158, guid: 521166ccd84194bdba3b7f91f3933cf2, type: 3}
       propertyPath: healthPlayer
       value: 
-      objectReference: {fileID: 1675774503}
+      objectReference: {fileID: 0}
     - target: {fileID: 7846294198139788158, guid: 521166ccd84194bdba3b7f91f3933cf2, type: 3}
       propertyPath: playermovement
       value: 
@@ -12090,7 +12090,6 @@ GameObject:
   - component: {fileID: 1675774500}
   - component: {fileID: 1675774502}
   - component: {fileID: 1675774501}
-  - component: {fileID: 1675774503}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -12267,18 +12266,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1675774503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675774496}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 864dbdc3b641247a18abbfb619df63d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1677734053 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4988532541053429174, guid: 459b2402bb0d340349cd6b9fa1ab6304, type: 3}
