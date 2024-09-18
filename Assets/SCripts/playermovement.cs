@@ -71,8 +71,6 @@ public class playermovement : MonoBehaviour
     {
        GameManager.instance.backToZero(resetTriggerDistance);
         seasons.instance.seasonChange();
-        
-
     }
     
     
