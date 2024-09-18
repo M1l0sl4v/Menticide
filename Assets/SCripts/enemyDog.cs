@@ -17,9 +17,7 @@ public class enemyDog : MonoBehaviour
     private bool lineOfSight = false;
     public SpriteRenderer sp;
     private GameObject player;
-
-    public playermovement playermovement;
-
+    
     public GameObject exlimation;
     private bool surprised = true;
     private GameObject e;
@@ -47,7 +45,7 @@ public class enemyDog : MonoBehaviour
         }
         if (collision.gameObject.tag == "Player")
         {
-            playermovement.TakeDamage(1);
+            playermovement.instance.TakeDamage(1);
         }
     }
 

@@ -23,6 +23,7 @@ public class playermovement : MonoBehaviour
     static public int maxHealth = 3;
     static public int health;
     public uiHearts uiHearts;
+    public static playermovement instance;
 
     private void Start()
     {
@@ -30,6 +31,7 @@ public class playermovement : MonoBehaviour
         _originalSpeed = speed;
         health = maxHealth;
         uiHearts.StartHealth(health);
+        instance = this;    
     }
     
     public void TakeDamage(int amount)

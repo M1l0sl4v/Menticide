@@ -46,6 +46,9 @@ TagManager:
   - name: Path
     uniqueID: 1290651643
     locked: 0
+  - name: dog
+    uniqueID: 867422893
+    locked: 0
   - name: Tree
     uniqueID: 4261067525
     locked: 0
