@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 public class enemyDog : MonoBehaviour
 {
+    public LayerMask myLayerMask;
     public float losDistance;
     public float enemyspeedChase;
     public float enemyspeedNormal;
     public float despawnDistance = 50;
     public int enemyBehaviour;
     private Vector3 currentPos;
+
+    public float despawnDistanceDog = 10f;
 
     private Vector3 enemyStartPos;
     private Vector2 _direction;
@@ -22,18 +25,19 @@ public class enemyDog : MonoBehaviour
     private bool surprised = true;
     private GameObject e;
 
+
     void Update()
     {
 
         //this measures the distance to the player and returns the object to the pool when it gets too far away
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         Vector3 playerPos = player.transform.position;
-        currentPos = transform.position;
+        Vector3 currentPos = transform.position;
         float dist = Vector3.Distance(currentPos, playerPos);
-        //if (dist > despawnDistance)
-        //{
-        //   ObjectPoolManager.ReturnObjectToPool(gameObject);
-        // }
+        if (dist > despawnDistanceDog)
+        {
+            ObjectPoolManager.ReturnObjectToPool(gameObject);
+        }
         enemyAi();
     }
     // hmmmm
@@ -68,9 +72,9 @@ public class enemyDog : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, losDistance);
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, losDistance,myLayerMask);
         if (ray.collider != null)
         {
             lineOfSight = ray.collider.CompareTag("Player");

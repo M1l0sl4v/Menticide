@@ -22,16 +22,16 @@ public class treeSpawner : MonoBehaviour
     {
 
         //delay on start, then incriments
-        if(Time.time > spawnTime)
-        {
-            timeBetweenSpawn = Random.Range(spawnmin, spawnmax);
-            Spawn();
-            spawnTime = Time.time + timeBetweenSpawn; 
-        }
+        //if(Time.time > spawnTime)
+        //{
+        //    timeBetweenSpawn = Random.Range(spawnmin, spawnmax);
+        //    Spawn();
+        //    spawnTime = Time.time + timeBetweenSpawn; 
+        //}
       
     }
 
-    void Spawn()
+    public void Spawn()
     {
         //location
         Vector3Int randomCellPossition = new Vector3Int(Random.Range((int)xMin, (int)xMax), (Random.Range((int)yMin,(int)yMax)),0);

@@ -22,18 +22,18 @@ public class obstaclespawner : MonoBehaviour
     void Update()
     {
 
-        //delay on start, then incriments
-        if(Time.time > spawnTime)
-        {
-            timeBetweenSpawn = Random.Range(spawnmin, spawnmax);
-            Spawn();
-            spawnTime = Time.time + timeBetweenSpawn;
-           // Debug.Log(timeBetweenSpawn);
-        }
+        ////delay on start, then incriments
+        //if(Time.time > spawnTime)
+        //{
+        //    timeBetweenSpawn = Random.Range(spawnmin, spawnmax);
+        //    Spawn();
+        //    spawnTime = Time.time + timeBetweenSpawn;
+        //   // Debug.Log(timeBetweenSpawn);
+        //}
       
     }
 
-    void Spawn()
+    public void Spawn()
     {
         //location
         float randomX = Random.Range(minX, maxX);
