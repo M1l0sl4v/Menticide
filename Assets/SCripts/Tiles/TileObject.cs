@@ -10,6 +10,7 @@ public class TileObject : MonoBehaviour
     private Sprite _sprite;
     private float _speedMultiplier;
     static int pathLayer = 3;
+    public GameObject tile;
 
     public enum TileAlignment
     {
