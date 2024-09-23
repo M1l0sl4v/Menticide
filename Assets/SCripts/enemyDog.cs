@@ -24,6 +24,7 @@ public class enemyDog : MonoBehaviour
     public GameObject exlimation;
     private bool surprised = true;
     private GameObject e;
+    public Animator anim;
 
 
     void Update()
@@ -70,6 +71,7 @@ public class enemyDog : MonoBehaviour
         distance = Random.Range(5, 10);
         enemyStartPos = transform.position;
         player = GameObject.FindGameObjectWithTag("Player");
+        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -117,6 +119,7 @@ public class enemyDog : MonoBehaviour
             e = Instantiate(exlimation, transform);
             e.transform.parent = transform;
             surprised = false;
+            anim.SetTrigger("stun");
         }
         if (e == null)
         {
