@@ -21,13 +21,13 @@ public class treeSpawner : MonoBehaviour
     void Update()
     {
 
-        //delay on start, then incriments
-        //if(Time.time > spawnTime)
-        //{
-        //    timeBetweenSpawn = Random.Range(spawnmin, spawnmax);
-        //    Spawn();
-        //    spawnTime = Time.time + timeBetweenSpawn; 
-        //}
+       // delay on start, then incriments
+        if(Time.time > spawnTime)
+        {
+            timeBetweenSpawn = Random.Range(spawnmin, spawnmax);
+            Spawn();
+            spawnTime = Time.time + timeBetweenSpawn; 
+        }
       
     }
 

@@ -5250,12 +5250,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b618e3304b3b4938814b195d3a49394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMin: -10
-  xMax: 10
+  xMin: -30
+  xMax: 30
   yMin: 8
   yMax: 10
-  spawnmin: 0.5
-  spawnmax: 1
+  spawnmin: 0.1
+  spawnmax: 0.5
   Tree:
   - {fileID: 7249441000127401223, guid: e2ecd55b15db646e7a45fac442f60b92, type: 3}
   - {fileID: 3470831779439197005, guid: c6f8e8fc8a2d54866ab3042a67f530d5, type: 3}
@@ -7333,12 +7333,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b618e3304b3b4938814b195d3a49394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMin: -10
-  xMax: 10
+  xMin: -30
+  xMax: 30
   yMin: 8
   yMax: 10
-  spawnmin: 0.5
-  spawnmax: 1
+  spawnmin: 0.1
+  spawnmax: 0.5
   Tree:
   - {fileID: 7249441000127401223, guid: e2ecd55b15db646e7a45fac442f60b92, type: 3}
   - {fileID: 3470831779439197005, guid: c6f8e8fc8a2d54866ab3042a67f530d5, type: 3}
