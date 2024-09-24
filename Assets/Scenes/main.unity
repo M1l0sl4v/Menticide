@@ -1083,7 +1083,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146629630}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.019751929, w: 0.9998049}
   m_LocalPosition: {x: 0.01, y: 0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1129,7 +1129,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 19
+  m_PointLightOuterRadius: 8.060471
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -2882,6 +2882,22 @@ PrefabInstance:
     - target: {fileID: 1546645933743141903, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
       propertyPath: m_Offset.y
       value: -0.019504935
+      objectReference: {fileID: 0}
+    - target: {fileID: 1700632340610863045, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1700632340610863045, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1700632340610863045, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1700632340610863045, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4781328570725660143, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12054,10 +12070,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.1590909
-    y: 0
-    width: 1.1538641
-    height: 1.0925267
+    x: 0
+    y: 0.5621806
+    width: 0.5365622
+    height: 0.5414182
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
