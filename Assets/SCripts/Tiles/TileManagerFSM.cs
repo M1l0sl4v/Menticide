@@ -254,6 +254,9 @@ public class TileManagerFSM : MonoBehaviour
         newPosition.y += tileResetDistance;
         tile.transform.position = newPosition;
         print("moved tile");
+
+        // 5% chance to spawn rubble as well
+
         //tile.transform.position.Set(tile.transform.position.x, tile.transform.position.y + tileResetDistance, tile.transform.position.z);
     }
 }
