@@ -170,7 +170,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 1.58
-      minScalar: 1
+      minScalar: 0.49
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -668,7 +668,7 @@ ParticleSystem:
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 0.21
+    radiusThickness: 0.57
     donutRadius: 0.2
     m_Position: {x: 0, y: -0.00000004941781, z: -0.000012325673}
     m_Rotation: {x: 0, y: 0, z: 0}
@@ -751,7 +751,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.5991492
+      value: 0.39
       mode: 0
       spread: 0
       speed:
