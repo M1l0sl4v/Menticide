@@ -1321,27 +1321,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSeason: 0
   tileResetDistance: 18
-  smrLSprites: []
-  smrMSprites: []
-  smrRSprites: []
+  smrLSprites:
+  - {fileID: 426129960, guid: e443ef5dbf37e22498c41d71923b0772, type: 3}
+  - {fileID: -1534454307, guid: e443ef5dbf37e22498c41d71923b0772, type: 3}
+  - {fileID: 1249375546, guid: e443ef5dbf37e22498c41d71923b0772, type: 3}
+  smrMSprites:
+  - {fileID: 1530657771, guid: e443ef5dbf37e22498c41d71923b0772, type: 3}
+  - {fileID: 486572757, guid: e443ef5dbf37e22498c41d71923b0772, type: 3}
+  - {fileID: -216293799, guid: e443ef5dbf37e22498c41d71923b0772, type: 3}
+  smrRSprites:
+  - {fileID: -361197425, guid: e443ef5dbf37e22498c41d71923b0772, type: 3}
+  - {fileID: 1051952836, guid: e443ef5dbf37e22498c41d71923b0772, type: 3}
+  - {fileID: -851022450, guid: e443ef5dbf37e22498c41d71923b0772, type: 3}
   earlyFallLSprites: []
   earlyFallMSprites: []
   earlyFallRSprites: []
-  fallLSprites: []
-  fallMSprites: []
-  fallRSprites: []
+  fallLSprites:
+  - {fileID: -1236482185, guid: b4fe618076ae2af41a24a120a309d767, type: 3}
+  - {fileID: -236650222, guid: b4fe618076ae2af41a24a120a309d767, type: 3}
+  - {fileID: 513592618, guid: b4fe618076ae2af41a24a120a309d767, type: 3}
+  fallMSprites:
+  - {fileID: 1513556184, guid: b4fe618076ae2af41a24a120a309d767, type: 3}
+  - {fileID: 1367547114, guid: b4fe618076ae2af41a24a120a309d767, type: 3}
+  - {fileID: -1693324193, guid: b4fe618076ae2af41a24a120a309d767, type: 3}
+  fallRSprites:
+  - {fileID: 709921350, guid: b4fe618076ae2af41a24a120a309d767, type: 3}
+  - {fileID: -577360772, guid: b4fe618076ae2af41a24a120a309d767, type: 3}
+  - {fileID: 741906508, guid: b4fe618076ae2af41a24a120a309d767, type: 3}
   earlyWinLSprites: []
   earlyWinMSprites: []
   earlyWinRSprites: []
-  winLSprites: []
-  winMSprites: []
-  winRSprites: []
+  winLSprites:
+  - {fileID: -1455878100, guid: 2e30c40b8eb5cfe4c8edc2e74a5aaaba, type: 3}
+  - {fileID: 1239501253, guid: 2e30c40b8eb5cfe4c8edc2e74a5aaaba, type: 3}
+  - {fileID: -462547519, guid: 2e30c40b8eb5cfe4c8edc2e74a5aaaba, type: 3}
+  winMSprites:
+  - {fileID: -1144114151, guid: 2e30c40b8eb5cfe4c8edc2e74a5aaaba, type: 3}
+  - {fileID: -471959970, guid: 2e30c40b8eb5cfe4c8edc2e74a5aaaba, type: 3}
+  - {fileID: 1658325347, guid: 2e30c40b8eb5cfe4c8edc2e74a5aaaba, type: 3}
+  winRSprites:
+  - {fileID: -1504131282, guid: 2e30c40b8eb5cfe4c8edc2e74a5aaaba, type: 3}
+  - {fileID: 1227411134, guid: 2e30c40b8eb5cfe4c8edc2e74a5aaaba, type: 3}
+  - {fileID: -1267489994, guid: 2e30c40b8eb5cfe4c8edc2e74a5aaaba, type: 3}
   earlySprLSprites: []
   earlySprMSprites: []
   earlySprRSprites: []
-  sprLSprites: []
-  sprMSprites: []
-  sprRSprites: []
+  sprLSprites:
+  - {fileID: 506462540, guid: b033902f1e56bff4a97599468e507906, type: 3}
+  - {fileID: 2119626371, guid: b033902f1e56bff4a97599468e507906, type: 3}
+  - {fileID: 1186734713, guid: b033902f1e56bff4a97599468e507906, type: 3}
+  sprMSprites:
+  - {fileID: 2138573109, guid: b033902f1e56bff4a97599468e507906, type: 3}
+  - {fileID: -1230432541, guid: b033902f1e56bff4a97599468e507906, type: 3}
+  - {fileID: 858737065, guid: b033902f1e56bff4a97599468e507906, type: 3}
+  sprRSprites:
+  - {fileID: -1980475009, guid: b033902f1e56bff4a97599468e507906, type: 3}
+  - {fileID: -961260249, guid: b033902f1e56bff4a97599468e507906, type: 3}
+  - {fileID: 1737637011, guid: b033902f1e56bff4a97599468e507906, type: 3}
   earlySmrLSprites: []
   earlySmrMSprites: []
   earlySmrRSprites: []
