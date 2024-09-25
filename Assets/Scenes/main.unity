@@ -198,7 +198,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1257488884}
+      addedObject: {fileID: 1257488878}
   m_SourcePrefab: {fileID: 100100000, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
 --- !u!1001 &4552692
 PrefabInstance:
@@ -349,12 +349,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 54989314}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1 &71350008 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379691630286030414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
@@ -419,12 +418,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 71350008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 2
+  sprite: {fileID: 0}
 --- !u!1 &73918004 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379691630286030414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
@@ -489,12 +487,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 73918004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 2
+  sprite: {fileID: 0}
 --- !u!1 &74075114
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,12 +599,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 78123613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 2
+  sprite: {fileID: 0}
 --- !u!1 &99721691 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 399984036638425203, guid: eef4b7a33238b403ea19e61144b3d782, type: 3}
@@ -672,12 +668,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 99721691}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1001 &111264634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -833,7 +828,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1823969368}
+      addedObject: {fileID: 1823969365}
   m_SourcePrefab: {fileID: 100100000, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
 --- !u!1 &122295374
 GameObject:
@@ -967,12 +962,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 132672265}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1001 &139539105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1148,6 +1142,7 @@ GameObject:
   - component: {fileID: 154867866}
   - component: {fileID: 154867865}
   - component: {fileID: 154867867}
+  - component: {fileID: 154867868}
   m_Layer: 8
   m_Name: cullingField
   m_TagString: cullingField
@@ -1312,6 +1307,44 @@ MonoBehaviour:
   spawnminObstacle: 0.5
   spawnmaxObstacle: 1
   obstaclespawner: {fileID: 673161324}
+--- !u!114 &154867868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154867861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ec3e89b7fbc694aa867d019920641f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSeason: 0
+  tileResetDistance: 18
+  smrLSprites: []
+  smrMSprites: []
+  smrRSprites: []
+  earlyFallLSprites: []
+  earlyFallMSprites: []
+  earlyFallRSprites: []
+  fallLSprites: []
+  fallMSprites: []
+  fallRSprites: []
+  earlyWinLSprites: []
+  earlyWinMSprites: []
+  earlyWinRSprites: []
+  winLSprites: []
+  winMSprites: []
+  winRSprites: []
+  earlySprLSprites: []
+  earlySprMSprites: []
+  earlySprRSprites: []
+  sprLSprites: []
+  sprMSprites: []
+  sprRSprites: []
+  earlySmrLSprites: []
+  earlySmrMSprites: []
+  earlySmrRSprites: []
 --- !u!1 &157406399 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4988532541053429174, guid: 459b2402bb0d340349cd6b9fa1ab6304, type: 3}
@@ -1376,12 +1409,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 157406399}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1 &165096990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1577,12 +1609,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 192384834}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!4 &193117790 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6127464293199555261, guid: 933a4cef5b96c4051840fd0900a4195f, type: 3}
@@ -1878,12 +1909,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 237885579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1 &274352869
 GameObject:
   m_ObjectHideFlags: 0
@@ -2028,7 +2058,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3826459044889058211, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
   m_PrefabInstance: {fileID: 776496469}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &299300517
+--- !u!114 &299300514
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2037,12 +2067,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 299300512}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 0
+  sprite: {fileID: 0}
 --- !u!1 &314637616
 GameObject:
   m_ObjectHideFlags: 0
@@ -2332,7 +2361,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1981393055}
+      addedObject: {fileID: 1981393052}
   m_SourcePrefab: {fileID: 100100000, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
 --- !u!1001 &385445528
 PrefabInstance:
@@ -2459,12 +2488,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 417649548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1001 &422350333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2540,7 +2568,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1778770174}
+      addedObject: {fileID: 1778770168}
   m_SourcePrefab: {fileID: 100100000, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
 --- !u!1001 &429149412
 PrefabInstance:
@@ -2617,7 +2645,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2070589752}
+      addedObject: {fileID: 2070589746}
   m_SourcePrefab: {fileID: 100100000, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
 --- !u!1001 &438750655
 PrefabInstance:
@@ -2690,7 +2718,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3826459044889058211, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
   m_PrefabInstance: {fileID: 1708380522}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &455148646
+--- !u!114 &455148643
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2699,12 +2727,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 455148641}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 0
+  sprite: {fileID: 0}
 --- !u!1001 &493977414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2780,7 +2807,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1750761881}
+      addedObject: {fileID: 1750761878}
   m_SourcePrefab: {fileID: 100100000, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
 --- !u!1001 &501130442
 PrefabInstance:
@@ -2926,12 +2953,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 503416408}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1 &527637405 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379691630286030414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
@@ -2996,12 +3022,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 527637405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 2
+  sprite: {fileID: 0}
 --- !u!1001 &530777342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3146,12 +3171,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 535771991}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1001 &550838732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3296,12 +3320,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 587843487}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1 &594896783
 GameObject:
   m_ObjectHideFlags: 0
@@ -4067,7 +4090,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3826459044889058211, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
   m_PrefabInstance: {fileID: 1266868125}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &706404191
+--- !u!114 &706404188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4076,12 +4099,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 706404186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 0
+  sprite: {fileID: 0}
 --- !u!1 &709153007
 GameObject:
   m_ObjectHideFlags: 0
@@ -4382,7 +4404,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2007385250}
+      addedObject: {fileID: 2007385244}
   m_SourcePrefab: {fileID: 100100000, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
 --- !u!1001 &720940848
 PrefabInstance:
@@ -4528,12 +4550,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 729779614}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1 &730381380 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4988532541053429174, guid: 459b2402bb0d340349cd6b9fa1ab6304, type: 3}
@@ -4598,12 +4619,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 730381380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1001 &756574735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4748,12 +4768,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 756823568}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1 &763669951 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 399984036638425203, guid: eef4b7a33238b403ea19e61144b3d782, type: 3}
@@ -4818,12 +4837,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 763669951}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1001 &776496469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4899,7 +4917,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 299300517}
+      addedObject: {fileID: 299300514}
   m_SourcePrefab: {fileID: 100100000, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
 --- !u!1001 &777650445
 PrefabInstance:
@@ -5125,12 +5143,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 783609616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1001 &796022925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5353,7 +5370,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 965465209}
+      addedObject: {fileID: 965465206}
   m_SourcePrefab: {fileID: 100100000, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
 --- !u!1001 &829209745
 PrefabInstance:
@@ -5584,7 +5601,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3826459044889058211, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
   m_PrefabInstance: {fileID: 957173202}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &842777671
+--- !u!114 &842777668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5593,12 +5610,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 842777666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 0
+  sprite: {fileID: 0}
 --- !u!1 &852104072 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379691630286030414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
@@ -5663,12 +5679,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 852104072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 2
+  sprite: {fileID: 0}
 --- !u!1 &860433068 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379691630286030414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
@@ -5733,12 +5748,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 860433068}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 2
+  sprite: {fileID: 0}
 --- !u!1 &866539827 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 399984036638425203, guid: eef4b7a33238b403ea19e61144b3d782, type: 3}
@@ -5803,12 +5817,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 866539827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1 &866588049
 GameObject:
   m_ObjectHideFlags: 0
@@ -6022,12 +6035,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 867992689}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 2
+  sprite: {fileID: 0}
 --- !u!1 &876587882
 GameObject:
   m_ObjectHideFlags: 0
@@ -6516,7 +6528,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2010438296}
+      addedObject: {fileID: 2010438293}
   m_SourcePrefab: {fileID: 100100000, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
 --- !u!1 &915907382
 GameObject:
@@ -6796,12 +6808,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 918177740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 2
+  sprite: {fileID: 0}
 --- !u!1001 &918207601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7030,12 +7041,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 930082754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1 &933866984 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379691630286030414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
@@ -7100,12 +7110,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 933866984}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 2
+  sprite: {fileID: 0}
 --- !u!1 &955607784
 GameObject:
   m_ObjectHideFlags: 0
@@ -7214,7 +7223,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 842777671}
+      addedObject: {fileID: 842777668}
   m_SourcePrefab: {fileID: 100100000, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
 --- !u!1 &965465204 stripped
 GameObject:
@@ -7226,7 +7235,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3826459044889058211, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
   m_PrefabInstance: {fileID: 815865606}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &965465209
+--- !u!114 &965465206
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7235,12 +7244,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 965465204}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 0
+  sprite: {fileID: 0}
 --- !u!4 &974319246 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3131619425607364820, guid: 5f3881ac2ec1e4b4a9edc1b177e7e463, type: 3}
@@ -7504,12 +7512,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 993492354}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1 &1007118041
 GameObject:
   m_ObjectHideFlags: 0
@@ -7582,7 +7589,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3826459044889058211, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
   m_PrefabInstance: {fileID: 1060970809}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1043181827
+--- !u!114 &1043181821
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7591,12 +7598,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1043181819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 0
+  sprite: {fileID: 0}
 --- !u!1 &1057903817 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4988532541053429174, guid: 459b2402bb0d340349cd6b9fa1ab6304, type: 3}
@@ -7661,12 +7667,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1057903817}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1001 &1060970809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7742,7 +7747,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1043181827}
+      addedObject: {fileID: 1043181821}
   m_SourcePrefab: {fileID: 100100000, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
 --- !u!1 &1063292224 stripped
 GameObject:
@@ -7808,12 +7813,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1063292224}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 2
+  sprite: {fileID: 0}
 --- !u!1 &1068642966
 GameObject:
   m_ObjectHideFlags: 0
@@ -9022,12 +9026,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1153240610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1001 &1154196334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9480,7 +9483,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1365495616}
+      addedObject: {fileID: 1365495610}
   m_SourcePrefab: {fileID: 100100000, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
 --- !u!1 &1229319035 stripped
 GameObject:
@@ -9546,12 +9549,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1229319035}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1 &1257488876 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
@@ -9562,7 +9564,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3826459044889058211, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
   m_PrefabInstance: {fileID: 3457129}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1257488884
+--- !u!114 &1257488878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9571,12 +9573,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1257488876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 0
+  sprite: {fileID: 0}
 --- !u!1 &1263996635 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4988532541053429174, guid: 459b2402bb0d340349cd6b9fa1ab6304, type: 3}
@@ -9641,12 +9642,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1263996635}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1001 &1266868125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9722,7 +9722,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 706404191}
+      addedObject: {fileID: 706404188}
   m_SourcePrefab: {fileID: 100100000, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
 --- !u!1 &1274203998 stripped
 GameObject:
@@ -9788,12 +9788,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1274203998}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1 &1275487561 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379691630286030414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
@@ -9858,12 +9857,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1275487561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 2
+  sprite: {fileID: 0}
 --- !u!1001 &1282402016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10043,12 +10041,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1289492477}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 2
+  sprite: {fileID: 0}
 --- !u!1 &1292085185
 GameObject:
   m_ObjectHideFlags: 0
@@ -10234,12 +10231,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1293244089}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1001 &1297822905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10540,7 +10536,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1465606077}
+      addedObject: {fileID: 1465606074}
   m_SourcePrefab: {fileID: 100100000, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
 --- !u!1001 &1329793098
 PrefabInstance:
@@ -10741,12 +10737,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1336346828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1001 &1347017533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10971,7 +10966,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3826459044889058211, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
   m_PrefabInstance: {fileID: 1206789899}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1365495616
+--- !u!114 &1365495610
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10980,12 +10975,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1365495608}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 0
+  sprite: {fileID: 0}
 --- !u!1 &1388212425
 GameObject:
   m_ObjectHideFlags: 0
@@ -11158,12 +11152,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1389020628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 2
+  sprite: {fileID: 0}
 --- !u!1 &1404006204 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379691630286030414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
@@ -11228,12 +11221,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1404006204}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 2
+  sprite: {fileID: 0}
 --- !u!1001 &1413880034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11378,12 +11370,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1418148290}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 2
+  sprite: {fileID: 0}
 --- !u!1 &1424143796
 GameObject:
   m_ObjectHideFlags: 0
@@ -11591,12 +11582,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1450143215}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1001 &1452945728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11687,7 +11677,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3826459044889058211, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
   m_PrefabInstance: {fileID: 1326470016}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1465606077
+--- !u!114 &1465606074
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11696,12 +11686,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1465606072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 0
+  sprite: {fileID: 0}
 --- !u!1001 &1496490909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11901,12 +11890,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1500934831}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!4 &1560875941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8176814249895226974, guid: 80bd3e6377f514b7ebd9d7ddb8178787, type: 3}
@@ -12473,9 +12461,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.5982287
-    width: 0.53797466
-    height: 0.46195653
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -12628,12 +12616,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1633018648}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1001 &1633716465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12778,12 +12765,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1665389662}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1 &1666272787 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4988532541053429174, guid: 459b2402bb0d340349cd6b9fa1ab6304, type: 3}
@@ -12848,12 +12834,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1666272787}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1 &1675774496
 GameObject:
   m_ObjectHideFlags: 0
@@ -13109,12 +13094,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1677734053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1001 &1692290259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13430,7 +13414,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 455148646}
+      addedObject: {fileID: 455148643}
   m_SourcePrefab: {fileID: 100100000, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
 --- !u!1001 &1715146202
 PrefabInstance:
@@ -13576,12 +13560,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1716777827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 2
+  sprite: {fileID: 0}
 --- !u!1 &1717556186 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 399984036638425203, guid: eef4b7a33238b403ea19e61144b3d782, type: 3}
@@ -13646,12 +13629,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1717556186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1 &1719958014 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 399984036638425203, guid: eef4b7a33238b403ea19e61144b3d782, type: 3}
@@ -13716,12 +13698,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1719958014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1 &1734688395 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4988532541053429174, guid: 459b2402bb0d340349cd6b9fa1ab6304, type: 3}
@@ -13786,12 +13767,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1734688395}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1 &1745148904
 GameObject:
   m_ObjectHideFlags: 0
@@ -13835,7 +13815,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3826459044889058211, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
   m_PrefabInstance: {fileID: 493977414}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1750761881
+--- !u!114 &1750761878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13844,12 +13824,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1750761876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 0
+  sprite: {fileID: 0}
 --- !u!1001 &1775198300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13940,7 +13919,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3826459044889058211, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
   m_PrefabInstance: {fileID: 422350333}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1778770174
+--- !u!114 &1778770168
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13949,12 +13928,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1778770166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 0
+  sprite: {fileID: 0}
 --- !u!1 &1823969363 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
@@ -13965,7 +13943,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3826459044889058211, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
   m_PrefabInstance: {fileID: 117895875}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1823969368
+--- !u!114 &1823969365
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13974,12 +13952,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1823969363}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 0
+  sprite: {fileID: 0}
 --- !u!1 &1836558845
 GameObject:
   m_ObjectHideFlags: 0
@@ -14906,7 +14883,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3826459044889058211, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
   m_PrefabInstance: {fileID: 1944793730}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1841955921
+--- !u!114 &1841955918
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14915,12 +14892,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1841955916}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 0
+  sprite: {fileID: 0}
 --- !u!1001 &1842474189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15282,12 +15258,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1861311110}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1 &1861477260 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 399984036638425203, guid: eef4b7a33238b403ea19e61144b3d782, type: 3}
@@ -15352,12 +15327,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1861477260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 1
+  sprite: {fileID: 0}
 --- !u!1001 &1942876501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15574,7 +15548,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1841955921}
+      addedObject: {fileID: 1841955918}
   m_SourcePrefab: {fileID: 100100000, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
 --- !u!1 &1969046012
 GameObject:
@@ -15799,7 +15773,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3826459044889058211, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
   m_PrefabInstance: {fileID: 380180149}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1981393055
+--- !u!114 &1981393052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15808,12 +15782,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1981393050}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 0
+  sprite: {fileID: 0}
 --- !u!1 &2000153698 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379691630286030414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
@@ -15878,12 +15851,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2000153698}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 2
+  sprite: {fileID: 0}
 --- !u!1 &2007385242 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
@@ -15894,7 +15866,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3826459044889058211, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
   m_PrefabInstance: {fileID: 719424975}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2007385250
+--- !u!114 &2007385244
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15903,12 +15875,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2007385242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 0
+  sprite: {fileID: 0}
 --- !u!1 &2010438291 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
@@ -15919,7 +15890,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3826459044889058211, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
   m_PrefabInstance: {fileID: 912487391}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2010438296
+--- !u!114 &2010438293
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15928,12 +15899,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2010438291}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 0
+  sprite: {fileID: 0}
 --- !u!1 &2031082413
 GameObject:
   m_ObjectHideFlags: 0
@@ -16162,7 +16132,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3826459044889058211, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
   m_PrefabInstance: {fileID: 2074258112}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2055204179
+--- !u!114 &2055204176
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16171,12 +16141,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2055204174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 0
+  sprite: {fileID: 0}
 --- !u!1 &2064885524 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379691630286030414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
@@ -16241,12 +16210,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2064885524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 2
+  sprite: {fileID: 0}
 --- !u!1 &2070589744 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
@@ -16257,7 +16225,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3826459044889058211, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
   m_PrefabInstance: {fileID: 429149412}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2070589752
+--- !u!114 &2070589746
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16266,12 +16234,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2070589744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48ba5b4658baa4ff48fe131f4e0592d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0
-  tileresetdistance: 18
-  restart: 0
+  type: 0
+  sprite: {fileID: 0}
 --- !u!4 &2073644774 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6127464293199555261, guid: 933a4cef5b96c4051840fd0900a4195f, type: 3}
@@ -16432,7 +16399,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2055204179}
+      addedObject: {fileID: 2055204176}
   m_SourcePrefab: {fileID: 100100000, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
 --- !u!1 &2075483690
 GameObject:
