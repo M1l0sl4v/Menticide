@@ -1110,7 +1110,7 @@ MonoBehaviour:
   m_Intensity: 0.58
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000fbc7ed4c05bbfafdadd2b3331b969d84
+  m_ApplyToSortingLayers: 00000000fbc7ed4c05bbfafdadd2b3331b969d84ff5a64cc
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -2859,103 +2859,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1750761881}
   m_SourcePrefab: {fileID: 100100000, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
---- !u!1001 &499088769
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1546645933743141903, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: m_Size.x
-      value: 1.6591408
-      objectReference: {fileID: 0}
-    - target: {fileID: 1546645933743141903, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: m_Size.y
-      value: 0.7749185
-      objectReference: {fileID: 0}
-    - target: {fileID: 1546645933743141903, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.019504666
-      objectReference: {fileID: 0}
-    - target: {fileID: 1546645933743141903, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.019504935
-      objectReference: {fileID: 0}
-    - target: {fileID: 1700632340610863045, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1700632340610863045, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1700632340610863045, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1700632340610863045, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4781328570725660143, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 4781328570725660143, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 4781328570725660143, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4781328570725660143, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4781328570725660143, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4781328570725660143, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4781328570725660143, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4781328570725660143, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4781328570725660143, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4781328570725660143, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5075196644585124462, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: m_Name
-      value: enemyDog
-      objectReference: {fileID: 0}
-    - target: {fileID: 7846294198139788158, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: enemyspeedChase
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7846294198139788158, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-      propertyPath: enemyspeedNormal
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
 --- !u!1001 &501130442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10435,7 +10338,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -33899771
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -10723,7 +10626,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.32
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -11804,7 +11707,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
   UVModule:
     serializedVersion: 2
-    enabled: 0
+    enabled: 1
     mode: 0
     timeMode: 0
     fps: 30
@@ -16901,9 +16804,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.59903383
+    width: 0.53667545
+    height: 0.46059784
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -17315,8 +17218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b13fe40ca357b4ba8663eeb13746f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  speedMultiplier: 1.5
+  speed: 3
+  speedMultiplier: 1.2
   speedDecayRate: 1
   resetTriggerDistance: 300
   uiHearts: {fileID: 196417510}
@@ -17471,7 +17374,7 @@ Rigidbody2D:
     m_Bits: 512
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &1677734053 stripped
 GameObject:
@@ -21175,4 +21078,3 @@ SceneRoots:
   - {fileID: 1969046016}
   - {fileID: 1282427980}
   - {fileID: 1068642968}
-  - {fileID: 499088769}

@@ -39,8 +39,8 @@ Material:
     m_Floats:
     - _Fog_Size: 15.4
     - _Pixelation: 33.51
-    - _opacity: 0.02
+    - _opacity: 0.008
     m_Colors:
     - _Fog_Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Fog_Speed: {r: 1, g: 1, b: 0, a: 0}
+    - _Fog_Speed: {r: 0.5, g: 0.5, b: 0, a: 0}
   m_BuildTextureStacks: []
