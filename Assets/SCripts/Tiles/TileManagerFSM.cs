@@ -154,13 +154,13 @@ public class TileManagerFSM : MonoBehaviour
                 switch (tile.type)
                 {
                     case TileObject.Type.Left:
-                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = smrLSprites[Random.Range(0, smrLSprites.Length)];
+                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyFallLSprites[Random.Range(0, earlyFallLSprites.Length)];
                         break;
                     case TileObject.Type.Middle:
-                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = smrMSprites[Random.Range(0, smrMSprites.Length)];
+                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyFallMSprites[Random.Range(0, earlyFallMSprites.Length)];
                         break;
                     case TileObject.Type.Right:
-                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = smrRSprites[Random.Range(0, smrRSprites.Length)];
+                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyFallRSprites[Random.Range(0, earlyFallRSprites.Length)];
                         break;
                 }
                 break;
@@ -182,13 +182,13 @@ public class TileManagerFSM : MonoBehaviour
                 switch (tile.type)
                 {
                     case TileObject.Type.Left:
-                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = fallLSprites[Random.Range(0, fallLSprites.Length)];
+                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyWinLSprites[Random.Range(0, earlyWinLSprites.Length)];
                         break;
                     case TileObject.Type.Middle:
-                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = fallMSprites[Random.Range(0, fallMSprites.Length)];
+                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyWinMSprites[Random.Range(0, earlyWinMSprites.Length)];
                         break;
                     case TileObject.Type.Right:
-                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = fallRSprites[Random.Range(0, fallRSprites.Length)];
+                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyWinRSprites[Random.Range(0, earlyWinRSprites.Length)];
                         break;
                 }
                 break;
@@ -210,13 +210,13 @@ public class TileManagerFSM : MonoBehaviour
                 switch (tile.type)
                 {
                     case TileObject.Type.Left:
-                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = winLSprites[Random.Range(0, winLSprites.Length)];
+                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySprLSprites[Random.Range(0, earlySprLSprites.Length)];
                         break;
                     case TileObject.Type.Middle:
-                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = winMSprites[Random.Range(0, winMSprites.Length)];
+                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySprMSprites[Random.Range(0, earlySprMSprites.Length)];
                         break;
                     case TileObject.Type.Right:
-                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = winRSprites[Random.Range(0, winRSprites.Length)];
+                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySprRSprites[Random.Range(0, earlySprRSprites.Length)];
                         break;
                 }
                 break;
@@ -238,13 +238,13 @@ public class TileManagerFSM : MonoBehaviour
                 switch (tile.type)
                 {
                     case TileObject.Type.Left:
-                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = sprLSprites[Random.Range(0, sprLSprites.Length)];
+                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySmrLSprites[Random.Range(0, earlySmrLSprites.Length)];
                         break;
                     case TileObject.Type.Middle:
-                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = sprMSprites[Random.Range(0, sprMSprites.Length)];
+                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySmrMSprites[Random.Range(0, earlySmrMSprites.Length)];
                         break;
                     case TileObject.Type.Right:
-                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = sprRSprites[Random.Range(0, sprRSprites.Length)];
+                        tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySmrRSprites[Random.Range(0, earlySmrRSprites.Length)];
                         break;
                 }
                 break;
