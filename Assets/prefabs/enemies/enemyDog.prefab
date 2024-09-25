@@ -110,7 +110,6 @@ MonoBehaviour:
   despawnDistanceDog: 10
   sp: {fileID: 0}
   exlimation: {fileID: 1348696221685265807, guid: 195e0f6155c4c434d8f48f48aef3a53a, type: 3}
-  anim: {fileID: -3079357004096876155}
 --- !u!61 &1546645933743141903
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -140,7 +139,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
