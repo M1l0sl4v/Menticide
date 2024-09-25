@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6062459444185067396}
   - component: {fileID: 3120595144087981125}
   m_Layer: 0
-  m_Name: leaves falling
+  m_Name: leaves fallinglight green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1487,10 +1487,10 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 1410757618, guid: b1bd68cc54e1a4d468726878b6b05d6b, type: 3}
-    - sprite: {fileID: 1558240924, guid: b1bd68cc54e1a4d468726878b6b05d6b, type: 3}
-    - sprite: {fileID: -1600357889, guid: b1bd68cc54e1a4d468726878b6b05d6b, type: 3}
-    - sprite: {fileID: 1842341068, guid: b1bd68cc54e1a4d468726878b6b05d6b, type: 3}
+    - sprite: {fileID: 460479101, guid: 45e6fdcdd17574e1d96b04e4773ec8e2, type: 3}
+    - sprite: {fileID: 222483709, guid: 45e6fdcdd17574e1d96b04e4773ec8e2, type: 3}
+    - sprite: {fileID: 1664809310, guid: 45e6fdcdd17574e1d96b04e4773ec8e2, type: 3}
+    - sprite: {fileID: 930394885, guid: 45e6fdcdd17574e1d96b04e4773ec8e2, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -4780,7 +4780,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 85a676703452b428b912b2a03131fd75, type: 2}
+  - {fileID: 2100000, guid: d26c9e232edfc486fa1369a76e9cdd50, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
