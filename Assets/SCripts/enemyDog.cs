@@ -24,6 +24,7 @@ public class enemyDog : MonoBehaviour
     public GameObject exlimation;
     private bool surprised = true;
     private GameObject e;
+    public Animator anim;
 
 
     void Update()
@@ -40,18 +41,19 @@ public class enemyDog : MonoBehaviour
         }
         enemyAi();
     }
-
-    void OnTriggerEnter2D(Collider2D other)
+    // hmmmm
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.CompareTag("cullingField"))
+        if (collision.gameObject.tag == "cullingField")
         {
             ObjectPoolManager.ReturnObjectToPool(gameObject);
         }
-        if (other.gameObject.CompareTag("Player"))
+        if (collision.gameObject.tag == "Player")
         {
             playermovement.instance.TakeDamage(1);
         }
     }
+
     private void enemyAi()
     {
         if (lineOfSight)
@@ -69,6 +71,7 @@ public class enemyDog : MonoBehaviour
         distance = Random.Range(5, 10);
         enemyStartPos = transform.position;
         player = GameObject.FindGameObjectWithTag("Player");
+        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -116,6 +119,7 @@ public class enemyDog : MonoBehaviour
             e = Instantiate(exlimation, transform);
             e.transform.parent = transform;
             surprised = false;
+            anim.SetTrigger("stun");
         }
         if (e == null)
         {
