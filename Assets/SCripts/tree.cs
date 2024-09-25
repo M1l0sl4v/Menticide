@@ -36,7 +36,7 @@ public class tree : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             leafspawn();
-            //Debug.Log("leafspawn");
+            Debug.Log("leafspawn");
         }
 
         if (other.CompareTag("cullingField"))
