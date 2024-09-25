@@ -9031,7 +9031,6 @@ Transform:
   - {fileID: 1007118043}
   - {fileID: 154867864}
   - {fileID: 1128357900}
-  - {fileID: 1343161208}
   m_Father: {fileID: 1282427980}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1181204470
@@ -10493,7 +10492,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 3.9
+    scalar: 2
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -10882,7 +10881,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 3.1415927
       minScalar: 0
       maxCurve:
@@ -10935,7 +10934,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 3.1415927
       minScalar: 0
       maxCurve:
@@ -10988,8 +10987,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotation:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 6.283185
+      minMaxState: 0
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -13557,8 +13556,8 @@ ParticleSystem:
         m_RotationOrder: 4
     rotationAmount:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 600
+      minMaxState: 0
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -13610,8 +13609,8 @@ ParticleSystem:
         m_RotationOrder: 4
     sizeAmount:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 0.8
+      minMaxState: 0
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -15202,11 +15201,11 @@ Transform:
   m_GameObject: {fileID: 1343161205}
   serializedVersion: 2
   m_LocalRotation: {x: -0.3173839, y: -0.6318762, z: 0.6318763, w: 0.3173838}
-  m_LocalPosition: {x: 10.19, y: 3.08, z: 0.100000024}
+  m_LocalPosition: {x: 9.49, y: 4.67, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1180109631}
+  m_Father: {fileID: 1675774499}
   m_LocalEulerAnglesHint: {x: 36.66, y: -90, z: 90}
 --- !u!1001 &1347017533
 PrefabInstance:
@@ -16902,9 +16901,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.59903383
-    width: 0.53667545
-    height: 0.46059784
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -17388,6 +17387,7 @@ Transform:
   m_Children:
   - {fileID: 1626794936}
   - {fileID: 146629631}
+  - {fileID: 1343161208}
   m_Father: {fileID: 1282427980}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1675774500
