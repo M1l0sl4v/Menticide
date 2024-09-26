@@ -24,6 +24,8 @@ public class enemyDog : MonoBehaviour
     public GameObject exlimation;
     private bool surprised = true;
     private GameObject e;
+    
+    public Animator animator;
 
 
     void Update()
@@ -116,6 +118,7 @@ public class enemyDog : MonoBehaviour
             e = Instantiate(exlimation, transform);
             e.transform.parent = transform;
             surprised = false;
+            animator.SetTrigger("stun");
         }
         if (e == null)
         {
