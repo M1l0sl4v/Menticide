@@ -6,6 +6,9 @@ public class Score : MonoBehaviour
 {
     public int score;
 
+    public int months;
+    public int years;
+
     public static Score instance;
 
     // Start is called before the first frame update
@@ -25,5 +28,4 @@ public class Score : MonoBehaviour
         score += amount;
     }
 
-    public int GetScore() { return score; }
 }
