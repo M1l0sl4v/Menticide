@@ -163,7 +163,7 @@ public class TileRow : MonoBehaviour
     {
         if (collision.gameObject.tag == "cullingField")
         {
-            Score.instance.IncreaseScore(1);
+            Score.instance.IncreaseScore();
 
             Vector3 newPosition = transform.position;
             newPosition.y += TileManagerFSM.tileResetDistance;
