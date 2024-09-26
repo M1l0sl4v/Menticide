@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class TileRow : MonoBehaviour
 {
     private int count = 4;
-    private GameObject[] tiles;
+    public GameObject[] tiles;
 
 
     // Start is called before the first frame update
@@ -153,8 +153,22 @@ public class TileRow : MonoBehaviour
         {
             temp[i] = transform.GetChild(i).gameObject;
         }
+        tiles = temp;
     }
 
 
-    
+
+    // On collision with culling field, increase score by 1 and move row up
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "cullingField")
+        {
+            Score.instance.IncreaseScore(1);
+
+            Vector3 newPosition = transform.position;
+            newPosition.y += TileManagerFSM.tileResetDistance;
+            transform.position = newPosition;
+        }
+    }
+
 }

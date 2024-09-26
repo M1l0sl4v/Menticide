@@ -17,7 +17,7 @@ public class TileManagerFSM : MonoBehaviour
     }
 
     public Season currentSeason;
-    public float tileResetDistance;
+    public static float tileResetDistance = 18;
 
     [Header("Summer Sprites")]
     public Sprite[] smrLSprites;
@@ -250,13 +250,11 @@ public class TileManagerFSM : MonoBehaviour
                 break;
         }
         // Move tile upwards by tileResetDistance units
-        Vector3 newPosition = tile.transform.position;
-        newPosition.y += tileResetDistance;
-        tile.transform.position = newPosition;
-        print("moved tile");
+        //Vector3 newPosition = tile.transform.position;
+        //newPosition.y += tileResetDistance;
+        //tile.transform.position = newPosition;
 
         // 5% chance to spawn rubble as well
 
-        //tile.transform.position.Set(tile.transform.position.x, tile.transform.position.y + tileResetDistance, tile.transform.position.z);
     }
 }

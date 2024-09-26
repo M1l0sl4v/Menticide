@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    private int score;
+    public int score;
+
+    public static Score instance;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame
@@ -17,8 +20,10 @@ public class Score : MonoBehaviour
         
     }
 
-    public void IncreaseScore()
+    public void IncreaseScore(int amount)
     {
-
+        score += amount;
     }
+
+    public int GetScore() { return score; }
 }
