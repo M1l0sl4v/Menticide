@@ -13,7 +13,7 @@ public class TileRow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        DetectTiles();
     }
 
     // Update is called once per frame
@@ -143,6 +143,16 @@ public class TileRow : MonoBehaviour
     public int Count()
     {
         return count;
+    }
+
+    // Updates the internal array of tiles in the row
+    public void DetectTiles()
+    {
+        GameObject[] temp = new GameObject[transform.childCount];
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            temp[i] = transform.GetChild(i).gameObject;
+        }
     }
 
 
