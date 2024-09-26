@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TileManagerFSM : MonoBehaviour
 {
-    public enum Season
+    public enum State
     {
         Summer,
         EarlyFall,
@@ -16,7 +16,7 @@ public class TileManagerFSM : MonoBehaviour
         EarlySummer
     }
 
-    public Season currentSeason;
+    public State currentState;
     public static float tileResetDistance = 18;
 
     [Header("Summer Sprites")]
@@ -54,13 +54,6 @@ public class TileManagerFSM : MonoBehaviour
 
     public static TileManagerFSM instance;
 
-    //private float timeInCurSeason;
-
-    //[Tooltip("How fast the density of next season's tiles increases during transition seasons")]
-    //public float seasonChangeSpeed;
-
-    //private float nextSeasonTileChance; // chance for a processed tile to have the next season's sprite
-
     // Start is called before the first frame update
     void Start()
     {
@@ -70,27 +63,26 @@ public class TileManagerFSM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (currentSeason)
+        switch (currentState)
         {
-            case Season.Summer:
+            case State.Summer:
                 UpdateSummer(); break;
-            case Season.EarlyFall:
+            case State.EarlyFall:
                 UpdateEarlyFall(); break;
-            case Season.Fall:
+            case State.Fall:
                 UpdateFall(); break;
-            case Season.EarlyWinter:
+            case State.EarlyWinter:
                 UpdateEarlyWinter(); break;
-            case Season.Winter:
+            case State.Winter:
                 UpdateWinter(); break;
-            case Season.EarlySpring:
+            case State.EarlySpring:
                 UpdateEarlySpring(); break;
-            case Season.Spring:
+            case State.Spring:
                 UpdateSpring(); break;
-            case Season.EarlySummer:
+            case State.EarlySummer:
                 UpdateEarlySummer(); break;
         }
 
-        //timeInCurSeason += Time.deltaTime;
     }
 
     private void UpdateSummer()
@@ -134,10 +126,10 @@ public class TileManagerFSM : MonoBehaviour
 
     public void ProcessTile(TileObject tile)
     {
-        switch (currentSeason)
+        switch (currentState)
         {
             //Sprite sprite = tile.gameObject.GetComponent<SpriteRenderer>().sprite 
-            case Season.Summer:
+            case State.Summer:
                 switch (tile.type)
                 {
                     case TileObject.Type.Left:
@@ -150,7 +142,7 @@ public class TileManagerFSM : MonoBehaviour
                         tile.gameObject.GetComponent<SpriteRenderer>().sprite = smrRSprites[Random.Range(0, smrRSprites.Length)];
                         break;
                 } break;
-            case Season.EarlyFall:
+            case State.EarlyFall:
                 switch (tile.type)
                 {
                     case TileObject.Type.Left:
@@ -162,9 +154,8 @@ public class TileManagerFSM : MonoBehaviour
                     case TileObject.Type.Right:
                         tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyFallRSprites[Random.Range(0, earlyFallRSprites.Length)];
                         break;
-                }
-                break;
-            case Season.Fall:
+                } break;
+            case State.Fall:
                 switch (tile.type)
                 {
                     case TileObject.Type.Left:
@@ -176,9 +167,8 @@ public class TileManagerFSM : MonoBehaviour
                     case TileObject.Type.Right:
                         tile.gameObject.GetComponent<SpriteRenderer>().sprite = fallRSprites[Random.Range(0, fallRSprites.Length)];
                         break;
-                }
-                break;
-            case Season.EarlyWinter:
+                } break;
+            case State.EarlyWinter:
                 switch (tile.type)
                 {
                     case TileObject.Type.Left:
@@ -192,7 +182,7 @@ public class TileManagerFSM : MonoBehaviour
                         break;
                 }
                 break;
-            case Season.Winter:
+            case State.Winter:
                 switch (tile.type)
                 {
                     case TileObject.Type.Left:
@@ -206,7 +196,7 @@ public class TileManagerFSM : MonoBehaviour
                         break;
                 }
                 break;
-            case Season.EarlySpring:
+            case State.EarlySpring:
                 switch (tile.type)
                 {
                     case TileObject.Type.Left:
@@ -220,7 +210,7 @@ public class TileManagerFSM : MonoBehaviour
                         break;
                 }
                 break;
-            case Season.Spring:
+            case State.Spring:
                 switch (tile.type)
                 {
                     case TileObject.Type.Left:
@@ -234,7 +224,7 @@ public class TileManagerFSM : MonoBehaviour
                         break;
                 }
                 break;
-            case Season.EarlySummer:
+            case State.EarlySummer:
                 switch (tile.type)
                 {
                     case TileObject.Type.Left:
@@ -249,10 +239,6 @@ public class TileManagerFSM : MonoBehaviour
                 }
                 break;
         }
-        // Move tile upwards by tileResetDistance units
-        //Vector3 newPosition = tile.transform.position;
-        //newPosition.y += tileResetDistance;
-        //tile.transform.position = newPosition;
 
         // 5% chance to spawn rubble as well
 

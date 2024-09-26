@@ -1699,7 +1699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ec3e89b7fbc694aa867d019920641f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSeason: 0
+  currentState: 0
   smrLSprites:
   - {fileID: -877153745, guid: e443ef5dbf37e22498c41d71923b0772, type: 3}
   - {fileID: -1993764102, guid: e443ef5dbf37e22498c41d71923b0772, type: 3}
@@ -2167,7 +2167,6 @@ GameObject:
   - component: {fileID: 206098210}
   - component: {fileID: 206098213}
   - component: {fileID: 206098212}
-  - component: {fileID: 206098211}
   - component: {fileID: 206098214}
   m_Layer: 5
   m_Name: Score
@@ -2196,23 +2195,6 @@ RectTransform:
   m_AnchoredPosition: {x: -753, y: 452}
   m_SizeDelta: {x: 318.784, y: 59.713}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &206098211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206098209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccb9a1866b2acbc458ac877d65ee1028, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 1587748122}
-  displayDebugInfo: 1
-  debugInfo: {fileID: 705224755}
-  seasonLength: 300
-  monthLength: 100
 --- !u!114 &206098212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2263,7 +2245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad0511ca5b4fae4480cad41c9f781b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  displayDebugInfo: 1
+  scoreText: {fileID: 1587748122}
+  debugInfo: {fileID: 705224756}
 --- !u!1 &216771150
 GameObject:
   m_ObjectHideFlags: 0
@@ -2594,7 +2578,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0 units in month
+  m_text: 0 dist in month
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4335,7 +4319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0 units total
+  m_text: 0 dist total
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7663,7 +7647,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0 units in year
+  m_text: 0 dist in year
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10221,7 +10205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91bd53263642e43218b7cf657233dff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  season: 0
+  currentSeason: 0
   backGround: {fileID: 1128357899}
 --- !u!4 &1139213880 stripped
 Transform:
@@ -12032,7 +12016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91bd53263642e43218b7cf657233dff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  season: 0
+  currentSeason: 0
   backGround: {fileID: 1128357899}
 --- !u!1 &1336346828 stripped
 GameObject:
@@ -17607,7 +17591,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0 units in season
+  m_text: 0 dist in season
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
