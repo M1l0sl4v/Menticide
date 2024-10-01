@@ -271,3 +271,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnDistanceTree: 10
   leafs: {fileID: 5752905677984127925, guid: 19882fcd318bb40feb915a5c6441f4cb, type: 3}
+  ruscle: {fileID: 0}
+  effects: {fileID: 0}

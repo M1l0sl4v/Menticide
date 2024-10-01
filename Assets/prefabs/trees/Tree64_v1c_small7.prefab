@@ -190,6 +190,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnDistanceTree: 10
   leafs: {fileID: 5752905677984127925, guid: 6a9f3f58f984f4c79881eddfaa8b8dc8, type: 3}
+  ruscle: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!1 &7419804192092726514
 GameObject:
   m_ObjectHideFlags: 0

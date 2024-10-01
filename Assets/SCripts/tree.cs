@@ -2,12 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class tree : MonoBehaviour
 {
     public float despawnDistanceTree = 10;
     public static tree instance;
     [SerializeField] private ParticleSystem leafs;
+  
+    [SerializeField] private AudioClip ruscle;
+    //private AudioSource ruscleSource;
+    public AudioMixerGroup effects;
 
     private ParticleSystem leafsinstance;
 
@@ -36,6 +41,7 @@ public class tree : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             leafspawn();
+            AudioSource.PlayClipAtPoint(ruscle, transform.position,1f);
             Debug.Log("leafspawn");
         }
 
@@ -50,7 +56,7 @@ public class tree : MonoBehaviour
     private void leafspawn()
     {
        
-        leafsinstance = Instantiate(leafs, transform.position , Quaternion.identity, transform); 
+        leafsinstance = Instantiate(leafs, transform.position , Quaternion.identity, transform);
     }
     
 }
