@@ -26,4 +26,14 @@ public class AudioManager : MonoBehaviour
       Destroy(audioSource.gameObject, clip.length); 
       
    }
+   public void enemyFX(AudioClip clip, Transform spawnPossition, float volume)
+   {
+      AudioSource audioSource = Instantiate(enemyfxObject, spawnPossition.transform.position, quaternion.identity); // spawns gameobject to play the sound
+      audioSource.clip = clip; //assigns the passed audioclip
+      audioSource.volume = volume;
+      audioSource.Play();
+      float cliplength = audioSource.clip.length;
+      Destroy(audioSource.gameObject, clip.length); 
+      
+   }
 }

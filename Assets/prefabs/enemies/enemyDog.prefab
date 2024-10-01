@@ -107,6 +107,7 @@ MonoBehaviour:
   enemyspeedNormal: 3
   despawnDistance: 50
   enemyBehaviour: 0
+  snarl: {fileID: 8300000, guid: 42983210d31ca461a8a1c9c96e2dc8e1, type: 3}
   despawnDistanceDog: 10
   sp: {fileID: 0}
   exlimation: {fileID: 1348696221685265807, guid: 195e0f6155c4c434d8f48f48aef3a53a, type: 3}

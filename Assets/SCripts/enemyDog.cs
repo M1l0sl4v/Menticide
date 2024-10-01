@@ -11,6 +11,8 @@ public class enemyDog : MonoBehaviour
     public int enemyBehaviour;
     private Vector3 currentPos;
 
+    [SerializeField] private AudioClip snarl;
+
     public float despawnDistanceDog = 10f;
 
     private Vector3 enemyStartPos;
@@ -115,6 +117,7 @@ public class enemyDog : MonoBehaviour
     {
         if (surprised)
         {
+            AudioManager.instance.enemyFX(snarl, transform,1f);
             e = Instantiate(exlimation, transform);
             e.transform.parent = transform;
             surprised = false;
