@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Draw : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class Draw : MonoBehaviour
     private LineRenderer currentLine;
     private Vector3 initialPoint;
     private AudioSource audioSource;
-
+    public AudioMixerGroup lineSoundGroup;
+    
     private PauseMenu pauseMenu;
 
     void Start()
@@ -25,6 +27,7 @@ public class Draw : MonoBehaviour
         }
         audioSource.clip = drawingSoundClip;
         audioSource.loop = true; // Loop the audio while drawing
+        
 
         pauseMenu = FindAnyObjectByType<PauseMenu>();
     }
