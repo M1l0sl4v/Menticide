@@ -3701,7 +3701,7 @@ GameObject:
   - component: {fileID: 206098210}
   - component: {fileID: 206098213}
   - component: {fileID: 206098212}
-  - component: {fileID: 206098211}
+  - component: {fileID: 206098214}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -3729,21 +3729,6 @@ RectTransform:
   m_AnchoredPosition: {x: -753, y: 452}
   m_SizeDelta: {x: 318.784, y: 59.713}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &206098211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206098209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccb9a1866b2acbc458ac877d65ee1028, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  displayDebugInfo: 1
-  scoreText: {fileID: 1587748122}
-  debugInfo: {fileID: 705224755}
 --- !u!114 &206098212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3782,6 +3767,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206098209}
   m_CullTransparentMesh: 1
+--- !u!114 &206098214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206098209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad0511ca5b4fae4480cad41c9f781b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayDebugInfo: 1
+  scoreText: {fileID: 1587748122}
+  debugInfo: {fileID: 705224756}
 --- !u!1001 &212487624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20144,6 +20144,7 @@ MonoBehaviour:
   wallTag: Wall
   drawingSoundClip: {fileID: 8300000, guid: cf86224c00aaf4f7f882823a014d0f8e, type: 3}
   lineLifetime: 5
+  lineSoundGroup: {fileID: 0}
 --- !u!4 &1435355290
 Transform:
   m_ObjectHideFlags: 0
