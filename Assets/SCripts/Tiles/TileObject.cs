@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class TileObject : MonoBehaviour
 {
-    public enum Type
+    public enum SpriteType
     {
         Left,
         Middle,
         Right
     }
-    public Type type;
+    public SpriteType spriteType;
 
-    public Sprite sprite;
+    public enum TileLayer
+    {
+        Base,
+        Overlay
+    }
+    public TileLayer tileLayer;
+
 
     private void Start()
     {
-        sprite = GetComponent<Sprite>();
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
