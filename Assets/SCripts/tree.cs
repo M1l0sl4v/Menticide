@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class tree : MonoBehaviour
 {
-    public float treespeed;
     public float despawnDistanceTree = 10;
     public static tree instance;
+    [SerializeField] private ParticleSystem leafs;
+    [SerializeField] private AudioClip ruscleSound;
+    
+    private ParticleSystem leafsinstance;
 
     private void Start()
     {
@@ -27,13 +30,29 @@ public class tree : MonoBehaviour
             ObjectPoolManager.ReturnObjectToPool(gameObject);
         }
     }
-    // hmmmm
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "cullingField")
+        //Debug.Log("wow");
+        if (other.CompareTag("Player"))
+        {
+            leafspawn();
+            AudioManager.instance.environmentFX(ruscleSound, transform ,1f);
+            Debug.Log("leafspawn");
+        }
+
+        if (other.CompareTag("cullingField"))
         {
             ObjectPoolManager.ReturnObjectToPool(gameObject);
         }
+        
+    }
+
+
+    private void leafspawn()
+    {
+       
+        leafsinstance = Instantiate(leafs, transform.position , Quaternion.identity, transform);
     }
     
 }
