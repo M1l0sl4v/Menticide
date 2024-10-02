@@ -12,8 +12,8 @@ public class seasons : MonoBehaviour
 
     public GameObject backGround;
 
-    public static int monthLength = 100;
-    public static int seasonLength = 300;
+    public static int monthLength = 50;
+    public static int seasonLength = 150; // should be 3x month length
 
     private Color colorTransition;
     // this is whats used to store the season 1=summer,2=fall,3=winter,4=spring

@@ -24,40 +24,64 @@ public class TileManagerFSM : MonoBehaviour
     }
     public PathMaterial pathMaterial;
 
+
+
     public static float tileResetDistance = 18;
 
+    // Overlay
     [Header("Summer Sprites")]
     public Sprite[] smrLSprites;
     public Sprite[] smrMSprites;
     public Sprite[] smrRSprites;
-    [Header("Early Fall Sprites")]
-    public Sprite[] earlyFallLSprites;
-    public Sprite[] earlyFallMSprites;
-    public Sprite[] earlyFallRSprites;
     [Header("Fall Sprites")]
     public Sprite[] fallLSprites;
     public Sprite[] fallMSprites;
     public Sprite[] fallRSprites;
-    [Header("Early Winter Sprites")]
-    public Sprite[] earlyWinLSprites;
-    public Sprite[] earlyWinMSprites;
-    public Sprite[] earlyWinRSprites;
     [Header("Winter Sprites")]
     public Sprite[] winLSprites;
     public Sprite[] winMSprites;
     public Sprite[] winRSprites;
-    [Header("Early Spring Sprites")]
-    public Sprite[] earlySprLSprites;
-    public Sprite[] earlySprMSprites;
-    public Sprite[] earlySprRSprites;
     [Header("Spring Sprites")]
     public Sprite[] sprLSprites;
     public Sprite[] sprMSprites;
     public Sprite[] sprRSprites;
-    [Header("Early Summer Sprites")]
-    public Sprite[] earlySmrLSprites;
-    public Sprite[] earlySmrMSprites;
-    public Sprite[] earlySmrRSprites;
+
+    //[Header("Early Fall Sprites")]
+    //public Sprite[] earlyFallLSprites;
+    //public Sprite[] earlyFallMSprites;
+    //public Sprite[] earlyFallRSprites;
+    //[Header("Early Winter Sprites")]
+    //public Sprite[] earlyWinLSprites;
+    //public Sprite[] earlyWinMSprites;
+    //public Sprite[] earlyWinRSprites;
+    //[Header("Early Spring Sprites")]
+    //public Sprite[] earlySprLSprites;
+    //public Sprite[] earlySprMSprites;
+    //public Sprite[] earlySprRSprites;
+    //[Header("Early Summer Sprites")]
+    //public Sprite[] earlySmrLSprites;
+    //public Sprite[] earlySmrMSprites;
+    //public Sprite[] earlySmrRSprites;
+
+    // Base
+    [Header("Brick Sprites")]
+    public Sprite[] brickFadeoutSprites;
+    public Sprite[] brickFadeinSprites;
+    public Sprite[] brickLSprites;
+    public Sprite[] brickMSprites;
+    public Sprite[] brickRSprites;
+    [Header("Paved Sprites")]
+    public Sprite[] pavedFadeoutSprites;
+    public Sprite[] pavedFadeinSprites;
+    public Sprite[] pavedLSprites;
+    public Sprite[] pavedMSprites;
+    public Sprite[] pavedRSprites;
+    [Header("Dirt Sprites")]
+    public Sprite[] dirtFadeoutSprites;
+    public Sprite[] dirtFadeinSprites;
+    public Sprite[] dirtLSprites;
+    public Sprite[] dirtMSprites;
+    public Sprite[] dirtRSprites;
 
     public static TileManagerFSM instance;
 
@@ -135,7 +159,7 @@ public class TileManagerFSM : MonoBehaviour
     {
         switch (tile.tileLayer)
         {
-            case TileObject.TileLayer.Base:
+            case TileObject.TileLayer.Overlay:
                 switch (seasonState)
                 {
                     case SeasonState.Summer:
@@ -155,15 +179,15 @@ public class TileManagerFSM : MonoBehaviour
                     case SeasonState.EarlyFall:
                         switch (tile.spriteType)
                         {
-                            case TileObject.SpriteType.Left:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyFallLSprites[Random.Range(0, earlyFallLSprites.Length)];
-                                break;
-                            case TileObject.SpriteType.Middle:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyFallMSprites[Random.Range(0, earlyFallMSprites.Length)];
-                                break;
-                            case TileObject.SpriteType.Right:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyFallRSprites[Random.Range(0, earlyFallRSprites.Length)];
-                                break;
+                            //case TileObject.SpriteType.Left:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyFallLSprites[Random.Range(0, earlyFallLSprites.Length)];
+                            //    break;
+                            //case TileObject.SpriteType.Middle:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyFallMSprites[Random.Range(0, earlyFallMSprites.Length)];
+                            //    break;
+                            //case TileObject.SpriteType.Right:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyFallRSprites[Random.Range(0, earlyFallRSprites.Length)];
+                            //    break;
                         }
                         break;
                     case SeasonState.Fall:
@@ -183,15 +207,15 @@ public class TileManagerFSM : MonoBehaviour
                     case SeasonState.EarlyWinter:
                         switch (tile.spriteType)
                         {
-                            case TileObject.SpriteType.Left:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyWinLSprites[Random.Range(0, earlyWinLSprites.Length)];
-                                break;
-                            case TileObject.SpriteType.Middle:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyWinMSprites[Random.Range(0, earlyWinMSprites.Length)];
-                                break;
-                            case TileObject.SpriteType.Right:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyWinRSprites[Random.Range(0, earlyWinRSprites.Length)];
-                                break;
+                            //case TileObject.SpriteType.Left:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyWinLSprites[Random.Range(0, earlyWinLSprites.Length)];
+                            //    break;
+                            //case TileObject.SpriteType.Middle:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyWinMSprites[Random.Range(0, earlyWinMSprites.Length)];
+                            //    break;
+                            //case TileObject.SpriteType.Right:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyWinRSprites[Random.Range(0, earlyWinRSprites.Length)];
+                            //    break;
                         }
                         break;
                     case SeasonState.Winter:
@@ -211,15 +235,15 @@ public class TileManagerFSM : MonoBehaviour
                     case SeasonState.EarlySpring:
                         switch (tile.spriteType)
                         {
-                            case TileObject.SpriteType.Left:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySprLSprites[Random.Range(0, earlySprLSprites.Length)];
-                                break;
-                            case TileObject.SpriteType.Middle:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySprMSprites[Random.Range(0, earlySprMSprites.Length)];
-                                break;
-                            case TileObject.SpriteType.Right:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySprRSprites[Random.Range(0, earlySprRSprites.Length)];
-                                break;
+                            //case TileObject.SpriteType.Left:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySprLSprites[Random.Range(0, earlySprLSprites.Length)];
+                            //    break;
+                            //case TileObject.SpriteType.Middle:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySprMSprites[Random.Range(0, earlySprMSprites.Length)];
+                            //    break;
+                            //case TileObject.SpriteType.Right:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySprRSprites[Random.Range(0, earlySprRSprites.Length)];
+                            //    break;
                         }
                         break;
                     case SeasonState.Spring:
@@ -239,20 +263,20 @@ public class TileManagerFSM : MonoBehaviour
                     case SeasonState.EarlySummer:
                         switch (tile.spriteType)
                         {
-                            case TileObject.SpriteType.Left:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySmrLSprites[Random.Range(0, earlySmrLSprites.Length)];
-                                break;
-                            case TileObject.SpriteType.Middle:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySmrMSprites[Random.Range(0, earlySmrMSprites.Length)];
-                                break;
-                            case TileObject.SpriteType.Right:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySmrRSprites[Random.Range(0, earlySmrRSprites.Length)];
-                                break;
+                            //case TileObject.SpriteType.Left:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySmrLSprites[Random.Range(0, earlySmrLSprites.Length)];
+                            //    break;
+                            //case TileObject.SpriteType.Middle:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySmrMSprites[Random.Range(0, earlySmrMSprites.Length)];
+                            //    break;
+                            //case TileObject.SpriteType.Right:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySmrRSprites[Random.Range(0, earlySmrRSprites.Length)];
+                                //break;
                         }
                         break;
                 }
                 break;
-            case TileObject.TileLayer.Overlay:
+            case TileObject.TileLayer.Base:
                 switch (pathMaterial)
                 {
                     case PathMaterial.Brick:
