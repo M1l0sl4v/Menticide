@@ -7,9 +7,13 @@ public class seasons : MonoBehaviour
     
     public static seasons instance;
 
-    public int season;
+    public int currentSeason;
+    private int nextSeason;
 
     public GameObject backGround;
+
+    public static int monthLength = 100;
+    public static int seasonLength = 300;
 
     private Color colorTransition;
     // this is whats used to store the season 1=summer,2=fall,3=winter,4=spring
@@ -27,7 +31,7 @@ public class seasons : MonoBehaviour
 //switch statement cycles through the seasons and calls their methods. just calling this method changes the season.
     public void seasonChange()
     {
-            switch (season)
+            switch (nextSeason)
                     {
                         case 1:
                             summer();
@@ -51,26 +55,30 @@ public class seasons : MonoBehaviour
     public void summer()
     {
         colorTransition = new Color(14f / 255,48f / 255, 7f / 255, 1);//we devide by 255 to get the rgb value
-        
-        season = 2; //passes this to fall
+
+        currentSeason = 1;
+        nextSeason = 2; //passes this to fall
     }
     public void fall()
     {
         colorTransition=new Color(48f / 255, 32f / 255, 7f / 255, 1);//we devide by 255 to get the rgb value
-        
-        season = 3;//passes this to winter
+
+        currentSeason = 2;
+        nextSeason = 3;//passes this to winter
     }
     public void winter()
     {
         colorTransition=new Color(200f / 255, 194f / 255, 186f / 255, 1);//we devide by 255 to get the rgb value
 
-        season = 4; //passes this to spring
+        currentSeason = 3;
+        nextSeason = 4; //passes this to spring
     }
     public void spring()
     {
         colorTransition=new Color(118f / 255, 114f / 255, 24f / 255, 1);//we devide by 255 to get the rgb value
 
-        season = 1;// loops back to summer
+        currentSeason = 4;
+        nextSeason = 1;// loops back to summer
     }
 
 }

@@ -1,69 +1,100 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
+using static TileManagerFSM;
 
 public class Score : MonoBehaviour
 {
 
-    public TMP_Text scoreText;
-
+    // Toggle debug info
     public bool displayDebugInfo;
-    public GameObject debugInfo;
-    private int totalDistance;
+
+    private int score;
+    private int month;
+    private int year;
+
+    private string monthComponent;
+    private string commaComponent;
+    private string yearComponent;
+
     private int distanceInMonth;
     private int distanceInSeason;
     private int distanceInYear;
+   
+    // Score display
+    public TMP_Text scoreText;
 
-    private playermovement player;
+    // instance
+    public static Score instance;
 
-    private string yearComponent;
-    private string monthComponent;
-    private string commaComponent;
-
-    public int seasonLength;
-    public int monthLength;
-
-    private int month;
-    private int year;
-    private int season;
-
-    private TMP_Text debugSeason;
-    private TMP_Text debugUnitsInMonth;
-    private TMP_Text debugUnitsInSeason;
-    private TMP_Text debugUnitsInYear;
-    private TMP_Text debugTotalUnits;
+    // Debug info variables
+    public Transform debugInfo;
+    TMP_Text debugSeason;
+    TMP_Text debugMonthDist;
+    TMP_Text debugSeasonDist;
+    TMP_Text debugYearDist;
+    TMP_Text debugTotalDist;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<playermovement>();
+        instance = this;
 
         // Debug info
-        debugSeason = debugInfo.transform.Find("season").GetComponent<TMP_Text>();
-        debugUnitsInMonth = debugInfo.transform.Find("units in month").GetComponent<TMP_Text>();
-        debugUnitsInSeason = debugInfo.transform.Find("units in season").GetComponent<TMP_Text>();
-        debugUnitsInYear = debugInfo.transform.Find("units in year").GetComponent<TMP_Text>();
-        debugTotalUnits = debugInfo.transform.Find("units total").GetComponent<TMP_Text>();
+        debugSeason = debugInfo.Find("season").GetComponent<TMP_Text>();
+        debugMonthDist = debugInfo.Find("units in month").GetComponent<TMP_Text>();
+        debugSeasonDist = debugInfo.Find("units in season").GetComponent<TMP_Text>();
+        debugYearDist = debugInfo.Find("units in year").GetComponent<TMP_Text>();
+        debugTotalDist = debugInfo.Find("units total").GetComponent<TMP_Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        // Display/hide debug info
-        debugInfo.SetActive(displayDebugInfo);
-        CalculateDebug();
+        // Update months
+        if (distanceInMonth >= seasons.monthLength)
+        {
+            month++;
+            distanceInMonth = 0;
+        }
 
-        // Update the score display
-        UpdateScore();
+        if (distanceInSeason >= seasons.seasonLength)
+        {
+            seasons.instance.seasonChange();
+            distanceInSeason = 0;
+        }
 
-        // Display main score
-        CalculateDistance();
+        if (distanceInYear >= seasons.seasonLength * 4)
+        {
+            year++;
+            distanceInYear = 0;
+            month = 1;
+        }
 
+        // Toggle debug info display
+        debugInfo.gameObject.SetActive(displayDebugInfo);
     }
-   
+
+
+    // Increment the score by 1
+    public void IncreaseScore()
+    {
+        IncreaseScore(1);
+    }
+
+    // Increase the score by amount
+    public void IncreaseScore(int amount)
+    {
+        score += amount;
+        distanceInMonth += amount;
+        distanceInSeason += amount;
+        distanceInYear += amount;
+
+        UpdateScore();
+        UpdateDebug();
+    }
+
 
     private void UpdateScore()
     {
@@ -86,50 +117,27 @@ public class Score : MonoBehaviour
         scoreText.text = yearComponent + commaComponent + monthComponent;
     }
 
-    private void CalculateDistance()
-    {
-        distanceInSeason = (int) player.transform.position.y;
-
-        distanceInYear = season * seasonLength + distanceInSeason;
-        totalDistance = (year * seasonLength * 4) + distanceInYear;
-        distanceInMonth = totalDistance % monthLength;
-
-        if (distanceInSeason >= seasonLength)
-        {
-            player.playerReset();
-            season++;
-
-        }
-        if (season == 4)
-        {
-            year++;
-            season = 0;
-        }
-        month = distanceInYear / monthLength;
-
-    }
-
-    private void CalculateDebug()
+    private void UpdateDebug()
     {
         // Season
-        switch (season)
+        switch (seasons.instance.currentSeason)
         {
-            case 0: debugSeason.text = "Season 0 (Summer)"; break;
-            case 1: debugSeason.text = "Season 1 (Fall)"; break;
-            case 2: debugSeason.text = "Season 2 (Winter)"; break;
-            case 3: debugSeason.text = "Season 3 (Spring)"; break;
+            case 1: debugSeason.text = "Season 1 (Summer)"; break;
+            case 2: debugSeason.text = "Season 2 (Fall)"; break;
+            case 3: debugSeason.text = "Season 3 (Winter)"; break;
+            case 4: debugSeason.text = "Season 4 (Spring)"; break;
         }
 
         // Units in month
-        debugUnitsInMonth.text = distanceInMonth + " units in month";
+        debugMonthDist.text = distanceInMonth + " dist in month";
 
         // Units in season
-        debugUnitsInSeason.text = distanceInSeason + " units in season";
+        debugSeasonDist.text = distanceInSeason + " dist in season";
 
         // Units in year
-        debugUnitsInYear.text = distanceInYear + " units in year";
+        debugYearDist.text = distanceInYear + " dist in year";
 
         // Units total
-        debugTotalUnits.text = totalDistance + " units total";
+        debugTotalDist.text = score + " dist total";
     }
 }
