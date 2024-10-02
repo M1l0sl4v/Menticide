@@ -352,8 +352,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &71350008 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379691630286030414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
@@ -421,8 +421,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &73918004 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379691630286030414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
@@ -490,8 +490,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &74075114
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,8 +602,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &99721691 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 399984036638425203, guid: eef4b7a33238b403ea19e61144b3d782, type: 3}
@@ -671,8 +671,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &111264634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -965,8 +965,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &139539105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1319,8 +1319,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ec3e89b7fbc694aa867d019920641f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSeason: 0
-  tileResetDistance: 0
+  seasonState: 0
+  pathMaterial: 0
   smrLSprites:
   - {fileID: -877153745, guid: e443ef5dbf37e22498c41d71923b0772, type: 3}
   - {fileID: -1993764102, guid: e443ef5dbf37e22498c41d71923b0772, type: 3}
@@ -1484,8 +1484,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &165096990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1684,8 +1684,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!4 &193117790 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6127464293199555261, guid: 933a4cef5b96c4051840fd0900a4195f, type: 3}
@@ -1828,11 +1828,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb9a1866b2acbc458ac877d65ee1028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1587748122}
   displayDebugInfo: 1
+  scoreText: {fileID: 1587748122}
   debugInfo: {fileID: 705224755}
-  seasonLength: 0
-  monthLength: 0
 --- !u!114 &206098212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1984,8 +1982,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &274352869
 GameObject:
   m_ObjectHideFlags: 0
@@ -2142,8 +2140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &314637616
 GameObject:
   m_ObjectHideFlags: 0
@@ -2764,8 +2762,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &422350333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3003,8 +3001,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &493977414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3229,8 +3227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &527637405 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379691630286030414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
@@ -3298,8 +3296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &530777342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3447,8 +3445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &550838732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3596,8 +3594,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &594896783
 GameObject:
   m_ObjectHideFlags: 0
@@ -4375,8 +4373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &709153007
 GameObject:
   m_ObjectHideFlags: 0
@@ -4826,8 +4824,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &730381380 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4988532541053429174, guid: 459b2402bb0d340349cd6b9fa1ab6304, type: 3}
@@ -4895,8 +4893,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &756574735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5044,8 +5042,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &763669951 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 399984036638425203, guid: eef4b7a33238b403ea19e61144b3d782, type: 3}
@@ -5113,8 +5111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &776496469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5419,8 +5417,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &796022925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5886,8 +5884,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &852104072 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379691630286030414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
@@ -5955,8 +5953,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &860433068 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379691630286030414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
@@ -6024,8 +6022,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &866539827 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 399984036638425203, guid: eef4b7a33238b403ea19e61144b3d782, type: 3}
@@ -6093,8 +6091,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &866588049
 GameObject:
   m_ObjectHideFlags: 0
@@ -6311,8 +6309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &876587882
 GameObject:
   m_ObjectHideFlags: 0
@@ -7084,8 +7082,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &918207601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7317,8 +7315,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &933866984 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379691630286030414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
@@ -7386,8 +7384,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &955607784
 GameObject:
   m_ObjectHideFlags: 0
@@ -7520,8 +7518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!4 &974319246 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3131619425607364820, guid: 5f3881ac2ec1e4b4a9edc1b177e7e463, type: 3}
@@ -7788,8 +7786,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &1007118041
 GameObject:
   m_ObjectHideFlags: 0
@@ -7874,8 +7872,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &1057903817 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4988532541053429174, guid: 459b2402bb0d340349cd6b9fa1ab6304, type: 3}
@@ -7943,8 +7941,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &1060970809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8089,8 +8087,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &1068642966
 GameObject:
   m_ObjectHideFlags: 0
@@ -9207,8 +9205,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1290651643
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9233,7 +9231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91bd53263642e43218b7cf657233dff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  season: 0
+  currentSeason: 0
   backGround: {fileID: 1128357899}
 --- !u!4 &1139213880 stripped
 Transform:
@@ -9307,8 +9305,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &1154196334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9830,8 +9828,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &1257488876 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
@@ -9854,8 +9852,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &1263996635 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4988532541053429174, guid: 459b2402bb0d340349cd6b9fa1ab6304, type: 3}
@@ -9923,8 +9921,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &1266868125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10069,8 +10067,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &1275487561 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379691630286030414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
@@ -10138,8 +10136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &1282402016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10322,8 +10320,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &1292085185
 GameObject:
   m_ObjectHideFlags: 0
@@ -10512,8 +10510,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &1297822905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10950,7 +10948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91bd53263642e43218b7cf657233dff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  season: 0
+  currentSeason: 0
   backGround: {fileID: 1128357899}
 --- !u!114 &1332601557
 MonoBehaviour:
@@ -11033,8 +11031,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &1347017533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11271,8 +11269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &1388212425
 GameObject:
   m_ObjectHideFlags: 0
@@ -11448,8 +11446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &1404006204 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379691630286030414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
@@ -11517,8 +11515,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &1413880034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11666,8 +11664,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &1424143796
 GameObject:
   m_ObjectHideFlags: 0
@@ -11796,7 +11794,6 @@ MonoBehaviour:
   wallTag: Wall
   drawingSoundClip: {fileID: 8300000, guid: cf86224c00aaf4f7f882823a014d0f8e, type: 3}
   lineLifetime: 5
-  lineSoundGroup: {fileID: -570749532139490037, guid: 1563ec55dad5940e1b3b282d4b69f38b, type: 2}
 --- !u!4 &1435355290
 Transform:
   m_ObjectHideFlags: 0
@@ -11879,8 +11876,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &1452945728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11983,8 +11980,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &1496490909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12187,8 +12184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!4 &1560875941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8176814249895226974, guid: 80bd3e6377f514b7ebd9d7ddb8178787, type: 3}
@@ -12746,9 +12743,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.35748792
+    y: 0
     width: 1
-    height: 0.2853261
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -12904,8 +12901,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &1633716465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13053,8 +13050,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &1666272787 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4988532541053429174, guid: 459b2402bb0d340349cd6b9fa1ab6304, type: 3}
@@ -13122,8 +13119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &1675774496
 GameObject:
   m_ObjectHideFlags: 0
@@ -13392,8 +13389,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &1692290259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13858,8 +13855,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &1717556186 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 399984036638425203, guid: eef4b7a33238b403ea19e61144b3d782, type: 3}
@@ -13927,8 +13924,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &1719958014 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 399984036638425203, guid: eef4b7a33238b403ea19e61144b3d782, type: 3}
@@ -13996,8 +13993,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &1734688395 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4988532541053429174, guid: 459b2402bb0d340349cd6b9fa1ab6304, type: 3}
@@ -14065,8 +14062,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &1745148904
 GameObject:
   m_ObjectHideFlags: 0
@@ -14122,8 +14119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &1775198300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14226,8 +14223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &1823969363 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
@@ -14250,8 +14247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &1836558845
 GameObject:
   m_ObjectHideFlags: 0
@@ -15190,8 +15187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &1842474189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15556,8 +15553,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &1861477260 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 399984036638425203, guid: eef4b7a33238b403ea19e61144b3d782, type: 3}
@@ -15625,8 +15622,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1001 &1942876501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16080,8 +16077,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &2000153698 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379691630286030414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
@@ -16149,8 +16146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &2007385242 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
@@ -16173,8 +16170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &2010438291 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
@@ -16197,8 +16194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &2031082413
 GameObject:
   m_ObjectHideFlags: 0
@@ -16439,8 +16436,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &2064885524 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379691630286030414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
@@ -16508,8 +16505,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!1 &2070589744 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3381624393132315317, guid: 60bf1d5fe3eef42b2a24a9a8fb7bc84b, type: 3}
@@ -16532,8 +16529,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  sprite: {fileID: 0}
+  spriteType: 0
+  tileLayer: 0
 --- !u!4 &2073644774 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6127464293199555261, guid: 933a4cef5b96c4051840fd0900a4195f, type: 3}
