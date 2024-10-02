@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,18 +24,19 @@ public class enemyDog : MonoBehaviour
 
     public SpriteRenderer sp;
     public Animator animator;
-    public Tilemap tilemap;
+    private Tilemap tilemap;
 
     private void Start()
     {
+        tilemap = GameObject.FindGameObjectWithTag("enemyTilemap").GetComponent<Tilemap>();
         enemyStartPos = transform.position;
-        player = GameObject.FindGameObjectWithTag("Player"); // Cache player reference
+        player = GameObject.FindGameObjectWithTag("Player");
         targetCellWorldPos = transform.position;
-
     }
 
     private void Update()
     {
+        // Measure the distance to the player and return to the object pool if too far away
         float dist = Vector3.Distance(transform.position, player.transform.position);
         if (dist > despawnDistanceDog)
         {
@@ -47,6 +49,7 @@ public class enemyDog : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Check for line of sight with the player
         RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, losDistance, myLayerMask);
         if (ray.collider != null)
         {
@@ -82,13 +85,16 @@ public class enemyDog : MonoBehaviour
     private void idle()
     {
         surprised = true; // Reset surprise state when idle
+        // Here, we could implement some idle movement logic if needed
     }
 
     private void chase()
     {
+        // Move towards the target cell center position
         transform.position = Vector2.MoveTowards(transform.position, targetCellWorldPos, enemyspeedChase * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, targetCellWorldPos) < 0.01f)
+        // If the enemy reaches the center of the target cell, recalculate path
+        if (Vector3.Distance(transform.position, targetCellWorldPos) < 0.001f)
         {
             calculatePathToPlayer();
         }
@@ -98,7 +104,7 @@ public class enemyDog : MonoBehaviour
     {
         if (surprised)
         {
-            AudioManager.instance.enemyFX(snarl, transform, 1f); // Play snarl sound
+            AudioManager.instance.enemyFX(snarl, transform, 1f);
             e = Instantiate(exlimation, transform); // Show exclamation mark
             e.transform.parent = transform;
             surprised = false; // Avoid re-triggering
@@ -116,31 +122,37 @@ public class enemyDog : MonoBehaviour
     {
         Vector3Int enemyCell = tilemap.WorldToCell(transform.position);
         Vector3Int playerCell = tilemap.WorldToCell(player.transform.position);
-
         Vector3Int nextCell = enemyCell;
         if (Mathf.Abs(playerCell.x - enemyCell.x) >= Mathf.Abs(playerCell.y - enemyCell.y))
         {
-            if (playerCell.x > enemyCell.x)
+            if (playerCell.x > enemyCell.x)//i removed up thing cus it looked bad
             {
-                nextCell.x += 1; // Move right
+                nextCell.x += 1;
+                sp.flipX = true;
+                //transform.rotation = Quaternion.Euler(0, 0, 0);
             }
             else if (playerCell.x < enemyCell.x)
             {
-                nextCell.x -= 1; // Move left
+                nextCell.x -= 1;
+                sp.flipX = false;
+                //transform.rotation = Quaternion.Euler(0, 0, 0);
             }
         }
         else
         {
             if (playerCell.y > enemyCell.y)
             {
-                nextCell.y += 1; // Move up
+                nextCell.y += 1;
+                //transform.rotation = Quaternion.Euler(0, 0, 90);
+                //sp.flipX = true;
             }
             else if (playerCell.y < enemyCell.y)
             {
-                nextCell.y -= 1; // Move down
+                nextCell.y -= 1;
+                //transform.rotation = Quaternion.Euler(0, 0, -90);
+                //sp.flipX = true;
             }
         }
-
         targetCellWorldPos = tilemap.GetCellCenterWorld(nextCell);
     }
 }

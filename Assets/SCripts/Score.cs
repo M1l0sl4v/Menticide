@@ -91,8 +91,11 @@ public class Score : MonoBehaviour
         distanceInSeason = (int) player.transform.position.y;
 
         distanceInYear = season * seasonLength + distanceInSeason;
-        totalDistance = (year * seasonLength * 4) + distanceInYear;
-        distanceInMonth = totalDistance % monthLength;
+        if (totalDistance != 0)
+        {
+            totalDistance = (year * seasonLength * 4) + distanceInYear;
+            distanceInMonth = totalDistance % monthLength;
+        }
 
         if (distanceInSeason >= seasonLength)
         {
