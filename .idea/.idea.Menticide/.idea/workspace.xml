@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="181a9b39-c2d7-40b0-b7bc-d00f50f0c591" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Menticide/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Menticide/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCripts/audio/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/audio/AudioManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCripts/enemyDog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/enemyDog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/mainmixer.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sounds/mainmixer.mixer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/sounds.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/soundstuff/EnemyFX.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/soundstuff/EnemyFX.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +109,8 @@
       <workItem from="1725922043617" duration="612000" />
       <workItem from="1725942835400" duration="780000" />
       <workItem from="1726197685347" duration="393000" />
-      <workItem from="1727754234390" duration="7121000" />
+      <workItem from="1727754234390" duration="7524000" />
+      <workItem from="1727843118584" duration="1016000" />
     </task>
     <servers />
   </component>
