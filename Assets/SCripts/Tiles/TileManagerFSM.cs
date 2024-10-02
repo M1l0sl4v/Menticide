@@ -82,6 +82,13 @@ public class TileManagerFSM : MonoBehaviour
     public Sprite[] dirtLSprites;
     public Sprite[] dirtMSprites;
     public Sprite[] dirtRSprites;
+    [Header("Cobble Sprites")]
+    public Sprite[] cobbleFadeoutSprites;
+    public Sprite[] cobbleFadeinSprites;
+    public Sprite[] cobbleLSprites;
+    public Sprite[] cobbleMSprites;
+    public Sprite[] cobbleRSprites;
+
 
     public static TileManagerFSM instance;
 
