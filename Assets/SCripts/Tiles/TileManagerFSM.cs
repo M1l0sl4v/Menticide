@@ -138,7 +138,6 @@ public class TileManagerFSM : MonoBehaviour
             case TileObject.TileLayer.Base:
                 switch (seasonState)
                 {
-                    //Sprite sprite = tile.gameObject.GetComponent<SpriteRenderer>().sprite 
                     case SeasonState.Summer:
                         switch (tile.spriteType)
                         {
@@ -251,7 +250,8 @@ public class TileManagerFSM : MonoBehaviour
                                 break;
                         }
                         break;
-                } break;
+                }
+                break;
             case TileObject.TileLayer.Overlay:
                 switch (pathMaterial)
                 {
@@ -264,7 +264,10 @@ public class TileManagerFSM : MonoBehaviour
                 }
                 break;
         }
+
+
         // 5% chance to spawn rubble as well
+
 
 
 
