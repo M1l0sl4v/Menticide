@@ -23,16 +23,11 @@ public class Distance : MonoBehaviour
         Vector3 playerPos = player.transform.position;
         Vector3 currentPos = transform.position;
         float dist = Vector3.Distance(currentPos, playerPos);
-        // Normalize the distance to a 0-1 range
-        float normalizedDistance = Mathf.InverseLerp(minDistance, maxDistance, dist);
         
-        // Interpolate between the max and min decibel values based on distance
+        //takes the player pos and compares it to the volume, also converts the logarithmic decibals to linear volume, i think at least.
+        float normalizedDistance = Mathf.InverseLerp(minDistance, maxDistance, dist); 
         float volumeDb = Mathf.Lerp(maxVolumeDb, minVolumeDb, normalizedDistance);
-        
-        // Convert dB to linear volume
         float linearVolume = Mathf.Pow(10, volumeDb / 20);
-
-        // Apply the calculated linear volume to the audio source
         audioSource.volume = linearVolume;
     }
 }
