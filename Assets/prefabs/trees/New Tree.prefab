@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8778242122592538823}
   - component: {fileID: 2210232966884204670}
   - component: {fileID: 189209827518617349}
+  - component: {fileID: -263359358506370309}
   m_Layer: 0
   m_Name: New Tree
   m_TagString: Untagged
@@ -71,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -33899771
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -1668764111, guid: ed999d8146ac4954a8d0c049b4e6be96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -106,3 +107,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-263359358506370309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3482516811903228533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434acf63bf94c463cb0274ad6457dcc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnDistanceTree: 10
+  leafs: {fileID: 5752905677984127925, guid: 6a9f3f58f984f4c79881eddfaa8b8dc8, type: 3}
+  ruscleSound: {fileID: 8300000, guid: 7b24b07ab9dae4b99bdd741d1b9d0b04, type: 3}
