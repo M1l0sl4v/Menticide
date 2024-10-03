@@ -20,7 +20,9 @@ public class TileManagerFSM : MonoBehaviour
     public enum PathMaterial
     {
         Brick,
-        Paved
+        Paved,
+        Cobble,
+        Dirt
     }
     public PathMaterial pathMaterial;
 
@@ -287,10 +289,60 @@ public class TileManagerFSM : MonoBehaviour
                 switch (pathMaterial)
                 {
                     case PathMaterial.Brick:
-                        // change base material to brick
+                        switch (tile.spriteType)
+                        {
+                            case TileObject.SpriteType.Left:
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = brickLSprites[Random.Range(0, brickLSprites.Length)];
+                                break;
+                            case TileObject.SpriteType.Middle:
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = brickMSprites[Random.Range(0, brickMSprites.Length)];
+                                break;
+                            case TileObject.SpriteType.Right:
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = brickRSprites[Random.Range(0, brickRSprites.Length)];
+                                break;
+                        }
                         break;
                     case PathMaterial.Paved:
-                        // change base material to paved
+                        switch (tile.spriteType)
+                        {
+                            case TileObject.SpriteType.Left:
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = pavedLSprites[Random.Range(0, pavedLSprites.Length)];
+                                break;
+                            case TileObject.SpriteType.Middle:
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = pavedMSprites[Random.Range(0, pavedMSprites.Length)];
+                                break;
+                            case TileObject.SpriteType.Right:
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = pavedRSprites[Random.Range(0, pavedRSprites.Length)];
+                                break;
+                        }
+                        break;
+                    case PathMaterial.Cobble:
+                        switch (tile.spriteType)
+                        {
+                            case TileObject.SpriteType.Left:
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = cobbleLSprites[Random.Range(0, cobbleLSprites.Length)];
+                                break;
+                            case TileObject.SpriteType.Middle:
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = cobbleMSprites[Random.Range(0, cobbleMSprites.Length)];
+                                break;
+                            case TileObject.SpriteType.Right:
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = cobbleRSprites[Random.Range(0, cobbleRSprites.Length)];
+                                break;
+                        }
+                        break;
+                    case PathMaterial.Dirt:
+                        switch (tile.spriteType)
+                        {
+                            case TileObject.SpriteType.Left:
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = dirtLSprites[Random.Range(0, dirtLSprites.Length)];
+                                break;
+                            case TileObject.SpriteType.Middle:
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = dirtMSprites[Random.Range(0, dirtMSprites.Length)];
+                                break;
+                            case TileObject.SpriteType.Right:
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = dirtRSprites[Random.Range(0, dirtRSprites.Length)];
+                                break;
+                        }
                         break;
                 }
                 break;
