@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteType: 0
+  spriteType: 2
   tileLayer: 0
 --- !u!61 &19048161
 BoxCollider2D:
@@ -3737,7 +3737,7 @@ GameObject:
   - component: {fileID: 206098210}
   - component: {fileID: 206098213}
   - component: {fileID: 206098212}
-  - component: {fileID: 206098211}
+  - component: {fileID: 206098214}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -3765,23 +3765,6 @@ RectTransform:
   m_AnchoredPosition: {x: -753, y: 452}
   m_SizeDelta: {x: 318.784, y: 59.713}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &206098211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206098209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccb9a1866b2acbc458ac877d65ee1028, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 1587748122}
-  displayDebugInfo: 1
-  debugInfo: {fileID: 705224755}
-  seasonLength: 0
-  monthLength: 0
 --- !u!114 &206098212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3820,6 +3803,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206098209}
   m_CullTransparentMesh: 1
+--- !u!114 &206098214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206098209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad0511ca5b4fae4480cad41c9f781b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayDebugInfo: 1
+  scoreText: {fileID: 1587748122}
+  debugInfo: {fileID: 705224756}
 --- !u!1001 &212487624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6706,7 +6704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteType: 0
+  spriteType: 1
   tileLayer: 0
 --- !u!61 &350474700
 BoxCollider2D:
@@ -8614,7 +8612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteType: 0
+  spriteType: 1
   tileLayer: 0
 --- !u!61 &467163125
 BoxCollider2D:
@@ -8763,7 +8761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteType: 0
+  spriteType: 2
   tileLayer: 0
 --- !u!61 &514780931
 BoxCollider2D:
@@ -11179,7 +11177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteType: 0
+  spriteType: 1
   tileLayer: 0
 --- !u!61 &723294723
 BoxCollider2D:
@@ -15007,7 +15005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bf7dbc5ce8e474492d5a2c7fcbf19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteType: 0
+  spriteType: 1
   tileLayer: 0
 --- !u!61 &1032158267
 BoxCollider2D:
