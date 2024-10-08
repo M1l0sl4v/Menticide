@@ -49,6 +49,7 @@ public class seasons : MonoBehaviour
                             return;
                     }
         Debug.Log("seasoncahnged");
+        WeatherManager.instance.ChangeWeather();
     }
     
     //each season has a method here, its set up so we should be able to kinda go ham with the seasons.

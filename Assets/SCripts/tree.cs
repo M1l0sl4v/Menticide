@@ -9,6 +9,9 @@ public class tree : MonoBehaviour
     public static tree instance;
     [SerializeField] private ParticleSystem leafs;
     [SerializeField] private AudioClip ruscleSound;
+    public float delay = 2f;
+    
+    private Coroutine destroyLeavesCoroutine;
     
     private ParticleSystem leafsinstance;
 
@@ -39,6 +42,7 @@ public class tree : MonoBehaviour
             leafspawn();
             AudioManager.instance.environmentFX(ruscleSound, transform ,1f);
             Debug.Log("leafspawn");
+            StartCoroutine(DestroyLeavesCoroutine(delay));
         }
 
         if (other.CompareTag("cullingField"))
@@ -46,6 +50,16 @@ public class tree : MonoBehaviour
             ObjectPoolManager.ReturnObjectToPool(gameObject);
         }
         
+    }
+
+    private IEnumerator DestroyLeavesCoroutine(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Debug.Log("Destroying leaves...");
+        if (leafsinstance != null)
+        {
+            Destroy(leafsinstance.gameObject);  
+        }
     }
 
 

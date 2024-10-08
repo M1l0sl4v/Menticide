@@ -18847,6 +18847,7 @@ GameObject:
   - component: {fileID: 1332601555}
   - component: {fileID: 1332601556}
   - component: {fileID: 1332601557}
+  - component: {fileID: 1332601558}
   m_Layer: 0
   m_Name: game controller
   m_TagString: Untagged
@@ -18923,6 +18924,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   envirofxObject: {fileID: 4841542676470499439, guid: 3b0f2867d7dc94765b2affd9c3263405, type: 3}
   enemyfxObject: {fileID: 5250871102250748721, guid: a1dc8d667aa4a4b8c9fee87c6dd631c8, type: 3}
+--- !u!114 &1332601558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332601551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5247447faa7374cb3898d183a1f11c0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeather: 2
 --- !u!1001 &1341835689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22425,9 +22439,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.58090186
-    width: 0.53797466
-    height: 0.5072944
+    y: 0.073954985
+    width: 1
+    height: 0.8518891
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
