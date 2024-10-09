@@ -1,10 +1,8 @@
-using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-public class TileManagerFSM : MonoBehaviour
+public class OldTileFSM : MonoBehaviour
 {
     public enum SeasonState
     {
@@ -50,6 +48,22 @@ public class TileManagerFSM : MonoBehaviour
     public Sprite[] sprMSprites;
     public Sprite[] sprRSprites;
 
+    //[Header("Early Fall Sprites")]
+    //public Sprite[] earlyFallLSprites;
+    //public Sprite[] earlyFallMSprites;
+    //public Sprite[] earlyFallRSprites;
+    //[Header("Early Winter Sprites")]
+    //public Sprite[] earlyWinLSprites;
+    //public Sprite[] earlyWinMSprites;
+    //public Sprite[] earlyWinRSprites;
+    //[Header("Early Spring Sprites")]
+    //public Sprite[] earlySprLSprites;
+    //public Sprite[] earlySprMSprites;
+    //public Sprite[] earlySprRSprites;
+    //[Header("Early Summer Sprites")]
+    //public Sprite[] earlySmrLSprites;
+    //public Sprite[] earlySmrMSprites;
+    //public Sprite[] earlySmrRSprites;
 
     // Base
     [Header("Brick Sprites")]
@@ -82,35 +96,39 @@ public class TileManagerFSM : MonoBehaviour
     private int nextSeasonChance;
     private float seasonChangeSpeed;
 
-    private TileSprite[] tileSprites;
-
-    public static TileManagerFSM instance;
+    public static OldTileFSM instance;
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-
-        // Compile big list
     }
 
     // Update is called once per frame
     void Update()
     {
+        //switch (seasonState)
+        //{
+        //    case SeasonState.Summer:
+        //        UpdateSummer(); break;
+        //    case SeasonState.EarlyFall:
+        //        UpdateEarlyFall(); break;
+        //    case SeasonState.Fall:
+        //        UpdateFall(); break;
+        //    case SeasonState.EarlyWinter:
+        //        UpdateEarlyWinter(); break;
+        //    case SeasonState.Winter:
+        //        UpdateWinter(); break;
+        //    case SeasonState.EarlySpring:
+        //        UpdateEarlySpring(); break;
+        //    case SeasonState.Spring:
+        //        UpdateSpring(); break;
+        //    case SeasonState.EarlySummer:
+        //        UpdateEarlySummer(); break;
+        //}
 
     }
 
-    private TileSprite[] ConcatArrays(params TileSprite[][] p)
-    {
-        var position = 0;
-        var outputArray = new TileSprite[p.Sum(a => a.Length)];
-        foreach (var curr in p)
-        {
-            Array.Copy(curr, 0, outputArray, position, curr.Length);
-            position += curr.Length;
-        }
-        return outputArray;
-    }
     private void UpdateSummer(TileObject tile)
     {
         switch (tile.spriteType)
@@ -125,6 +143,12 @@ public class TileManagerFSM : MonoBehaviour
                 tile.gameObject.GetComponent<SpriteRenderer>().sprite = smrRSprites[Random.Range(0, smrRSprites.Length)];
                 break;
         }
+    }
+
+
+    private void UpdateEarlyFall(TileObject tile)
+    {
+
     }
 
     private void UpdateFall(TileObject tile)
@@ -143,6 +167,10 @@ public class TileManagerFSM : MonoBehaviour
         }
     }
 
+    private void UpdateEarlyWinter(TileObject tile)
+    {
+
+    }
     private void UpdateWinter(TileObject tile)
     {
         switch (tile.spriteType)
@@ -157,6 +185,11 @@ public class TileManagerFSM : MonoBehaviour
                 tile.gameObject.GetComponent<SpriteRenderer>().sprite = winRSprites[Random.Range(0, winRSprites.Length)];
                 break;
         }
+    }
+
+    private void UpdateEarlySpring(TileObject tile)
+    {
+
     }
 
     private void UpdateSpring(TileObject tile)
@@ -175,7 +208,10 @@ public class TileManagerFSM : MonoBehaviour
         }
     }
 
+    private void UpdateEarlySummer(TileObject tile)
+    {
 
+    }
 
     public void ProcessTile(TileObject tile)
     {
@@ -187,19 +223,72 @@ public class TileManagerFSM : MonoBehaviour
                     case SeasonState.Summer:
                         UpdateSummer(tile);
                         break;
-                        
+
+                    case SeasonState.EarlyFall:
+                        switch (tile.spriteType)
+                        {
+                            //case TileObject.SpriteType.Left:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyFallLSprites[Random.Range(0, earlyFallLSprites.Length)];
+                            //    break;
+                            //case TileObject.SpriteType.Middle:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyFallMSprites[Random.Range(0, earlyFallMSprites.Length)];
+                            //    break;
+                            //case TileObject.SpriteType.Right:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyFallRSprites[Random.Range(0, earlyFallRSprites.Length)];
+                            //    break;
+                        }
+                        break;
                     case SeasonState.Fall:
                         UpdateFall(tile);
                         break;
-
+                    case SeasonState.EarlyWinter:
+                        switch (tile.spriteType)
+                        {
+                            //case TileObject.SpriteType.Left:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyWinLSprites[Random.Range(0, earlyWinLSprites.Length)];
+                            //    break;
+                            //case TileObject.SpriteType.Middle:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyWinMSprites[Random.Range(0, earlyWinMSprites.Length)];
+                            //    break;
+                            //case TileObject.SpriteType.Right:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyWinRSprites[Random.Range(0, earlyWinRSprites.Length)];
+                            //    break;
+                        }
+                        break;
                     case SeasonState.Winter:
                         UpdateWinter(tile);
                         break;
-
+                    case SeasonState.EarlySpring:
+                        switch (tile.spriteType)
+                        {
+                            //case TileObject.SpriteType.Left:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySprLSprites[Random.Range(0, earlySprLSprites.Length)];
+                            //    break;
+                            //case TileObject.SpriteType.Middle:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySprMSprites[Random.Range(0, earlySprMSprites.Length)];
+                            //    break;
+                            //case TileObject.SpriteType.Right:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySprRSprites[Random.Range(0, earlySprRSprites.Length)];
+                            //    break;
+                        }
+                        break;
                     case SeasonState.Spring:
                         UpdateSpring(tile);
                         break;
-
+                    case SeasonState.EarlySummer:
+                        switch (tile.spriteType)
+                        {
+                            //case TileObject.SpriteType.Left:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySmrLSprites[Random.Range(0, earlySmrLSprites.Length)];
+                            //    break;
+                            //case TileObject.SpriteType.Middle:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySmrMSprites[Random.Range(0, earlySmrMSprites.Length)];
+                            //    break;
+                            //case TileObject.SpriteType.Right:
+                            //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySmrRSprites[Random.Range(0, earlySmrRSprites.Length)];
+                            //break;
+                        }
+                        break;
                 }
                 break;
             case TileObject.TileLayer.Base:
@@ -275,7 +364,6 @@ public class TileManagerFSM : MonoBehaviour
 
         // set tile sprite to random one from [x] deck
 
-        //foreach (TileSprite sprite in )
 
 
         // start with mega-deck of all possible sprites
