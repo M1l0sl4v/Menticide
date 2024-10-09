@@ -22,21 +22,8 @@ public class uiHearts : MonoBehaviour
         int heartFill = health;
         foreach (Image i in hearts)
         {
-            /*i.fillAmount = heartFill;
-            heartFill -= 1;*/
-            
-            
-            if (heartFill > 0)
-            {
-                i.fillAmount = 1; 
-            }
-            else if (i.fillAmount != 0) 
-            {
-                i.GetComponentInParent<Animator>().SetTrigger("HeartLost");
-                i.fillAmount = 0;
-            }
+            i.fillAmount = heartFill;
             heartFill -= 1;
-            
         }
     }
 }

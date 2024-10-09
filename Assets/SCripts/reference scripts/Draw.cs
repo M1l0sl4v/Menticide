@@ -26,6 +26,7 @@ public class WallDrawing : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("hi");
         HandleInput();
     }
 
@@ -39,7 +40,7 @@ public class WallDrawing : MonoBehaviour
         {
             StopDrawing();
         }
-
+        
         if (currentLine != null)
         {
             ContinueDrawing();
@@ -72,12 +73,13 @@ public class WallDrawing : MonoBehaviour
     void ContinueDrawing()
     {
         // Extend the line renderer based on mouse position
+        Debug.Log("hi");
         Vector3 mousePos = GetMousePosWithZ();
 
         // Check the distance from the last point
         float minDistance = 0.1f; // Adjust the minimum distance as needed
 
-        if (Vector3.Distance(linePositions[linePositions.Count - 1], mousePos) > minDistance)
+        if (linePositions.Count == 0 || Vector3.Distance(linePositions[linePositions.Count - 1], mousePos) > minDistance)
         {
             linePositions.Add(mousePos);
 
@@ -96,8 +98,6 @@ public class WallDrawing : MonoBehaviour
             // Add collider to drawn line
             EdgeCollider2D edgeCollider = currentLine.gameObject.AddComponent<EdgeCollider2D>();
             edgeCollider.points = ConvertToVector2Array(linePositions);
-
-            currentLine = null;
         }
     }
 
@@ -118,4 +118,5 @@ public class WallDrawing : MonoBehaviour
         }
         return vector2Array;
     }
+
 }

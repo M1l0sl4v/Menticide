@@ -3,7 +3,9 @@ guid: df1521a287d552a44a2a05f72f84a4a5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - wallMaterial: {fileID: 2100000, guid: 004e9e7bcf14149ed880c7724f0328bc, type: 2}
+  - drawingSoundClip: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

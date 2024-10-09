@@ -124,7 +124,6 @@ MonoBehaviour:
   despawnDistanceTree: 10
   leafs: {fileID: 5752905677984127925, guid: 6a9f3f58f984f4c79881eddfaa8b8dc8, type: 3}
   ruscleSound: {fileID: 8300000, guid: 7b24b07ab9dae4b99bdd741d1b9d0b04, type: 3}
-  delay: 0.5
 --- !u!61 &3094326388853522562
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -1,8 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class obstaclespawner : MonoBehaviour
 {
@@ -14,31 +12,27 @@ public class obstaclespawner : MonoBehaviour
     private float spawnTime;
     public float spawnmin;
     public float spawnmax;
-    
+    public List<GameObject> enemytype1;
+    public List<GameObject> enemytype2;
     
     public float rareenemychance;
  
-    public List<GameObject> enemytype1;
-    public List<GameObject> enemytype2;
+ 
 
-    private void Start()
-    {
-        timeBetweenSpawn = Random.Range(spawnmin, spawnmax);
-        spawnTime = Time.time + timeBetweenSpawn;
-    }
-
-    void FixedUpdate()
+    void Update()
     {
 
-        // delay on start, then incriments
-        if(Time.time > spawnTime)
-        {
-            timeBetweenSpawn = Random.Range(spawnmin, spawnmax);
-            Spawn();
-            spawnTime = Time.time + timeBetweenSpawn; 
-        }
+        ////delay on start, then incriments
+        //if(Time.time > spawnTime)
+        //{
+        //    timeBetweenSpawn = Random.Range(spawnmin, spawnmax);
+        //    Spawn();
+        //    spawnTime = Time.time + timeBetweenSpawn;
+        //   // Debug.Log(timeBetweenSpawn);
+        //}
       
     }
+
     public void Spawn()
     {
         //location
@@ -46,13 +40,16 @@ public class obstaclespawner : MonoBehaviour
         float randomY = Random.Range(minY, maxY);
 
         float spawnChance = Random.value;
-        
+
+       // Debug.Log(spawnChance);
+
         if (spawnChance > rareenemychance)
         {
             int prefabIndex = Random.Range(0, enemytype2.Count);
             //calling the pool
             ObjectPoolManager.SpawnObject(enemytype2[prefabIndex], transform.position + new Vector3(randomY, randomX), ObjectPoolManager.PoolType.Enemytype2);
             
+           // Debug.Log("rare enemy spawned, number was " + spawnChance);
         }
         else 
         {

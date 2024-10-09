@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 867422893
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -268779993, guid: a91639f2bca7847a78705fd44c9f5988, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -103,14 +103,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 65
   losDistance: 5
-  enemyspeedChase: 5
+  enemyspeedChase: 4
   enemyspeedNormal: 3
-  despawnDistance: 50
-  enemyBehaviour: 0
-  snarl: {fileID: 8300000, guid: 42983210d31ca461a8a1c9c96e2dc8e1, type: 3}
   despawnDistanceDog: 10
-  sp: {fileID: 0}
+  snarl: {fileID: 8300000, guid: 42983210d31ca461a8a1c9c96e2dc8e1, type: 3}
   exlimation: {fileID: 1348696221685265807, guid: 195e0f6155c4c434d8f48f48aef3a53a, type: 3}
+  sp: {fileID: 1700632340610863045}
   animator: {fileID: -3079357004096876155}
 --- !u!61 &1546645933743141903
 BoxCollider2D:

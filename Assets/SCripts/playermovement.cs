@@ -24,8 +24,6 @@ public class playermovement : MonoBehaviour
     static public int health;
     public uiHearts uiHearts;
     public static playermovement instance;
-    
-    [SerializeField] private AudioClip takeDamageSound;
 
     private void Start()
     {
@@ -38,7 +36,6 @@ public class playermovement : MonoBehaviour
     
     public void TakeDamage(int amount)
     {
-        AudioManager.instance.environmentFX(takeDamageSound, transform,1f);
         health -= amount;
         uiHearts.updateHealth(health);
         if (health <= 0)
