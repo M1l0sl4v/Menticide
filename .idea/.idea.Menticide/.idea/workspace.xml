@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="181a9b39-c2d7-40b0-b7bc-d00f50f0c591" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/test tiles/Ui hart.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/test tiles/Ui hart.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/test tiles/pixil-frame-0 (56).prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/test tiles/pixil-frame-0 (56).prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Menticide/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Menticide/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/uiHearts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/uiHearts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/test tiles/Ui hart.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/test tiles/Ui hart.prefab.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
