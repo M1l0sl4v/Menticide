@@ -33,7 +33,7 @@ public class playermovement : MonoBehaviour
         _originalSpeed = speed;
         health = maxHealth;
         uiHearts.StartHealth(health);
-        instance = this;    
+        instance = this;
     }
     
     public void TakeDamage(int amount)
