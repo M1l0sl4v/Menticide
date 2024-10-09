@@ -3763,7 +3763,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -753, y: 452}
+  m_AnchoredPosition: {x: -753, y: 489}
   m_SizeDelta: {x: 318.784, y: 59.713}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &206098212
@@ -9384,8 +9384,8 @@ MonoBehaviour:
   minX: 0
   maxY: 10
   minY: 0
-  spawnmin: 0.5
-  spawnmax: 1
+  spawnmin: 0.2
+  spawnmax: 0.5
   rareenemychance: 1
   enemytype1:
   - {fileID: 5075196644585124462, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
@@ -19386,8 +19386,8 @@ MonoBehaviour:
   minX: 0
   maxY: 10
   minY: 0
-  spawnmin: 0.5
-  spawnmax: 1
+  spawnmin: 0.2
+  spawnmax: 0.5
   rareenemychance: 1
   enemytype1:
   - {fileID: 5075196644585124462, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
@@ -22330,7 +22330,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0.59726685
-    width: 0.60580915
+    width: 0.60616845
     height: 0.46211815
   near clip plane: 0.3
   far clip plane: 1000
