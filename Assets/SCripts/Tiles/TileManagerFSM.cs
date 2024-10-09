@@ -93,6 +93,7 @@ public class TileManagerFSM : MonoBehaviour
     {
         instance = this;
 
+        // EXPERIMENTAL
         // Compile big list
         combinedSprites = ConcatArrays(
             smrLSprites,
@@ -138,6 +139,7 @@ public class TileManagerFSM : MonoBehaviour
 
     }
 
+    // EXPERIMENTAL
     private Sprite[] ConcatArrays(params Sprite[][] p)
     {
         var position = 0;
