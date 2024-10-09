@@ -83,7 +83,8 @@ public class TileManagerFSM : MonoBehaviour
     private int nextSeasonChance;
     private float seasonChangeSpeed;
 
-    private TileSprite[] tileSprites;
+    private Sprite[] combinedSprites;
+    private TileSprite[] masterList;
 
     public static TileManagerFSM instance;
 
@@ -92,7 +93,44 @@ public class TileManagerFSM : MonoBehaviour
     {
         instance = this;
 
+        // EXPERIMENTAL
         // Compile big list
+        combinedSprites = ConcatArrays(
+            smrLSprites,
+            smrMSprites,
+            smrRSprites,
+            fallLSprites,
+            fallMSprites,
+            fallRSprites,
+            winLSprites,
+            winMSprites,
+            winRSprites,
+            sprLSprites,
+            sprMSprites,
+            sprRSprites,
+            brickFadeoutSprites,
+            brickFadeinSprites,
+            brickLSprites,
+            brickMSprites,
+            brickRSprites,
+            pavedFadeoutSprites,
+            pavedFadeinSprites,
+            pavedLSprites,
+            pavedMSprites,
+            pavedRSprites,
+            dirtFadeoutSprites,
+            dirtFadeinSprites,
+            dirtLSprites,
+            dirtMSprites,
+            dirtRSprites,
+            cobbleFadeoutSprites,
+            cobbleFadeinSprites,
+            cobbleLSprites,
+            cobbleMSprites,
+            cobbleRSprites
+            );
+
+            
     }
 
     // Update is called once per frame
@@ -101,10 +139,11 @@ public class TileManagerFSM : MonoBehaviour
 
     }
 
-    private TileSprite[] ConcatArrays(params TileSprite[][] p)
+    // EXPERIMENTAL
+    private Sprite[] ConcatArrays(params Sprite[][] p)
     {
         var position = 0;
-        var outputArray = new TileSprite[p.Sum(a => a.Length)];
+        var outputArray = new Sprite[p.Sum(a => a.Length)];
         foreach (var curr in p)
         {
             Array.Copy(curr, 0, outputArray, position, curr.Length);
