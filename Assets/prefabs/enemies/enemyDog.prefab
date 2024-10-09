@@ -103,7 +103,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 65
   losDistance: 5
-  enemyspeedChase: 4
+  enemyspeedChase: 5
   enemyspeedNormal: 3
   despawnDistance: 50
   enemyBehaviour: 0

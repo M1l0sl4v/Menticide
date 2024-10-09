@@ -41,7 +41,6 @@ public class tree : MonoBehaviour
         {
             leafspawn();
             AudioManager.instance.environmentFX(ruscleSound, transform ,1f);
-            Debug.Log("leafspawn");
             StartCoroutine(DestroyLeavesCoroutine(delay));
         }
 
@@ -55,7 +54,6 @@ public class tree : MonoBehaviour
     private IEnumerator DestroyLeavesCoroutine(float delay)
     {
         yield return new WaitForSeconds(delay);
-        Debug.Log("Destroying leaves...");
         if (leafsinstance != null)
         {
             Destroy(leafsinstance.gameObject);  

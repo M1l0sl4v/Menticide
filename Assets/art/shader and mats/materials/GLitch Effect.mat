@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Fog
-  m_Shader: {fileID: -6465566751694194690, guid: 9661467c445684ffeb87949f5d454e83, type: 3}
+  m_Name: GLitch Effect
+  m_Shader: {fileID: -6465566751694194690, guid: 5f04f3175ce114ba6965ddbc9ac7fe97, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -37,10 +37,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Fog_Size: 15.4
-    - _Pixelation: 33.51
-    - _opacity: 0.015
-    m_Colors:
-    - _Fog_Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Fog_Speed: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _GLitchStrength: 8.52
+    - _NoiseAmount: 92.6
+    m_Colors: []
   m_BuildTextureStacks: []
