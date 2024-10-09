@@ -2957,9 +2957,10 @@ MonoBehaviour:
   spawnminTree: 2
   spawnmaxTree: 4
   treeSpawner: {fileID: 799384008}
-  spawnminObstacle: 0.5
-  spawnmaxObstacle: 1
-  obstaclespawner: {fileID: 673161324}
+  spawnminObstacle: 2
+  spawnmaxObstacle: 4
+  obstaclespawner: {fileID: 594896784}
+  obstaclespawner2: {fileID: 1388212426}
 --- !u!114 &154867868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7387,7 +7388,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -9379,17 +9380,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8270214c2881be54bb11919e278d58a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxX: 0
+  maxX: 8
   minX: 0
-  maxY: 1
-  minY: 3
-  spawnmin: 2
-  spawnmax: 4
+  maxY: 10
+  minY: 0
+  spawnmin: 0.5
+  spawnmax: 1
+  rareenemychance: 1
   enemytype1:
   - {fileID: 5075196644585124462, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-  enemytype2:
-  - {fileID: 7593429793533628578, guid: 7ad2fab9ebb4644adbcb2bb79792b54e, type: 3}
-  rareenemychance: 0.9
+  enemytype2: []
 --- !u!212 &594896785
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9451,7 +9451,7 @@ Transform:
   m_GameObject: {fileID: 594896783}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.9900002, y: 7.6399994, z: 0}
+  m_LocalPosition: {x: -6.27, y: 7.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10203,114 +10203,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3131619425607364820, guid: 5f3881ac2ec1e4b4a9edc1b177e7e463, type: 3}
   m_PrefabInstance: {fileID: 908207271}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &673161323
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 673161326}
-  - component: {fileID: 673161325}
-  - component: {fileID: 673161324}
-  m_Layer: 0
-  m_Name: spawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &673161324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 673161323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8270214c2881be54bb11919e278d58a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxX: 0
-  minX: 0
-  maxY: 1
-  minY: 3
-  spawnmin: 2
-  spawnmax: 4
-  enemytype1:
-  - {fileID: 5075196644585124462, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-  enemytype2:
-  - {fileID: 7593429793533628578, guid: 7ad2fab9ebb4644adbcb2bb79792b54e, type: 3}
-  rareenemychance: 0.9
---- !u!212 &673161325
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 673161323}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 0.5}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &673161326
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 673161323}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.39000005, y: 7.6399994, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1180109631}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &681545317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16772,7 +16664,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 216771152}
-  - {fileID: 673161326}
   - {fileID: 1388212428}
   - {fileID: 594896786}
   - {fileID: 799384007}
@@ -19491,17 +19382,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8270214c2881be54bb11919e278d58a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxX: 0
+  maxX: 8
   minX: 0
-  maxY: 1
-  minY: 3
-  spawnmin: 2
-  spawnmax: 4
+  maxY: 10
+  minY: 0
+  spawnmin: 0.5
+  spawnmax: 1
+  rareenemychance: 1
   enemytype1:
   - {fileID: 5075196644585124462, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
-  enemytype2:
-  - {fileID: 7593429793533628578, guid: 7ad2fab9ebb4644adbcb2bb79792b54e, type: 3}
-  rareenemychance: 0.9
+  enemytype2: []
 --- !u!212 &1388212427
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19563,7 +19453,7 @@ Transform:
   m_GameObject: {fileID: 1388212425}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.8500001, y: 7.6399994, z: 0}
+  m_LocalPosition: {x: 7.17, y: 7.6399994, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20176,7 +20066,7 @@ MonoBehaviour:
   wallMaterial: {fileID: 0}
   wallWidth: 0.3
   wallTag: Wall
-  drawingSoundClip: {fileID: 8300000, guid: cf86224c00aaf4f7f882823a014d0f8e, type: 3}
+  drawingSoundClip: {fileID: 8300000, guid: f129a093b2aee4cd89d174559bf43e92, type: 3}
   lineLifetime: 5
   lineSoundGroup: {fileID: 0}
 --- !u!4 &1435355290
@@ -22439,9 +22329,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.110326566
-    width: 1
-    height: 0.7794572
+    y: 0.32877812
+    width: 0.5947541
+    height: 0.41011855
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -23316,6 +23206,7 @@ MonoBehaviour:
   speedDecayRate: 1
   resetTriggerDistance: 300
   uiHearts: {fileID: 196417510}
+  takeDamageSound: {fileID: 8300000, guid: 53f7f0fdf6e954dae9a8be8a8080fa96, type: 3}
 --- !u!212 &1675774498
 SpriteRenderer:
   m_ObjectHideFlags: 0
