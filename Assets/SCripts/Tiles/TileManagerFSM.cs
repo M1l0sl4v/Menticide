@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using System.Linq;
 using UnityEngine;
 
@@ -116,13 +117,13 @@ public class TileManagerFSM : MonoBehaviour
         switch (tile.spriteType)
         {
             case TileObject.SpriteType.Left:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = smrLSprites[Random.Range(0, smrLSprites.Length)];
+                tile.gameObject.GetComponent<SpriteRenderer>().sprite = smrLSprites[UnityEngine.Random.Range(0, smrLSprites.Length)];
                 break;
             case TileObject.SpriteType.Middle:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = smrMSprites[Random.Range(0, smrMSprites.Length)];
+                tile.gameObject.GetComponent<SpriteRenderer>().sprite = smrMSprites[UnityEngine.Random.Range(0, smrMSprites.Length)];
                 break;
             case TileObject.SpriteType.Right:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = smrRSprites[Random.Range(0, smrRSprites.Length)];
+                tile.gameObject.GetComponent<SpriteRenderer>().sprite = smrRSprites[UnityEngine.Random.Range(0, smrRSprites.Length)];
                 break;
         }
     }
@@ -132,13 +133,13 @@ public class TileManagerFSM : MonoBehaviour
         switch (tile.spriteType)
         {
             case TileObject.SpriteType.Left:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = fallLSprites[Random.Range(0, fallLSprites.Length)];
+                tile.gameObject.GetComponent<SpriteRenderer>().sprite = fallLSprites[UnityEngine.Random.Range(0, fallLSprites.Length)];
                 break;
             case TileObject.SpriteType.Middle:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = fallMSprites[Random.Range(0, fallMSprites.Length)];
+                tile.gameObject.GetComponent<SpriteRenderer>().sprite = fallMSprites[UnityEngine.Random.Range(0, fallMSprites.Length)];
                 break;
             case TileObject.SpriteType.Right:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = fallRSprites[Random.Range(0, fallRSprites.Length)];
+                tile.gameObject.GetComponent<SpriteRenderer>().sprite = fallRSprites[UnityEngine.Random.Range(0, fallRSprites.Length)];
                 break;
         }
     }
@@ -148,13 +149,13 @@ public class TileManagerFSM : MonoBehaviour
         switch (tile.spriteType)
         {
             case TileObject.SpriteType.Left:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = winLSprites[Random.Range(0, winLSprites.Length)];
+                tile.gameObject.GetComponent<SpriteRenderer>().sprite = winLSprites[UnityEngine.Random.Range(0, winLSprites.Length)];
                 break;
             case TileObject.SpriteType.Middle:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = winMSprites[Random.Range(0, winMSprites.Length)];
+                tile.gameObject.GetComponent<SpriteRenderer>().sprite = winMSprites[UnityEngine.Random.Range(0, winMSprites.Length)];
                 break;
             case TileObject.SpriteType.Right:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = winRSprites[Random.Range(0, winRSprites.Length)];
+                tile.gameObject.GetComponent<SpriteRenderer>().sprite = winRSprites[UnityEngine.Random.Range(0, winRSprites.Length)];
                 break;
         }
     }
@@ -164,13 +165,13 @@ public class TileManagerFSM : MonoBehaviour
         switch (tile.spriteType)
         {
             case TileObject.SpriteType.Left:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = sprLSprites[Random.Range(0, sprLSprites.Length)];
+                tile.gameObject.GetComponent<SpriteRenderer>().sprite = sprLSprites[UnityEngine.Random.Range(0, sprLSprites.Length)];
                 break;
             case TileObject.SpriteType.Middle:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = sprMSprites[Random.Range(0, sprMSprites.Length)];
+                tile.gameObject.GetComponent<SpriteRenderer>().sprite = sprMSprites[UnityEngine.Random.Range(0, sprMSprites.Length)];
                 break;
             case TileObject.SpriteType.Right:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = sprRSprites[Random.Range(0, sprRSprites.Length)];
+                tile.gameObject.GetComponent<SpriteRenderer>().sprite = sprRSprites[UnityEngine.Random.Range(0, sprRSprites.Length)];
                 break;
         }
     }
@@ -209,13 +210,13 @@ public class TileManagerFSM : MonoBehaviour
                         switch (tile.spriteType)
                         {
                             case TileObject.SpriteType.Left:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = brickLSprites[Random.Range(0, brickLSprites.Length)];
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = brickLSprites[UnityEngine.Random.Range(0, brickLSprites.Length)];
                                 break;
                             case TileObject.SpriteType.Middle:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = brickMSprites[Random.Range(0, brickMSprites.Length)];
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = brickMSprites[UnityEngine.Random.Range(0, brickMSprites.Length)];
                                 break;
                             case TileObject.SpriteType.Right:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = brickRSprites[Random.Range(0, brickRSprites.Length)];
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = brickRSprites[UnityEngine.Random.Range(0, brickRSprites.Length)];
                                 break;
                         }
                         break;
@@ -223,13 +224,13 @@ public class TileManagerFSM : MonoBehaviour
                         switch (tile.spriteType)
                         {
                             case TileObject.SpriteType.Left:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = pavedLSprites[Random.Range(0, pavedLSprites.Length)];
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = pavedLSprites[UnityEngine.Random.Range(0, pavedLSprites.Length)];
                                 break;
                             case TileObject.SpriteType.Middle:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = pavedMSprites[Random.Range(0, pavedMSprites.Length)];
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = pavedMSprites[UnityEngine.Random.Range(0, pavedMSprites.Length)];
                                 break;
                             case TileObject.SpriteType.Right:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = pavedRSprites[Random.Range(0, pavedRSprites.Length)];
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = pavedRSprites[UnityEngine.Random.Range(0, pavedRSprites.Length)];
                                 break;
                         }
                         break;
@@ -237,13 +238,13 @@ public class TileManagerFSM : MonoBehaviour
                         switch (tile.spriteType)
                         {
                             case TileObject.SpriteType.Left:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = cobbleLSprites[Random.Range(0, cobbleLSprites.Length)];
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = cobbleLSprites[UnityEngine.Random.Range(0, cobbleLSprites.Length)];
                                 break;
                             case TileObject.SpriteType.Middle:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = cobbleMSprites[Random.Range(0, cobbleMSprites.Length)];
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = cobbleMSprites[UnityEngine.Random.Range(0, cobbleMSprites.Length)];
                                 break;
                             case TileObject.SpriteType.Right:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = cobbleRSprites[Random.Range(0, cobbleRSprites.Length)];
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = cobbleRSprites[UnityEngine.Random.Range(0, cobbleRSprites.Length)];
                                 break;
                         }
                         break;
@@ -251,13 +252,13 @@ public class TileManagerFSM : MonoBehaviour
                         switch (tile.spriteType)
                         {
                             case TileObject.SpriteType.Left:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = dirtLSprites[Random.Range(0, dirtLSprites.Length)];
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = dirtLSprites[UnityEngine.Random.Range(0, dirtLSprites.Length)];
                                 break;
                             case TileObject.SpriteType.Middle:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = dirtMSprites[Random.Range(0, dirtMSprites.Length)];
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = dirtMSprites[UnityEngine.Random.Range(0, dirtMSprites.Length)];
                                 break;
                             case TileObject.SpriteType.Right:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = dirtRSprites[Random.Range(0, dirtRSprites.Length)];
+                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = dirtRSprites[UnityEngine.Random.Range(0, dirtRSprites.Length)];
                                 break;
                         }
                         break;
