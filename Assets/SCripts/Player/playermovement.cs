@@ -40,11 +40,18 @@ public class playermovement : MonoBehaviour
     {
         AudioManager.instance.environmentFX(takeDamageSound, transform,1f);
         health -= amount;
-        uiHearts.updateHealth(health);
+        uiHearts.hearts[uiHearts.hearts.Count - 1].GetComponent<Animator>().SetTrigger("HeartLost");
+        StartCoroutine(DamageSequence());
         if (health <= 0)
         {
-            return;
+            DeathSequence.instance.StartDeathSequence();
         }
+    }
+
+    private IEnumerator DamageSequence()
+    {
+        yield return new WaitForSeconds(0.417f); // length of Heartdestroy
+        uiHearts.updateHealth(health);
     }
 
     private void Update()

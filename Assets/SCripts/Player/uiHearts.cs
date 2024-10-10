@@ -17,6 +17,7 @@ public class uiHearts : MonoBehaviour
             hearts.Add(h.GetComponent<Image>());
         }
     }
+    // called when player is damaged
     public void updateHealth(int health)
     {
         int heartFill = health;
@@ -32,11 +33,12 @@ public class uiHearts : MonoBehaviour
             }
             else if (i.fillAmount != 0) 
             {
-                i.GetComponentInParent<Animator>().SetTrigger("HeartLost");
+                //i.GetComponentInParent<Animator>().SetTrigger("HeartLost");
                 i.fillAmount = 0;
             }
             heartFill -= 1;
             
         }
     }
+
 }
