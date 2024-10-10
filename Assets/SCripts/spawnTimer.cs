@@ -11,15 +11,19 @@ public class spawnTimer : MonoBehaviour
     public treeSpawner treeSpawner;
 
     private float timeBetweenSpawn;
+    private float spawnerChoose;
     private float spawnTimeObstacle;
     public float spawnminObstacle;
     public float spawnmaxObstacle;
     public obstaclespawner obstaclespawner;
+    public obstaclespawner obstaclespawner2;
 
     // Start is called before the first frame update
     void Start()
     {
         treeSpawner.Spawn();
+        obstaclespawner.Spawn();
+        obstaclespawner2.Spawn();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -29,13 +33,22 @@ public class spawnTimer : MonoBehaviour
             treeSpawner.Spawn();
             spawnTimeTree = Time.time + timeBetweenSpawn;
         }
-        if (Time.time > spawnTimeObstacle)
+        /*if (Time.time > spawnTimeObstacle)
         {
             timeBetweenSpawn = Random.Range(spawnminObstacle, spawnmaxObstacle);
-            obstaclespawner.Spawn();
+            //chose between the two spawners
+            spawnerChoose = Random.value;
+            if (spawnerChoose > .5f)
+            {
+                 obstaclespawner.Spawn();
+            }
+            else
+            {
+                obstaclespawner2.Spawn();
+            }
             spawnTimeObstacle = Time.time + timeBetweenSpawn;
             // Debug.Log(timeBetweenSpawn);
-        }
+        }*/
     }
     // Update is called once per frame
     void Update()

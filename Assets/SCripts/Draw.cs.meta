@@ -3,11 +3,7 @@ guid: d305839ba8d1341bfb5e34d196e447f3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - drawBar: {fileID: 1896221248595683823, guid: 5214c0029d98046a9a3f7dbd3615ea14, type: 3}
-  - wallMaterial: {instanceID: 0}
-  - drawingSoundClip: {instanceID: 0}
-  - lineSoundGroup: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

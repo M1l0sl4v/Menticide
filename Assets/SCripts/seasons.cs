@@ -14,6 +14,7 @@ public class seasons : MonoBehaviour
 
     public static int monthLength = 50;
     public static int seasonLength = 150; // should be 3x month length
+    public static int transitionAfter = 100; // start the season change after this long, lasting until end of season
 
     private Color colorTransition;
     // this is whats used to store the season 1=summer,2=fall,3=winter,4=spring
@@ -49,7 +50,7 @@ public class seasons : MonoBehaviour
                             return;
                     }
         Debug.Log("seasoncahnged");
-        WeatherManager.instance.ChangeWeather();
+        WeatherManager.instance.ChangeWeather();//call the weather from that season
     }
     
     //each season has a method here, its set up so we should be able to kinda go ham with the seasons.

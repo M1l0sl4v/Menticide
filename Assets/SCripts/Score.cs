@@ -140,4 +140,9 @@ public class Score : MonoBehaviour
         // Units total
         debugTotalDist.text = score + " dist total";
     }
+
+    public int DistanceInSeason()
+    {
+        return distanceInSeason;
+    }
 }
