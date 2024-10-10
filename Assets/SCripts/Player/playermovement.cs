@@ -2,6 +2,7 @@ using System.Collections;
 using System.Diagnostics.Contracts;
 using UnityEngine;
 using TMPro;
+using System.Diagnostics.CodeAnalysis;
 public class playermovement : MonoBehaviour
 {
     // Movement speed of the player
@@ -21,8 +22,9 @@ public class playermovement : MonoBehaviour
     //distance at which the player is reset
 
     static public int maxHealth = 3;
-    static public int health;
+    public int health;
     public uiHearts uiHearts;
+    private int timesDamaged;
     public static playermovement instance;
     
     [SerializeField] private AudioClip takeDamageSound;
@@ -38,15 +40,23 @@ public class playermovement : MonoBehaviour
     
     public void TakeDamage(int amount)
     {
+        
         AudioManager.instance.environmentFX(takeDamageSound, transform,1f);
+
+        for (int i = health - 1; i > (health - 1) - amount; i--)
+        {
+            uiHearts.hearts[i].GetComponent<Animator>().SetTrigger("HeartLost");
+        }
         health -= amount;
-        uiHearts.hearts[uiHearts.hearts.Count - 1].GetComponent<Animator>().SetTrigger("HeartLost");
+
+        //uiHearts.hearts[health - 1].GetComponent<Animator>().SetTrigger("HeartLost");
         StartCoroutine(DamageSequence());
         if (health <= 0)
         {
             DeathSequence.instance.StartDeathSequence();
         }
     }
+
 
     private IEnumerator DamageSequence()
     {
@@ -68,13 +78,16 @@ public class playermovement : MonoBehaviour
 
         // Move the player in the current direction
         transform.Translate(_direction * speed * Time.deltaTime);
-        
+
         //pointAmount.text = ((int)transform.position.y).ToString();
         //this checks at certain intervuls, this will be changed later depending on what we want.
         //if (transform.position.y >= resetTriggerDistance)
         //{
         //    playerReset();
         //}
+
+        // DEBUG: Kill player
+        if (Input.GetKeyDown(KeyCode.BackQuote)) { TakeDamage(health); }
        
     }
 //this sets the player back to zero
