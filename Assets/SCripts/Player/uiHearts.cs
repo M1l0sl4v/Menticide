@@ -7,10 +7,12 @@ public class uiHearts : MonoBehaviour
 {
     public GameObject heartUii;
     public List<Image> hearts;
-
+    private Image editorImage;
     // Start is called before the first frame update
     public void StartHealth(int health)
     {
+        editorImage = GetComponent<Image>();
+        editorImage.enabled = false;
         for (int i = 0; i < health; i++)
         {
             GameObject h = Instantiate(heartUii, transform);
