@@ -2,6 +2,7 @@ using System.Collections;
 using System.Diagnostics.Contracts;
 using UnityEngine;
 using TMPro;
+using System.Diagnostics.CodeAnalysis;
 public class playermovement : MonoBehaviour
 {
     // Movement speed of the player
@@ -21,8 +22,10 @@ public class playermovement : MonoBehaviour
     //distance at which the player is reset
 
     static public int maxHealth = 3;
-    static public int health;
+    public int health;
     public uiHearts uiHearts;
+    public float invincibilityDuration;
+    private float invincibilityLeft;
     public static playermovement instance;
     
     [SerializeField] private AudioClip takeDamageSound;
@@ -33,18 +36,38 @@ public class playermovement : MonoBehaviour
         _originalSpeed = speed;
         health = maxHealth;
         uiHearts.StartHealth(health);
-        instance = this;    
+        instance = this;
     }
     
     public void TakeDamage(int amount)
     {
-        AudioManager.instance.environmentFX(takeDamageSound, transform,1f);
-        health -= amount;
-        uiHearts.updateHealth(health);
-        if (health <= 0)
+        if (invincibilityLeft <= 0)
         {
-            return;
+            AudioManager.instance.environmentFX(takeDamageSound, transform, 1f);
+
+            for (int i = health - 1; i > (health - 1) - amount; i--)
+            {
+                uiHearts.hearts[i].GetComponent<Animator>().SetTrigger("HeartLost");
+            }
+            health -= amount;
+
+            //uiHearts.hearts[health - 1].GetComponent<Animator>().SetTrigger("HeartLost");
+            StartCoroutine(DamageSequence());
+            if (health <= 0)
+            {
+                DeathSequence.instance.StartDeathSequence();
+            }
+
+            // Begin i-frames
+            invincibilityLeft = invincibilityDuration;
         }
+    }
+
+
+    private IEnumerator DamageSequence()
+    {
+        yield return new WaitForSeconds(0.417f); // length of Heartdestroy
+        uiHearts.updateHealth(health);
     }
 
     private void Update()
@@ -61,13 +84,21 @@ public class playermovement : MonoBehaviour
 
         // Move the player in the current direction
         transform.Translate(_direction * speed * Time.deltaTime);
-        
+
         //pointAmount.text = ((int)transform.position.y).ToString();
         //this checks at certain intervuls, this will be changed later depending on what we want.
         //if (transform.position.y >= resetTriggerDistance)
         //{
         //    playerReset();
         //}
+
+        // DEBUG: Kill player
+        if (Input.GetKeyDown(KeyCode.BackQuote)) { TakeDamage(health); }
+
+        // i-frames
+        GetComponent<Animator>().SetFloat("I Frames", invincibilityLeft);
+        if (invincibilityLeft > 0 || !DeathSequence.instance.controlLock) invincibilityLeft -= Time.deltaTime;
+        else if (invincibilityLeft < 0) invincibilityLeft = 0;
        
     }
 //this sets the player back to zero

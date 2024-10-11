@@ -5,7 +5,7 @@ using UnityEngine;
 public class UIStack : MonoBehaviour
 {
 
-    private Stack<GameObject> stack = new Stack<GameObject>();
+    private static Stack<GameObject> stack = new Stack<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -19,20 +19,20 @@ public class UIStack : MonoBehaviour
         
     }
 
-    public void Push(GameObject uiElement)
+    public static void Push(GameObject uiElement)
     {
         stack.Push(uiElement);
         uiElement.SetActive(true);
     }
 
-    public GameObject Pop()
+    public static GameObject Pop()
     {
         GameObject uiElement = stack.Pop();
         uiElement.SetActive(false);
         return uiElement;
     }
 
-    public void PopAll()
+    public static void PopAll()
     {
         foreach (GameObject uiElement in stack)
         {
