@@ -24,7 +24,8 @@ public class playermovement : MonoBehaviour
     static public int maxHealth = 3;
     public int health;
     public uiHearts uiHearts;
-    private int timesDamaged;
+    public float invincibilityDuration;
+    private float invincibilityLeft;
     public static playermovement instance;
     
     [SerializeField] private AudioClip takeDamageSound;
@@ -40,20 +41,25 @@ public class playermovement : MonoBehaviour
     
     public void TakeDamage(int amount)
     {
-        
-        AudioManager.instance.environmentFX(takeDamageSound, transform,1f);
-
-        for (int i = health - 1; i > (health - 1) - amount; i--)
+        if (invincibilityLeft <= 0)
         {
-            uiHearts.hearts[i].GetComponent<Animator>().SetTrigger("HeartLost");
-        }
-        health -= amount;
+            AudioManager.instance.environmentFX(takeDamageSound, transform, 1f);
 
-        //uiHearts.hearts[health - 1].GetComponent<Animator>().SetTrigger("HeartLost");
-        StartCoroutine(DamageSequence());
-        if (health <= 0)
-        {
-            DeathSequence.instance.StartDeathSequence();
+            for (int i = health - 1; i > (health - 1) - amount; i--)
+            {
+                uiHearts.hearts[i].GetComponent<Animator>().SetTrigger("HeartLost");
+            }
+            health -= amount;
+
+            //uiHearts.hearts[health - 1].GetComponent<Animator>().SetTrigger("HeartLost");
+            StartCoroutine(DamageSequence());
+            if (health <= 0)
+            {
+                DeathSequence.instance.StartDeathSequence();
+            }
+
+            // Begin i-frames
+            invincibilityLeft = invincibilityDuration;
         }
     }
 
@@ -88,6 +94,11 @@ public class playermovement : MonoBehaviour
 
         // DEBUG: Kill player
         if (Input.GetKeyDown(KeyCode.BackQuote)) { TakeDamage(health); }
+
+        // i-frames
+        GetComponent<Animator>().SetFloat("I Frames", invincibilityLeft);
+        if (invincibilityLeft > 0 || !DeathSequence.instance.controlLock) invincibilityLeft -= Time.deltaTime;
+        else if (invincibilityLeft < 0) invincibilityLeft = 0;
        
     }
 //this sets the player back to zero
