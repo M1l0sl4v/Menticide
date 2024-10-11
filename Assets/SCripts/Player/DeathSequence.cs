@@ -46,6 +46,7 @@ public class DeathSequence : MonoBehaviour
     void Start()
     {
         instance = this;
+        controlLock = false;
     }
 
     // Update is called once per frame
