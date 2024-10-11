@@ -96,9 +96,9 @@ public class playermovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.BackQuote)) { TakeDamage(health); }
 
         // i-frames
+        if (invincibilityLeft > 0) invincibilityLeft -= Time.deltaTime;
+        if (invincibilityLeft < 0) invincibilityLeft = 0;
         GetComponent<Animator>().SetFloat("I Frames", invincibilityLeft);
-        if (invincibilityLeft > 0 || !DeathSequence.controlLock) invincibilityLeft -= Time.deltaTime;
-        else if (invincibilityLeft < 0) invincibilityLeft = 0;
        
     }
 //this sets the player back to zero
