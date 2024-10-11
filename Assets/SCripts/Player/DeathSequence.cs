@@ -99,17 +99,19 @@ public class DeathSequence : MonoBehaviour
         yield return new WaitForSeconds(endScreenDelay);
         UIStack.Push(menuButtons);
         menuActive = true;
-        
+        yield return null;
     }
 
     public void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        controlLock = false;
     }
 
     public void Menu()
     {
         SceneManager.LoadScene(0);
+        controlLock = false;
     }
 
 
