@@ -8,15 +8,23 @@ using UnityEngine.UI;
 public class DeathSequence : MonoBehaviour
 {
     public static DeathSequence instance;
-    public bool controlLock;
+    public static bool controlLock;
+
     public GameObject blackoutPanel;
     public GameObject endScreen;
-    private float endScreenDelay = 1.5f;
+    public float endScreenDelay;
+    public float deathMessageDelay;
 
-    public Image[] buttons;
-    public TMP_Text[] texts;
-    private float alpha;
+    public TMP_Text messageObject; // gameobject to display the death message
+    public string[] deathMessages; // possible death messages to choose from
+    public TMP_Text[] buttons; // menu button text
+
+    private float buttonAlpha;
     private bool menuActive;
+    private float deathMessageAlpha;
+    private bool deathMessageActive;
+
+    public float fadeInSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -27,13 +35,19 @@ public class DeathSequence : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (menuActive && alpha < 1)
+        if (menuActive && buttonAlpha < 1)
         {
-            //buttons[0].color = new Color(1, 0, 0, alpha);
-            //buttons[1].color = new Color(1, 0, 0, alpha);
-            texts[0].color = new Color(1, 0, 0, alpha);
-            texts[1].color = new Color(1, 0, 0, alpha);
-            alpha += 0.01f;
+            foreach (TMP_Text button in buttons)
+            {
+                button.color = new Color(1, 0, 0, buttonAlpha);
+            }
+            buttonAlpha += fadeInSpeed;
+        }
+
+        if (deathMessageActive && deathMessageAlpha < 1)
+        {
+            messageObject.color = new Color(1, 0, 0, deathMessageAlpha);
+            deathMessageAlpha += fadeInSpeed;
         }
     }
 
@@ -46,9 +60,15 @@ public class DeathSequence : MonoBehaviour
     {
         controlLock = true;
         UIStack.Push(blackoutPanel);
+        foreach (TMP_Text button in buttons)
+        {
+            button.color = Color.black;
+        }
+        messageObject.color = Color.black;
+        yield return new WaitForSeconds(deathMessageDelay);
+        deathMessageActive = true;
+        messageObject.text = deathMessages[Random.Range(0, deathMessages.Length)];
         yield return new WaitForSeconds(endScreenDelay);
-        texts[0].color = Color.black;
-        texts[1].color = Color.black;
         UIStack.Push(endScreen);
         menuActive = true;
         

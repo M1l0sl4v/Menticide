@@ -47,7 +47,7 @@ public class playermovement : MonoBehaviour
 
             for (int i = health - 1; i > (health - 1) - amount; i--)
             {
-                uiHearts.hearts[i].GetComponent<Animator>().SetTrigger("HeartLost");
+                if (i >= 0) uiHearts.hearts[i].GetComponent<Animator>().SetTrigger("HeartLost");
             }
             health -= amount;
 
@@ -97,7 +97,7 @@ public class playermovement : MonoBehaviour
 
         // i-frames
         GetComponent<Animator>().SetFloat("I Frames", invincibilityLeft);
-        if (invincibilityLeft > 0 || !DeathSequence.instance.controlLock) invincibilityLeft -= Time.deltaTime;
+        if (invincibilityLeft > 0 || !DeathSequence.controlLock) invincibilityLeft -= Time.deltaTime;
         else if (invincibilityLeft < 0) invincibilityLeft = 0;
        
     }

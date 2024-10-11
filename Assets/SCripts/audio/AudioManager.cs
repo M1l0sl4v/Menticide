@@ -18,7 +18,7 @@ public class AudioManager : MonoBehaviour
 
    public void environmentFX(AudioClip clip, Transform spawnPossition, float volume)
    {
-        if (!DeathSequence.instance.controlLock)
+        if (!DeathSequence.controlLock)
         {
             AudioSource audioSource = Instantiate(envirofxObject, spawnPossition.transform.position, quaternion.identity); // spawns gameobject to play the sound
             audioSource.clip = clip; //assigns the passed audioclip
@@ -31,7 +31,7 @@ public class AudioManager : MonoBehaviour
    }
    public void enemyFX(AudioClip clip, Transform spawnPossition, float volume)
    {
-        if (!DeathSequence.instance.controlLock)
+        if (!DeathSequence.controlLock)
         {
             AudioSource audioSource = Instantiate(enemyfxObject, spawnPossition.transform.position, quaternion.identity); // spawns gameobject to play the sound
             audioSource.clip = clip; //assigns the passed audioclip
