@@ -145,4 +145,9 @@ public class Score : MonoBehaviour
     {
         return distanceInSeason;
     }
+
+    public string ScoreAsString()
+    {
+        return yearComponent + commaComponent + monthComponent;
+    }
 }

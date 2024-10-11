@@ -10,21 +10,37 @@ public class DeathSequence : MonoBehaviour
     public static DeathSequence instance;
     public static bool controlLock;
 
+    [Header("Text Fade In Speed")]
+    public float fadeInSpeed;
+
+    [Header("Blackout")]
     public GameObject blackoutPanel;
-    public GameObject endScreen;
-    public float endScreenDelay;
+
+    [Header("Death Message")]
+    public TMP_Text deathMessageObject; // text object to display the death message
+    public string[] deathMessages; // possible death messages to choose from
     public float deathMessageDelay;
 
-    public TMP_Text messageObject; // gameobject to display the death message
-    public string[] deathMessages; // possible death messages to choose from
-    public TMP_Text[] buttons; // menu button text
+    [Header("Score")]
+    public TMP_Text scoreText; // score display
+    public float scoreDelay;
 
-    private float buttonAlpha;
-    private bool menuActive;
+    [Header("Buttons")]
+    public GameObject menuButtons;
+    public TMP_Text[] buttons; // menu button text
+    public float endScreenDelay;
+
+
     private float deathMessageAlpha;
     private bool deathMessageActive;
 
-    public float fadeInSpeed;
+    private bool menuActive;
+    private float buttonAlpha;
+
+    private float scoreTextAlpha;
+    private bool scoreTextActive;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -46,8 +62,14 @@ public class DeathSequence : MonoBehaviour
 
         if (deathMessageActive && deathMessageAlpha < 1)
         {
-            messageObject.color = new Color(1, 0, 0, deathMessageAlpha);
+            deathMessageObject.color = new Color(1, 0, 0, deathMessageAlpha);
             deathMessageAlpha += fadeInSpeed;
+        }
+
+        if (scoreTextActive && scoreTextAlpha < 1)
+        {
+            scoreText.color = new Color(1, 0, 0, scoreTextAlpha);
+            scoreTextAlpha += fadeInSpeed;
         }
     }
 
@@ -64,12 +86,18 @@ public class DeathSequence : MonoBehaviour
         {
             button.color = Color.black;
         }
-        messageObject.color = Color.black;
+        deathMessageObject.color = Color.black;
+        scoreText.color = Color.black;
+
         yield return new WaitForSeconds(deathMessageDelay);
         deathMessageActive = true;
-        messageObject.text = deathMessages[Random.Range(0, deathMessages.Length)];
+        deathMessageObject.text = deathMessages[Random.Range(0, deathMessages.Length)];
+
+        yield return new WaitForSeconds(scoreDelay);
+        scoreTextActive = true;
+        scoreText.text = "You survived " + Score.instance.ScoreAsString();
         yield return new WaitForSeconds(endScreenDelay);
-        UIStack.Push(endScreen);
+        UIStack.Push(menuButtons);
         menuActive = true;
         
     }
@@ -81,7 +109,6 @@ public class DeathSequence : MonoBehaviour
 
     public void Menu()
     {
-        throw new System.NotImplementedException();
         SceneManager.LoadScene(0);
     }
 
