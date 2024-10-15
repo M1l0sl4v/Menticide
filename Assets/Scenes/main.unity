@@ -3867,7 +3867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad0511ca5b4fae4480cad41c9f781b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayDebugInfo: 1
+  displayDebugInfo: 0
   scoreText: {fileID: 1587748122}
   debugInfo: {fileID: 705224756}
 --- !u!1001 &212487624

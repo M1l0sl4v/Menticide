@@ -159,8 +159,6 @@ public class DeathSequence : MonoBehaviour
 
     public void PopulateLeaderboard()
     {
-        LogCollection<string>(Score.topNames);
-        LogCollection<int>(Score.topScores);
         int curPos = 0;
         foreach (Transform t in leaderboard.transform)
         {
@@ -171,7 +169,8 @@ public class DeathSequence : MonoBehaviour
         }
     }
 
-    private void LogCollection<T>(List<T> list)
+    // Used for debugging, made static in case anyone else would find it helpful for debugging
+    public static void LogCollection<T>(List<T> list)
     {
         string output = "";
         foreach (T t in list) { output += t.ToString() + " "; }

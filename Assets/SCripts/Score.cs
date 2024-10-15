@@ -173,25 +173,33 @@ public class Score : MonoBehaviour
 
     public static void AddScore(string name, int score)
     {
+        // Check for empty list
         if (topScores.Count == 0)
         {
             topScores.Add(score);
             topNames.Add(name);
         }
+        // Check for high score
+        else if (score > highScore)
+        {
+            topScores.Insert(0, score);
+            topNames.Insert(0, name);
+        }
+        // Add score in middle
         else
         {
             for (int i = topScores.Count - 1; i >= 0; i--)
             {
-                if (score >= topScores[i])
+                // if score to be added is less than the score to the left, add it to the right
+                if (score <= topScores[i])
                 {
-                    topScores.Insert(i, score);
-                    topNames.Insert(i, name);
+                    topScores.Insert(i+1, score);
+                    topNames.Insert(i+1, name);
                     break;
                 }
-                topScores.Add(score);
-                topNames.Add(name);
             }
         }
+        // Update new high score
         highScore = topScores[0];
     }
 
