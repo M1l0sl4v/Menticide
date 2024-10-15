@@ -2,24 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using static TileManagerFSM;
 
 public class Score : MonoBehaviour
 {
     // High score
-    public static int highScore;
+    public static int highScore = 0;
 
+    public static List<int> topScores = new List<int>();
+    public static List<string> topNames = new List<string>();
 
+    
     // Toggle debug info
     public bool displayDebugInfo;
 
     private int score;
     private int month;
     private int year;
-
-    private string monthComponent;
-    private string commaComponent;
-    private string yearComponent;
 
     private int distanceInMonth;
     private int distanceInSeason;
@@ -94,13 +92,17 @@ public class Score : MonoBehaviour
         distanceInSeason += amount;
         distanceInYear += amount;
 
-        UpdateScore();
+        scoreText.text = UpdateScore(year, month);
         UpdateDebug();
     }
 
 
-    private void UpdateScore()
+    private static string UpdateScore(int year, int month)
     {
+        string yearComponent;
+        string monthComponent;
+        string commaComponent;
+
         // Determine year component
         if (year == 0) yearComponent = "";
         else if (year == 1) yearComponent = "1 Year";
@@ -117,7 +119,7 @@ public class Score : MonoBehaviour
         else monthComponent = month + " Months";
 
         // Combine all componenets
-        scoreText.text = yearComponent + commaComponent + monthComponent;
+        return yearComponent + commaComponent + monthComponent;
     }
 
     private void UpdateDebug()
@@ -151,7 +153,7 @@ public class Score : MonoBehaviour
 
     public string ScoreAsString()
     {
-        return yearComponent + commaComponent + monthComponent;
+        return ScoreToMessage(score);
     }
 
     public int ScoreAsInt()
@@ -159,10 +161,38 @@ public class Score : MonoBehaviour
         return score;
     }
 
-    public void CheckForHighScore()
+    public static string ScoreToMessage(int score)
     {
-        
+        int month = score / seasons.monthLength;
+        int year = month / (seasons.seasonLength * 4);
+        month = month % 12;
+
+        return UpdateScore(year, month);
     }
 
+
+    public static void AddScore(string name, int score)
+    {
+        if (topScores.Count == 0)
+        {
+            topScores.Add(score);
+            topNames.Add(name);
+        }
+        else
+        {
+            for (int i = topScores.Count - 1; i >= 0; i--)
+            {
+                if (score >= topScores[i])
+                {
+                    topScores.Insert(i, score);
+                    topNames.Insert(i, name);
+                    break;
+                }
+                topScores.Add(score);
+                topNames.Add(name);
+            }
+        }
+        highScore = topScores[0];
+    }
 
 }
