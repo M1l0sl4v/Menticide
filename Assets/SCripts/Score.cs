@@ -6,6 +6,9 @@ using static TileManagerFSM;
 
 public class Score : MonoBehaviour
 {
+    // High score
+    public static int highScore;
+
 
     // Toggle debug info
     public bool displayDebugInfo;
@@ -150,4 +153,16 @@ public class Score : MonoBehaviour
     {
         return yearComponent + commaComponent + monthComponent;
     }
+
+    public int ScoreAsInt()
+    {
+        return score;
+    }
+
+    public void CheckForHighScore()
+    {
+        
+    }
+
+
 }

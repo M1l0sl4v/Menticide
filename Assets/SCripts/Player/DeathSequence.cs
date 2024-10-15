@@ -23,6 +23,7 @@ public class DeathSequence : MonoBehaviour
 
     [Header("Score")]
     public TMP_Text scoreText; // score display
+    private string highScore;
     public float scoreDelay;
 
     [Header("Buttons")]
@@ -96,6 +97,13 @@ public class DeathSequence : MonoBehaviour
 
         yield return new WaitForSeconds(scoreDelay);
         scoreTextActive = true;
+
+        if (Score.instance.ScoreAsInt() > Score.highScore)
+        {
+            Score.highScore = Score.instance.ScoreAsInt();
+
+        }
+
         scoreText.text = "You survived " + Score.instance.ScoreAsString();
         yield return new WaitForSeconds(endScreenDelay);
         UIStack.Push(menuButtons);
