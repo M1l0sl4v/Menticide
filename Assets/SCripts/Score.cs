@@ -58,6 +58,12 @@ public class Score : MonoBehaviour
         {
             month++;
             distanceInMonth = 0;
+            if (month == 12)
+            {
+                year++;
+                distanceInYear = 0;
+                month = 0;
+            }
         }
 
         if (distanceInSeason >= seasons.seasonLength)
@@ -66,12 +72,6 @@ public class Score : MonoBehaviour
             distanceInSeason = 0;
         }
 
-        if (distanceInYear >= seasons.seasonLength * 4)
-        {
-            year++;
-            distanceInYear = 0;
-            month = 1;
-        }
 
         // Toggle debug info display
         debugInfo.gameObject.SetActive(displayDebugInfo);
@@ -164,8 +164,8 @@ public class Score : MonoBehaviour
     public static string ScoreToMessage(int score)
     {
         int month = score / seasons.monthLength;
-        int year = month / (seasons.seasonLength * 4);
-        month = month % 12;
+        int year = month / 12;
+        month %= 12;
 
         return UpdateScore(year, month);
     }
