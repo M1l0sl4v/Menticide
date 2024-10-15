@@ -57,28 +57,28 @@ public class seasons : MonoBehaviour
     public void summer()
     {
         colorTransition = new Color(14f / 255,48f / 255, 7f / 255, 1);//we devide by 255 to get the rgb value
-        TileManagerFSM.instance.seasonState = TileManagerFSM.SeasonState.Summer;
+        TileManagerFSM.instance.season = TileSprite.Season.Summer;
         currentSeason = 1;
         nextSeason = 2; //passes this to fall
     }
     public void fall()
     {
         colorTransition=new Color(48f / 255, 32f / 255, 7f / 255, 1);//we devide by 255 to get the rgb value
-        TileManagerFSM.instance.seasonState = TileManagerFSM.SeasonState.Fall;
+        TileManagerFSM.instance.season = TileSprite.Season.Fall;
         currentSeason = 2;
         nextSeason = 3;//passes this to winter
     }
     public void winter()
     {
         colorTransition=new Color(200f / 255, 194f / 255, 186f / 255, 1);//we devide by 255 to get the rgb value
-        TileManagerFSM.instance.seasonState = TileManagerFSM.SeasonState.Winter;
+        TileManagerFSM.instance.season = TileSprite.Season.Winter;
         currentSeason = 3;
         nextSeason = 4; //passes this to spring
     }
     public void spring()
     {
         colorTransition=new Color(118f / 255, 114f / 255, 24f / 255, 1);//we devide by 255 to get the rgb value
-        TileManagerFSM.instance.seasonState = TileManagerFSM.SeasonState.Spring;
+        TileManagerFSM.instance.season = TileSprite.Season.Spring;
         currentSeason = 4;
         nextSeason = 1;// loops back to summer
     }
