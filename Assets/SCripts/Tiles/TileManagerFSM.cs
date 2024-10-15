@@ -11,7 +11,7 @@ public class TileManagerFSM : MonoBehaviour
 
     // barely even a FSM at this point...
 
-    public enum SeasonState
+    private enum SeasonState
     {
         Summer,
         EarlyFall,
@@ -22,7 +22,9 @@ public class TileManagerFSM : MonoBehaviour
         Spring,
         EarlySummer
     }
-    public SeasonState seasonState;
+    private SeasonState seasonState;
+
+    public Season season;
 
     //public enum PathMaterial
     //{
@@ -31,7 +33,6 @@ public class TileManagerFSM : MonoBehaviour
     //    Cobble,
     //    Dirt
     //}
-    public Direction direction;
     public PathMaterial pathMaterial;
 
 
@@ -88,7 +89,7 @@ public class TileManagerFSM : MonoBehaviour
     private int nextSeasonChance;
     private float seasonChangeSpeed;
 
-    public TileSprite[] masterList;
+    private TileSprite[] masterList;
 
     public static TileManagerFSM instance;
 
@@ -158,7 +159,6 @@ public class TileManagerFSM : MonoBehaviour
 
     }
 
-    // EXPERIMENTAL
     private TileSprite[] AssignTags(Sprite[] sprites, Direction dir, Layer layer, Season season)
     {
         TileSprite[] output = new TileSprite[sprites.Length];
@@ -194,71 +194,6 @@ public class TileManagerFSM : MonoBehaviour
         }
         return outputArray;
     }
-    // END OF EXPERIMENTAL
-
-    private void UpdateSummer(TileObject tile)
-    {
-        switch (tile.direction)
-        {
-            case TileObject.Direction.Left:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = smrLSprites[UnityEngine.Random.Range(0, smrLSprites.Length)];
-                break;
-            case TileObject.Direction.Middle:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = smrMSprites[UnityEngine.Random.Range(0, smrMSprites.Length)];
-                break;
-            case TileObject.Direction.Right:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = smrRSprites[UnityEngine.Random.Range(0, smrRSprites.Length)];
-                break;
-        }
-    }
-
-    private void UpdateFall(TileObject tile)
-    {
-        switch (tile.direction)
-        {
-            case TileObject.Direction.Left:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = fallLSprites[UnityEngine.Random.Range(0, fallLSprites.Length)];
-                break;
-            case TileObject.Direction.Middle:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = fallMSprites[UnityEngine.Random.Range(0, fallMSprites.Length)];
-                break;
-            case TileObject.Direction.Right:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = fallRSprites[UnityEngine.Random.Range(0, fallRSprites.Length)];
-                break;
-        }
-    }
-
-    private void UpdateWinter(TileObject tile)
-    {
-        switch (tile.direction)
-        {
-            case TileObject.Direction.Left:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = winLSprites[UnityEngine.Random.Range(0, winLSprites.Length)];
-                break;
-            case TileObject.Direction.Middle:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = winMSprites[UnityEngine.Random.Range(0, winMSprites.Length)];
-                break;
-            case TileObject.Direction.Right:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = winRSprites[UnityEngine.Random.Range(0, winRSprites.Length)];
-                break;
-        }
-    }
-
-    private void UpdateSpring(TileObject tile)
-    {
-        switch (tile.direction)
-        {
-            case TileObject.Direction.Left:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = sprLSprites[UnityEngine.Random.Range(0, sprLSprites.Length)];
-                break;
-            case TileObject.Direction.Middle:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = sprMSprites[UnityEngine.Random.Range(0, sprMSprites.Length)];
-                break;
-            case TileObject.Direction.Right:
-                tile.gameObject.GetComponent<SpriteRenderer>().sprite = sprRSprites[UnityEngine.Random.Range(0, sprRSprites.Length)];
-                break;
-        }
-    }
 
 
 
@@ -269,95 +204,27 @@ public class TileManagerFSM : MonoBehaviour
         switch (layer)
         {
             case Layer.Overlay:
-                Season season = seasons.instance.currentSeason;
+                Season season = this.season;
+                break;
+            case Layer.Base:
+                PathMaterial pathMaterial = this.pathMaterial;
+                break;
         }
 
+        List<Sprite> spriteChoices = new List<Sprite>();
 
-        switch (tile.layer)
+        foreach (TileSprite sprite in masterList)
         {
-            case TileObject.Layer.Overlay:
-                switch (seasonState)
-                {
-                    case SeasonState.Summer:
-                        UpdateSummer(tile);
-                        break;
-                        
-                    case SeasonState.Fall:
-                        UpdateFall(tile);
-                        break;
-
-                    case SeasonState.Winter:
-                        UpdateWinter(tile);
-                        break;
-
-                    case SeasonState.Spring:
-                        UpdateSpring(tile);
-                        break;
-
-                }
-                break;
-            case TileObject.Layer.Base:
-                switch (pathMaterial)
-                {
-                    case PathMaterial.Brick:
-                        switch (tile.direction)
-                        {
-                            case TileObject.Direction.Left:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = brickLSprites[UnityEngine.Random.Range(0, brickLSprites.Length)];
-                                break;
-                            case TileObject.Direction.Middle:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = brickMSprites[UnityEngine.Random.Range(0, brickMSprites.Length)];
-                                break;
-                            case TileObject.Direction.Right:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = brickRSprites[UnityEngine.Random.Range(0, brickRSprites.Length)];
-                                break;
-                        }
-                        break;
-                    case PathMaterial.Paved:
-                        switch (tile.direction)
-                        {
-                            case TileObject.Direction.Left:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = pavedLSprites[UnityEngine.Random.Range(0, pavedLSprites.Length)];
-                                break;
-                            case TileObject.Direction.Middle:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = pavedMSprites[UnityEngine.Random.Range(0, pavedMSprites.Length)];
-                                break;
-                            case TileObject.Direction.Right:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = pavedRSprites[UnityEngine.Random.Range(0, pavedRSprites.Length)];
-                                break;
-                        }
-                        break;
-                    case PathMaterial.Cobble:
-                        switch (tile.direction)
-                        {
-                            case TileObject.Direction.Left:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = cobbleLSprites[UnityEngine.Random.Range(0, cobbleLSprites.Length)];
-                                break;
-                            case TileObject.Direction.Middle:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = cobbleMSprites[UnityEngine.Random.Range(0, cobbleMSprites.Length)];
-                                break;
-                            case TileObject.Direction.Right:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = cobbleRSprites[UnityEngine.Random.Range(0, cobbleRSprites.Length)];
-                                break;
-                        }
-                        break;
-                    case PathMaterial.Dirt:
-                        switch (tile.direction)
-                        {
-                            case TileObject.Direction.Left:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = dirtLSprites[UnityEngine.Random.Range(0, dirtLSprites.Length)];
-                                break;
-                            case TileObject.Direction.Middle:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = dirtMSprites[UnityEngine.Random.Range(0, dirtMSprites.Length)];
-                                break;
-                            case TileObject.Direction.Right:
-                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = dirtRSprites[UnityEngine.Random.Range(0, dirtRSprites.Length)];
-                                break;
-                        }
-                        break;
-                }
-                break;
+            if (sprite.layer != layer) continue;
+            if (sprite.direction != direction) continue;
+            if (layer == Layer.Overlay && sprite.season != season) continue;
+            if (layer == Layer.Base && sprite.material != pathMaterial) continue;
+            spriteChoices.Add(sprite.sprite);
         }
+
+        tile.GetComponent<SpriteRenderer>().sprite = spriteChoices[UnityEngine.Random.Range(0, spriteChoices.Count)];
+
+
 
 
         // 5% chance to spawn rubble as well
