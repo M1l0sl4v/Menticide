@@ -2,21 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using static TileManagerFSM;
 
 public class Score : MonoBehaviour
 {
+    // High score
+    public static int highScore = 0;
 
+    public static List<int> topScores = new List<int>();
+    public static List<string> topNames = new List<string>();
+
+    
     // Toggle debug info
     public bool displayDebugInfo;
 
     private int score;
     private int month;
     private int year;
-
-    private string monthComponent;
-    private string commaComponent;
-    private string yearComponent;
 
     private int distanceInMonth;
     private int distanceInSeason;
@@ -57,6 +58,12 @@ public class Score : MonoBehaviour
         {
             month++;
             distanceInMonth = 0;
+            if (month == 12)
+            {
+                year++;
+                distanceInYear = 0;
+                month = 0;
+            }
         }
 
         if (distanceInSeason >= seasons.seasonLength)
@@ -65,12 +72,6 @@ public class Score : MonoBehaviour
             distanceInSeason = 0;
         }
 
-        if (distanceInYear >= seasons.seasonLength * 4)
-        {
-            year++;
-            distanceInYear = 0;
-            month = 1;
-        }
 
         // Toggle debug info display
         debugInfo.gameObject.SetActive(displayDebugInfo);
@@ -91,13 +92,17 @@ public class Score : MonoBehaviour
         distanceInSeason += amount;
         distanceInYear += amount;
 
-        UpdateScore();
+        scoreText.text = UpdateScore(year, month);
         UpdateDebug();
     }
 
 
-    private void UpdateScore()
+    private static string UpdateScore(int year, int month)
     {
+        string yearComponent;
+        string monthComponent;
+        string commaComponent;
+
         // Determine year component
         if (year == 0) yearComponent = "";
         else if (year == 1) yearComponent = "1 Year";
@@ -114,7 +119,7 @@ public class Score : MonoBehaviour
         else monthComponent = month + " Months";
 
         // Combine all componenets
-        scoreText.text = yearComponent + commaComponent + monthComponent;
+        return yearComponent + commaComponent + monthComponent;
     }
 
     private void UpdateDebug()
@@ -148,6 +153,54 @@ public class Score : MonoBehaviour
 
     public string ScoreAsString()
     {
-        return yearComponent + commaComponent + monthComponent;
+        return ScoreToMessage(score);
     }
+
+    public int ScoreAsInt()
+    {
+        return score;
+    }
+
+    public static string ScoreToMessage(int score)
+    {
+        int month = score / seasons.monthLength;
+        int year = month / 12;
+        month %= 12;
+
+        return UpdateScore(year, month);
+    }
+
+
+    public static void AddScore(string name, int score)
+    {
+        // Check for empty list
+        if (topScores.Count == 0)
+        {
+            topScores.Add(score);
+            topNames.Add(name);
+        }
+        // Check for high score
+        else if (score > highScore)
+        {
+            topScores.Insert(0, score);
+            topNames.Insert(0, name);
+        }
+        // Add score in middle
+        else
+        {
+            for (int i = topScores.Count - 1; i >= 0; i--)
+            {
+                // if score to be added is less than the score to the left, add it to the right
+                if (score <= topScores[i])
+                {
+                    topScores.Insert(i+1, score);
+                    topNames.Insert(i+1, name);
+                    break;
+                }
+            }
+        }
+        // Update new high score
+        highScore = topScores[0];
+    }
+
 }

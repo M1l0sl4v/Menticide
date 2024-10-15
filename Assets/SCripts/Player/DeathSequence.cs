@@ -24,6 +24,15 @@ public class DeathSequence : MonoBehaviour
     [Header("Score")]
     public TMP_Text scoreText; // score display
     public float scoreDelay;
+    public TMP_Text highScoreText;
+    private bool isHighScore;
+    public float highScoreMinSize;
+    public float highScoreMaxSize;
+    public float highScorePulseSpeed;
+    private float highScoreCurSize;
+    private bool growing;
+    public TMP_InputField inputField;
+    public GameObject leaderboard;
 
     [Header("Buttons")]
     public GameObject menuButtons;
@@ -47,6 +56,7 @@ public class DeathSequence : MonoBehaviour
     {
         instance = this;
         controlLock = false;
+        highScoreCurSize = highScoreMinSize;
     }
 
     // Update is called once per frame
@@ -70,7 +80,24 @@ public class DeathSequence : MonoBehaviour
         if (scoreTextActive && scoreTextAlpha < 1)
         {
             scoreText.color = new Color(1, 0, 0, scoreTextAlpha);
+            if (isHighScore) highScoreText.color = new Color(1, 0, 0, scoreTextAlpha);
+
             scoreTextAlpha += fadeInSpeed;
+        }
+
+        if (isHighScore)
+        {
+            if (growing)
+            {
+                highScoreCurSize += highScorePulseSpeed;
+                if (highScoreCurSize >= highScoreMaxSize) growing = false;
+            }
+            else
+            {
+                highScoreCurSize -= highScorePulseSpeed;
+                if (highScoreCurSize <= highScoreMinSize) growing = true;
+            }
+            highScoreText.rectTransform.localScale = new Vector3(highScoreCurSize, highScoreCurSize, highScoreCurSize);
         }
     }
 
@@ -81,6 +108,7 @@ public class DeathSequence : MonoBehaviour
 
     private IEnumerator _StartDeathSequence()
     {
+        // Ready elements for fade-in
         controlLock = true;
         UIStack.Push(blackoutPanel);
         foreach (TMP_Text button in buttons)
@@ -89,17 +117,26 @@ public class DeathSequence : MonoBehaviour
         }
         deathMessageObject.color = Color.black;
         scoreText.color = Color.black;
+        highScoreText.color = Color.black;
 
+        // Show death message
         yield return new WaitForSeconds(deathMessageDelay);
         deathMessageActive = true;
         deathMessageObject.text = deathMessages[Random.Range(0, deathMessages.Length)];
 
+        // Show score
         yield return new WaitForSeconds(scoreDelay);
         scoreTextActive = true;
+        // Check for high score
+        if (Score.instance.ScoreAsInt() > Score.highScore) isHighScore = true;
         scoreText.text = "You survived " + Score.instance.ScoreAsString();
+
+        // Show menu buttons
         yield return new WaitForSeconds(endScreenDelay);
         UIStack.Push(menuButtons);
         menuActive = true;
+
+
         yield return null;
     }
 
@@ -115,5 +152,29 @@ public class DeathSequence : MonoBehaviour
         controlLock = false;
     }
 
+    public void SaveScore()
+    {
+        Score.AddScore(inputField.text, Score.instance.ScoreAsInt());
+    }
+
+    public void PopulateLeaderboard()
+    {
+        int curPos = 0;
+        foreach (Transform t in leaderboard.transform)
+        {
+            t.Find("Name").GetComponent<TMP_Text>().text = curPos < Score.topNames.Count ? Score.topNames[curPos] : "";
+            t.Find("Score").GetComponent<TMP_Text>().text = curPos < Score.topScores.Count ? Score.ScoreToMessage(Score.topScores[curPos]) : "";
+            
+            curPos++;
+        }
+    }
+
+    // Used for debugging, made static in case anyone else would find it helpful for debugging
+    public static void LogCollection<T>(List<T> list)
+    {
+        string output = "";
+        foreach (T t in list) { output += t.ToString() + " "; }
+        Debug.LogWarning(output);
+    }
 
 }
