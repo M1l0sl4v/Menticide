@@ -174,7 +174,14 @@ public class DeathSequence : MonoBehaviour
     {
         string output = "";
         foreach (T t in list) { output += t.ToString() + " "; }
-        Debug.LogWarning(output);
+        Debug.LogWarning(list.Count + " items: " + output);
+    }
+
+    public static void LogCollection<T>(T[] array)
+    {
+        string output = "";
+        foreach (T t in array) { output += t.ToString() + " "; }
+        Debug.LogWarning(array.Length + " items: " + output);
     }
 
 }

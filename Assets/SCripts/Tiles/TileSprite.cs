@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TileSprite : MonoBehaviour
+public class TileSprite
 {
 
     public Sprite sprite;
@@ -18,13 +18,13 @@ public class TileSprite : MonoBehaviour
     public enum Layer
     {
         Base,
-        Overylay
+        Overlay
     }
     public Layer layer;
 
     public enum Season
     {
-        None,
+        None = 0,
         Summer,
         Fall,
         Winter,
@@ -32,13 +32,15 @@ public class TileSprite : MonoBehaviour
     }
     public Season season;
 
-    public enum Material
+    public enum PathMaterial
     {
         None,
         Brick,
-        Paved
+        Paved,
+        Dirt,
+        Cobble
     }
-    public Material material;
+    public PathMaterial material;
 
     public TileSprite(Sprite sp, Direction d, Layer l, Season s)
     {
@@ -48,11 +50,18 @@ public class TileSprite : MonoBehaviour
         this.season = s;
     }
 
-    public TileSprite(Sprite sp, Direction d, Layer l, Material m)
+    public TileSprite(Sprite sp, Direction d, Layer l, PathMaterial m)
     {
         this.sprite = sp;
         this.direction = d;
         this.layer = l;
         this.material = m;
+    }
+
+    public override string ToString()
+    {
+        if (layer == Layer.Base) return direction.ToString() + layer.ToString() + material.ToString();
+        if (layer == Layer.Overlay) return direction.ToString() + layer.ToString() + season.ToString();
+        throw new System.Exception("Unset layer not allowed"); // this line should never be reached
     }
 }
