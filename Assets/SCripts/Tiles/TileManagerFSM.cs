@@ -5,6 +5,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 using static TileSprite;
+using UnityEngine.U2D;
 
 public class TileManagerFSM : MonoBehaviour
 {
@@ -100,9 +101,8 @@ public class TileManagerFSM : MonoBehaviour
     {
         instance = this;
 
-        IFuckedUpTheEnumsAgain();
+        SetEnums();
 
-        // EXPERIMENTAL
         // Compile big list
         masterList = ConcatArrays(
 
@@ -150,17 +150,57 @@ public class TileManagerFSM : MonoBehaviour
             AssignTags(cobbleLSprites, Direction.Left, Layer.Base, PathMaterial.Cobble),
             AssignTags(cobbleMSprites, Direction.Middle, Layer.Base, PathMaterial.Cobble),
             AssignTags(cobbleRSprites, Direction.Right, Layer.Base, PathMaterial.Cobble)
-            );
-
-        //DeathSequence.LogCollection<TileSprite>(masterList);
-
-            
+            );            
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+    public void ProcessTile(TileObject tile)
+    {
+        // Check for season transition
+        Season seasonToUse;
+        if (Score.instance.DistanceInSeason() >= seasons.transitionAfter && UnityEngine.Random.value < NextSeasonChance()) seasonToUse = PeekNextSeason();
+        else seasonToUse = season;
+
+        // List to contain options
+        List<Sprite> spriteChoices = new();
+
+        // Populate spriteChoices
+        foreach (TileSprite sprite in masterList)
+        {
+            if (sprite.layer != tile.layer) continue;
+            if (sprite.direction != tile.direction) continue;
+            if (tile.layer == Layer.Overlay && sprite.season != seasonToUse) continue;
+            if (tile.layer == Layer.Base && sprite.material != pathMaterial) continue;
+            spriteChoices.Add(sprite.sprite);
+            tileCache.Add(sprite);
+        }
+
+        // Check for empty list, else fetch random sprite from spriteChoices
+        if (spriteChoices.Count == 0) tile.SetSprite(null);
+        else tile.SetSprite(spriteChoices[UnityEngine.Random.Range(0, spriteChoices.Count)]);
+
+
+
+        // Pause for debugging purposes
+        if (pauseAfterEachTile) PauseMenu.instance.Pause();
+
+    }
+
+    private float NextSeasonChance()
+    {
+        float transitionDuration = seasons.seasonLength - seasons.transitionAfter;
+        int distanceInTransition = Score.instance.DistanceInSeason() - seasons.transitionAfter;
+        return Mathf.Clamp(distanceInTransition / transitionDuration, 0f, 1f);
+    }
+
+    private Season PeekNextSeason()
+    {
+        if (season == Season.Spring) return Season.Summer;
+        else return season + 1;
     }
 
     private TileSprite[] AssignTags(Sprite[] sprites, Direction dir, Layer layer, Season season)
@@ -201,32 +241,9 @@ public class TileManagerFSM : MonoBehaviour
 
 
 
-    public void ProcessTile(TileObject tile)
-    {
-        List<Sprite> spriteChoices = new();
-
-        foreach (TileSprite sprite in masterList)
-        {
-            if (sprite.layer != tile.layer) continue;
-            if (sprite.direction != tile.direction) continue;
-            if (tile.layer == Layer.Overlay && sprite.season != season) continue;
-            if (tile.layer == Layer.Base && sprite.material != pathMaterial) continue;
-            spriteChoices.Add(sprite.sprite);
-            tileCache.Add(sprite);
-        }
-        if (spriteChoices.Count == 0) tile.SetSprite(null);
-        else tile.SetSprite(spriteChoices[UnityEngine.Random.Range(0, spriteChoices.Count)]);
-        if (pauseAfterEachTile) PauseMenu.instance.Pause();
 
 
-
-        // 5% chance to spawn rubble as well
-
-    }
-
-    // Call this function when you reset all the enums to their base value like a bonehead
-    // After calling, copy the Tilemap gameobject from play mode and paste values in edit mode
-    public void IFuckedUpTheEnumsAgain()
+    public void SetEnums()
     {
         Transform tilemap = GameObject.Find("Tilemap").transform;
 
