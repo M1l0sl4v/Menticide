@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class FPS : MonoBehaviour
+public class FPSDisplay : MonoBehaviour
 {
     public TMP_Text display;
     [Tooltip("How often (in seconds) should fps be calculated")]

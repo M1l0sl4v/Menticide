@@ -155,7 +155,7 @@ public class TileManagerFSM : MonoBehaviour
         // List to contain options
         List<Sprite> spriteChoices = new();
 
-        if (DebugTools.instance.tileManagerAlgorithm == DebugTools.Algorithm.Cache)
+        if (StaticDebugTools.instance.tileManagerAlgorithm == StaticDebugTools.Algorithm.Cache)
         {
             if (tile.layer == Layer.Overlay) spriteChoices = tileCache[CacheKey(tile.direction, tile.layer, seasonToUse)];
             if (tile.layer == Layer.Base) spriteChoices = tileCache[CacheKey(tile.direction, tile.layer, materialToUse)];
@@ -163,7 +163,7 @@ public class TileManagerFSM : MonoBehaviour
         
 
 
-        if (DebugTools.instance.tileManagerAlgorithm == DebugTools.Algorithm.Picker)
+        if (StaticDebugTools.instance.tileManagerAlgorithm == StaticDebugTools.Algorithm.Picker)
         {
             // Check for no overlay in summer, else populate spriteChoices
             if (tile.layer == Layer.Overlay && season == Season.Summer)
