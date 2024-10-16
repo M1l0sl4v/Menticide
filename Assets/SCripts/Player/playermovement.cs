@@ -203,4 +203,6 @@ public class playermovement : MonoBehaviour
         _direction = Vector2.up;
         _isCollidingWithWall = false;
     }
+    
+    
 }
