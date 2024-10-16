@@ -59,8 +59,7 @@ public class DeathSequence : MonoBehaviour
         highScoreCurSize = highScoreMinSize;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (menuActive && buttonAlpha < 1)
         {

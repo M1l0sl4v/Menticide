@@ -39,4 +39,9 @@ public class DebugTools : MonoBehaviour
             damagePlayer = 0;
         }
     }
+
+    public void ChangeAlgorithm(int algorithm)
+    {
+        tileManagerAlgorithm = (Algorithm) algorithm;
+    }
 }
