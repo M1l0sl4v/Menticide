@@ -39,5 +39,10 @@ public class TileObject : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = sprite;
     }
 
-    
+    public override string ToString()
+    {
+        return direction.ToString() + layer.ToString();
+    }
+
+
 }

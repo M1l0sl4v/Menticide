@@ -15,7 +15,6 @@ public class TileManagerFSM : MonoBehaviour
 
     public Season season;
     public PathMaterial pathMaterial;
-    public bool pauseAfterEachTile;
 
 
 
@@ -66,7 +65,7 @@ public class TileManagerFSM : MonoBehaviour
     public Sprite[] cobbleRSprites;
 
     private TileSprite[] masterList;
-    private List<TileSprite> tileCache = new();
+    private Dictionary<string, List<Sprite>> tileCache = new();
 
 
     public static float tileResetDistance = 18;
@@ -126,7 +125,13 @@ public class TileManagerFSM : MonoBehaviour
             AssignTags(cobbleLSprites, Direction.Left, Layer.Base, PathMaterial.Cobble),
             AssignTags(cobbleMSprites, Direction.Middle, Layer.Base, PathMaterial.Cobble),
             AssignTags(cobbleRSprites, Direction.Right, Layer.Base, PathMaterial.Cobble)
-            );            
+            );
+
+        foreach (TileSprite sprite in masterList)
+        {
+            if (!tileCache.ContainsKey(sprite.ToString())) tileCache.Add(sprite.ToString(), new List<Sprite>());
+            tileCache[sprite.ToString()].Add(sprite.sprite);
+        }
     }
 
     void Update()
@@ -142,37 +147,46 @@ public class TileManagerFSM : MonoBehaviour
         if (Score.instance.DistanceInSeason() >= seasons.transitionAfter && UnityEngine.Random.value < NextSeasonChance()) seasonToUse = PeekNextSeason();
         else seasonToUse = season;
 
+        // Check for material to use
+        PathMaterial materialToUse;
+        materialToUse = pathMaterial;
+
+
         // List to contain options
         List<Sprite> spriteChoices = new();
 
-        // Check for no overlay in summer, else populate spriteChoices
-        if (tile.layer == Layer.Overlay && season == Season.Summer)
+        if (DebugTools.instance.tileManagerAlgorithm == DebugTools.Algorithm.Cache)
         {
-            tile.SetSprite(null);
-            if (pauseAfterEachTile) PauseMenu.instance.Pause();
-            return;
+            if (tile.layer == Layer.Overlay) spriteChoices = tileCache[CacheKey(tile.direction, tile.layer, seasonToUse)];
+            if (tile.layer == Layer.Base) spriteChoices = tileCache[CacheKey(tile.direction, tile.layer, materialToUse)];
         }
-        else
+        
+
+
+        if (DebugTools.instance.tileManagerAlgorithm == DebugTools.Algorithm.Picker)
         {
-            foreach (TileSprite sprite in masterList)
+            // Check for no overlay in summer, else populate spriteChoices
+            if (tile.layer == Layer.Overlay && season == Season.Summer)
             {
-                if (sprite.layer != tile.layer) continue;
-                if (sprite.direction != tile.direction) continue;
-                if (tile.layer == Layer.Overlay && sprite.season != seasonToUse) continue;
-                if (tile.layer == Layer.Base && sprite.material != pathMaterial) continue;
-                spriteChoices.Add(sprite.sprite);
-                tileCache.Add(sprite);
+                tile.SetSprite(null);
+                return;
+            }
+            else
+            {
+                foreach (TileSprite sprite in masterList)
+                {
+                    if (sprite.layer != tile.layer) continue;
+                    if (sprite.direction != tile.direction) continue;
+                    if (tile.layer == Layer.Overlay && sprite.season != seasonToUse) continue;
+                    if (tile.layer == Layer.Base && sprite.material != pathMaterial) continue;
+                    spriteChoices.Add(sprite.sprite);
+                }
             }
         }
 
         // Check for empty list, else fetch random sprite from spriteChoices
         if (spriteChoices.Count == 0) tile.SetSprite(null);
         else tile.SetSprite(spriteChoices[UnityEngine.Random.Range(0, spriteChoices.Count)]);
-
-
-
-        // Pause for debugging purposes
-        if (pauseAfterEachTile) PauseMenu.instance.Pause();
 
     }
 
@@ -189,6 +203,22 @@ public class TileManagerFSM : MonoBehaviour
     {
         if (season == Season.Spring) return Season.Summer;
         else return season + 1;
+    }
+
+    // Returns the string key associated with a specific combination of traits
+    private string CacheKey(Direction direction, Layer layer, Season season)
+    {
+        return "" + direction + layer + season;
+    }
+    private string CacheKey(Direction direction, Layer layer, PathMaterial material)
+    {
+        return "" + direction + layer + material;
+    }
+
+    // Clears the tile cache
+    public void ClearTileCache()
+    {
+        tileCache.Clear();
     }
 
     private TileSprite[] AssignTags(Sprite[] sprites, Direction dir, Layer layer, Season season)

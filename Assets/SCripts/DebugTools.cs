@@ -11,6 +11,16 @@ public class DebugTools : MonoBehaviour
     public bool playerMoveSpeedOverride;
     public float overrideValue;
     public int damagePlayer;
+
+    [Header("Game")]
+    public bool pauseAfterEveryRow;
+    public enum Algorithm
+    {
+        Cache,
+        Picker
+    }
+    public Algorithm tileManagerAlgorithm;
+
     // Start is called before the first frame update
     void Awake()
     {

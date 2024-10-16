@@ -1147,6 +1147,8 @@ MonoBehaviour:
   playerMoveSpeedOverride: 0
   overrideValue: 10
   damagePlayer: 0
+  pauseAfterEveryRow: 0
+  tileManagerAlgorithm: 0
 --- !u!114 &64684206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3051,10 +3053,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   season: 1
   pathMaterial: 1
-  pauseAfterEachTile: 0
-  smrLSprites: []
-  smrMSprites: []
-  smrRSprites: []
+  smrLSprites:
+  - {fileID: 21300000, guid: 6d34284a3ab88df4f8c53788ff8ae6b4, type: 3}
+  smrMSprites:
+  - {fileID: 21300000, guid: 6d34284a3ab88df4f8c53788ff8ae6b4, type: 3}
+  smrRSprites:
+  - {fileID: 21300000, guid: 6d34284a3ab88df4f8c53788ff8ae6b4, type: 3}
   fallLSprites:
   - {fileID: 764720465, guid: a0e43fd7a49b3df44bd765a4d7af229f, type: 3}
   - {fileID: -257445845, guid: a0e43fd7a49b3df44bd765a4d7af229f, type: 3}
