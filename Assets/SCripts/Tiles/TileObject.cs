@@ -33,4 +33,6 @@ public class TileObject : MonoBehaviour
             TileManagerFSM.instance.ProcessTile(this);
         }
     }
+
+    
 }

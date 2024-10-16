@@ -9,20 +9,20 @@ using static TileSprite;
 public class TileManagerFSM : MonoBehaviour
 {
 
-    // barely even a FSM at this point...
+    // not even a FSM at this point...
 
-    private enum SeasonState
-    {
-        Summer,
-        EarlyFall,
-        Fall,
-        EarlyWinter,
-        Winter,
-        EarlySpring,
-        Spring,
-        EarlySummer
-    }
-    private SeasonState seasonState;
+    //private enum SeasonState
+    //{
+    //    Summer,
+    //    EarlyFall,
+    //    Fall,
+    //    EarlyWinter,
+    //    Winter,
+    //    EarlySpring,
+    //    Spring,
+    //    EarlySummer
+    //}
+    //private SeasonState seasonState;
 
     public Season season;
 
@@ -199,29 +199,19 @@ public class TileManagerFSM : MonoBehaviour
 
     public void ProcessTile(TileObject tile)
     {
-        Direction direction = tile.direction;
-        Layer layer = tile.layer;
-        switch (layer)
-        {
-            case Layer.Overlay:
-                Season season = this.season;
-                break;
-            case Layer.Base:
-                PathMaterial pathMaterial = this.pathMaterial;
-                break;
-        }
 
-        List<Sprite> spriteChoices = new List<Sprite>();
+
+        List<Sprite> spriteChoices = new();
 
         foreach (TileSprite sprite in masterList)
         {
-            if (sprite.layer != layer) continue;
-            if (sprite.direction != direction) continue;
-            if (layer == Layer.Overlay && sprite.season != season) continue;
-            if (layer == Layer.Base && sprite.material != pathMaterial) continue;
+            if (sprite.layer != tile.layer) continue;
+            if (sprite.direction != tile.direction) continue;
+            if (tile.layer == Layer.Overlay && sprite.season != season) continue;
+            if (tile.layer == Layer.Base && sprite.material != pathMaterial) continue;
             spriteChoices.Add(sprite.sprite);
         }
-
+        Debug.LogWarning(spriteChoices.Count);
         tile.GetComponent<SpriteRenderer>().sprite = spriteChoices[UnityEngine.Random.Range(0, spriteChoices.Count)];
 
 
@@ -246,5 +236,34 @@ public class TileManagerFSM : MonoBehaviour
 
 
 
+    }
+
+    // Call this function when you reset all the enums to their base value like a bonehead
+    // After calling, copy the Tilemap gameobject from play mode and paste values in edit mode
+    public void IFuckedUpTheEnumsAgain()
+    {
+        Transform tilemap = GameObject.Find("Tilemap").transform;
+
+        foreach (Transform row in tilemap)
+        {
+            Transform baseTiles = row.Find("Base");
+            Transform overlayTiles = row.Find("Overlay");
+
+            foreach (TileObject tile in baseTiles.GetComponentsInChildren<TileObject>())
+            {
+                tile.layer = Layer.Base;
+                if (tile.name == "Base 1") tile.direction = Direction.Left;
+                else if (tile.name == "Base 2" || tile.name == "Base 3") tile.direction = Direction.Middle;
+                else if (tile.name == "Base 4") tile.direction = Direction.Right;
+            }
+
+            foreach (TileObject tile in overlayTiles.GetComponentsInChildren<TileObject>())
+            {
+                tile.layer = Layer.Overlay;
+                if (tile.name == "Overlay 1") tile.direction = Direction.Left;
+                else if (tile.name == "Overlay 2" || tile.name == "Overlay 3") tile.direction = Direction.Middle;
+                else if (tile.name == "Overlay 4") tile.direction = Direction.Right;
+            }
+        }
     }
 }
