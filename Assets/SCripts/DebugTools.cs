@@ -20,7 +20,6 @@ public class DebugTools : MonoBehaviour
         Picker
     }
     public Algorithm tileManagerAlgorithm;
-    print("test");
 
     // Start is called before the first frame update
     void Awake()
