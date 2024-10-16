@@ -98,6 +98,8 @@ public class TileManagerFSM : MonoBehaviour
     {
         instance = this;
 
+        IFuckedUpTheEnumsAgain();
+
         // EXPERIMENTAL
         // Compile big list
         masterList = ConcatArrays(
@@ -252,17 +254,17 @@ public class TileManagerFSM : MonoBehaviour
             foreach (TileObject tile in baseTiles.GetComponentsInChildren<TileObject>())
             {
                 tile.layer = Layer.Base;
-                if (tile.name == "Base 1") tile.direction = Direction.Left;
-                else if (tile.name == "Base 2" || tile.name == "Base 3") tile.direction = Direction.Middle;
-                else if (tile.name == "Base 4") tile.direction = Direction.Right;
+                if (tile.name == "Base 0") tile.direction = Direction.Left;
+                else if (tile.name == "Base 1" || tile.name == "Base 2") tile.direction = Direction.Middle;
+                else if (tile.name == "Base 3") tile.direction = Direction.Right;
             }
 
             foreach (TileObject tile in overlayTiles.GetComponentsInChildren<TileObject>())
             {
                 tile.layer = Layer.Overlay;
-                if (tile.name == "Overlay 1") tile.direction = Direction.Left;
-                else if (tile.name == "Overlay 2" || tile.name == "Overlay 3") tile.direction = Direction.Middle;
-                else if (tile.name == "Overlay 4") tile.direction = Direction.Right;
+                if (tile.name == "Overlay 0") tile.direction = Direction.Left;
+                else if (tile.name == "Overlay 1" || tile.name == "Overlay 2") tile.direction = Direction.Middle;
+                else if (tile.name == "Overlay 3") tile.direction = Direction.Right;
             }
         }
     }
