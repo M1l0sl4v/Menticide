@@ -39,7 +39,7 @@ public class Draw : MonoBehaviour
 
     void HandleInput()
     {
-        if (Input.GetMouseButtonDown(0) && !pauseMenu.paused)
+        if (Input.GetMouseButtonDown(0) && !pauseMenu.paused && !DeathSequence.controlLock)
         {
             StartDrawing();
         }
@@ -57,6 +57,7 @@ public class Draw : MonoBehaviour
     void StartDrawing()
     {
         GameObject lineObject = new GameObject("Line");
+        lineObject.layer = LayerMask.NameToLayer(wallTag);
         currentLine = lineObject.AddComponent<LineRenderer>();
         Debug.Log("Started Drawing");
 
@@ -101,12 +102,10 @@ public class Draw : MonoBehaviour
             // Add collider to drawn line
             EdgeCollider2D edgeCollider = currentLine.gameObject.AddComponent<EdgeCollider2D>();
             edgeCollider.points = new Vector2[] { (Vector2)initialPoint, (Vector2)finalPoint };
-
-            currentLine.gameObject.layer = LayerMask.NameToLayer("WallLayer");//when merge add this code 
+            currentLine.gameObject.layer = LayerMask.NameToLayer(wallTag);
 
             // Start the coroutine to destroy the line after a delay
             StartCoroutine(DestroyLineAfterDelay(currentLine.gameObject, lineLifetime));
-
 
             currentLine = null;
         }

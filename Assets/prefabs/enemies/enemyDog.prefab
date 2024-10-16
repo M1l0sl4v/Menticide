@@ -103,7 +103,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1088
   losDistance: 5
-  enemyspeedChase: 8
+  enemyspeedChase: 5
   enemyspeedNormal: 3
   despawnDistanceDog: 10
   snarl: {fileID: 8300000, guid: 42983210d31ca461a8a1c9c96e2dc8e1, type: 3}
@@ -125,7 +125,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

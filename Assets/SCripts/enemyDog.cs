@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -129,13 +128,13 @@ public class enemyDog : MonoBehaviour
             {
                 nextCell.x += 1;
                 sp.flipX = true;
-                //transform.rotation = Quaternion.Euler(0, 0, 0);
+                transform.rotation = Quaternion.Euler(0, 0, 0);
             }
             else if (playerCell.x < enemyCell.x)
             {
                 nextCell.x -= 1;
                 sp.flipX = false;
-                //transform.rotation = Quaternion.Euler(0, 0, 0);
+                transform.rotation = Quaternion.Euler(0, 0, 0);
             }
         }
         else
@@ -143,14 +142,14 @@ public class enemyDog : MonoBehaviour
             if (playerCell.y > enemyCell.y)
             {
                 nextCell.y += 1;
-                //transform.rotation = Quaternion.Euler(0, 0, 90);
-                //sp.flipX = true;
+                transform.rotation = Quaternion.Euler(0, 0, 90);
+                sp.flipX = true;
             }
             else if (playerCell.y < enemyCell.y)
             {
                 nextCell.y -= 1;
-                //transform.rotation = Quaternion.Euler(0, 0, -90);
-                //sp.flipX = true;
+                transform.rotation = Quaternion.Euler(0, 0, -90);
+                sp.flipX = true;
             }
         }
         targetCellWorldPos = tilemap.GetCellCenterWorld(nextCell);

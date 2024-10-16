@@ -18,22 +18,27 @@ public class AudioManager : MonoBehaviour
 
    public void environmentFX(AudioClip clip, Transform spawnPossition, float volume)
    {
-      AudioSource audioSource = Instantiate(envirofxObject, spawnPossition.transform.position, quaternion.identity); // spawns gameobject to play the sound
-      audioSource.clip = clip; //assigns the passed audioclip
-      audioSource.volume = volume;
-      audioSource.Play();
-      float cliplength = audioSource.clip.length;
-      Destroy(audioSource.gameObject, clip.length); 
+        if (!DeathSequence.controlLock)
+        {
+            AudioSource audioSource = Instantiate(envirofxObject, spawnPossition.transform.position, quaternion.identity); // spawns gameobject to play the sound
+            audioSource.clip = clip; //assigns the passed audioclip
+            audioSource.volume = volume;
+            audioSource.Play();
+            float cliplength = audioSource.clip.length;
+            Destroy(audioSource.gameObject, clip.length);
+        }
       
    }
    public void enemyFX(AudioClip clip, Transform spawnPossition, float volume)
    {
-      AudioSource audioSource = Instantiate(enemyfxObject, spawnPossition.transform.position, quaternion.identity); // spawns gameobject to play the sound
-      audioSource.clip = clip; //assigns the passed audioclip
-      audioSource.volume = volume;
-      audioSource.Play();
-      float cliplength = audioSource.clip.length;
-      Destroy(audioSource.gameObject, clip.length); 
-      
+        if (!DeathSequence.controlLock)
+        {
+            AudioSource audioSource = Instantiate(enemyfxObject, spawnPossition.transform.position, quaternion.identity); // spawns gameobject to play the sound
+            audioSource.clip = clip; //assigns the passed audioclip
+            audioSource.volume = volume;
+            audioSource.Play();
+            float cliplength = audioSource.clip.length;
+            Destroy(audioSource.gameObject, clip.length);
+        }
    }
 }

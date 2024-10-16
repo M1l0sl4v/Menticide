@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8016826754057315412}
   - component: {fileID: 3070282144984832910}
   - component: {fileID: 2250352687030996402}
-  - component: {fileID: 599695106354535731}
   m_Layer: 5
   m_Name: Ui hart
   m_TagString: Untagged
@@ -98,18 +97,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!111 &599695106354535731
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1615541235688368361}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: f3331d06006f04dc1b3a07450fb29dd6, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
