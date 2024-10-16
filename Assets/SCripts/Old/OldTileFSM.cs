@@ -225,69 +225,69 @@
 //                        break;
 
 //                    case SeasonState.EarlyFall:
-//                        //switch (tile.spriteType)
-//                        //{
-//                        //    //case TileObject.SpriteType.Left:
-//                        //    //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyFallLSprites[Random.Range(0, earlyFallLSprites.Length)];
-//                        //    //    break;
-//                        //    //case TileObject.SpriteType.Middle:
-//                        //    //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyFallMSprites[Random.Range(0, earlyFallMSprites.Length)];
-//                        //    //    break;
-//                        //    //case TileObject.SpriteType.Right:
-//                        //    //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyFallRSprites[Random.Range(0, earlyFallRSprites.Length)];
-//                        //    //    break;
-//                        //}
-//                        //break;
+//                        switch (tile.spriteType)
+//                        {
+//                            case TileObject.SpriteType.Left:
+//                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyFallLSprites[Random.Range(0, earlyFallLSprites.Length)];
+//                                break;
+//                            case TileObject.SpriteType.Middle:
+//                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyFallMSprites[Random.Range(0, earlyFallMSprites.Length)];
+//                                break;
+//                            case TileObject.SpriteType.Right:
+//                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyFallRSprites[Random.Range(0, earlyFallRSprites.Length)];
+//                                break;
+//                        }
+//                        break;
 //                    case SeasonState.Fall:
 //                        UpdateFall(tile);
 //                        break;
 //                    case SeasonState.EarlyWinter:
-//                        //switch (tile.spriteType)
-//                        //{
-//                        //    //case TileObject.SpriteType.Left:
-//                        //    //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyWinLSprites[Random.Range(0, earlyWinLSprites.Length)];
-//                        //    //    break;
-//                        //    //case TileObject.SpriteType.Middle:
-//                        //    //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyWinMSprites[Random.Range(0, earlyWinMSprites.Length)];
-//                        //    //    break;
-//                        //    //case TileObject.SpriteType.Right:
-//                        //    //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyWinRSprites[Random.Range(0, earlyWinRSprites.Length)];
-//                        //    //    break;
-//                        //}
-//                        //break;
+//                        switch (tile.spriteType)
+//                        {
+//                            case TileObject.SpriteType.Left:
+//                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyWinLSprites[Random.Range(0, earlyWinLSprites.Length)];
+//                                break;
+//                            case TileObject.SpriteType.Middle:
+//                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyWinMSprites[Random.Range(0, earlyWinMSprites.Length)];
+//                                break;
+//                            case TileObject.SpriteType.Right:
+//                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlyWinRSprites[Random.Range(0, earlyWinRSprites.Length)];
+//                                break;
+//                        }
+//                        break;
 //                    case SeasonState.Winter:
 //                        UpdateWinter(tile);
 //                        break;
 //                    case SeasonState.EarlySpring:
-//                        //switch (tile.spriteType)
-//                        //{
-//                        //    //case TileObject.SpriteType.Left:
-//                        //    //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySprLSprites[Random.Range(0, earlySprLSprites.Length)];
-//                        //    //    break;
-//                        //    //case TileObject.SpriteType.Middle:
-//                        //    //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySprMSprites[Random.Range(0, earlySprMSprites.Length)];
-//                        //    //    break;
-//                        //    //case TileObject.SpriteType.Right:
-//                        //    //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySprRSprites[Random.Range(0, earlySprRSprites.Length)];
-//                        //    //break;
-//                        //}
-//                        //break;
+//                        switch (tile.spriteType)
+//                        {
+//                            case TileObject.SpriteType.Left:
+//                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySprLSprites[Random.Range(0, earlySprLSprites.Length)];
+//                                break;
+//                            case TileObject.SpriteType.Middle:
+//                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySprMSprites[Random.Range(0, earlySprMSprites.Length)];
+//                                break;
+//                            case TileObject.SpriteType.Right:
+//                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySprRSprites[Random.Range(0, earlySprRSprites.Length)];
+//                            //break;
+//                        }
+//                        break;
 //                    case SeasonState.Spring:
 //                        UpdateSpring(tile);
 //                        break;
 //                    case SeasonState.EarlySummer:
-//                        //switch (tile.spriteType)
-//                        //{
-//                        //    //case TileObject.SpriteType.Left:
-//                        //    //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySmrLSprites[Random.Range(0, earlySmrLSprites.Length)];
-//                        //    //    break;
-//                        //    //case TileObject.SpriteType.Middle:
-//                        //    //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySmrMSprites[Random.Range(0, earlySmrMSprites.Length)];
-//                        //    //    break;
-//                        //    //case TileObject.SpriteType.Right:
-//                        //    //    tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySmrRSprites[Random.Range(0, earlySmrRSprites.Length)];
-//                        //    //break;
-//                        //}
+//                        switch (tile.spriteType)
+//                        {
+//                            case TileObject.SpriteType.Left:
+//                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySmrLSprites[Random.Range(0, earlySmrLSprites.Length)];
+//                                break;
+//                            case TileObject.SpriteType.Middle:
+//                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySmrMSprites[Random.Range(0, earlySmrMSprites.Length)];
+//                                break;
+//                            case TileObject.SpriteType.Right:
+//                                tile.gameObject.GetComponent<SpriteRenderer>().sprite = earlySmrRSprites[Random.Range(0, earlySmrRSprites.Length)];
+//                                break;
+//                        }
 //                        //break;
 //                        break;
 //                }

@@ -34,5 +34,10 @@ public class TileObject : MonoBehaviour
         }
     }
 
+    public void SetSprite(Sprite sprite)
+    {
+        GetComponent<SpriteRenderer>().sprite = sprite;
+    }
+
     
 }

@@ -201,8 +201,6 @@ public class TileManagerFSM : MonoBehaviour
 
     public void ProcessTile(TileObject tile)
     {
-
-
         List<Sprite> spriteChoices = new();
 
         foreach (TileSprite sprite in masterList)
@@ -213,8 +211,7 @@ public class TileManagerFSM : MonoBehaviour
             if (tile.layer == Layer.Base && sprite.material != pathMaterial) continue;
             spriteChoices.Add(sprite.sprite);
         }
-        Debug.LogWarning(spriteChoices.Count);
-        tile.GetComponent<SpriteRenderer>().sprite = spriteChoices[UnityEngine.Random.Range(0, spriteChoices.Count)];
+        tile.SetSprite(spriteChoices[UnityEngine.Random.Range(0, spriteChoices.Count)]);
 
 
 
