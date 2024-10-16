@@ -41,7 +41,7 @@ public class playermovement : MonoBehaviour
     
     public void TakeDamage(int amount)
     {
-        if (invincibilityLeft <= 0 && !DeathSequence.controlLock)
+        if (invincibilityLeft <= 0 && !DeathSequence.controlLock && !DebugTools.instance.playerInvincibility)
         {
             AudioManager.instance.environmentFX(takeDamageSound, transform, 1f);
 
@@ -84,6 +84,7 @@ public class playermovement : MonoBehaviour
 
         // Move the player in the current direction
         transform.Translate(_direction * speed * Time.deltaTime);
+        //GetComponent<Rigidbody2D>().MovePosition(new Vector2(transform.position.x, transform.position.y + (speed * 3.5f * Time.deltaTime)));
 
         //pointAmount.text = ((int)transform.position.y).ToString();
         //this checks at certain intervuls, this will be changed later depending on what we want.
@@ -93,7 +94,16 @@ public class playermovement : MonoBehaviour
         //}
 
         // DEBUG: Kill player
-        if (Input.GetKeyDown(KeyCode.BackQuote)) { TakeDamage(health); }
+        if (Input.GetKeyDown(KeyCode.BackQuote))
+        {
+            invincibilityLeft = 0;
+
+            // DebugTools invincibility workaround
+            bool before = DebugTools.instance.playerInvincibility;
+            DebugTools.instance.playerInvincibility = false;
+            TakeDamage(health);
+            DebugTools.instance.playerInvincibility = before;
+        }
 
         // i-frames
         if (invincibilityLeft > 0) invincibilityLeft -= Time.deltaTime;

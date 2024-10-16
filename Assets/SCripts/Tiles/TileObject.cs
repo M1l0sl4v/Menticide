@@ -1,23 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static TileSprite;
 
 public class TileObject : MonoBehaviour
 {
-    public enum SpriteType
-    {
-        Left,
-        Middle,
-        Right
-    }
-    public SpriteType spriteType;
+    //public enum Direction
+    //{
+    //    Left,
+    //    Middle,
+    //    Right
+    //}
+    public Direction direction;
 
-    public enum TileLayer
-    {
-        Base,
-        Overlay
-    }
-    public TileLayer tileLayer;
+    //public enum Layer
+    //{
+    //    Base,
+    //    Overlay
+    //}
+    public Layer layer;
 
 
     private void Start()
@@ -32,4 +33,16 @@ public class TileObject : MonoBehaviour
             TileManagerFSM.instance.ProcessTile(this);
         }
     }
+
+    public void SetSprite(Sprite sprite)
+    {
+        GetComponent<SpriteRenderer>().sprite = sprite;
+    }
+
+    public override string ToString()
+    {
+        return direction.ToString() + layer.ToString();
+    }
+
+
 }
