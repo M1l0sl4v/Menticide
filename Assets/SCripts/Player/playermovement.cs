@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Diagnostics.Contracts;
 using UnityEngine;
@@ -30,6 +31,11 @@ public class playermovement : MonoBehaviour
     
     [SerializeField] private AudioClip takeDamageSound;
 
+
+
+    private Vector3 _target;
+    public Camera Camera;
+
     private void Start()
     {
         // Initialize the original speed value
@@ -41,7 +47,7 @@ public class playermovement : MonoBehaviour
     
     public void TakeDamage(int amount)
     {
-        if (invincibilityLeft <= 0 && !DeathSequence.controlLock && !StaticDebugTools.instance.playerInvincibility)
+        if (invincibilityLeft <= 0 && !DeathSequence.controlLock)
         {
             AudioManager.instance.environmentFX(takeDamageSound, transform, 1f);
 
@@ -82,9 +88,9 @@ public class playermovement : MonoBehaviour
             }
         }
 
+        //movePointAndClick();
         // Move the player in the current direction
         transform.Translate(_direction * speed * Time.deltaTime);
-        //GetComponent<Rigidbody2D>().MovePosition(new Vector2(transform.position.x, transform.position.y + (speed * 3.5f * Time.deltaTime)));
 
         //pointAmount.text = ((int)transform.position.y).ToString();
         //this checks at certain intervuls, this will be changed later depending on what we want.
@@ -94,22 +100,15 @@ public class playermovement : MonoBehaviour
         //}
 
         // DEBUG: Kill player
-        if (Input.GetKeyDown(KeyCode.BackQuote))
-        {
-            invincibilityLeft = 0;
-
-            // DebugTools invincibility workaround
-            bool before = StaticDebugTools.instance.playerInvincibility;
-            StaticDebugTools.instance.playerInvincibility = false;
-            TakeDamage(health);
-            StaticDebugTools.instance.playerInvincibility = before;
-        }
+        if (Input.GetKeyDown(KeyCode.BackQuote)) { TakeDamage(health); }
 
         // i-frames
         if (invincibilityLeft > 0) invincibilityLeft -= Time.deltaTime;
         if (invincibilityLeft < 0) invincibilityLeft = 0;
         GetComponent<Animator>().SetFloat("I Frames", invincibilityLeft);
-       
+        moveWASD();
+
+
     }
 //this sets the player back to zero
 //i am using this method to move everything else back, but it is not working great
@@ -203,6 +202,20 @@ public class playermovement : MonoBehaviour
         _direction = Vector2.up;
         _isCollidingWithWall = false;
     }
-    
-    
+    void moveWASD()
+    {
+        Vector3 moveVec = new Vector3(Input.GetAxis("Horizontal"), 0,0);
+        transform.position += moveVec * speed * Time.deltaTime;
+    }
+    void movePointAndClick()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            _target = Camera.ScreenToWorldPoint(Input.mousePosition);
+            _target.z = 0;
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, _target, speed * Time.deltaTime);
+        transform.Translate(_direction * speed * Time.deltaTime);
+    }
 }
