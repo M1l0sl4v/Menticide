@@ -13,13 +13,6 @@ public class FPS : MonoBehaviour
     private float elapsedTime;
     private int frameCounter;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         elapsedTime += Time.deltaTime;

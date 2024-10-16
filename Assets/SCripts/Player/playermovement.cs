@@ -41,7 +41,7 @@ public class playermovement : MonoBehaviour
     
     public void TakeDamage(int amount)
     {
-        if (invincibilityLeft <= 0 && !DeathSequence.controlLock)
+        if (invincibilityLeft <= 0 && !DeathSequence.controlLock && !DebugTools.instance.playerInvincibility)
         {
             AudioManager.instance.environmentFX(takeDamageSound, transform, 1f);
 

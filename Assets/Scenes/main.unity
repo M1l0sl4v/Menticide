@@ -1113,6 +1113,70 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &64684204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 64684207}
+  - component: {fileID: 64684206}
+  - component: {fileID: 64684205}
+  m_Layer: 0
+  m_Name: Static Game Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &64684205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64684204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9979d2b87ff6b0742a82d249635ecc62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInvincibility: 0
+  playerMoveSpeedOverride: 0
+  overrideValue: 0
+  damagePlayer: 0
+--- !u!114 &64684206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64684204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbc69599259c2947af80c5f6868d6c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  display: {fileID: 1372379574}
+  calculationInterval: 0.25
+  framesPerSecond: 0
+--- !u!4 &64684207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64684204}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.22, y: 6.97, z: -0.046346355}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &68250370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3859,7 +3923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad0511ca5b4fae4480cad41c9f781b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayDebugInfo: 0
+  displayDebugInfo: 1
   scoreText: {fileID: 1587748122}
   debugInfo: {fileID: 705224756}
 --- !u!1001 &212487624
@@ -21399,7 +21463,6 @@ GameObject:
   - component: {fileID: 1332601556}
   - component: {fileID: 1332601557}
   - component: {fileID: 1332601558}
-  - component: {fileID: 1332601559}
   m_Layer: 0
   m_Name: game controller
   m_TagString: Untagged
@@ -21489,20 +21552,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWeather: 2
---- !u!114 &1332601559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332601551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bbc69599259c2947af80c5f6868d6c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  display: {fileID: 1372379574}
-  framesPerSecond: 0
 --- !u!1001 &1341835689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35013,6 +35062,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1332601553}
+  - {fileID: 64684207}
   - {fileID: 1435355290}
   - {fileID: 122295377}
   - {fileID: 1969046016}
