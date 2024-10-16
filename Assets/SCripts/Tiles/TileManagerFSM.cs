@@ -121,7 +121,7 @@ public class TileManagerFSM : MonoBehaviour
             // Spring
             AssignTags(winLSprites, Direction.Left, Layer.Overlay, Season.Winter),
             AssignTags(winMSprites, Direction.Middle, Layer.Overlay, Season.Winter),
-            AssignTags(winMSprites, Direction.Right, Layer.Overlay, Season.Winter),
+            AssignTags(winRSprites, Direction.Right, Layer.Overlay, Season.Winter),
 
             // Winter
             AssignTags(sprLSprites, Direction.Left, Layer.Overlay, Season.Spring),
