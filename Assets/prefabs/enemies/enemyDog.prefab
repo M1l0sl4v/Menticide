@@ -103,7 +103,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1088
   losDistance: 5
-  enemyspeedChase: 5
+  enemyspeedChase: 6
   enemyspeedNormal: 3
   despawnDistanceDog: 10
   snarl: {fileID: 8300000, guid: 42983210d31ca461a8a1c9c96e2dc8e1, type: 3}

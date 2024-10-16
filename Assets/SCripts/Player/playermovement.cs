@@ -87,7 +87,7 @@ public class playermovement : MonoBehaviour
             }
         }
 
-        movePointAndClick();
+        //movePointAndClick();
         // Move the player in the current direction
         transform.Translate(_direction * speed * Time.deltaTime);
 
@@ -105,7 +105,7 @@ public class playermovement : MonoBehaviour
         if (invincibilityLeft > 0) invincibilityLeft -= Time.deltaTime;
         if (invincibilityLeft < 0) invincibilityLeft = 0;
         GetComponent<Animator>().SetFloat("I Frames", invincibilityLeft);
-        //moveWASD();
+        moveWASD();
 
 
     }
