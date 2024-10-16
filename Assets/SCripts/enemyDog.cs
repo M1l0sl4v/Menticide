@@ -1,48 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
+
 public class enemyDog : MonoBehaviour
 {
     public LayerMask myLayerMask;
     public float losDistance;
     public float enemyspeedChase;
     public float enemyspeedNormal;
-    public float despawnDistance = 50;
-    public int enemyBehaviour;
-    private Vector3 currentPos;
-
-    [SerializeField] private AudioClip snarl;
-
     public float despawnDistanceDog = 10f;
 
+    [SerializeField] private AudioClip snarl;
+    [SerializeField] private GameObject exlimation;
+
     private Vector3 enemyStartPos;
-    private Vector2 _direction;
-    private int distance;
-
+    private Vector3 targetCellWorldPos;
     private bool lineOfSight = false;
-    public SpriteRenderer sp;
-    private GameObject player;
-    
-    public GameObject exlimation;
     private bool surprised = true;
+    private GameObject player;
     private GameObject e;
-    
+
+    public SpriteRenderer sp;
     public Animator animator;
+    private Tilemap tilemap;
 
-
-    void Update()
+    private void Start()
     {
+        tilemap = GameObject.FindGameObjectWithTag("enemyTilemap").GetComponent<Tilemap>();
+        enemyStartPos = transform.position;
+        player = GameObject.FindGameObjectWithTag("Player");
+        targetCellWorldPos = transform.position;
+    }
 
-        //this measures the distance to the player and returns the object to the pool when it gets too far away
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        Vector3 playerPos = player.transform.position;
-        Vector3 currentPos = transform.position;
-        float dist = Vector3.Distance(currentPos, playerPos);
+    private void Update()
+    {
+        // Measure the distance to the player and return to the object pool if too far away
+        float dist = Vector3.Distance(transform.position, player.transform.position);
         if (dist > despawnDistanceDog)
         {
             ObjectPoolManager.ReturnObjectToPool(gameObject);
+            return;
         }
+
         enemyAi();
+    }
+
+    private void FixedUpdate()
+    {
+        // Check for line of sight with the player
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, losDistance, myLayerMask);
+        if (ray.collider != null)
+        {
+            lineOfSight = ray.collider.CompareTag("Player");
+            Debug.DrawRay(transform.position, player.transform.position - transform.position, lineOfSight ? Color.green : Color.red);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -51,11 +63,12 @@ public class enemyDog : MonoBehaviour
         {
             ObjectPoolManager.ReturnObjectToPool(gameObject);
         }
-        if (other.gameObject.CompareTag("Player"))
+        else if (other.gameObject.CompareTag("Player"))
         {
             playermovement.instance.TakeDamage(1);
         }
     }
+
     private void enemyAi()
     {
         if (lineOfSight)
@@ -68,65 +81,77 @@ public class enemyDog : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        distance = Random.Range(5, 10);
-        enemyStartPos = transform.position;
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
-
-    void FixedUpdate()
-    {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, losDistance,myLayerMask);
-        if (ray.collider != null)
-        {
-            lineOfSight = ray.collider.CompareTag("Player");
-            if (lineOfSight)
-            {
-                Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
-            }
-            else
-            {
-                Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
-            }
-        }
-    }
     private void idle()
     {
-        surprised = true;
-
-        transform.Translate(_direction * Time.deltaTime);
-
-        if (Mathf.Abs(enemyStartPos.x - currentPos.x) <= distance)
-        {
-            _direction = new Vector2(enemyspeedNormal, 0);
-        }
-        else
-        {
-            enemyspeedNormal *= -1;
-            distance = Random.Range(5, 10);
-            enemyStartPos = transform.position;
-            sp.flipX = !sp.flipX;
-        }
+        surprised = true; // Reset surprise state when idle
+        // Here, we could implement some idle movement logic if needed
     }
+
     private void chase()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemyspeedChase * Time.deltaTime);
+        // Move towards the target cell center position
+        transform.position = Vector2.MoveTowards(transform.position, targetCellWorldPos, enemyspeedChase * Time.deltaTime);
+
+        // If the enemy reaches the center of the target cell, recalculate path
+        if (Vector3.Distance(transform.position, targetCellWorldPos) < 0.001f)
+        {
+            calculatePathToPlayer();
+        }
     }
+
     private void stuned()
     {
         if (surprised)
         {
-            AudioManager.instance.enemyFX(snarl, transform,1f);
-            e = Instantiate(exlimation, transform);
+            AudioManager.instance.enemyFX(snarl, transform, 1f);
+            e = Instantiate(exlimation, transform); // Show exclamation mark
             e.transform.parent = transform;
-            surprised = false;
+            surprised = false; // Avoid re-triggering
             animator.SetTrigger("stun");
         }
+
         if (e == null)
         {
+            calculatePathToPlayer();
             chase();
         }
-        
+    }
+
+    private void calculatePathToPlayer()
+    {
+        Vector3Int enemyCell = tilemap.WorldToCell(transform.position);
+        Vector3Int playerCell = tilemap.WorldToCell(player.transform.position);
+        Vector3Int nextCell = enemyCell;
+        if (Mathf.Abs(playerCell.x - enemyCell.x) >= Mathf.Abs(playerCell.y - enemyCell.y))
+        {
+            if (playerCell.x > enemyCell.x)//i removed up thing cus it looked bad
+            {
+                nextCell.x += 1;
+                sp.flipX = true;
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            else if (playerCell.x < enemyCell.x)
+            {
+                nextCell.x -= 1;
+                sp.flipX = false;
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+        }
+        else
+        {
+            if (playerCell.y > enemyCell.y)
+            {
+                nextCell.y += 1;
+                transform.rotation = Quaternion.Euler(0, 0, 90);
+                sp.flipX = true;
+            }
+            else if (playerCell.y < enemyCell.y)
+            {
+                nextCell.y -= 1;
+                transform.rotation = Quaternion.Euler(0, 0, -90);
+                sp.flipX = true;
+            }
+        }
+        targetCellWorldPos = tilemap.GetCellCenterWorld(nextCell);
     }
 }

@@ -101,16 +101,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myLayerMask:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 1088
   losDistance: 5
-  enemyspeedChase: 5
+  enemyspeedChase: 6
   enemyspeedNormal: 3
-  despawnDistance: 50
-  enemyBehaviour: 0
-  snarl: {fileID: 8300000, guid: 42983210d31ca461a8a1c9c96e2dc8e1, type: 3}
   despawnDistanceDog: 10
-  sp: {fileID: 1700632340610863045}
+  snarl: {fileID: 8300000, guid: 42983210d31ca461a8a1c9c96e2dc8e1, type: 3}
   exlimation: {fileID: 1348696221685265807, guid: 195e0f6155c4c434d8f48f48aef3a53a, type: 3}
+  sp: {fileID: 1700632340610863045}
   animator: {fileID: -3079357004096876155}
 --- !u!61 &1546645933743141903
 BoxCollider2D:
@@ -127,7 +125,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
