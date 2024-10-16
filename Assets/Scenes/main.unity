@@ -1145,7 +1145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInvincibility: 0
   playerMoveSpeedOverride: 0
-  overrideValue: 0
+  overrideValue: 10
   damagePlayer: 0
 --- !u!114 &64684206
 MonoBehaviour:
@@ -3049,23 +3049,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ec3e89b7fbc694aa867d019920641f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  season: 2
+  season: 1
   pathMaterial: 1
   pauseAfterEachTile: 0
   smrLSprites: []
   smrMSprites: []
   smrRSprites: []
   fallLSprites:
-  - {fileID: -1133430926, guid: e3ae4bee4e3916f4fb302fef25511171, type: 3}
-  - {fileID: 435423815, guid: e3ae4bee4e3916f4fb302fef25511171, type: 3}
+  - {fileID: 764720465, guid: a0e43fd7a49b3df44bd765a4d7af229f, type: 3}
+  - {fileID: -257445845, guid: a0e43fd7a49b3df44bd765a4d7af229f, type: 3}
   fallMSprites:
-  - {fileID: -1837798816, guid: e3ae4bee4e3916f4fb302fef25511171, type: 3}
-  - {fileID: 1730024878, guid: e3ae4bee4e3916f4fb302fef25511171, type: 3}
-  - {fileID: -465582530, guid: e3ae4bee4e3916f4fb302fef25511171, type: 3}
-  - {fileID: 69841908, guid: e3ae4bee4e3916f4fb302fef25511171, type: 3}
+  - {fileID: 1750311888, guid: a0e43fd7a49b3df44bd765a4d7af229f, type: 3}
+  - {fileID: -1885160774, guid: a0e43fd7a49b3df44bd765a4d7af229f, type: 3}
+  - {fileID: -1825700586, guid: a0e43fd7a49b3df44bd765a4d7af229f, type: 3}
+  - {fileID: 1199492274, guid: a0e43fd7a49b3df44bd765a4d7af229f, type: 3}
   fallRSprites:
-  - {fileID: 797393261, guid: e3ae4bee4e3916f4fb302fef25511171, type: 3}
-  - {fileID: -1747039805, guid: e3ae4bee4e3916f4fb302fef25511171, type: 3}
+  - {fileID: -489186571, guid: a0e43fd7a49b3df44bd765a4d7af229f, type: 3}
+  - {fileID: 645339162, guid: a0e43fd7a49b3df44bd765a4d7af229f, type: 3}
   winLSprites:
   - {fileID: 895662467, guid: be123c72c7507e54a9c0190fa81b8943, type: 3}
   - {fileID: 1409312696, guid: be123c72c7507e54a9c0190fa81b8943, type: 3}
