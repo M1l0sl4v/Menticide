@@ -168,7 +168,7 @@ public class TileRow : MonoBehaviour
             Vector3 newPosition = transform.position;
             newPosition.y += TileManagerFSM.tileResetDistance;
             transform.position = newPosition;
-            if (DebugTools.instance.pauseAfterEveryRow) PauseMenu.instance.Pause();
+            if (StaticDebugTools.instance.pauseAfterEveryRow) PauseMenu.instance.Pause();
         }
     }
 

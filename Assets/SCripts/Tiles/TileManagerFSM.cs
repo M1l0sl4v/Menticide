@@ -75,9 +75,9 @@ public class TileManagerFSM : MonoBehaviour
     void Start()
     {
         instance = this;
-        
-        ApplyEnums();
-        
+
+        SetEnums();
+
         // Compile big list
         masterList = ConcatArrays(
 
@@ -155,7 +155,7 @@ public class TileManagerFSM : MonoBehaviour
         // List to contain options
         List<Sprite> spriteChoices = new();
 
-        if (DebugTools.instance.tileManagerAlgorithm == DebugTools.Algorithm.Cache)
+        if (StaticDebugTools.instance.tileManagerAlgorithm == StaticDebugTools.Algorithm.Cache)
         {
             if (tile.layer == Layer.Overlay) spriteChoices = tileCache[CacheKey(tile.direction, tile.layer, seasonToUse)];
             if (tile.layer == Layer.Base) spriteChoices = tileCache[CacheKey(tile.direction, tile.layer, materialToUse)];
@@ -163,7 +163,7 @@ public class TileManagerFSM : MonoBehaviour
         
 
 
-        if (DebugTools.instance.tileManagerAlgorithm == DebugTools.Algorithm.Picker)
+        if (StaticDebugTools.instance.tileManagerAlgorithm == StaticDebugTools.Algorithm.Picker)
         {
             // Check for no overlay in summer, else populate spriteChoices
             if (tile.layer == Layer.Overlay && season == Season.Summer)
@@ -280,33 +280,6 @@ public class TileManagerFSM : MonoBehaviour
                 if (tile.name == "Overlay 0") tile.direction = Direction.Left;
                 else if (tile.name == "Overlay 1" || tile.name == "Overlay 2") tile.direction = Direction.Middle;
                 else if (tile.name == "Overlay 3") tile.direction = Direction.Right;
-            }
-        }
-    }
-    // This function shouldn't have to exist, but Unity saves enums in a weird way so this should be called once every time the scene is loaded
-    public void ApplyEnums()
-    {
-        Transform tilemap = GameObject.Find("Tilemap").transform;
-
-        foreach (Transform row in tilemap)
-        {
-            Transform baseTiles = row.Find("Base");
-            Transform overlayTiles = row.Find("Overlay");
-
-            foreach (TileObject tile in baseTiles.GetComponentsInChildren<TileObject>())
-            {
-                tile.tileLayer = TileObject.TileLayer.Base;
-                if (tile.name == "Base 0") tile.spriteType = TileObject.SpriteType.Left;
-                else if (tile.name == "Base 1" || tile.name == "Base 2") tile.spriteType = TileObject.SpriteType.Middle;
-                else if (tile.name == "Base 3") tile.spriteType = TileObject.SpriteType.Right;
-            }
-
-            foreach (TileObject tile in overlayTiles.GetComponentsInChildren<TileObject>())
-            {
-                tile.tileLayer = TileObject.TileLayer.Overlay;
-                if (tile.name == "Overlay 0") tile.spriteType = TileObject.SpriteType.Left;
-                else if (tile.name == "Overlay 1" || tile.name == "Overlay 2") tile.spriteType = TileObject.SpriteType.Middle;
-                else if (tile.name == "Overlay 3") tile.spriteType = TileObject.SpriteType.Right;
             }
         }
     }

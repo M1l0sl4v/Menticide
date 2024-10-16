@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DebugTools : MonoBehaviour
+public class StaticDebugTools : MonoBehaviour
 {
-    public static DebugTools instance;
+    public static StaticDebugTools instance;
 
     [Header("Player")]
     public bool playerInvincibility;

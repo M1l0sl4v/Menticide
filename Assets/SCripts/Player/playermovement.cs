@@ -41,7 +41,7 @@ public class playermovement : MonoBehaviour
     
     public void TakeDamage(int amount)
     {
-        if (invincibilityLeft <= 0 && !DeathSequence.controlLock && !DebugTools.instance.playerInvincibility)
+        if (invincibilityLeft <= 0 && !DeathSequence.controlLock && !StaticDebugTools.instance.playerInvincibility)
         {
             AudioManager.instance.environmentFX(takeDamageSound, transform, 1f);
 
@@ -99,10 +99,10 @@ public class playermovement : MonoBehaviour
             invincibilityLeft = 0;
 
             // DebugTools invincibility workaround
-            bool before = DebugTools.instance.playerInvincibility;
-            DebugTools.instance.playerInvincibility = false;
+            bool before = StaticDebugTools.instance.playerInvincibility;
+            StaticDebugTools.instance.playerInvincibility = false;
             TakeDamage(health);
-            DebugTools.instance.playerInvincibility = before;
+            StaticDebugTools.instance.playerInvincibility = before;
         }
 
         // i-frames
