@@ -35,7 +35,9 @@ public class TileManagerFSM : MonoBehaviour
     //}
     public PathMaterial pathMaterial;
 
+    public List<TileSprite> tileCache = new();
 
+    public bool pauseAfterEachTile;
 
     public static float tileResetDistance = 18;
 
@@ -210,30 +212,15 @@ public class TileManagerFSM : MonoBehaviour
             if (tile.layer == Layer.Overlay && sprite.season != season) continue;
             if (tile.layer == Layer.Base && sprite.material != pathMaterial) continue;
             spriteChoices.Add(sprite.sprite);
+            tileCache.Add(sprite);
         }
-        tile.SetSprite(spriteChoices[UnityEngine.Random.Range(0, spriteChoices.Count)]);
-
+        if (spriteChoices.Count == 0) tile.SetSprite(null);
+        else tile.SetSprite(spriteChoices[UnityEngine.Random.Range(0, spriteChoices.Count)]);
+        if (pauseAfterEachTile) PauseMenu.instance.Pause();
 
 
 
         // 5% chance to spawn rubble as well
-
-
-
-
-
-
-        // set tile sprite to random one from [x] deck
-
-        //foreach (TileSprite sprite in )
-
-
-        // start with mega-deck of all possible sprites
-        //    - sprites have "tags" or some way of indentifying
-        // 
-
-
-
 
     }
 
