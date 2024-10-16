@@ -93,7 +93,6 @@ GameObject:
   - component: {fileID: 2795931588961209405}
   - component: {fileID: 6199895543653792037}
   - component: {fileID: -3639145682088035711}
-  - component: {fileID: -8662939690627285519}
   - component: {fileID: 294393993112735516}
   m_Layer: 0
   m_Name: pixil-frame-0 (56)
@@ -183,21 +182,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 1
---- !u!111 &-8662939690627285519
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348696221685265807}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: d443990ccc17d404f89b78e684205243, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!95 &294393993112735516
 Animator:
   serializedVersion: 5

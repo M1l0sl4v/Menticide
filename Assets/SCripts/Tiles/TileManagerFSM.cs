@@ -178,7 +178,7 @@ public class TileManagerFSM : MonoBehaviour
                     if (sprite.layer != tile.layer) continue;
                     if (sprite.direction != tile.direction) continue;
                     if (tile.layer == Layer.Overlay && sprite.season != seasonToUse) continue;
-                    if (tile.layer == Layer.Base && sprite.material != pathMaterial) continue;
+                    if (tile.layer == Layer.Base && sprite.material != materialToUse) continue;
                     spriteChoices.Add(sprite.sprite);
                 }
             }
