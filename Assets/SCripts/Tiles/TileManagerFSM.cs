@@ -12,35 +12,13 @@ public class TileManagerFSM : MonoBehaviour
 
     // not even a FSM at this point...
 
-    //private enum SeasonState
-    //{
-    //    Summer,
-    //    EarlyFall,
-    //    Fall,
-    //    EarlyWinter,
-    //    Winter,
-    //    EarlySpring,
-    //    Spring,
-    //    EarlySummer
-    //}
-    //private SeasonState seasonState;
 
     public Season season;
-
-    //public enum PathMaterial
-    //{
-    //    Brick,
-    //    Paved,
-    //    Cobble,
-    //    Dirt
-    //}
     public PathMaterial pathMaterial;
-
-    public List<TileSprite> tileCache = new();
-
     public bool pauseAfterEachTile;
 
-    public static float tileResetDistance = 18;
+
+
 
     // Overlay
     [Header("Summer Sprites")]
@@ -87,13 +65,11 @@ public class TileManagerFSM : MonoBehaviour
     public Sprite[] cobbleMSprites;
     public Sprite[] cobbleRSprites;
 
-
-    private int emptyChance;
-    private int nextSeasonChance;
-    private float seasonChangeSpeed;
-
     private TileSprite[] masterList;
+    private List<TileSprite> tileCache = new();
 
+
+    public static float tileResetDistance = 18;
     public static TileManagerFSM instance;
 
     // Start is called before the first frame update
@@ -153,11 +129,12 @@ public class TileManagerFSM : MonoBehaviour
             );            
     }
 
-    // Update is called once per frame
     void Update()
     {
 
     }
+
+    // Called by each tile on itself as it hits the culling field
     public void ProcessTile(TileObject tile)
     {
         // Check for season transition
@@ -168,15 +145,24 @@ public class TileManagerFSM : MonoBehaviour
         // List to contain options
         List<Sprite> spriteChoices = new();
 
-        // Populate spriteChoices
-        foreach (TileSprite sprite in masterList)
+        // Check for no overlay in summer, else populate spriteChoices
+        if (tile.layer == Layer.Overlay && season == Season.Summer)
         {
-            if (sprite.layer != tile.layer) continue;
-            if (sprite.direction != tile.direction) continue;
-            if (tile.layer == Layer.Overlay && sprite.season != seasonToUse) continue;
-            if (tile.layer == Layer.Base && sprite.material != pathMaterial) continue;
-            spriteChoices.Add(sprite.sprite);
-            tileCache.Add(sprite);
+            tile.SetSprite(null);
+            if (pauseAfterEachTile) PauseMenu.instance.Pause();
+            return;
+        }
+        else
+        {
+            foreach (TileSprite sprite in masterList)
+            {
+                if (sprite.layer != tile.layer) continue;
+                if (sprite.direction != tile.direction) continue;
+                if (tile.layer == Layer.Overlay && sprite.season != seasonToUse) continue;
+                if (tile.layer == Layer.Base && sprite.material != pathMaterial) continue;
+                spriteChoices.Add(sprite.sprite);
+                tileCache.Add(sprite);
+            }
         }
 
         // Check for empty list, else fetch random sprite from spriteChoices
@@ -190,6 +176,7 @@ public class TileManagerFSM : MonoBehaviour
 
     }
 
+    // Returns the chance [0-1] that an overlay tile should have the sprite for the next season
     private float NextSeasonChance()
     {
         float transitionDuration = seasons.seasonLength - seasons.transitionAfter;
@@ -197,6 +184,7 @@ public class TileManagerFSM : MonoBehaviour
         return Mathf.Clamp(distanceInTransition / transitionDuration, 0f, 1f);
     }
 
+    // Returns what the next season will be
     private Season PeekNextSeason()
     {
         if (season == Season.Spring) return Season.Summer;
@@ -206,24 +194,20 @@ public class TileManagerFSM : MonoBehaviour
     private TileSprite[] AssignTags(Sprite[] sprites, Direction dir, Layer layer, Season season)
     {
         TileSprite[] output = new TileSprite[sprites.Length];
-
         for (int i = 0; i < output.Length; i++)
         {
             output[i] = new TileSprite(sprites[i], dir, layer, season);
         }
-
         return output;
     }
 
     private TileSprite[] AssignTags(Sprite[] sprites, Direction dir, Layer layer, PathMaterial material)
     {
         TileSprite[] output = new TileSprite[sprites.Length];
-
         for (int i = 0; i < output.Length; i++)
         {
             output[i] = new TileSprite(sprites[i], dir, layer, material);
         }
-
         return output;
     }
 
