@@ -27,6 +27,7 @@ public class Draw : MonoBehaviour
 
     void Start()
     {
+        //currentLine.textureMode = LineTextureMode.Stretch;
         // Get or add an AudioSource component to this GameObject
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
