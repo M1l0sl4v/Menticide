@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class tree : MonoBehaviour
 {
@@ -38,7 +38,8 @@ public class tree : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             leafspawn();
-            AudioManager.instance.environmentFX(ruscleSound, transform ,1f, 1f);
+            float pitch = Random.Range(.7f, 1.3f);
+            AudioManager.instance.environmentFX(ruscleSound, transform ,.6f, pitch);
             StartCoroutine(DestroyLeavesCoroutine(delay));
         }
 

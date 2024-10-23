@@ -11152,8 +11152,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRadius: 5
   showGizmo: 1
-  minSpawnTime: 2
-  maxSpawnTime: 3
+  minSpawnTime: 3
+  maxSpawnTime: 6
   rareenemychance: 1
   enemytype1:
   - {fileID: 5075196644585124462, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
@@ -13616,7 +13616,7 @@ Transform:
   m_GameObject: {fileID: 799384005}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.0099998, y: 7.8500004, z: -0.04463974}
+  m_LocalPosition: {x: -7.7, y: 12, z: -0.04463974}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13638,7 +13638,7 @@ MonoBehaviour:
   xMax: 30
   yMin: 8
   yMax: 10
-  spawnmin: 0.1
+  spawnmin: 0
   spawnmax: 0.11
   Tree:
   - {fileID: 3482516811903228533, guid: e8a90b75e56f14b4db67e65f5df64479, type: 3}
@@ -16955,7 +16955,7 @@ MonoBehaviour:
   xMax: 30
   yMin: 8
   yMax: 10
-  spawnmin: 0.1
+  spawnmin: 0
   spawnmax: 0.11
   Tree:
   - {fileID: 3482516811903228533, guid: e8a90b75e56f14b4db67e65f5df64479, type: 3}
@@ -16970,7 +16970,7 @@ Transform:
   m_GameObject: {fileID: 1007118041}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.95, y: 7.8500004, z: -0.04463974}
+  m_LocalPosition: {x: 7.3, y: 12, z: -0.04463974}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23669,8 +23669,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRadius: 5
   showGizmo: 1
-  minSpawnTime: 2
-  maxSpawnTime: 3
+  minSpawnTime: 3
+  maxSpawnTime: 6
   rareenemychance: 1
   enemytype1:
   - {fileID: 5075196644585124462, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
