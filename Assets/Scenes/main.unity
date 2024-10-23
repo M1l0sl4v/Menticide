@@ -11152,8 +11152,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRadius: 5
   showGizmo: 1
-  minSpawnTime: 0.5
-  maxSpawnTime: 0.8
+  minSpawnTime: 2
+  maxSpawnTime: 3
   rareenemychance: 1
   enemytype1:
   - {fileID: 5075196644585124462, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
@@ -23669,8 +23669,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRadius: 5
   showGizmo: 1
-  minSpawnTime: 0.5
-  maxSpawnTime: 0.8
+  minSpawnTime: 2
+  maxSpawnTime: 3
   rareenemychance: 1
   enemytype1:
   - {fileID: 5075196644585124462, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}

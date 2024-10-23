@@ -10,6 +10,10 @@ public class tree : MonoBehaviour
     [SerializeField] private AudioClip ruscleSound;
     public float delay = 2f;
     
+    public GameObject treespawner1;
+    public GameObject treespawner2;
+    
+    
     private Coroutine destroyLeavesCoroutine;
     
     private ParticleSystem leafsinstance;
@@ -41,6 +45,7 @@ public class tree : MonoBehaviour
         if (other.CompareTag("cullingField"))
         {
             ObjectPoolManager.ReturnObjectToPool(gameObject);
+            treespawner1.Spawn();
         }
         
     }

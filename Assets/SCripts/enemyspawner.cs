@@ -58,7 +58,7 @@ public class enemyespawner : MonoBehaviour
         }
         else //this is the common enemy
         {
-            Debug.Log("ENEMY SHOULD BE SPAWNING");
+            Debug.Log("should be spawning");
             int prefabIndex = Random.Range(0, enemytype1.Count);
             ObjectPoolManager.SpawnObject(enemytype1[prefabIndex], spawnPossition, ObjectPoolManager.PoolType.Enemytype1);
         }
@@ -71,7 +71,7 @@ public class enemyespawner : MonoBehaviour
     {
         if (showGizmo)
         {
-            Gizmos.color = Color.gray;
+            Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, spawnRadius);
             Vector3 rightDirection = Quaternion.Euler(0, 90, 0) * transform.forward * spawnRadius;
             Vector3 leftDirection = Quaternion.Euler(0, -90, 0) * transform.forward * spawnRadius;

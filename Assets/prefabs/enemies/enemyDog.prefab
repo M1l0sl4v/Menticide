@@ -102,11 +102,10 @@ MonoBehaviour:
   myLayerMask:
     serializedVersion: 2
     m_Bits: 1088
-  losDistance: 5
-  enemyspeedChase: 5
-  enemyspeedNormal: 3
-  despawnDistanceDog: 10
-  snarl: {fileID: 8300000, guid: 42983210d31ca461a8a1c9c96e2dc8e1, type: 3}
+  losDistance: 10
+  enemyspeedChase: 6
+  enemyspeedNormal: 5
+  despawnDistanceDog: 50
   exlimation: {fileID: 1348696221685265807, guid: 195e0f6155c4c434d8f48f48aef3a53a, type: 3}
   noticeSounds:
   - {fileID: 8300000, guid: 298dffb9cb6aa4453b70cce92e018cab, type: 3}
