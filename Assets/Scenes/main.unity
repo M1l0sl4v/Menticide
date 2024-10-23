@@ -1149,6 +1149,9 @@ MonoBehaviour:
   damagePlayer: 0
   pauseAfterEveryRow: 0
   tileManagerAlgorithm: 0
+  topNames: []
+  topScores: 
+  resetHighScores: 0
 --- !u!114 &64684206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20769,7 +20772,19 @@ MonoBehaviour:
   m_CharacterLimit: 10
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1675774504}
+        m_TargetAssemblyTypeName: DeathSequence, Assembly-CSharp
+        m_MethodName: DecideBehavior
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
@@ -20787,19 +20802,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 425082007}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -21793,7 +21796,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1292085188}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 206098214}
+        m_TargetAssemblyTypeName: Score, Assembly-CSharp
+        m_MethodName: ClearSavedHighScores
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1292085188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23850,7 +23865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1415654659
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27174,13 +27189,13 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.5432099
-    height: 1.8608853
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.75
+  orthographic size: 4.21875
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
