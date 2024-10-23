@@ -11,7 +11,7 @@ public class SettingsMenu : MonoBehaviour
         audioMixer.SetFloat("masterVolume", masterVolume);
     }
     public void SetEffectsVolume (float effectsVolume){
-        audioMixer.SetFloat("environmentVolume", effectsVolume);
+        audioMixer.SetFloat("effectsVolume", effectsVolume);
     }
     public void SetMusicVolume (float musicVolume){
         audioMixer.SetFloat("musicVolume", musicVolume);
