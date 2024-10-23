@@ -24,8 +24,10 @@ public class StaticDebugTools : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        instance = this;
         DontDestroyOnLoad(gameObject);
+        if (FindObjectsOfType<StaticDebugTools>().Length > 1) { Destroy(GameObject.FindGameObjectWithTag("Static")); }
+        gameObject.tag = "Untagged";
+        instance = this;
     }
 
     // Update is called once per frame

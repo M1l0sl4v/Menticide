@@ -162,6 +162,17 @@ public class DeathSequence : MonoBehaviour
         controlLock = false;
     }
 
+    public void DecideBehavior()
+    {
+        if (inputField.text != "")
+        {
+            inputField.interactable = false;
+            SaveScore();
+            PopulateLeaderboard();
+            Score.instance.SaveHighScore();
+        }
+    }
+
     public void SaveScore()
     {
         Score.AddScore(inputField.text, Score.instance.ScoreAsInt());

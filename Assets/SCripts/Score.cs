@@ -229,18 +229,21 @@ public class Score : MonoBehaviour
         topNames.Clear();
         topScores.Clear();
 
-        string csv = PlayerPrefs.GetString("highscores");
-        foreach (string line in csv.TrimEnd().Split("\n"))
+        if (PlayerPrefs.HasKey("highscores"))
         {
-            string[] strings = line.Split(",");
-            string name = strings[0];
-            int score = int.Parse(strings[1]);
+            string csv = PlayerPrefs.GetString("highscores");
+            foreach (string line in csv.TrimEnd('\n').Split("\n"))
+            {
+                string[] strings = line.Split(",");
+                string name = strings[0];
+                int score = int.Parse(strings[1]);
 
-            topNames.Add(name);
-            topScores.Add(score);
+                topNames.Add(name);
+                topScores.Add(score);
+            }
+
+            highScore = topScores[0];
         }
-
-        highScore = topScores[0];
     }
     private void OnApplicationQuit()
     {
@@ -252,6 +255,7 @@ public class Score : MonoBehaviour
         PlayerPrefs.DeleteKey("highscores");
         topNames.Clear();
         topScores.Clear();
+        highScore = 0;
     }
 
     
