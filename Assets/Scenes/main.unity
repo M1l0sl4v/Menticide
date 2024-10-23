@@ -15047,7 +15047,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &884997895
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18781,8 +18781,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Game Over
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cf3d38004d749490a93b10e85a14683a, type: 2}
-  m_sharedMaterial: {fileID: -9188023430420202209, guid: cf3d38004d749490a93b10e85a14683a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2a9544dbb66194f21af39373e415a038, type: 2}
+  m_sharedMaterial: {fileID: 9008125888292133931, guid: 2a9544dbb66194f21af39373e415a038, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -35830,8 +35830,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: You survived 0 Months
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cf3d38004d749490a93b10e85a14683a, type: 2}
-  m_sharedMaterial: {fileID: -9188023430420202209, guid: cf3d38004d749490a93b10e85a14683a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2a9544dbb66194f21af39373e415a038, type: 2}
+  m_sharedMaterial: {fileID: 9008125888292133931, guid: 2a9544dbb66194f21af39373e415a038, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
