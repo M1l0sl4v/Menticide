@@ -48,6 +48,9 @@ public class Score : MonoBehaviour
         debugSeasonDist = debugInfo.Find("units in season").GetComponent<TMP_Text>();
         debugYearDist = debugInfo.Find("units in year").GetComponent<TMP_Text>();
         debugTotalDist = debugInfo.Find("units total").GetComponent<TMP_Text>();
+
+        // Load high scores
+        LoadHighScore();
     }
 
     // Update is called once per frame
@@ -223,8 +226,11 @@ public class Score : MonoBehaviour
 
     public void LoadHighScore()
     {
+        topNames.Clear();
+        topScores.Clear();
+
         string csv = PlayerPrefs.GetString("highscores");
-        foreach (string line in csv.Split("\n"))
+        foreach (string line in csv.TrimEnd().Split("\n"))
         {
             string[] strings = line.Split(",");
             string name = strings[0];
@@ -233,6 +239,8 @@ public class Score : MonoBehaviour
             topNames.Add(name);
             topScores.Add(score);
         }
+
+        highScore = topScores[0];
     }
     private void OnApplicationQuit()
     {
@@ -242,5 +250,9 @@ public class Score : MonoBehaviour
     public void ClearSavedHighScores()
     {
         PlayerPrefs.DeleteKey("highscores");
+        topNames.Clear();
+        topScores.Clear();
     }
+
+    
 }
