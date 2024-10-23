@@ -87,11 +87,11 @@ public class DeathSequence : MonoBehaviour
             scoreTextAlpha += fadeInSpeed;
         }
 
-        timeElapsed += Time.deltaTime;
-        foreach (var element in deathScreenElements)
-        {
-            if (!element.complete && timeElapsed >= element.delay) element.FadeIn();
-        }
+        //timeElapsed += Time.deltaTime;
+        //foreach (var element in deathScreenElements)
+        //{
+        //    if (!element.complete && timeElapsed >= element.delay) element.FadeIn();
+        //}
 
         if (isHighScore)
         {

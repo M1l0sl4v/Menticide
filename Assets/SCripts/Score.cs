@@ -203,4 +203,44 @@ public class Score : MonoBehaviour
         highScore = topScores[0];
     }
 
+
+    private static string HighScoresToCSV()
+    {
+        string csv = "";
+
+        for (int i = 0; i < topScores.Count; i++)
+        {
+            csv += topNames[i] + ',' + topScores[i] + '\n';
+        }
+
+        return csv;
+    }
+
+    public void SaveHighScore()
+    {
+        PlayerPrefs.SetString("highscores", HighScoresToCSV());
+    }
+
+    public void LoadHighScore()
+    {
+        string csv = PlayerPrefs.GetString("highscores");
+        foreach (string line in csv.Split("\n"))
+        {
+            string[] strings = line.Split(",");
+            string name = strings[0];
+            int score = int.Parse(strings[1]);
+
+            topNames.Add(name);
+            topScores.Add(score);
+        }
+    }
+    private void OnApplicationQuit()
+    {
+        SaveHighScore();
+    }
+
+    public void ClearSavedHighScores()
+    {
+        PlayerPrefs.DeleteKey("highscores");
+    }
 }
