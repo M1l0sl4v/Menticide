@@ -15,6 +15,13 @@ public class treeSpawner : MonoBehaviour
     public float spawnmin;
     public float spawnmax;
     public List<GameObject> Tree;
+
+    [Header("Seasons")]
+    public GameObject summerTree;
+    public GameObject fallTree;
+    public GameObject winterTree;
+    public GameObject springTree;
+
     public float treeChance;
     public Tilemap tilemap;
     
