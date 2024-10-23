@@ -3035,8 +3035,8 @@ MonoBehaviour:
   spawnminTree: 2
   spawnmaxTree: 4
   treeSpawner: {fileID: 799384008}
-  mintimebetweenenemyspawn: 0.4
-  maxtimebetweenenemyspawn: 0.8
+  mintimebetweenenemyspawn: 0.2
+  maxtimebetweenenemyspawn: 0.6
   Enemyspawner: {fileID: 594896784}
   Enemyspawner2: {fileID: 1388212426}
 --- !u!114 &154867868
@@ -11048,7 +11048,7 @@ Transform:
   m_GameObject: {fileID: 594896783}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.9, y: 8.66, z: 0}
+  m_LocalPosition: {x: -9.9, y: 13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23521,7 +23521,7 @@ Transform:
   m_GameObject: {fileID: 1388212425}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.9, y: 9.47, z: 0}
+  m_LocalPosition: {x: 10.9, y: 13.809999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

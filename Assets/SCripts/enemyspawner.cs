@@ -25,17 +25,16 @@ public class enemyspawner : MonoBehaviour
         
         
         float spawnChance = Random.value; // a stupid way of making rare enemies spawn every now and then
-        if (spawnChance > rareenemychance)
+        if (spawnChance > rareenemychance) // this is the rare enemy
         {
-            int prefabIndex = Random.Range(0, enemytype2.Count);
-            //calling the pool
+            int prefabIndex = Random.Range(0, enemytype2.Count);//rare enemy
             ObjectPoolManager.SpawnObject(enemytype2[prefabIndex], spawnPossition, ObjectPoolManager.PoolType.Enemytype2);
             
         }
-        else 
+        else //this is the common enemy
         {
+            Debug.Log("ENEMY SHOULD BE SPAWNING");
             int prefabIndex = Random.Range(0, enemytype1.Count);
-            //calling the pool
             ObjectPoolManager.SpawnObject(enemytype1[prefabIndex], spawnPossition, ObjectPoolManager.PoolType.Enemytype1);
         }
         
