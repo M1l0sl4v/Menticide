@@ -78,6 +78,8 @@ public class playermovement : MonoBehaviour
 
     private void Update()
     {
+        
+        //Debug.Log(speed);
         // Gradually decrease the speed back to the original value if not colliding with a wall
         if (!_isCollidingWithWall && speed > _originalSpeed)
         {
