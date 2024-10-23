@@ -3035,10 +3035,10 @@ MonoBehaviour:
   spawnminTree: 2
   spawnmaxTree: 4
   treeSpawner: {fileID: 799384008}
-  spawnminObstacle: 2
-  spawnmaxObstacle: 4
-  obstaclespawner: {fileID: 594896784}
-  obstaclespawner2: {fileID: 1388212426}
+  mintimebetweenenemyspawn: 0.4
+  maxtimebetweenenemyspawn: 0.8
+  Enemyspawner: {fileID: 594896784}
+  Enemyspawner2: {fileID: 1388212426}
 --- !u!114 &154867868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10983,8 +10983,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRadius: 5
   showGizmo: 1
-  maxTimeBetweenSpawn: 0.8
-  minTimeBetweenSpawn: 0.4
   rareenemychance: 1
   enemytype1:
   - {fileID: 5075196644585124462, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
@@ -11050,7 +11048,7 @@ Transform:
   m_GameObject: {fileID: 594896783}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.2499995, y: 7.4, z: 0}
+  m_LocalPosition: {x: -9.9, y: 8.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20052,8 +20050,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 216771152}
-  - {fileID: 1388212428}
   - {fileID: 594896786}
+  - {fileID: 1388212428}
   - {fileID: 799384007}
   - {fileID: 1007118043}
   - {fileID: 154867864}
@@ -23458,8 +23456,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRadius: 5
   showGizmo: 1
-  maxTimeBetweenSpawn: 0.8
-  minTimeBetweenSpawn: 0.4
   rareenemychance: 1
   enemytype1:
   - {fileID: 5075196644585124462, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
@@ -23525,7 +23521,7 @@ Transform:
   m_GameObject: {fileID: 1388212425}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.19, y: 7.6399994, z: 0}
+  m_LocalPosition: {x: 10.9, y: 9.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26944,9 +26940,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.6847335
+    width: 0.59386504
+    height: 0.49186993
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
