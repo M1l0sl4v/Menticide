@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Draw : MonoBehaviour
 {
-    //public GameObject drawBar;
+    public GameObject drawBarPrefab;
     public Material wallMaterial;
     public float wallWidth = 0.3f;
     public string wallTag = "Wall";
@@ -37,12 +37,14 @@ public class Draw : MonoBehaviour
         audioSource.loop = true; // Loop the audio while drawing
 
         pauseMenu = FindAnyObjectByType<PauseMenu>();
+        
         drawBarcurrent = drawBarMax;
     }
 
     void Update()
     {
         HandleInput();
+//        Debug.Log(drawBarPrefab);
     }
 
     void HandleInput()
@@ -65,7 +67,6 @@ public class Draw : MonoBehaviour
             if (drawBarcurrent < drawBarMax)
             {
                 drawBarcurrent++;
-                //updateBar();
             }
         }
     }
@@ -88,10 +89,13 @@ public class Draw : MonoBehaviour
 
         // Set the initial point of the line
         initialPoint = GetMousePosWithZ();
-        currentLine.positionCount = 1;
+        currentLine.positionCount = 2;
         linePositions.Clear();
         linePositions.Add(initialPoint);
+        linePositions.Add(GetMousePosWithZ());
+
         currentLine.SetPosition(0, initialPoint);
+        currentLine.SetPosition(1, GetMousePosWithZ());
 
         // Play the drawing sound
         audioSource.Play();
@@ -101,27 +105,41 @@ public class Draw : MonoBehaviour
     {
         // Update the second point of the line to follow the mouse position
         Vector3 mousePos = GetMousePosWithZ();
-        if (linePositions.Count == 0 || Vector3.Distance(linePositions[linePositions.Count - 1], mousePos) > 1)
+//        Debug.Log(drawBarPrefab);
+        if (linePositions.Count < 2 || Vector3.Distance(linePositions[linePositions.Count - 2], mousePos) > 1)
         {
-            linePositions.Add(mousePos);
-            List<Vector3> smoothLinePositions = makeLineSmoth(linePositions);
+            linePositions.Insert(linePositions.Count - 1, mousePos);
+            List<Vector3> smoothLinePositions = makeLineSmoth(linePositions.GetRange(0, linePositions.Count - 1));
+            smoothLinePositions.Add(mousePos);
 
             currentLine.positionCount = smoothLinePositions.Count;
             currentLine.SetPositions(smoothLinePositions.ToArray());
             drawBarcurrent--;
-           // updateBar();
         }
+        currentLine.SetPosition(currentLine.positionCount - 1, mousePos);
     }
 
     void StopDrawing()
     {
         if (currentLine != null)
         {
+            Vector3 mousePos = GetMousePosWithZ();
+            linePositions.Insert(linePositions.Count - 1, mousePos);
+            List<Vector3> smoothLinePositions = makeLineSmoth(linePositions.GetRange(0, linePositions.Count - 1));
+            smoothLinePositions.Add(mousePos);
+
+            currentLine.positionCount = smoothLinePositions.Count;
+            currentLine.SetPositions(smoothLinePositions.ToArray());
+            drawBarcurrent--;
             // Stop playing the drawing sound
             audioSource.Stop();
-
+            //remve mouse line
+            if (linePositions.Count > 1)
+            {
+                linePositions.RemoveAt(linePositions.Count - 1);
+            }
             // Finalize the line to be straight between initial and final points
-            List<Vector3> smoothLinePositions = makeLineSmoth(linePositions);
+            smoothLinePositions = makeLineSmoth(linePositions);
             currentLine.positionCount = smoothLinePositions.Count;
             currentLine.SetPositions(smoothLinePositions.ToArray());
 
@@ -174,10 +192,4 @@ public class Draw : MonoBehaviour
         smoothedPoints.Add(points[points.Count - 1]);
         return smoothedPoints;
     }
-    /*void updateBar()
-    {
-        GameObject h = Instantiate(drawBar, transform);
-        h.GetComponent<Image>().fillAmount = drawBarcurrent;
-    }*/
-
 }

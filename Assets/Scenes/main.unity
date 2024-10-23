@@ -11219,7 +11219,7 @@ Transform:
   m_GameObject: {fileID: 594896783}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.9, y: 13, z: 0}
+  m_LocalPosition: {x: -9.9, y: 10.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23736,7 +23736,7 @@ Transform:
   m_GameObject: {fileID: 1388212425}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.9, y: 13.809999, z: 0}
+  m_LocalPosition: {x: 10.9, y: 11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24399,6 +24399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d305839ba8d1341bfb5e34d196e447f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drawBarPrefab: {fileID: 0}
   wallMaterial: {fileID: 0}
   wallWidth: 0.3
   wallTag: Wall
@@ -28220,7 +28221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  speedMultiplier: 1.1
+  speedMultiplier: 1
   speedDecayRate: 0
   resetTriggerDistance: 300
   health: 0
