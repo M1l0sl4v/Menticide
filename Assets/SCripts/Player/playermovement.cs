@@ -49,7 +49,7 @@ public class playermovement : MonoBehaviour
     {
         if (invincibilityLeft <= 0 && !DeathSequence.controlLock)
         {
-            AudioManager.instance.environmentFX(takeDamageSound, transform, 1f);
+            AudioManager.instance.environmentFX(takeDamageSound, transform, 1f, 1f);
 
             for (int i = health - 1; i > (health - 1) - amount; i--)
             {

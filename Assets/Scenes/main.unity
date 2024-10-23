@@ -10981,12 +10981,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8270214c2881be54bb11919e278d58a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxX: 8
-  minX: 0
-  maxY: 10
-  minY: 0
-  spawnmin: 0.2
-  spawnmax: 0.4
+  spawnRadius: 5
+  showGizmo: 1
+  maxTimeBetweenSpawn: 0.8
+  minTimeBetweenSpawn: 0.4
   rareenemychance: 1
   enemytype1:
   - {fileID: 5075196644585124462, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
@@ -11052,7 +11050,7 @@ Transform:
   m_GameObject: {fileID: 594896783}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.27, y: 7.4, z: 0}
+  m_LocalPosition: {x: -6.2499995, y: 7.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23458,12 +23456,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8270214c2881be54bb11919e278d58a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxX: 8
-  minX: 0
-  maxY: 10
-  minY: 0
-  spawnmin: 0.2
-  spawnmax: 0.4
+  spawnRadius: 5
+  showGizmo: 1
+  maxTimeBetweenSpawn: 0.8
+  minTimeBetweenSpawn: 0.4
   rareenemychance: 1
   enemytype1:
   - {fileID: 5075196644585124462, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
@@ -23529,7 +23525,7 @@ Transform:
   m_GameObject: {fileID: 1388212425}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.17, y: 7.6399994, z: 0}
+  m_LocalPosition: {x: 7.19, y: 7.6399994, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26948,9 +26944,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.02929293
+    y: 0
     width: 1
-    height: 0.9818182
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -27988,6 +27984,7 @@ MonoBehaviour:
   uiHearts: {fileID: 196417510}
   invincibilityDuration: 1
   takeDamageSound: {fileID: 8300000, guid: 53f7f0fdf6e954dae9a8be8a8080fa96, type: 3}
+  Camera: {fileID: 0}
 --- !u!212 &1675774498
 SpriteRenderer:
   m_ObjectHideFlags: 0

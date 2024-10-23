@@ -40,7 +40,7 @@ public class tree : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             leafspawn();
-            AudioManager.instance.environmentFX(ruscleSound, transform ,1f);
+            AudioManager.instance.environmentFX(ruscleSound, transform ,1f, 1f);
             StartCoroutine(DestroyLeavesCoroutine(delay));
         }
 

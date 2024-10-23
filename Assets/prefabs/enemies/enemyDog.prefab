@@ -108,6 +108,10 @@ MonoBehaviour:
   despawnDistanceDog: 10
   snarl: {fileID: 8300000, guid: 42983210d31ca461a8a1c9c96e2dc8e1, type: 3}
   exlimation: {fileID: 1348696221685265807, guid: 195e0f6155c4c434d8f48f48aef3a53a, type: 3}
+  noticeSounds:
+  - {fileID: 8300000, guid: 298dffb9cb6aa4453b70cce92e018cab, type: 3}
+  - {fileID: 8300000, guid: 298dffb9cb6aa4453b70cce92e018cab, type: 3}
+  - {fileID: 8300000, guid: 3924c84d4adea4bcbb8216777d4cf265, type: 3}
   sp: {fileID: 1700632340610863045}
   animator: {fileID: -3079357004096876155}
 --- !u!61 &1546645933743141903

@@ -11,7 +11,6 @@ public class enemyDog : MonoBehaviour
     public float enemyspeedNormal;
     public float despawnDistanceDog = 10f;
 
-    [SerializeField] private AudioClip snarl;
     [SerializeField] private GameObject exlimation;
 
     private Vector3 enemyStartPos;
@@ -20,6 +19,7 @@ public class enemyDog : MonoBehaviour
     private bool surprised = true;
     private GameObject player;
     private GameObject e;
+    public List<AudioClip> noticeSounds;
 
     public SpriteRenderer sp;
     public Animator animator;
@@ -103,10 +103,12 @@ public class enemyDog : MonoBehaviour
     {
         if (surprised)
         {
-            AudioManager.instance.enemyFX(snarl, transform, 1f);
+            int prefabIndex = Random.Range(0, noticeSounds.Count);
+            float pitch = Random.Range(.7f, 1.3f);
+            AudioManager.instance.enemyFX(noticeSounds[prefabIndex], transform, 1f, pitch);
             e = Instantiate(exlimation, transform); // Show exclamation mark
             e.transform.parent = transform;
-            surprised = false; // Avoid re-triggering
+            surprised = false; // Avoid re-triggerings
             animator.SetTrigger("stun");
         }
 

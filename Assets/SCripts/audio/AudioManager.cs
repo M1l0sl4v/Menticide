@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour
       instance = this;
    }
 
-   public void environmentFX(AudioClip clip, Transform spawnPossition, float volume)
+   public void environmentFX(AudioClip clip, Transform spawnPossition, float volume, float pitch)
    {
         if (!DeathSequence.controlLock)
         {
@@ -24,12 +24,13 @@ public class AudioManager : MonoBehaviour
             audioSource.clip = clip; //assigns the passed audioclip
             audioSource.volume = volume;
             audioSource.Play();
+            audioSource.pitch = pitch;
             float cliplength = audioSource.clip.length;
             Destroy(audioSource.gameObject, clip.length);
         }
       
    }
-   public void enemyFX(AudioClip clip, Transform spawnPossition, float volume)
+   public void enemyFX(AudioClip clip, Transform spawnPossition, float volume, float pitch)
    {
         if (!DeathSequence.controlLock)
         {
@@ -37,6 +38,7 @@ public class AudioManager : MonoBehaviour
             audioSource.clip = clip; //assigns the passed audioclip
             audioSource.volume = volume;
             audioSource.Play();
+            audioSource.pitch = pitch;
             float cliplength = audioSource.clip.length;
             Destroy(audioSource.gameObject, clip.length);
         }
