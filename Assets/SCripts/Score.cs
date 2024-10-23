@@ -48,6 +48,9 @@ public class Score : MonoBehaviour
         debugSeasonDist = debugInfo.Find("units in season").GetComponent<TMP_Text>();
         debugYearDist = debugInfo.Find("units in year").GetComponent<TMP_Text>();
         debugTotalDist = debugInfo.Find("units total").GetComponent<TMP_Text>();
+
+        // Load high scores
+        LoadHighScore();
     }
 
     // Update is called once per frame
@@ -203,4 +206,57 @@ public class Score : MonoBehaviour
         highScore = topScores[0];
     }
 
+
+    private static string HighScoresToCSV()
+    {
+        string csv = "";
+
+        for (int i = 0; i < topScores.Count; i++)
+        {
+            csv += topNames[i] + ',' + topScores[i] + '\n';
+        }
+
+        return csv;
+    }
+
+    public void SaveHighScore()
+    {
+        PlayerPrefs.SetString("highscores", HighScoresToCSV());
+    }
+
+    public void LoadHighScore()
+    {
+        topNames.Clear();
+        topScores.Clear();
+
+        if (PlayerPrefs.HasKey("highscores"))
+        {
+            string csv = PlayerPrefs.GetString("highscores");
+            foreach (string line in csv.TrimEnd('\n').Split("\n"))
+            {
+                string[] strings = line.Split(",");
+                string name = strings[0];
+                int score = int.Parse(strings[1]);
+
+                topNames.Add(name);
+                topScores.Add(score);
+            }
+
+            highScore = topScores[0];
+        }
+    }
+    private void OnApplicationQuit()
+    {
+        SaveHighScore();
+    }
+
+    public void ClearSavedHighScores()
+    {
+        PlayerPrefs.DeleteKey("highscores");
+        topNames.Clear();
+        topScores.Clear();
+        highScore = 0;
+    }
+
+    
 }
