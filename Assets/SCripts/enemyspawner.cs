@@ -5,7 +5,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class enemyspawner : MonoBehaviour
+public class enemyespawner : MonoBehaviour
 {
     public float spawnRadius;
     public bool showGizmo;
@@ -20,9 +20,14 @@ public class enemyspawner : MonoBehaviour
 
 
  
+    private void Start()
+    {
+        timeBetweenSpawn = Random.Range(minSpawnTime, maxSpawnTime);
+        spawnTime = Time.time + timeBetweenSpawn;
+    }
+
     void Update()
     {
-
         // delay on start, then incriments
         if(Time.time > spawnTime)
         {
@@ -30,9 +35,13 @@ public class enemyspawner : MonoBehaviour
             Spawn();
             spawnTime = Time.time + timeBetweenSpawn; 
         }
-      
-    }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Spawn();
+        }
+    }
+    
     public void Spawn()
     {
         float randomAngle = Random.Range(-90f, 90f);
