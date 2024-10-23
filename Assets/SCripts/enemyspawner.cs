@@ -35,11 +35,6 @@ public class enemyespawner : MonoBehaviour
             Spawn();
             spawnTime = Time.time + timeBetweenSpawn; 
         }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Spawn();
-        }
     }
     
     public void Spawn()
@@ -58,7 +53,6 @@ public class enemyespawner : MonoBehaviour
         }
         else //this is the common enemy
         {
-            Debug.Log("should be spawning");
             int prefabIndex = Random.Range(0, enemytype1.Count);
             ObjectPoolManager.SpawnObject(enemytype1[prefabIndex], spawnPossition, ObjectPoolManager.PoolType.Enemytype1);
         }
