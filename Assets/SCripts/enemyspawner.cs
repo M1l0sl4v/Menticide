@@ -9,14 +9,30 @@ public class enemyspawner : MonoBehaviour
 {
     public float spawnRadius;
     public bool showGizmo;
-   
     
-    
+    private float timeBetweenSpawn;
+    private float spawnTime;
+    public float minSpawnTime;
+    public float maxSpawnTime;
     public float rareenemychance;
- 
     public List<GameObject> enemytype1;
     public List<GameObject> enemytype2;
-    
+
+
+ 
+    void Update()
+    {
+
+        // delay on start, then incriments
+        if(Time.time > spawnTime)
+        {
+            timeBetweenSpawn = Random.Range(minSpawnTime, maxSpawnTime);
+            Spawn();
+            spawnTime = Time.time + timeBetweenSpawn; 
+        }
+      
+    }
+
     public void Spawn()
     {
         float randomAngle = Random.Range(-90f, 90f);
@@ -41,7 +57,7 @@ public class enemyspawner : MonoBehaviour
         //i wanted a spawn percentage that could scale easily. this just rolls between 0 and 1, and if it is above .9 it spawns a rare, if not it spawns a common. this allows us to just add a new variable 
         //with a new spawn type or enemy type. we will have to fiddle with the percentages, but this should be a pretty decent system, i hope. 
     }
-
+   
     private void OnDrawGizmos()
     {
         if (showGizmo)
@@ -52,7 +68,8 @@ public class enemyspawner : MonoBehaviour
             Vector3 leftDirection = Quaternion.Euler(0, -90, 0) * transform.forward * spawnRadius;
             Gizmos.DrawLine(transform.position, transform.position + rightDirection);
             Gizmos.DrawLine(transform.position, transform.position + leftDirection);
-            
         }
     }
+    
+  
 }

@@ -6,7 +6,6 @@ using UnityEngine;
 public class tree : MonoBehaviour
 {
     public float despawnDistanceTree = 10;
-    public static tree instance;
     [SerializeField] private ParticleSystem leafs;
     [SerializeField] private AudioClip ruscleSound;
     public float delay = 2f;
@@ -14,11 +13,6 @@ public class tree : MonoBehaviour
     private Coroutine destroyLeavesCoroutine;
     
     private ParticleSystem leafsinstance;
-
-    private void Start()
-    {
-        instance = this;
-    }
 
     void Update()
     {
