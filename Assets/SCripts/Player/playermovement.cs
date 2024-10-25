@@ -47,7 +47,7 @@ public class playermovement : MonoBehaviour
     
     public void TakeDamage(int amount)
     {
-        if (invincibilityLeft <= 0 && !DeathSequence.controlLock && !StaticDebugTools.instance.playerInvincibility)
+        if (invincibilityLeft <= 0 && !DeathSequence.controlLock)
         {
             AudioManager.instance.environmentFX(takeDamageSound, transform, 1f, 1f);
 
@@ -102,13 +102,7 @@ public class playermovement : MonoBehaviour
         //}
 
         // DEBUG: Kill player
-        if (Input.GetKeyDown(KeyCode.BackQuote)) 
-        {
-            bool before = StaticDebugTools.instance.playerInvincibility;
-            StaticDebugTools.instance.playerInvincibility = false;
-            TakeDamage(health);
-            StaticDebugTools.instance.playerInvincibility = before;
-        }
+        if (Input.GetKeyDown(KeyCode.BackQuote)) { TakeDamage(health); }
 
         // i-frames
         if (invincibilityLeft > 0) invincibilityLeft -= Time.deltaTime;

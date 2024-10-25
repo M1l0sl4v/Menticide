@@ -49,9 +49,6 @@ public class DeathSequence : MonoBehaviour
     private float scoreTextAlpha;
     private bool scoreTextActive;
 
-    private List<DeathScreenElement> deathScreenElements;
-    private float timeElapsed;
-
 
 
     // Start is called before the first frame update
@@ -87,12 +84,6 @@ public class DeathSequence : MonoBehaviour
             scoreTextAlpha += fadeInSpeed;
         }
 
-        //timeElapsed += Time.deltaTime;
-        //foreach (var element in deathScreenElements)
-        //{
-        //    if (!element.complete && timeElapsed >= element.delay) element.FadeIn();
-        //}
-
         if (isHighScore)
         {
             if (growing)
@@ -126,7 +117,6 @@ public class DeathSequence : MonoBehaviour
         deathMessageObject.color = Color.black;
         scoreText.color = Color.black;
         highScoreText.color = Color.black;
-        PopulateLeaderboard();
 
         // Show death message
         yield return new WaitForSeconds(deathMessageDelay);
@@ -144,7 +134,6 @@ public class DeathSequence : MonoBehaviour
         yield return new WaitForSeconds(endScreenDelay);
         UIStack.Push(menuButtons);
         menuActive = true;
-        inputField.Select();
 
 
         yield return null;
@@ -160,17 +149,6 @@ public class DeathSequence : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         controlLock = false;
-    }
-
-    public void DecideBehavior()
-    {
-        if (inputField.text != "")
-        {
-            inputField.interactable = false;
-            SaveScore();
-            PopulateLeaderboard();
-            Score.instance.SaveHighScore();
-        }
     }
 
     public void SaveScore()
