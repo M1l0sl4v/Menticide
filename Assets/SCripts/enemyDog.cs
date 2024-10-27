@@ -86,13 +86,63 @@ public class enemyDog : MonoBehaviour
     private void idle()
     {
         surprised = true; // Reset surprise state when idle
-        // Here, we could implement some idle movement logic if needed
+                          // Here, we could implement some idle movement logic if needed
+        transform.position = Vector2.MoveTowards(transform.position, targetCellWorldPos, enemyspeedNormal * Time.deltaTime);
+        if (Vector3.Distance(transform.position, targetCellWorldPos) < 0.001f)
+        {
+            findIdleNectPos();
+        }
     }
-    void findIdleNectPos()
+    void findIdleNectPos()//set pos to go to "cell" then it goes to it then finds nex pos
     {
-        Vector3Int enemyCell = tilemap.WorldToCell(transform.position);
-        int nextCell = Random.Range(-4, 4);//set pos to go to "cell" then it goes to it then finds nex pos
+        Vector3Int nextCellIdle = new Vector3Int(Random.Range(-4, 4), Random.Range(-4, 4),0);
 
+        Vector3Int enemyCell = tilemap.WorldToCell(transform.position);
+        Vector3Int nextCell = enemyCell;
+
+
+        if (Mathf.Abs(nextCellIdle.x - enemyCell.x) >= Mathf.Abs(nextCellIdle.y - enemyCell.y))
+        {
+            if (nextCellIdle.x > enemyCell.x)
+            {
+                nextCell.x += 1;
+
+                animator.SetBool("WalkRight", true);
+                animator.SetBool("WalkLeft", false);
+                animator.SetBool("WalkUp", false);
+                animator.SetBool("WalkDown", false);
+            }
+            else if (nextCellIdle.x < enemyCell.x)
+            {
+                nextCell.x -= 1;
+
+                animator.SetBool("WalkRight", false);
+                animator.SetBool("WalkLeft", true);
+                animator.SetBool("WalkUp", false);
+                animator.SetBool("WalkDown", false);
+            }
+        }
+        else
+        {
+            if (nextCellIdle.y > enemyCell.y)
+            {
+                nextCell.y += 1;
+                animator.SetBool("WalkRight", false);
+                animator.SetBool("WalkLeft", false);
+                animator.SetBool("WalkUp", true);
+                animator.SetBool("WalkDown", false);
+            }
+            else if (nextCellIdle.y < enemyCell.y)
+            {
+                nextCell.y -= 1;
+                animator.SetBool("WalkRight", false);
+                animator.SetBool("WalkLeft", false);
+                animator.SetBool("WalkUp", false);
+                animator.SetBool("WalkDown", true);
+            }
+        }
+        targetCellWorldPos = tilemap.GetCellCenterWorld(nextCell);
+    
     }
 
     private void chase()
@@ -133,7 +183,7 @@ public class enemyDog : MonoBehaviour
         Vector3Int nextCell = enemyCell;
         if (Mathf.Abs(playerCell.x - enemyCell.x) >= Mathf.Abs(playerCell.y - enemyCell.y))
         {
-            if (playerCell.x > enemyCell.x)//i removed up thing cus it looked bad
+            if (playerCell.x > enemyCell.x)
             {
                 nextCell.x += 1;
 

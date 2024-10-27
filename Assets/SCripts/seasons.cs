@@ -16,6 +16,11 @@ public class seasons : MonoBehaviour
     public static int seasonLength = 150; // should be 3x month length
     public static int transitionAfter = 100; // start the season change after this long, lasting until end of season
 
+    public Color summerColorNotWork = Color.blue;
+    public Color fallColorNotWork = Color.green;
+    public Color winterColorNotWork = Color.magenta;
+    public Color springColorNotWork = Color.yellow;
+
     private Color colorTransition;
     // this is whats used to store the season 1=summer,2=fall,3=winter,4=spring
     void Start()

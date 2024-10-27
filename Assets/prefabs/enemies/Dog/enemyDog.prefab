@@ -104,7 +104,7 @@ MonoBehaviour:
     m_Bits: 1088
   losDistance: 5
   enemyspeedChase: 5
-  enemyspeedNormal: 3
+  enemyspeedNormal: 1.13
   despawnDistanceDog: 10
   exlimation: {fileID: 1348696221685265807, guid: 195e0f6155c4c434d8f48f48aef3a53a, type: 3}
   noticeSounds:
@@ -148,7 +148,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 1.36}
+    oldSize: {x: 1, y: 2.125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
