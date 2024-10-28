@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2676902261688520762}
   - component: {fileID: 6130171139222252423}
   m_Layer: 0
-  m_Name: FallTree
+  m_Name: WinterTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -33899771
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -866452578, guid: 6dedd941222583c4c834b85d02891422, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f652aecbdc1599a4aa2c9f880b5f4c71, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,14 +98,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteList:
-  - {fileID: -1216461006, guid: 814cb2f82a60a1448a5814fd65e8d843, type: 3}
-  - {fileID: 671798060, guid: f7ea77af34d4ce245add4f8ca377a3da, type: 3}
-  - {fileID: 1925832532, guid: 2d16179d07ff49f45b99f442fc51907c, type: 3}
-  - {fileID: 1566295496, guid: 50b285b4cba7c1b4ba7825fd37eef632, type: 3}
-  - {fileID: -866452578, guid: 6dedd941222583c4c834b85d02891422, type: 3}
-  - {fileID: 1808417994, guid: 002d91f684300ce489958b95a0cf3f99, type: 3}
-  - {fileID: -1859367732, guid: 54b74dbda97880c4fb4875e47c60be70, type: 3}
-  - {fileID: 470860805, guid: ba3b4b498e576a742b14ee7b7f285b36, type: 3}
-  - {fileID: 2114417113, guid: e7529d279abc82445ac0098b2b44454a, type: 3}
-  - {fileID: 838318231, guid: dd8bbb4a02624be45a96a9e73a9b036a, type: 3}
-  - {fileID: 991197732, guid: 16fdf732f173d1f44b902b1fdc0b800e, type: 3}
+  - {fileID: 21300000, guid: f652aecbdc1599a4aa2c9f880b5f4c71, type: 3}

@@ -13650,6 +13650,10 @@ MonoBehaviour:
   - {fileID: 3482516811903228533, guid: e8a90b75e56f14b4db67e65f5df64479, type: 3}
   treeChance: 0
   tilemap: {fileID: 1836558848}
+  summerTree: {fileID: 4089663407155386498, guid: 640674092cb7c9748832b9b6e87bc33c, type: 3}
+  fallTree: {fileID: 4089663407155386498, guid: 34193669573586b43b1a556e37c8c730, type: 3}
+  winterTree: {fileID: 4089663407155386498, guid: 0455ebca0749b3146bfa49fa7d0f5e1e, type: 3}
+  springTree: {fileID: 4089663407155386498, guid: 59eff01161378404ebf8670f8431fd1a, type: 3}
 --- !u!4 &808981343 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8176814249895226974, guid: 80bd3e6377f514b7ebd9d7ddb8178787, type: 3}
@@ -16967,6 +16971,10 @@ MonoBehaviour:
   - {fileID: 3482516811903228533, guid: e8a90b75e56f14b4db67e65f5df64479, type: 3}
   treeChance: 0
   tilemap: {fileID: 1836558848}
+  summerTree: {fileID: 4089663407155386498, guid: 640674092cb7c9748832b9b6e87bc33c, type: 3}
+  fallTree: {fileID: 4089663407155386498, guid: 34193669573586b43b1a556e37c8c730, type: 3}
+  winterTree: {fileID: 4089663407155386498, guid: 0455ebca0749b3146bfa49fa7d0f5e1e, type: 3}
+  springTree: {fileID: 4089663407155386498, guid: 59eff01161378404ebf8670f8431fd1a, type: 3}
 --- !u!4 &1007118043
 Transform:
   m_ObjectHideFlags: 0
@@ -27193,13 +27201,13 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.5432099
-    height: 1.873016
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.25
+  orthographic size: 4.21875
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
