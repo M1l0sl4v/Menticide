@@ -16,7 +16,12 @@ public class TileManagerFSM : MonoBehaviour
     public Season season;
     public PathMaterial pathMaterial;
 
-
+    // Base Material transition
+    public int minPathLength;
+    public int maxPathLength;
+    private int currentPathLength;
+    private int distanceInPath;
+    private int transitionTilesLeft;
 
 
     // Overlay
@@ -124,7 +129,25 @@ public class TileManagerFSM : MonoBehaviour
             // Cobble
             AssignTags(cobbleLSprites, Direction.Left, Layer.Base, PathMaterial.Cobble),
             AssignTags(cobbleMSprites, Direction.Middle, Layer.Base, PathMaterial.Cobble),
-            AssignTags(cobbleRSprites, Direction.Right, Layer.Base, PathMaterial.Cobble)
+            AssignTags(cobbleRSprites, Direction.Right, Layer.Base, PathMaterial.Cobble),
+
+            // BASE TRANSITION
+
+            // Brick
+            AssignTags(brickFadeinSprites, PathMaterial.Brick, TransitionType.FadeIn),
+            AssignTags(brickFadeoutSprites, PathMaterial.Brick, TransitionType.FadeOut),
+
+            // Paved
+            AssignTags(pavedFadeinSprites, PathMaterial.Paved, TransitionType.FadeIn),
+            AssignTags(pavedFadeoutSprites, PathMaterial.Paved, TransitionType.FadeOut),
+
+            // Dirt
+            AssignTags(dirtFadeinSprites, PathMaterial.Dirt, TransitionType.FadeIn),
+            AssignTags(dirtFadeoutSprites, PathMaterial.Dirt, TransitionType.FadeOut),
+
+            // Cobble
+            AssignTags(cobbleFadeinSprites, PathMaterial.Cobble, TransitionType.FadeIn),
+            AssignTags(cobbleFadeoutSprites, PathMaterial.Cobble, TransitionType.FadeOut)
             );
 
         foreach (TileSprite sprite in masterList)
@@ -155,6 +178,7 @@ public class TileManagerFSM : MonoBehaviour
         // List to contain options
         List<Sprite> spriteChoices = new();
 
+        // "CACHE" ALGORITHM
         if (StaticDebugTools.instance.tileManagerAlgorithm == StaticDebugTools.Algorithm.Cache)
         {
             if (tile.layer == Layer.Overlay) spriteChoices = tileCache[CacheKey(tile.direction, tile.layer, seasonToUse)];
@@ -162,7 +186,7 @@ public class TileManagerFSM : MonoBehaviour
         }
         
 
-
+        // "PICKER" ALGORITHM
         if (StaticDebugTools.instance.tileManagerAlgorithm == StaticDebugTools.Algorithm.Picker)
         {
             // Check for no overlay in summer, else populate spriteChoices
@@ -238,6 +262,16 @@ public class TileManagerFSM : MonoBehaviour
         {
             output[i] = new TileSprite(sprites[i], dir, layer, material);
         }
+        return output;
+    }
+
+    private TileSprite[] AssignTags(Sprite[] sprites, PathMaterial material, TransitionType transition)
+    {
+        TileSprite[] output = new TileSprite[sprites.Length];
+        output[0] = new TileSprite(sprites[0], Direction.Left, Layer.Base, material, transition);
+        output[1] = new TileSprite(sprites[1], Direction.Middle, Layer.Base, material, transition);
+        output[2] = new TileSprite(sprites[2], Direction.Middle, Layer.Base, material, transition);
+        output[3] = new TileSprite(sprites[3], Direction.Right, Layer.Base, material, transition);
         return output;
     }
 
