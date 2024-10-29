@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using Random = UnityEngine.Random;
+
 
 public class WeatherManager : MonoBehaviour
 {
@@ -18,6 +20,9 @@ public class WeatherManager : MonoBehaviour
    public GameObject summerLeaf;
 
    public Material fogMaterial;
+   public Light2D playerLight;
+
+   public float fogOpacity;
    
    public WeatherType currentWeather;
 
@@ -61,8 +66,13 @@ public class WeatherManager : MonoBehaviour
             break;
       }
       Debug.Log(currentWeather);
+      
+      // all of this sets the lighitng and fog back to "normal" before the seasons change, just for consistancy.
       Vector2 fogSpeed = new Vector2(0.5f, 0.5f); 
       fogMaterial.SetVector("_fogSpeed", fogSpeed); 
+      playerLight.color = new Color(1, 1, 1, 1);
+      fogOpacity = 0.03f;
+      fogMaterial.SetFloat("_opacity", fogOpacity);
       ApplyWeatherEffect(currentWeather);
    }
    
@@ -106,40 +116,49 @@ public class WeatherManager : MonoBehaviour
    public void sunny()
    {
       setWeatherObjects(false,false,false,false,false,false,true);
+      playerLight.color = new Color(1f, 0.9f, 0.4f,1);
    }
    public void rainy()
    {
       setWeatherObjects(false,true,false,false,false,false,false);
+      playerLight.color = new Color(.6f, 0.9f, 1f,1);
+
    } 
    public void windyAutumn()
    {
       setWeatherObjects(false, false,false,false,false,false, false);
       Vector2 fogSpeed = new Vector2(0.5f, 0f); 
       fogMaterial.SetVector("_fogSpeed", fogSpeed); 
+      playerLight.color = new Color(1, 1, 1, 1);
    } 
    public void autumnLeaves()
    {
       setWeatherObjects(false, false,false,false,false,true, false);
-
+      playerLight.color = new Color(1,1,1,1);
    } 
    public void windySpring()
    {
       setWeatherObjects(true, false,false,false,true,false, false);
       Vector2 fogSpeed = new Vector2(0.5f, 0f); 
       fogMaterial.SetVector("_fogSpeed", fogSpeed); 
+      playerLight.color = new Color(1f, 0.9f, 0.4f);
    } 
    public void springLeaves()
    {
       setWeatherObjects(true, false,false,false,false,false, false);
-
+      playerLight.color = new Color(1f, 0.9f, 0.4f);
    } 
    public void foggy()
    {
       setWeatherObjects(false, false,true,false,false,true, false);
+      playerLight.color = new Color(0.73f, 0.83f, 1f);
+      fogOpacity = 0.05f;
+      fogMaterial.SetFloat("_opacity", fogOpacity);
    }
    public void snowing()
    {
       setWeatherObjects(false, false,false,true,false,false, false);
+      playerLight.color = Color.white;
 
    } 
    
@@ -155,5 +174,10 @@ public class WeatherManager : MonoBehaviour
       springLeaf.SetActive(spring);
       summerLeaf.SetActive(summerLeaves);
       
+   }
+
+   private void OnValidate()
+   {
+      ApplyWeatherEffect(currentWeather);
    }
 }
