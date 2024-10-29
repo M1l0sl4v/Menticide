@@ -6,6 +6,7 @@ public class CameraBoundaries : MonoBehaviour
     public float minX, maxX;       
     private Camera cam;
     private float camHalfWidth;
+    public float smoothSpeed;
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class CameraBoundaries : MonoBehaviour
     {
             Vector3 targetPosition = target.position;
             float clampedX = Mathf.Clamp(targetPosition.x, minX + camHalfWidth, maxX - camHalfWidth);
-            transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
+            Vector3 desiredPosition = new Vector3(clampedX, transform.position.y, transform.position.z);
+            transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
     }
 }
