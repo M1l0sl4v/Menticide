@@ -171,7 +171,7 @@ public class WeatherManager : MonoBehaviour
       float windspeed = windSpeed.speed;
       Vector2 fogSpeed = new Vector2(windspeed, 0f); 
       fogMaterial.SetVector("_fogSpeed", fogSpeed); 
-      playerLight.color = new Color(1f, 0.9f, 0.4f);
+      playerLight.color = new Color(1f, 0.9f, 0.7f);
       
       var springModule = springParticles.main;
       springModule.startSpeed = springSpeed; 
@@ -179,12 +179,12 @@ public class WeatherManager : MonoBehaviour
    public void springLeaves()
    {
       setWeatherObjects(true, false,false,false,false,false, false);
-      playerLight.color = new Color(1f, 0.9f, 0.4f);
+      playerLight.color = new Color(1f, 0.9f, 0.7f);
    } 
    public void foggy()
    {
       setWeatherObjects(false, false,true,false,false,true, false);
-      playerLight.color = new Color(0.73f, 0.83f, 1f);
+      playerLight.color = new Color(0.73f, 0.73f, 0.7f);
       Vector2 fogSpeed = new Vector2(0.2f, 0.2f); 
       fogMaterial.SetVector("_fogSpeed", fogSpeed); 
       fogOpacity = 0.07f;
