@@ -15076,7 +15076,7 @@ GameObject:
   - component: {fileID: 872574942}
   - component: {fileID: 872574941}
   - component: {fileID: 872574940}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: snow_spritesheet2_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15093,7 +15093,7 @@ Animator:
   m_GameObject: {fileID: 872574939}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 290f5d764716e4811aec1a7dbd26bd2f, type: 2}
+  m_Controller: {fileID: 9100000, guid: f858fc02b1bba404696b7c1ea37da9ef, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -15166,8 +15166,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.3000002, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1180109631}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15182,7 +15182,7 @@ GameObject:
   - component: {fileID: 873646084}
   - component: {fileID: 873646083}
   - component: {fileID: 873646082}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: rain_spritesheet (1)_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15199,7 +15199,7 @@ Animator:
   m_GameObject: {fileID: 873646081}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d7483661df85e4df19856399d062a8d2, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4b46238f9caba49a5885802a328ad9e7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -15272,8 +15272,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.3000002, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1180109631}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23232,6 +23232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5247447faa7374cb3898d183a1f11c0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallSpeed: 7
+  springSpeed: 7
+  defaultSpeed: 2.9
   rainOverlay: {fileID: 873646081}
   snowOverlay: {fileID: 872574939}
   windOverlay: {fileID: 1344840360}
@@ -23357,7 +23360,7 @@ GameObject:
   - component: {fileID: 1344840363}
   - component: {fileID: 1344840362}
   - component: {fileID: 1344840361}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: wind_spritesheet2_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23447,8 +23450,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.3000002, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1180109631}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27612,9 +27615,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0008354219
-    width: 1
-    height: 0.99749374
+    y: 0
+    width: 0.5432099
+    height: 1.7209691
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

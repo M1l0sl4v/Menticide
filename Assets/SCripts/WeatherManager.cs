@@ -10,6 +10,11 @@ using Random = UnityEngine.Random;
 public class WeatherManager : MonoBehaviour
 {
    public static WeatherManager instance;
+
+   public float fallSpeed;
+   public float springSpeed;
+   
+   public float defaultSpeed = 2.9f;
    
    //gameobjects
    public GameObject rainOverlay;
@@ -22,7 +27,11 @@ public class WeatherManager : MonoBehaviour
    public Material fogMaterial;
    public Light2D playerLight;
 
-   public float fogOpacity;
+   private float fogOpacity;
+   private Animator snowSpeed;
+   private Animator windSpeed;
+   private ParticleSystem springParticles;
+   private ParticleSystem fallParticles;
    
    public WeatherType currentWeather;
 
@@ -42,6 +51,10 @@ public class WeatherManager : MonoBehaviour
    {
       instance = this;
       ChangeWeather();
+      snowSpeed = snowOverlay.GetComponent<Animator>();
+      windSpeed = windOverlay.GetComponent<Animator>();
+      springParticles = springLeaf.GetComponent<ParticleSystem>();
+      fallParticles = fallLeaf.GetComponent<ParticleSystem>();
    }
 
 
@@ -73,6 +86,18 @@ public class WeatherManager : MonoBehaviour
       playerLight.color = new Color(1, 1, 1, 1);
       fogOpacity = 0.03f;
       fogMaterial.SetFloat("_opacity", fogOpacity);
+      
+      
+      ///i cant get this to work without breaking
+      /*
+      var fallDefault = fallParticles.main;
+      fallDefault.startSpeed = defaultSpeed;
+      
+      var springDefault = springParticles.main;
+      springDefault.startSpeed = defaultSpeed;
+      */
+      
+      
       ApplyWeatherEffect(currentWeather);
    }
    
@@ -126,10 +151,14 @@ public class WeatherManager : MonoBehaviour
    } 
    public void windyAutumn()
    {
-      setWeatherObjects(false, false,false,false,false,false, false);
-      Vector2 fogSpeed = new Vector2(0.5f, 0f); 
+      setWeatherObjects(false, false,false,false,true,true, false);
+      float windspeed = windSpeed.speed;
+      Vector2 fogSpeed = new Vector2(windspeed, 0f); 
       fogMaterial.SetVector("_fogSpeed", fogSpeed); 
       playerLight.color = new Color(1, 1, 1, 1);
+
+      var fallModule = fallParticles.main;
+      fallModule.startSpeed = fallSpeed;
    } 
    public void autumnLeaves()
    {
@@ -139,9 +168,13 @@ public class WeatherManager : MonoBehaviour
    public void windySpring()
    {
       setWeatherObjects(true, false,false,false,true,false, false);
-      Vector2 fogSpeed = new Vector2(0.5f, 0f); 
+      float windspeed = windSpeed.speed;
+      Vector2 fogSpeed = new Vector2(windspeed, 0f); 
       fogMaterial.SetVector("_fogSpeed", fogSpeed); 
       playerLight.color = new Color(1f, 0.9f, 0.4f);
+      
+      var springModule = springParticles.main;
+      springModule.startSpeed = springSpeed; 
    } 
    public void springLeaves()
    {
@@ -152,19 +185,18 @@ public class WeatherManager : MonoBehaviour
    {
       setWeatherObjects(false, false,true,false,false,true, false);
       playerLight.color = new Color(0.73f, 0.83f, 1f);
-      fogOpacity = 0.05f;
+      Vector2 fogSpeed = new Vector2(0.2f, 0.2f); 
+      fogMaterial.SetVector("_fogSpeed", fogSpeed); 
+      fogOpacity = 0.07f;
       fogMaterial.SetFloat("_opacity", fogOpacity);
    }
    public void snowing()
    {
       setWeatherObjects(false, false,false,true,false,false, false);
       playerLight.color = Color.white;
-
+      fogOpacity = 0.05f;
+      fogMaterial.SetFloat("_opacity", fogOpacity);
    } 
-   
-   
-   //animator speed = fog speed 
-
    public void setWeatherObjects(bool spring, bool rain, bool foggy, bool snow, bool wind, bool fall, bool summerLeaves)
    {
       rainOverlay.SetActive(rain);
@@ -173,7 +205,6 @@ public class WeatherManager : MonoBehaviour
       fallLeaf.SetActive(fall);
       springLeaf.SetActive(spring);
       summerLeaf.SetActive(summerLeaves);
-      
    }
 
    private void OnValidate()
