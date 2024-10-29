@@ -9,6 +9,16 @@ public class WeatherManager : MonoBehaviour
 {
    public static WeatherManager instance;
    
+   //gameobjects
+   public GameObject rainOverlay;
+   public GameObject snowOverlay;
+   public GameObject windOverlay;
+   public GameObject springLeaf;
+   public GameObject fallLeaf;
+   public GameObject summerLeaf;
+
+   public Material fogMaterial;
+   
    public WeatherType currentWeather;
 
    public enum WeatherType
@@ -26,6 +36,7 @@ public class WeatherManager : MonoBehaviour
    private void Start()
    {
       instance = this;
+      ChangeWeather();
    }
 
 
@@ -37,7 +48,7 @@ public class WeatherManager : MonoBehaviour
       switch (seasons.instance.currentSeason)
       {
          case 1: //sumner
-            currentWeather = GetRandomWeather(WeatherType.Sunny, WeatherType.Rainy, WeatherType.Foggy);
+            currentWeather = GetRandomWeather(WeatherType.Sunny, WeatherType.Rainy);
             break;
          case 2://autumn
             currentWeather = GetRandomWeather(WeatherType.autumnLeaves, WeatherType.Rainy, WeatherType.Foggy, WeatherType.windyautumn);
@@ -50,6 +61,8 @@ public class WeatherManager : MonoBehaviour
             break;
       }
       Debug.Log(currentWeather);
+      Vector2 fogSpeed = new Vector2(0.5f, 0.5f); 
+      fogMaterial.SetVector("_fogSpeed", fogSpeed); 
       ApplyWeatherEffect(currentWeather);
    }
    
@@ -92,34 +105,55 @@ public class WeatherManager : MonoBehaviour
    // I KNOW WE DONT NEED THE METHODS, this is mostly just so we dont have a switch statement the size of the bible
    public void sunny()
    {
-      
+      setWeatherObjects(false,false,false,false,false,false,true);
    }
    public void rainy()
    {
-      
+      setWeatherObjects(false,true,false,false,false,false,false);
    } 
    public void windyAutumn()
    {
-      
+      setWeatherObjects(false, false,false,false,false,false, false);
+      Vector2 fogSpeed = new Vector2(0.5f, 0f); 
+      fogMaterial.SetVector("_fogSpeed", fogSpeed); 
    } 
    public void autumnLeaves()
    {
-      
+      setWeatherObjects(false, false,false,false,false,true, false);
+
    } 
    public void windySpring()
    {
-      
+      setWeatherObjects(true, false,false,false,true,false, false);
+      Vector2 fogSpeed = new Vector2(0.5f, 0f); 
+      fogMaterial.SetVector("_fogSpeed", fogSpeed); 
    } 
    public void springLeaves()
    {
-      
+      setWeatherObjects(true, false,false,false,false,false, false);
+
    } 
    public void foggy()
    {
-      
+      setWeatherObjects(false, false,true,false,false,true, false);
    }
    public void snowing()
    {
-      
+      setWeatherObjects(false, false,false,true,false,false, false);
+
    } 
+   
+   
+   //animator speed = fog speed 
+
+   public void setWeatherObjects(bool spring, bool rain, bool foggy, bool snow, bool wind, bool fall, bool summerLeaves)
+   {
+      rainOverlay.SetActive(rain);
+      snowOverlay.SetActive(snow);
+      windOverlay.SetActive(wind);
+      fallLeaf.SetActive(fall);
+      springLeaf.SetActive(spring);
+      summerLeaf.SetActive(summerLeaves);
+      
+   }
 }

@@ -60,3 +60,6 @@ TagManager:
   - name: Tree
     uniqueID: 4261067525
     locked: 0
+  - name: weather
+    uniqueID: 1215178841
+    locked: 0
