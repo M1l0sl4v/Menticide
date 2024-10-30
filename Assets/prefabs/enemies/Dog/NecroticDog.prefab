@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1700632340610863045}
   - component: {fileID: 7846294198139788158}
   - component: {fileID: 1546645933743141903}
-  - component: {fileID: 7534529912854574927}
+  - component: {fileID: 3540727608563179546}
   m_Layer: 9
-  m_Name: enemyDog2
+  m_Name: NecroticDog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 867422893
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 760051753, guid: 06ac10987947e47288998bbcc4bb5e76, type: 3}
+  m_Sprite: {fileID: -705182145, guid: a93b63d0899a242a3ac2e9836ebda640, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 298dffb9cb6aa4453b70cce92e018cab, type: 3}
   - {fileID: 8300000, guid: 3924c84d4adea4bcbb8216777d4cf265, type: 3}
   sp: {fileID: 1700632340610863045}
-  animator: {fileID: 7534529912854574927}
+  animator: {fileID: 0}
 --- !u!61 &1546645933743141903
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -158,7 +158,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5163374, y: 1.1756598}
   m_EdgeRadius: 0
---- !u!95 &7534529912854574927
+--- !u!95 &3540727608563179546
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -168,7 +168,7 @@ Animator:
   m_GameObject: {fileID: 5075196644585124462}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3cf21e2e5292245e7ab0a282aa8e678e, type: 2}
+  m_Controller: {fileID: 9100000, guid: a6da542505a40624e9920ea7846e67ff, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
