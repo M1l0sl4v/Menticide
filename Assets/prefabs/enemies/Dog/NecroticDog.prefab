@@ -112,7 +112,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 298dffb9cb6aa4453b70cce92e018cab, type: 3}
   - {fileID: 8300000, guid: 3924c84d4adea4bcbb8216777d4cf265, type: 3}
   sp: {fileID: 1700632340610863045}
-  animator: {fileID: 0}
+  animator: {fileID: 3540727608563179546}
 --- !u!61 &1546645933743141903
 BoxCollider2D:
   m_ObjectHideFlags: 0

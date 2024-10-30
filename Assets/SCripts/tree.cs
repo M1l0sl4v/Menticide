@@ -46,20 +46,31 @@ public class tree : MonoBehaviour
 
         if (other.CompareTag("cullingField"))
         {
+            ClearParticles();
             ObjectPoolManager.ReturnObjectToPool(gameObject);
         }
         
     }
 
-    private IEnumerator DestroyLeavesCoroutine(float delay)
+    public IEnumerator DestroyLeavesCoroutine(float delay)
     {
         yield return new WaitForSeconds(delay);
         if (leafsinstance != null)
         {
-            Destroy(leafsinstance);  
+            //Destroy(leafsinstance);  
+            leafsinstance.Clear();
         }
     }
 
+    public void ClearParticles()
+    {
+        if (leafsinstance != null)
+        {
+            //Destroy(leafsinstance);  
+            Debug.LogWarning("Cleared leaves");
+            leafsinstance.Clear();
+        }
+    }
 
     private void leafspawn()
     {
