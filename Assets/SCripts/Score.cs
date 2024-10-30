@@ -255,7 +255,7 @@ public class Score : MonoBehaviour
         SaveHighScore();
     }
 
-    public void ClearSavedHighScores()
+    public static void ClearSavedHighScores()
     {
         PlayerPrefs.DeleteKey("highscores");
         topNames.Clear();

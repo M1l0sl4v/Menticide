@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
 
     public TMP_InputField inputField;
     public TMP_Text removeButtonText;
+    public TMP_Text clearButtonText;
 
     public bool splashFadeOut;
     public bool wheelFadeOut;
@@ -82,15 +83,26 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void ClearName()
+    public void RemoveName()
     {
         Score.RemoveEntry(inputField.text);
-        StartCoroutine(ResetText());
+        StartCoroutine(ResetRemoveText());
     }
 
-    IEnumerator ResetText()
+    public void ClearScores()
+    {
+        Score.ClearSavedHighScores();
+    }
+
+    IEnumerator ResetRemoveText()
     {
         yield return new WaitForSeconds(1.25f);
         removeButtonText.text = "Remove Entry";
+    }
+
+    IEnumerator ResetClearText()
+    {
+        yield return new WaitForSeconds(1.25f);
+        clearButtonText.text = "Clear Scores";
     }
 }
