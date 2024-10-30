@@ -8,6 +8,8 @@ TagManager:
   - Wall
   - enemyTilemap
   - Static
+  - AcidPool
+  - Enemy
   layers:
   - Default
   - TransparentFX

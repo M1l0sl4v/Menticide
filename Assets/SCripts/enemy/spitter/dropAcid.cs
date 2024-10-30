@@ -11,12 +11,6 @@ public class dropAcid : MonoBehaviour
     {
         StartCoroutine(SpitterShoot());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     IEnumerator SpitterShoot()
     {
         yield return new WaitForSeconds(AcidRate);

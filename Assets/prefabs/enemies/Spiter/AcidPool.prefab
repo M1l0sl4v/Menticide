@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -7087743016763817577}
   - component: {fileID: 5583704397484776379}
   - component: {fileID: -548999801695744502}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AcidPool
   m_TagString: AcidPool
   m_Icon: {fileID: 0}
