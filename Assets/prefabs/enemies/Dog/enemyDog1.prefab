@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1546645933743141903}
   - component: {fileID: 7534529912854574927}
   m_Layer: 9
-  m_Name: enemyDog
+  m_Name: enemyDog1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
