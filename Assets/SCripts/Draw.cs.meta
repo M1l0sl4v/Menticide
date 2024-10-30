@@ -5,7 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - drawBarPrefab: {fileID: 6548834813947375710, guid: 449f359af953142a49eecce4018ac534, type: 3}
-  - wallMaterial: {instanceID: 0}
+  - wallMaterial: {fileID: 2100000, guid: 2b9fcf5c59f1b472a8b330fde5d859e0, type: 2}
   - drawingSoundClip: {instanceID: 0}
   - lineSoundGroup: {instanceID: 0}
   executionOrder: 0

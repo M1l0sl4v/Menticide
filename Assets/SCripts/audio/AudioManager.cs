@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
    
    public static AudioManager instance;
 
+   public GameObject audioEmpty;
+
    private void Awake()
    {
       instance = this;
@@ -20,7 +22,7 @@ public class AudioManager : MonoBehaviour
    {
         if (!DeathSequence.controlLock)
         {
-            AudioSource audioSource = Instantiate(envirofxObject, spawnPossition.transform.position, quaternion.identity); // spawns gameobject to play the sound
+            AudioSource audioSource = Instantiate(envirofxObject, spawnPossition.position, quaternion.identity,audioEmpty.transform); // spawns gameobject to play the sound
             audioSource.clip = clip; //assigns the passed audioclip
             audioSource.volume = volume;
             audioSource.Play();
@@ -34,7 +36,7 @@ public class AudioManager : MonoBehaviour
    {
         if (!DeathSequence.controlLock)
         {
-            AudioSource audioSource = Instantiate(enemyfxObject, spawnPossition.transform.position, quaternion.identity); // spawns gameobject to play the sound
+            AudioSource audioSource = Instantiate(enemyfxObject, spawnPossition.transform.position, quaternion.identity, audioEmpty.transform); // spawns gameobject to play the sound
             audioSource.clip = clip; //assigns the passed audioclip
             audioSource.volume = volume;
             audioSource.Play();

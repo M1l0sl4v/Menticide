@@ -6,6 +6,7 @@ using System.Linq;
 using UnityEngine;
 using static TileSprite;
 using UnityEngine.U2D;
+using Unity.VisualScripting;
 
 public class TileManagerFSM : MonoBehaviour
 {
@@ -16,7 +17,15 @@ public class TileManagerFSM : MonoBehaviour
     public Season season;
     public PathMaterial pathMaterial;
 
-
+    // Base Material transition
+    public int minPathLength;
+    public int maxPathLength;
+    public PathMaterial nextMaterial;
+    public bool useTransitionTiles;
+    private int currentPathLength;
+    private int distanceInPath;
+    private int transitionTilesLeft;
+    private TransitionType transition;
 
 
     // Overlay
@@ -78,6 +87,11 @@ public class TileManagerFSM : MonoBehaviour
 
         SetEnums();
 
+        currentPathLength = UnityEngine.Random.Range(minPathLength, maxPathLength + 1);
+        pathMaterial = (PathMaterial)UnityEngine.Random.Range(1, 5);
+        nextMaterial = NewMaterial(pathMaterial);
+        season = Season.Summer;
+
         // Compile big list
         masterList = ConcatArrays(
 
@@ -124,13 +138,38 @@ public class TileManagerFSM : MonoBehaviour
             // Cobble
             AssignTags(cobbleLSprites, Direction.Left, Layer.Base, PathMaterial.Cobble),
             AssignTags(cobbleMSprites, Direction.Middle, Layer.Base, PathMaterial.Cobble),
-            AssignTags(cobbleRSprites, Direction.Right, Layer.Base, PathMaterial.Cobble)
+            AssignTags(cobbleRSprites, Direction.Right, Layer.Base, PathMaterial.Cobble),
+
+            // BASE TRANSITION
+
+            // Brick
+            AssignTags(brickFadeinSprites, PathMaterial.Brick, TransitionType.FadeIn),
+            AssignTags(brickFadeoutSprites, PathMaterial.Brick, TransitionType.FadeOut),
+
+            // Paved
+            AssignTags(pavedFadeinSprites, PathMaterial.Paved, TransitionType.FadeIn),
+            AssignTags(pavedFadeoutSprites, PathMaterial.Paved, TransitionType.FadeOut),
+
+            // Dirt
+            AssignTags(dirtFadeinSprites, PathMaterial.Dirt, TransitionType.FadeIn),
+            AssignTags(dirtFadeoutSprites, PathMaterial.Dirt, TransitionType.FadeOut),
+
+            // Cobble
+            AssignTags(cobbleFadeinSprites, PathMaterial.Cobble, TransitionType.FadeIn),
+            AssignTags(cobbleFadeoutSprites, PathMaterial.Cobble, TransitionType.FadeOut)
             );
 
         foreach (TileSprite sprite in masterList)
         {
             if (!tileCache.ContainsKey(sprite.ToString())) tileCache.Add(sprite.ToString(), new List<Sprite>());
             tileCache[sprite.ToString()].Add(sprite.sprite);
+        }
+
+
+        // Adjust to new material
+        foreach (TileObject tile in FindObjectsOfType<TileObject>())
+        {
+            ProcessTile(tile);
         }
     }
 
@@ -147,46 +186,70 @@ public class TileManagerFSM : MonoBehaviour
         if (Score.instance.DistanceInSeason() >= seasons.transitionAfter && UnityEngine.Random.value < NextSeasonChance()) seasonToUse = PeekNextSeason();
         else seasonToUse = season;
 
-        // Check for material to use
-        PathMaterial materialToUse;
-        materialToUse = pathMaterial;
+        // Check for transition
+        if (transitionTilesLeft == 16)
+        {
+            transition = TransitionType.FadeOut;
+        }
+        else if (transitionTilesLeft == 8)
+        {
+            transition = TransitionType.FadeIn;
+            pathMaterial = nextMaterial;
+            nextMaterial = NewMaterial(nextMaterial);
+            currentPathLength = UnityEngine.Random.Range(minPathLength, maxPathLength + 1);
+            distanceInPath = 0;
+        }
+        else if (transitionTilesLeft <= 0)
+        {
+            transition = TransitionType.None;
+        }
 
+        
 
         // List to contain options
         List<Sprite> spriteChoices = new();
 
+        // "CACHE" ALGORITHM
         if (StaticDebugTools.instance.tileManagerAlgorithm == StaticDebugTools.Algorithm.Cache)
         {
             if (tile.layer == Layer.Overlay) spriteChoices = tileCache[CacheKey(tile.direction, tile.layer, seasonToUse)];
-            if (tile.layer == Layer.Base) spriteChoices = tileCache[CacheKey(tile.direction, tile.layer, materialToUse)];
+            if (tile.layer == Layer.Base) spriteChoices = tileCache[CacheKey(tile.direction, tile.layer, pathMaterial, transition)];
         }
         
 
-
+        // "PICKER" ALGORITHM
         if (StaticDebugTools.instance.tileManagerAlgorithm == StaticDebugTools.Algorithm.Picker)
         {
-            // Check for no overlay in summer, else populate spriteChoices
-            if (tile.layer == Layer.Overlay && season == Season.Summer)
-            {
-                tile.SetSprite(null);
-                return;
-            }
-            else
-            {
-                foreach (TileSprite sprite in masterList)
-                {
-                    if (sprite.layer != tile.layer) continue;
-                    if (sprite.direction != tile.direction) continue;
-                    if (tile.layer == Layer.Overlay && sprite.season != seasonToUse) continue;
-                    if (tile.layer == Layer.Base && sprite.material != materialToUse) continue;
-                    spriteChoices.Add(sprite.sprite);
-                }
-            }
+            //// Check for no overlay in summer, else populate spriteChoices
+            //if (tile.layer == Layer.Overlay && season == Season.Summer)
+            //{
+            //    tile.SetSprite(null);
+            //    return;
+            //}
+            //else
+            //{
+            //    foreach (TileSprite sprite in masterList)
+            //    {
+            //        if (sprite.layer != tile.layer) continue;
+            //        if (sprite.direction != tile.direction) continue;
+            //        if (tile.layer == Layer.Overlay && sprite.season != seasonToUse) continue;
+            //        if (tile.layer == Layer.Base && sprite.material != pathMaterial) continue;
+            //        spriteChoices.Add(sprite.sprite);
+            //    }
+            //}
+            Debug.LogWarning("\"Picker\" algorithm is no longer supported! Switching to \"Cache\"");
+            StaticDebugTools.instance.ChangeAlgorithm((int)StaticDebugTools.Algorithm.Cache);
         }
 
         // Check for empty list, else fetch random sprite from spriteChoices
         if (spriteChoices.Count == 0) tile.SetSprite(null);
         else tile.SetSprite(spriteChoices[UnityEngine.Random.Range(0, spriteChoices.Count)]);
+
+        // Decrement
+        if (transitionTilesLeft > 0)
+        {
+            transitionTilesLeft--;
+        }
 
     }
 
@@ -210,9 +273,9 @@ public class TileManagerFSM : MonoBehaviour
     {
         return "" + direction + layer + season;
     }
-    private string CacheKey(Direction direction, Layer layer, PathMaterial material)
+    private string CacheKey(Direction direction, Layer layer, PathMaterial material, TransitionType transition)
     {
-        return "" + direction + layer + material;
+        return "" + direction + layer + material + transition;
     }
 
     // Clears the tile cache
@@ -241,6 +304,18 @@ public class TileManagerFSM : MonoBehaviour
         return output;
     }
 
+    private TileSprite[] AssignTags(Sprite[] sprites, PathMaterial material, TransitionType transition)
+    {
+        TileSprite[] output = new TileSprite[sprites.Length];
+        for (int i = 0; i < output.Length; i++)
+        {
+            if (i == 0) output[0] = new TileSprite(sprites[0], Direction.Left, Layer.Base, material, transition);
+            else if (i == sprites.Length - 1) output[i] = new TileSprite(sprites[i], Direction.Right, Layer.Base, material, transition);
+            else output[i] = new TileSprite(sprites[i], Direction.Middle, Layer.Base, material, transition);
+        }
+        return output;
+    }
+
     private TileSprite[] ConcatArrays(params TileSprite[][] p)
     {
         var position = 0;
@@ -254,8 +329,31 @@ public class TileManagerFSM : MonoBehaviour
     }
 
 
+    public void IncreasePathDistance()
+    {
+        distanceInPath += 1;
 
+        if (distanceInPath == currentPathLength - 1)
+        {
+            if (useTransitionTiles) transitionTilesLeft = 16; // this has to be double the expected value cause I coded it weird
+            else pathMaterial = NewMaterial(pathMaterial);
+        }
 
+    }
+
+    public void SetTransition(TransitionType transition)
+    {
+        this.transition = transition;
+    }
+
+    // Returns a random material that is not given material
+    private PathMaterial NewMaterial(PathMaterial material)
+    {
+        List<PathMaterial> options = new List<PathMaterial>{PathMaterial.Brick, PathMaterial.Paved, PathMaterial.Dirt, PathMaterial.Cobble};
+        options.Remove(material);
+
+        return options[UnityEngine.Random.Range(0, options.Count)];
+    }
 
     public void SetEnums()
     {

@@ -26,6 +26,7 @@ public class seasons : MonoBehaviour
     void Start()
     {
         instance = this;
+        backGround.GetComponent<Renderer>().material.color = new Color(14f / 255, 48f / 255, 7f / 255, 1);
         summer();
     }
 
@@ -33,6 +34,7 @@ public class seasons : MonoBehaviour
     void Update()
     {
         backGround.GetComponent<Renderer>().material.color = Color.Lerp(backGround.GetComponent<Renderer>().material.color, colorTransition, 1f * Time.deltaTime);
+
     }
 //switch statement cycles through the seasons and calls their methods. just calling this method changes the season.
     public void seasonChange()
@@ -75,7 +77,7 @@ public class seasons : MonoBehaviour
     }
     public void winter()
     {
-        colorTransition=new Color(200f / 255, 194f / 255, 186f / 255, 1);//we devide by 255 to get the rgb value
+        colorTransition=new Color(255f / 255, 255f / 255, 255f / 255, 1);//we devide by 255 to get the rgb value
         TileManagerFSM.instance.season = TileSprite.Season.Winter;
         currentSeason = 3;
         nextSeason = 4; //passes this to spring

@@ -15,6 +15,7 @@ public class enemyDog : MonoBehaviour
 
     private Vector3 targetCellWorldPos;
     private bool lineOfSight = false;
+    private bool lineOfSightLine = false;
     private bool surprised = true;
     private GameObject player;
     private GameObject e;
@@ -24,8 +25,10 @@ public class enemyDog : MonoBehaviour
     private Animator animator;
     private Tilemap tilemap;
 
+    private float enemyspeedChaseOrng;
+    private float enemyspeedNormalOrng;
 
-    
+
 
     private void Start()
     {
@@ -33,6 +36,8 @@ public class enemyDog : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         targetCellWorldPos = transform.position;
         animator = GetComponent<Animator>();
+        enemyspeedChaseOrng = enemyspeedChase;
+        enemyspeedNormalOrng = enemyspeedNormal;
     }
 
     private void Update()
@@ -43,6 +48,16 @@ public class enemyDog : MonoBehaviour
         {
             ObjectPoolManager.ReturnObjectToPool(gameObject);
             return;
+        }
+        if (lineOfSightLine == true)
+        {
+            enemyspeedChase = 0;
+            enemyspeedNormal = 0;
+        }
+        else
+        {
+            enemyspeedChase = enemyspeedChaseOrng;
+            enemyspeedNormal = enemyspeedNormalOrng;
         }
 
         enemyAi();
@@ -55,6 +70,7 @@ public class enemyDog : MonoBehaviour
         if (ray.collider != null)
         {
             lineOfSight = ray.collider.CompareTag("Player");
+            lineOfSightLine = ray.collider.CompareTag("Wall");
             Debug.DrawRay(transform.position, player.transform.position - transform.position, lineOfSight ? Color.green : Color.red);
         }
     }

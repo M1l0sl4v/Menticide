@@ -1765,7 +1765,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector2MaterialSlot",
     "m_ObjectId": "cf58dc2f4a9b4083a8f18e237383d676",
     "m_Id": 0,
-    "m_DisplayName": "Fog Speed",
+    "m_DisplayName": "fogSpeed",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -2130,10 +2130,10 @@
     "m_Guid": {
         "m_GuidSerialized": "fa6dfe0e-6af9-48a3-8892-50a5ce0e4d30"
     },
-    "m_Name": "Fog Speed",
+    "m_Name": "fogSpeed",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Fog Speed",
-    "m_DefaultReferenceName": "_Fog_Speed",
+    "m_RefNameGeneratedByDisplayName": "fogSpeed",
+    "m_DefaultReferenceName": "_fogSpeed",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,

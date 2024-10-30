@@ -38,7 +38,7 @@ public class Score : MonoBehaviour
     TMP_Text debugTotalDist;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         instance = this;
 
@@ -94,6 +94,14 @@ public class Score : MonoBehaviour
 
         scoreText.text = UpdateScore(year, month);
         UpdateDebug();
+
+        if (distanceInSeason == TreeSpawner.treeSwitchPoint)
+        {
+            foreach (var spawner in FindObjectsOfType<TreeSpawner>())
+            {
+                spawner.AdvanceTreePool();
+            }
+        }
     }
 
 
@@ -203,4 +211,57 @@ public class Score : MonoBehaviour
         highScore = topScores[0];
     }
 
+
+    private static string HighScoresToCSV()
+    {
+        string csv = "";
+
+        for (int i = 0; i < topScores.Count; i++)
+        {
+            csv += topNames[i] + ',' + topScores[i] + '\n';
+        }
+
+        return csv;
+    }
+
+    public void SaveHighScore()
+    {
+        PlayerPrefs.SetString("highscores", HighScoresToCSV());
+    }
+
+    public void LoadHighScore()
+    {
+        topNames.Clear();
+        topScores.Clear();
+
+        if (!string.IsNullOrWhiteSpace(PlayerPrefs.GetString("highscores")))
+        {
+            string csv = PlayerPrefs.GetString("highscores");
+            foreach (string line in csv.TrimEnd('\n').Split("\n"))
+            {
+                string[] strings = line.Split(",");
+                string name = strings[0];
+                int score = int.Parse(strings[1]);
+
+                topNames.Add(name);
+                topScores.Add(score);
+            }
+
+            highScore = topScores[0];
+        }
+    }
+    private void OnApplicationQuit()
+    {
+        SaveHighScore();
+    }
+
+    public void ClearSavedHighScores()
+    {
+        PlayerPrefs.DeleteKey("highscores");
+        topNames.Clear();
+        topScores.Clear();
+        highScore = 0;
+    }
+
+    
 }
