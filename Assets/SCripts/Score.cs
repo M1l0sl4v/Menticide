@@ -102,6 +102,8 @@ public class Score : MonoBehaviour
                 spawner.AdvanceTreePool();
             }
         }
+
+        enemyespawner.IncreaseChance();
     }
 
 
