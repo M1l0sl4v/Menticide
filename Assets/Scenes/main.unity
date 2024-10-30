@@ -3208,27 +3208,30 @@ MonoBehaviour:
   - {fileID: -489186571, guid: a0e43fd7a49b3df44bd765a4d7af229f, type: 3}
   - {fileID: 645339162, guid: a0e43fd7a49b3df44bd765a4d7af229f, type: 3}
   winLSprites:
-  - {fileID: 895662467, guid: be123c72c7507e54a9c0190fa81b8943, type: 3}
-  - {fileID: 1409312696, guid: be123c72c7507e54a9c0190fa81b8943, type: 3}
+  - {fileID: -967141280, guid: 8252160ced074fe479b230bf2c37451a, type: 3}
+  - {fileID: -2039541799, guid: 8252160ced074fe479b230bf2c37451a, type: 3}
+  - {fileID: -635423726, guid: 8252160ced074fe479b230bf2c37451a, type: 3}
   winMSprites:
-  - {fileID: 1803279074, guid: be123c72c7507e54a9c0190fa81b8943, type: 3}
-  - {fileID: 645124226, guid: be123c72c7507e54a9c0190fa81b8943, type: 3}
-  - {fileID: 2127106618, guid: be123c72c7507e54a9c0190fa81b8943, type: 3}
-  - {fileID: -1882265697, guid: be123c72c7507e54a9c0190fa81b8943, type: 3}
+  - {fileID: -1293361089, guid: 8252160ced074fe479b230bf2c37451a, type: 3}
+  - {fileID: 925051112, guid: 8252160ced074fe479b230bf2c37451a, type: 3}
+  - {fileID: 1554707496, guid: 8252160ced074fe479b230bf2c37451a, type: 3}
+  - {fileID: -506757466, guid: 8252160ced074fe479b230bf2c37451a, type: 3}
   winRSprites:
-  - {fileID: 971964000, guid: be123c72c7507e54a9c0190fa81b8943, type: 3}
-  - {fileID: 1905454001, guid: be123c72c7507e54a9c0190fa81b8943, type: 3}
+  - {fileID: 491520582, guid: 8252160ced074fe479b230bf2c37451a, type: 3}
+  - {fileID: 1555022523, guid: 8252160ced074fe479b230bf2c37451a, type: 3}
+  - {fileID: 1291246803, guid: 8252160ced074fe479b230bf2c37451a, type: 3}
   sprLSprites:
-  - {fileID: 1691031483, guid: db8342672837838419d280c02d108793, type: 3}
-  - {fileID: -2005942546, guid: db8342672837838419d280c02d108793, type: 3}
+  - {fileID: -661769882, guid: 82e49fe125ad32641a0ada7970e835f2, type: 3}
+  - {fileID: 582910998, guid: 82e49fe125ad32641a0ada7970e835f2, type: 3}
+  - {fileID: -729762984, guid: 82e49fe125ad32641a0ada7970e835f2, type: 3}
   sprMSprites:
-  - {fileID: 1055556308, guid: db8342672837838419d280c02d108793, type: 3}
-  - {fileID: 298006818, guid: db8342672837838419d280c02d108793, type: 3}
-  - {fileID: 789213941, guid: db8342672837838419d280c02d108793, type: 3}
-  - {fileID: 1173132866, guid: db8342672837838419d280c02d108793, type: 3}
+  - {fileID: -630969532, guid: 82e49fe125ad32641a0ada7970e835f2, type: 3}
+  - {fileID: -847904617, guid: 82e49fe125ad32641a0ada7970e835f2, type: 3}
+  - {fileID: 394046701, guid: 82e49fe125ad32641a0ada7970e835f2, type: 3}
   sprRSprites:
-  - {fileID: 914349895, guid: db8342672837838419d280c02d108793, type: 3}
-  - {fileID: 538397744, guid: db8342672837838419d280c02d108793, type: 3}
+  - {fileID: -1175664912, guid: 82e49fe125ad32641a0ada7970e835f2, type: 3}
+  - {fileID: 126239764, guid: 82e49fe125ad32641a0ada7970e835f2, type: 3}
+  - {fileID: -1962289499, guid: 82e49fe125ad32641a0ada7970e835f2, type: 3}
   brickFadeoutSprites:
   - {fileID: 1505695072, guid: c49e2c7795c8b6b44a5852dce950f333, type: 3}
   - {fileID: 1950277376, guid: c49e2c7795c8b6b44a5852dce950f333, type: 3}
@@ -8715,6 +8718,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1675774499}
     m_Modifications:
+    - target: {fileID: 6062459444185067396, guid: 05dc1c0fa168b468c92cc8e1d56f9d7e, type: 3}
+      propertyPath: lengthInSec
+      value: 9.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6062459444185067396, guid: 05dc1c0fa168b468c92cc8e1d56f9d7e, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 6.267695
+      objectReference: {fileID: 0}
+    - target: {fileID: 6062459444185067396, guid: 05dc1c0fa168b468c92cc8e1d56f9d7e, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 12.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6062459444185067396, guid: 05dc1c0fa168b468c92cc8e1d56f9d7e, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 10.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504977595394252881, guid: fa481e79c49b14f6cbda95ecae91ecc2, type: 3}
+      propertyPath: m_Name
+      value: fall leaves 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4379440880696718170, guid: fa481e79c49b14f6cbda95ecae91ecc2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9
@@ -8755,31 +8778,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 125.181
       objectReference: {fileID: 0}
-    - target: {fileID: 1504977595394252881, guid: fa481e79c49b14f6cbda95ecae91ecc2, type: 3}
-      propertyPath: m_Name
-      value: fall leaves 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6062459444185067396, guid: 05dc1c0fa168b468c92cc8e1d56f9d7e, type: 3}
-      propertyPath: lengthInSec
-      value: 9.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6062459444185067396, guid: 05dc1c0fa168b468c92cc8e1d56f9d7e, type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 6.267695
-      objectReference: {fileID: 0}
-    - target: {fileID: 6062459444185067396, guid: 05dc1c0fa168b468c92cc8e1d56f9d7e, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 12.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 6062459444185067396, guid: 05dc1c0fa168b468c92cc8e1d56f9d7e, type: 3}
-      propertyPath: InitialModule.startLifetime.minScalar
-      value: 10.67
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa481e79c49b14f6cbda95ecae91ecc2, type: 3}
+--- !u!4 &379328007 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4379440880696718170, guid: fa481e79c49b14f6cbda95ecae91ecc2, type: 3}
+  m_PrefabInstance: {fileID: 379328006}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &385445528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29111,7 +29119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b13fe40ca357b4ba8663eeb13746f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 5
   speedMultiplier: 1.1
   speedDecayRate: 0
   _originalSpeed: 0
@@ -29190,6 +29198,7 @@ Transform:
   - {fileID: 1355525255}
   - {fileID: 146629631}
   - {fileID: 2075483691}
+  - {fileID: 379328007}
   m_Father: {fileID: 1282427980}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1675774500

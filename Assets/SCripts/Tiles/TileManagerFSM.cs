@@ -21,6 +21,7 @@ public class TileManagerFSM : MonoBehaviour
     public int minPathLength;
     public int maxPathLength;
     public PathMaterial nextMaterial;
+    public bool useTransitionTiles;
     private int currentPathLength;
     private int distanceInPath;
     private int transitionTilesLeft;
@@ -334,7 +335,8 @@ public class TileManagerFSM : MonoBehaviour
 
         if (distanceInPath == currentPathLength - 1)
         {
-            transitionTilesLeft = 16; // this has to be double the expected value cause I coded it weird
+            if (useTransitionTiles) transitionTilesLeft = 16; // this has to be double the expected value cause I coded it weird
+            else pathMaterial = NewMaterial(pathMaterial);
         }
 
     }
