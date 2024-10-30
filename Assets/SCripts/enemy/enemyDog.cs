@@ -110,11 +110,11 @@ public class enemyDog : MonoBehaviour
             e.transform.parent = transform;
             surprised = false; // Avoid re-triggerings
             animator.SetTrigger("stun");
+            calculatePathToPlayer();
         }
 
         if (e == null)
         {
-            calculatePathToPlayer();
             chase();
         }
     }
@@ -126,17 +126,23 @@ public class enemyDog : MonoBehaviour
         Vector3Int nextCell = enemyCell;
         if (Mathf.Abs(playerCell.x - enemyCell.x) >= Mathf.Abs(playerCell.y - enemyCell.y))
         {
-            if (playerCell.x > enemyCell.x)//i removed up thing cus it looked bad
+            if (playerCell.x > enemyCell.x)
             {
                 nextCell.x += 1;
-                sp.flipX = true;
-                transform.rotation = Quaternion.Euler(0, 0, 0);
+
+                animator.SetBool("WalkRight", true);
+                animator.SetBool("WalkLeft", false);
+                animator.SetBool("WalkUp", false);
+                animator.SetBool("WalkDown", false);
             }
             else if (playerCell.x < enemyCell.x)
             {
                 nextCell.x -= 1;
-                sp.flipX = false;
-                transform.rotation = Quaternion.Euler(0, 0, 0);
+
+                animator.SetBool("WalkRight", false);
+                animator.SetBool("WalkLeft", true);
+                animator.SetBool("WalkUp", false);
+                animator.SetBool("WalkDown", false);
             }
         }
         else
@@ -144,14 +150,18 @@ public class enemyDog : MonoBehaviour
             if (playerCell.y > enemyCell.y)
             {
                 nextCell.y += 1;
-                transform.rotation = Quaternion.Euler(0, 0, 90);
-                sp.flipX = true;
+                animator.SetBool("WalkRight", false);
+                animator.SetBool("WalkLeft", false);
+                animator.SetBool("WalkUp", true);
+                animator.SetBool("WalkDown", false);
             }
             else if (playerCell.y < enemyCell.y)
             {
                 nextCell.y -= 1;
-                transform.rotation = Quaternion.Euler(0, 0, -90);
-                sp.flipX = true;
+                animator.SetBool("WalkRight", false);
+                animator.SetBool("WalkLeft", false);
+                animator.SetBool("WalkUp", false);
+                animator.SetBool("WalkDown", true);
             }
         }
         targetCellWorldPos = tilemap.GetCellCenterWorld(nextCell);
