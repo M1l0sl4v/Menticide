@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class tree : MonoBehaviour
 {
@@ -38,16 +38,13 @@ public class tree : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             leafspawn();
-            float pitch = Random.Range(.7f, 1.3f);
-            AudioManager.instance.environmentFX(ruscleSound, transform ,.6f, pitch);
+            AudioManager.instance.environmentFX(ruscleSound, transform ,1f, 1f);
             StartCoroutine(DestroyLeavesCoroutine(delay));
         }
 
         if (other.CompareTag("cullingField"))
         {
             ObjectPoolManager.ReturnObjectToPool(gameObject);
-            treespawner1.Spawn();
-            treespawner2.Spawn();
         }
         
     }

@@ -48,9 +48,6 @@ public class Score : MonoBehaviour
         debugSeasonDist = debugInfo.Find("units in season").GetComponent<TMP_Text>();
         debugYearDist = debugInfo.Find("units in year").GetComponent<TMP_Text>();
         debugTotalDist = debugInfo.Find("units total").GetComponent<TMP_Text>();
-
-        // Load high scores
-        LoadHighScore();
     }
 
     // Update is called once per frame

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/animators/environment/rain anim.anim.meta
 guid: 6fd65bdb8af824a82b66173e9bf73a88
+========
+guid: 1de6b6f4b3eb94ec18e5906f8cf3b0c0
+>>>>>>>> Lucian:Assets/animators/dog/dogNormal/WalkDownNormalDog.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

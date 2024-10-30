@@ -35,6 +35,11 @@ public class enemyespawner : MonoBehaviour
             Spawn();
             spawnTime = Time.time + timeBetweenSpawn; 
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Spawn();
+        }
     }
     
     public void Spawn()
@@ -53,6 +58,7 @@ public class enemyespawner : MonoBehaviour
         }
         else //this is the common enemy
         {
+            Debug.Log("ENEMY SHOULD BE SPAWNING");
             int prefabIndex = Random.Range(0, enemytype1.Count);
             ObjectPoolManager.SpawnObject(enemytype1[prefabIndex], spawnPossition, ObjectPoolManager.PoolType.Enemytype1);
         }
@@ -65,7 +71,7 @@ public class enemyespawner : MonoBehaviour
     {
         if (showGizmo)
         {
-            Gizmos.color = Color.red;
+            Gizmos.color = Color.gray;
             Gizmos.DrawWireSphere(transform.position, spawnRadius);
             Vector3 rightDirection = Quaternion.Euler(0, 90, 0) * transform.forward * spawnRadius;
             Vector3 leftDirection = Quaternion.Euler(0, -90, 0) * transform.forward * spawnRadius;

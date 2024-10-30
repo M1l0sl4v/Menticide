@@ -15,7 +15,7 @@ public class playermovement : MonoBehaviour
     // Rate at which speed decreases back to the original value
     public float speedDecayRate = 1f;
 
-    private float _originalSpeed; // Store the initial speed
+    public float _originalSpeed; // Store the initial speed
     private Vector2 _direction = Vector2.up; // Current movement direction
     private bool _isCollidingWithWall = false; // Flag to check if the player is colliding with a wall
 
@@ -28,7 +28,11 @@ public class playermovement : MonoBehaviour
     public float invincibilityDuration;
     private float invincibilityLeft;
     public static playermovement instance;
-    
+
+
+    //player statis effects
+
+
     [SerializeField] private AudioClip takeDamageSound;
 
 
@@ -47,7 +51,7 @@ public class playermovement : MonoBehaviour
     
     public void TakeDamage(int amount)
     {
-        if (invincibilityLeft <= 0 && !DeathSequence.controlLock && !StaticDebugTools.instance.playerInvincibility)
+        if (invincibilityLeft <= 0 && !DeathSequence.controlLock)
         {
             AudioManager.instance.environmentFX(takeDamageSound, transform, 1f, 1f);
 
@@ -102,13 +106,7 @@ public class playermovement : MonoBehaviour
         //}
 
         // DEBUG: Kill player
-        if (Input.GetKeyDown(KeyCode.BackQuote)) 
-        {
-            bool before = StaticDebugTools.instance.playerInvincibility;
-            StaticDebugTools.instance.playerInvincibility = false;
-            TakeDamage(health);
-            StaticDebugTools.instance.playerInvincibility = before;
-        }
+        if (Input.GetKeyDown(KeyCode.BackQuote)) { TakeDamage(health); }
 
         // i-frames
         if (invincibilityLeft > 0) invincibilityLeft -= Time.deltaTime;
@@ -151,6 +149,11 @@ public class playermovement : MonoBehaviour
                 StartCoroutine(SlideAlongWall(collision, reflectedDirection));
             }
         }
+        if (collision.gameObject.CompareTag("AcidPool"))
+        {
+            playerStatisEffect.ApplyEffect(playerStatisEffect.Effects.Slow);
+            playerStatisEffect.ApplyEffect(playerStatisEffect.Effects.Poison);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -160,8 +163,12 @@ public class playermovement : MonoBehaviour
         {
             _isCollidingWithWall = false;
         }
+        if (collision.gameObject.CompareTag("AcidPool"))
+        {
+            playerStatisEffect.RemoveEffect(playerStatisEffect.Effects.Slow);
+            playerStatisEffect.RemoveEffect(playerStatisEffect.Effects.Poison);
+        }
     }
-
     private IEnumerator SlideAlongWall(Collision2D collision, Vector2 reflectedDirection)
     {
         // Get the EdgeCollider2D component from the collided wall

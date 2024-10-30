@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/SCripts/trees.meta
 guid: 703d387742c5cb749bdd6208ebcd62a7
+========
+guid: 8b62e9482ffe24ff780dbad1cde07e0e
+>>>>>>>> Lucian:Assets/SCripts/enemy.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

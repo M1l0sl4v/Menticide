@@ -44,12 +44,12 @@ public class Draw : MonoBehaviour
     void Update()
     {
         HandleInput();
-//        Debug.Log(drawBarPrefab);
+        Debug.Log(drawBarPrefab);
     }
 
     void HandleInput()
     {
-        if (Input.GetMouseButtonDown(0) && !pauseMenu.paused && !DeathSequence.controlLock)
+        if (Input.GetMouseButtonDown(0) && !pauseMenu.paused)
         {
             StartDrawing();
         }
@@ -105,7 +105,7 @@ public class Draw : MonoBehaviour
     {
         // Update the second point of the line to follow the mouse position
         Vector3 mousePos = GetMousePosWithZ();
-//        Debug.Log(drawBarPrefab);
+        Debug.Log(drawBarPrefab);
         if (linePositions.Count < 2 || Vector3.Distance(linePositions[linePositions.Count - 2], mousePos) > 1)
         {
             linePositions.Insert(linePositions.Count - 1, mousePos);

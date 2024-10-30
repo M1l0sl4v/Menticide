@@ -13,7 +13,6 @@ public class enemyDog : MonoBehaviour
 
     [SerializeField] private GameObject exlimation;
 
-    private Vector3 enemyStartPos;
     private Vector3 targetCellWorldPos;
     private bool lineOfSight = false;
     private bool surprised = true;
@@ -22,15 +21,18 @@ public class enemyDog : MonoBehaviour
     public List<AudioClip> noticeSounds;
 
     public SpriteRenderer sp;
-    public Animator animator;
+    private Animator animator;
     private Tilemap tilemap;
+
+
+    
 
     private void Start()
     {
         tilemap = GameObject.FindGameObjectWithTag("enemyTilemap").GetComponent<Tilemap>();
-        enemyStartPos = transform.position;
         player = GameObject.FindGameObjectWithTag("Player");
         targetCellWorldPos = transform.position;
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -84,7 +86,63 @@ public class enemyDog : MonoBehaviour
     private void idle()
     {
         surprised = true; // Reset surprise state when idle
-        // Here, we could implement some idle movement logic if needed
+                          // Here, we could implement some idle movement logic if needed
+        transform.position = Vector2.MoveTowards(transform.position, targetCellWorldPos, enemyspeedNormal * Time.deltaTime);
+        if (Vector3.Distance(transform.position, targetCellWorldPos) < 0.001f)
+        {
+            findIdleNectPos();
+        }
+    }
+    void findIdleNectPos()//set pos to go to "cell" then it goes to it then finds nex pos
+    {
+        Vector3Int nextCellIdle = new Vector3Int(Random.Range(-4, 4), Random.Range(-4, 4),0);
+
+        Vector3Int enemyCell = tilemap.WorldToCell(transform.position);
+        Vector3Int nextCell = enemyCell;
+
+
+        if (Mathf.Abs(nextCellIdle.x - enemyCell.x) >= Mathf.Abs(nextCellIdle.y - enemyCell.y))
+        {
+            if (nextCellIdle.x > enemyCell.x)
+            {
+                nextCell.x += 1;
+
+                animator.SetBool("WalkRight", true);
+                animator.SetBool("WalkLeft", false);
+                animator.SetBool("WalkUp", false);
+                animator.SetBool("WalkDown", false);
+            }
+            else if (nextCellIdle.x < enemyCell.x)
+            {
+                nextCell.x -= 1;
+
+                animator.SetBool("WalkRight", false);
+                animator.SetBool("WalkLeft", true);
+                animator.SetBool("WalkUp", false);
+                animator.SetBool("WalkDown", false);
+            }
+        }
+        else
+        {
+            if (nextCellIdle.y > enemyCell.y)
+            {
+                nextCell.y += 1;
+                animator.SetBool("WalkRight", false);
+                animator.SetBool("WalkLeft", false);
+                animator.SetBool("WalkUp", true);
+                animator.SetBool("WalkDown", false);
+            }
+            else if (nextCellIdle.y < enemyCell.y)
+            {
+                nextCell.y -= 1;
+                animator.SetBool("WalkRight", false);
+                animator.SetBool("WalkLeft", false);
+                animator.SetBool("WalkUp", false);
+                animator.SetBool("WalkDown", true);
+            }
+        }
+        targetCellWorldPos = tilemap.GetCellCenterWorld(nextCell);
+    
     }
 
     private void chase()
@@ -104,7 +162,7 @@ public class enemyDog : MonoBehaviour
         if (surprised)
         {
             int prefabIndex = Random.Range(0, noticeSounds.Count);
-            float pitch = Random.Range(1f, 1.3f);
+            float pitch = Random.Range(.7f, 1.3f);
             AudioManager.instance.enemyFX(noticeSounds[prefabIndex], transform, 1f, pitch);
             e = Instantiate(exlimation, transform); // Show exclamation mark
             e.transform.parent = transform;
@@ -114,7 +172,6 @@ public class enemyDog : MonoBehaviour
 
         if (e == null)
         {
-            calculatePathToPlayer();
             chase();
         }
     }
@@ -126,17 +183,23 @@ public class enemyDog : MonoBehaviour
         Vector3Int nextCell = enemyCell;
         if (Mathf.Abs(playerCell.x - enemyCell.x) >= Mathf.Abs(playerCell.y - enemyCell.y))
         {
-            if (playerCell.x > enemyCell.x)//i removed up thing cus it looked bad
+            if (playerCell.x > enemyCell.x)
             {
                 nextCell.x += 1;
-                sp.flipX = true;
-                transform.rotation = Quaternion.Euler(0, 0, 0);
+
+                animator.SetBool("WalkRight", true);
+                animator.SetBool("WalkLeft", false);
+                animator.SetBool("WalkUp", false);
+                animator.SetBool("WalkDown", false);
             }
             else if (playerCell.x < enemyCell.x)
             {
                 nextCell.x -= 1;
-                sp.flipX = false;
-                transform.rotation = Quaternion.Euler(0, 0, 0);
+
+                animator.SetBool("WalkRight", false);
+                animator.SetBool("WalkLeft", true);
+                animator.SetBool("WalkUp", false);
+                animator.SetBool("WalkDown", false);
             }
         }
         else
@@ -144,14 +207,18 @@ public class enemyDog : MonoBehaviour
             if (playerCell.y > enemyCell.y)
             {
                 nextCell.y += 1;
-                transform.rotation = Quaternion.Euler(0, 0, 90);
-                sp.flipX = true;
+                animator.SetBool("WalkRight", false);
+                animator.SetBool("WalkLeft", false);
+                animator.SetBool("WalkUp", true);
+                animator.SetBool("WalkDown", false);
             }
             else if (playerCell.y < enemyCell.y)
             {
                 nextCell.y -= 1;
-                transform.rotation = Quaternion.Euler(0, 0, -90);
-                sp.flipX = true;
+                animator.SetBool("WalkRight", false);
+                animator.SetBool("WalkLeft", false);
+                animator.SetBool("WalkUp", false);
+                animator.SetBool("WalkDown", true);
             }
         }
         targetCellWorldPos = tilemap.GetCellCenterWorld(nextCell);
