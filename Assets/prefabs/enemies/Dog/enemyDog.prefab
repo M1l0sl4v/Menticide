@@ -102,8 +102,8 @@ MonoBehaviour:
   myLayerMask:
     serializedVersion: 2
     m_Bits: 1088
-  losDistance: 5
-  enemyspeedChase: 5
+  losDistance: 20
+  enemyspeedChase: 5.5
   enemyspeedNormal: 3
   despawnDistanceDog: 50
   exlimation: {fileID: 1348696221685265807, guid: 195e0f6155c4c434d8f48f48aef3a53a, type: 3}
@@ -112,6 +112,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 298dffb9cb6aa4453b70cce92e018cab, type: 3}
   - {fileID: 8300000, guid: 3924c84d4adea4bcbb8216777d4cf265, type: 3}
   sp: {fileID: 1700632340610863045}
+  animator: {fileID: 7534529912854574927}
 --- !u!61 &1546645933743141903
 BoxCollider2D:
   m_ObjectHideFlags: 0

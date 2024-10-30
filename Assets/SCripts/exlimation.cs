@@ -9,6 +9,11 @@ public class exlimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        lifeTime -= Time.deltaTime;
+
+        if (lifeTime <= 0.0f)
+        {
+            Destroy(gameObject);
+        }
     }
 }

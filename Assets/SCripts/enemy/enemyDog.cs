@@ -13,41 +13,24 @@ public class enemyDog : MonoBehaviour
 
     [SerializeField] private GameObject exlimation;
 
+    private Vector3 enemyStartPos;
     private Vector3 targetCellWorldPos;
     private bool lineOfSight = false;
-    private bool lineOfSightLine = false;
     private bool surprised = true;
     private GameObject player;
     private GameObject e;
     public List<AudioClip> noticeSounds;
 
     public SpriteRenderer sp;
-    private Animator animator;
+    public Animator animator;
     private Tilemap tilemap;
-    
-    private float enemyspeedChaseOrng;
-    private float enemyspeedNormalOrng;
-
-    
 
     private void Start()
     {
         tilemap = GameObject.FindGameObjectWithTag("enemyTilemap").GetComponent<Tilemap>();
+        enemyStartPos = transform.position;
         player = GameObject.FindGameObjectWithTag("Player");
         targetCellWorldPos = transform.position;
-        animator = GetComponent<Animator>();
-        enemyspeedChaseOrng = enemyspeedChase;
-        enemyspeedNormalOrng = enemyspeedNormal;
-        if (lineOfSightLine == true)
-        {
-            enemyspeedChase = 0;
-            enemyspeedNormal = 0;
-        }
-        else
-        {
-            enemyspeedChase = enemyspeedChaseOrng;
-            enemyspeedNormal = enemyspeedNormalOrng;
-        }
     }
 
     private void Update()
@@ -70,7 +53,6 @@ public class enemyDog : MonoBehaviour
         if (ray.collider != null)
         {
             lineOfSight = ray.collider.CompareTag("Player");
-            lineOfSightLine = ray.collider.CompareTag("Wall");
             Debug.DrawRay(transform.position, player.transform.position - transform.position, lineOfSight ? Color.green : Color.red);
         }
     }
@@ -79,7 +61,6 @@ public class enemyDog : MonoBehaviour
     {
         if (other.gameObject.CompareTag("cullingField"))
         {
-            
             ObjectPoolManager.ReturnObjectToPool(gameObject);
         }
         else if (other.gameObject.CompareTag("Player"))
@@ -102,68 +83,8 @@ public class enemyDog : MonoBehaviour
 
     private void idle()
     {
-        if (surprised == false)
-        {
-            findIdleNectPos();
-        }
         surprised = true; // Reset surprise state when idle
-                          // Here, we could implement some idle movement logic if needed
-        transform.position = Vector2.MoveTowards(transform.position, targetCellWorldPos, enemyspeedNormal * Time.deltaTime);
-        if (Vector3.Distance(transform.position, targetCellWorldPos) < 0.001f)
-        {
-            findIdleNectPos();
-        }
-    }
-    void findIdleNectPos()//set pos to go to "cell" then it goes to it then finds nex pos
-    {
-        Vector3Int nextCellIdle = new Vector3Int(Random.Range(-4, 4), Random.Range(-4, 4),0);
-
-        Vector3Int enemyCell = tilemap.WorldToCell(transform.position);
-        Vector3Int nextCell = enemyCell;
-
-
-        if (Mathf.Abs(nextCellIdle.x - enemyCell.x) >= Mathf.Abs(nextCellIdle.y - enemyCell.y))
-        {
-            if (nextCellIdle.x > enemyCell.x)
-            {
-                nextCell.x += 1;
-
-                animator.SetBool("WalkRight", true);
-                animator.SetBool("WalkLeft", false);
-                animator.SetBool("WalkUp", false);
-                animator.SetBool("WalkDown", false);
-            }
-            else if (nextCellIdle.x < enemyCell.x)
-            {
-                nextCell.x -= 1;
-
-                animator.SetBool("WalkRight", false);
-                animator.SetBool("WalkLeft", true);
-                animator.SetBool("WalkUp", false);
-                animator.SetBool("WalkDown", false);
-            }
-        }
-        else
-        {
-            if (nextCellIdle.y > enemyCell.y)
-            {
-                nextCell.y += 1;
-                animator.SetBool("WalkRight", false);
-                animator.SetBool("WalkLeft", false);
-                animator.SetBool("WalkUp", true);
-                animator.SetBool("WalkDown", false);
-            }
-            else if (nextCellIdle.y < enemyCell.y)
-            {
-                nextCell.y -= 1;
-                animator.SetBool("WalkRight", false);
-                animator.SetBool("WalkLeft", false);
-                animator.SetBool("WalkUp", false);
-                animator.SetBool("WalkDown", true);
-            }
-        }
-        targetCellWorldPos = tilemap.GetCellCenterWorld(nextCell);
-    
+        // Here, we could implement some idle movement logic if needed
     }
 
     private void chase()
@@ -183,11 +104,10 @@ public class enemyDog : MonoBehaviour
         if (surprised)
         {
             int prefabIndex = Random.Range(0, noticeSounds.Count);
-            float pitch = Random.Range(.7f, 1.3f);
+            float pitch = Random.Range(1f, 1.3f);
             AudioManager.instance.enemyFX(noticeSounds[prefabIndex], transform, 1f, pitch);
-            GameObject e = Instantiate(exlimation, transform); // Show exclamation mark
+            e = Instantiate(exlimation, transform); // Show exclamation mark
             e.transform.parent = transform;
-            Destroy(e, 1f);
             surprised = false; // Avoid re-triggerings
             animator.SetTrigger("stun");
             calculatePathToPlayer();
@@ -245,11 +165,5 @@ public class enemyDog : MonoBehaviour
             }
         }
         targetCellWorldPos = tilemap.GetCellCenterWorld(nextCell);
-    }
-
-    void OnDisable()
-    {
-        lineOfSight = true;
-        surprised = true;
     }
 }
