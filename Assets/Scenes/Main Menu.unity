@@ -1565,7 +1565,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &509074783
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1681,6 +1681,30 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1602905124}
+        m_TargetAssemblyTypeName: TMPro.TMP_InputField, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1103125975}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Removed!
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &609976612
@@ -1939,7 +1963,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &686654008
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1977,6 +2001,7 @@ MonoBehaviour:
   splashText: {fileID: 0}
   loadingWheel: {fileID: 0}
   inputField: {fileID: 0}
+  removeButtonText: {fileID: 0}
   splashFadeOut: 0
   wheelFadeOut: 0
 --- !u!1 &711612945
@@ -3415,6 +3440,7 @@ MonoBehaviour:
   splashText: {fileID: 1617184614}
   loadingWheel: {fileID: 432909910}
   inputField: {fileID: 1602905124}
+  removeButtonText: {fileID: 1103125975}
   splashFadeOut: 0
   wheelFadeOut: 0
 --- !u!1 &1371813946

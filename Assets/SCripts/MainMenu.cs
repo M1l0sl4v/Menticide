@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     public Transform loadingWheel;
 
     public TMP_InputField inputField;
+    public TMP_Text removeButtonText;
 
     public bool splashFadeOut;
     public bool wheelFadeOut;
@@ -84,5 +85,12 @@ public class MainMenu : MonoBehaviour
     public void ClearName()
     {
         Score.RemoveEntry(inputField.text);
+        StartCoroutine(ResetText());
+    }
+
+    IEnumerator ResetText()
+    {
+        yield return new WaitForSeconds(1.25f);
+        removeButtonText.text = "Remove Entry";
     }
 }
