@@ -6,6 +6,7 @@ using System.Linq;
 using UnityEngine;
 using static TileSprite;
 using UnityEngine.U2D;
+using Unity.VisualScripting;
 
 public class TileManagerFSM : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class TileManagerFSM : MonoBehaviour
     private int currentPathLength;
     private int distanceInPath;
     private int transitionTilesLeft;
+    private TransitionType transition;
 
 
     // Overlay
@@ -82,6 +84,8 @@ public class TileManagerFSM : MonoBehaviour
         instance = this;
 
         SetEnums();
+
+        currentPathLength = UnityEngine.Random.Range(minPathLength, maxPathLength + 1);
 
         // Compile big list
         masterList = ConcatArrays(
@@ -174,6 +178,14 @@ public class TileManagerFSM : MonoBehaviour
         PathMaterial materialToUse;
         materialToUse = pathMaterial;
 
+        // Check for transition
+        if (transitionTilesLeft > 0)
+        {
+            if (--transitionTilesLeft <= 0)
+            {
+                transition = TransitionType.None;
+            }
+        }
 
         // List to contain options
         List<Sprite> spriteChoices = new();
@@ -182,7 +194,7 @@ public class TileManagerFSM : MonoBehaviour
         if (StaticDebugTools.instance.tileManagerAlgorithm == StaticDebugTools.Algorithm.Cache)
         {
             if (tile.layer == Layer.Overlay) spriteChoices = tileCache[CacheKey(tile.direction, tile.layer, seasonToUse)];
-            if (tile.layer == Layer.Base) spriteChoices = tileCache[CacheKey(tile.direction, tile.layer, materialToUse)];
+            if (tile.layer == Layer.Base) spriteChoices = tileCache[CacheKey(tile.direction, tile.layer, materialToUse, transition)];
         }
         
 
@@ -234,9 +246,9 @@ public class TileManagerFSM : MonoBehaviour
     {
         return "" + direction + layer + season;
     }
-    private string CacheKey(Direction direction, Layer layer, PathMaterial material)
+    private string CacheKey(Direction direction, Layer layer, PathMaterial material, TransitionType transition)
     {
-        return "" + direction + layer + material;
+        return "" + direction + layer + material + transition;
     }
 
     // Clears the tile cache
@@ -268,10 +280,12 @@ public class TileManagerFSM : MonoBehaviour
     private TileSprite[] AssignTags(Sprite[] sprites, PathMaterial material, TransitionType transition)
     {
         TileSprite[] output = new TileSprite[sprites.Length];
-        output[0] = new TileSprite(sprites[0], Direction.Left, Layer.Base, material, transition);
-        output[1] = new TileSprite(sprites[1], Direction.Middle, Layer.Base, material, transition);
-        output[2] = new TileSprite(sprites[2], Direction.Middle, Layer.Base, material, transition);
-        output[3] = new TileSprite(sprites[3], Direction.Right, Layer.Base, material, transition);
+        for (int i = 0; i < output.Length; i++)
+        {
+            if (i == 0) output[0] = new TileSprite(sprites[0], Direction.Left, Layer.Base, material, transition);
+            else if (i == sprites.Length - 1) output[i] = new TileSprite(sprites[i], Direction.Right, Layer.Base, material, transition);
+            else output[i] = new TileSprite(sprites[i], Direction.Middle, Layer.Base, material, transition);
+        }
         return output;
     }
 
@@ -288,8 +302,38 @@ public class TileManagerFSM : MonoBehaviour
     }
 
 
+    public void IncreasePathDistance()
+    {
+        distanceInPath += 1;
 
+        if (distanceInPath == currentPathLength - 1)
+        {
+            SetTransition(TransitionType.FadeOut);
+            transitionTilesLeft = 4;
+        }
+        else if (distanceInPath >= currentPathLength)
+        {
+            SetTransition(TransitionType.FadeIn);
+            pathMaterial = NewMaterial(pathMaterial);
+            transitionTilesLeft = 4;
+            currentPathLength = UnityEngine.Random.Range(minPathLength, maxPathLength + 1);
+            distanceInPath = 0;
+        }
+    }
 
+    public void SetTransition(TransitionType transition)
+    {
+        this.transition = transition;
+    }
+
+    // Returns a random material that is not given material
+    private PathMaterial NewMaterial(PathMaterial material)
+    {
+        List<PathMaterial> options = new List<PathMaterial>{PathMaterial.Brick, PathMaterial.Paved, PathMaterial.Dirt, PathMaterial.Cobble};
+        options.Remove(material);
+
+        return options[UnityEngine.Random.Range(0, options.Count)];
+    }
 
     public void SetEnums()
     {

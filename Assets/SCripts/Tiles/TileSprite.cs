@@ -81,7 +81,7 @@ public class TileSprite
     public override string ToString()
     {
         if (layer == Layer.Base) return direction.ToString() + layer.ToString() + material.ToString() + transitionType.ToString();
-        if (layer == Layer.Overlay) return direction.ToString() + layer.ToString() + season.ToString() + transitionType.ToString();
+        if (layer == Layer.Overlay) return direction.ToString() + layer.ToString() + season.ToString();
         throw new System.Exception("Unset layer not allowed"); // this line should never be reached
     }
 }
