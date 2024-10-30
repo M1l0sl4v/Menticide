@@ -1280,7 +1280,7 @@ GameObject:
   - component: {fileID: 64684205}
   m_Layer: 0
   m_Name: Static Game Controller
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3190,6 +3190,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   season: 3
   pathMaterial: 1
+  minPathLength: 100
+  maxPathLength: 200
+  nextMaterial: 0
   smrLSprites:
   - {fileID: 21300000, guid: 6d34284a3ab88df4f8c53788ff8ae6b4, type: 3}
   smrMSprites:
@@ -13813,6 +13816,10 @@ MonoBehaviour:
   - {fileID: 3482516811903228533, guid: e8a90b75e56f14b4db67e65f5df64479, type: 3}
   treeChance: 0
   tilemap: {fileID: 1836558848}
+  summerTree: {fileID: 4089663407155386498, guid: 640674092cb7c9748832b9b6e87bc33c, type: 3}
+  fallTree: {fileID: 4089663407155386498, guid: 34193669573586b43b1a556e37c8c730, type: 3}
+  winterTree: {fileID: 4089663407155386498, guid: 0455ebca0749b3146bfa49fa7d0f5e1e, type: 3}
+  springTree: {fileID: 4089663407155386498, guid: 59eff01161378404ebf8670f8431fd1a, type: 3}
 --- !u!4 &808981343 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8176814249895226974, guid: 80bd3e6377f514b7ebd9d7ddb8178787, type: 3}
@@ -17211,6 +17218,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3824585760666709414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 403776839, guid: c49e2c7795c8b6b44a5852dce950f333, type: 3}
+    - target: {fileID: 3824585760666709414, guid: 4b05706959b364dadb6106f207eac884, type: 3}
       propertyPath: m_SortingLayer
       value: 0
       objectReference: {fileID: 0}
@@ -17342,6 +17353,10 @@ MonoBehaviour:
   - {fileID: 3482516811903228533, guid: e8a90b75e56f14b4db67e65f5df64479, type: 3}
   treeChance: 0
   tilemap: {fileID: 1836558848}
+  summerTree: {fileID: 4089663407155386498, guid: 640674092cb7c9748832b9b6e87bc33c, type: 3}
+  fallTree: {fileID: 4089663407155386498, guid: 34193669573586b43b1a556e37c8c730, type: 3}
+  winterTree: {fileID: 4089663407155386498, guid: 0455ebca0749b3146bfa49fa7d0f5e1e, type: 3}
+  springTree: {fileID: 4089663407155386498, guid: 59eff01161378404ebf8670f8431fd1a, type: 3}
 --- !u!4 &1007118043
 Transform:
   m_ObjectHideFlags: 0

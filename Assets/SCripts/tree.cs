@@ -10,8 +10,8 @@ public class tree : MonoBehaviour
     [SerializeField] private AudioClip ruscleSound;
     public float delay = 2f;
     
-    public treeSpawner treespawner1;
-    public treeSpawner treespawner2;
+    public TreeSpawner treespawner1;
+    public TreeSpawner treespawner2;
     
     
     private Coroutine destroyLeavesCoroutine;

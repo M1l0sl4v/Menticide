@@ -30,7 +30,7 @@ public class StaticDebugTools : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        if (FindObjectsOfType<StaticDebugTools>().Length > 1) { Destroy(GameObject.FindGameObjectWithTag("Static")); }
+        if (FindObjectsOfType<StaticDebugTools>().Length > 1) Destroy(GameObject.FindGameObjectWithTag("Static"));
         gameObject.tag = "Untagged";
         instance = this;
     }

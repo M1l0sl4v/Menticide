@@ -38,7 +38,7 @@ public class Score : MonoBehaviour
     TMP_Text debugTotalDist;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         instance = this;
 
@@ -97,6 +97,14 @@ public class Score : MonoBehaviour
 
         scoreText.text = UpdateScore(year, month);
         UpdateDebug();
+
+        if (distanceInSeason == TreeSpawner.treeSwitchPoint)
+        {
+            foreach (var spawner in FindObjectsOfType<TreeSpawner>())
+            {
+                spawner.AdvanceTreePool();
+            }
+        }
     }
 
 
@@ -229,7 +237,7 @@ public class Score : MonoBehaviour
         topNames.Clear();
         topScores.Clear();
 
-        if (PlayerPrefs.HasKey("highscores"))
+        if (!string.IsNullOrWhiteSpace(PlayerPrefs.GetString("highscores")))
         {
             string csv = PlayerPrefs.GetString("highscores");
             foreach (string line in csv.TrimEnd('\n').Split("\n"))

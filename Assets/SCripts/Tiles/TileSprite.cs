@@ -42,12 +42,21 @@ public class TileSprite
     }
     public PathMaterial material;
 
+    public enum TransitionType
+    {
+        None,
+        FadeIn,
+        FadeOut
+    }
+    public TransitionType transitionType;
+
     public TileSprite(Sprite sp, Direction d, Layer l, Season s)
     {
         this.sprite = sp;
         this.direction = d;
         this.layer = l;
         this.season = s;
+        this.transitionType = TransitionType.None;
     }
 
     public TileSprite(Sprite sp, Direction d, Layer l, PathMaterial m)
@@ -56,11 +65,22 @@ public class TileSprite
         this.direction = d;
         this.layer = l;
         this.material = m;
+        this.transitionType = TransitionType.None;
     }
+
+    public TileSprite(Sprite sp, Direction d, Layer l, PathMaterial m, TransitionType t)
+    {
+        this.sprite = sp;
+        this.direction = d;
+        this.layer = l;
+        this.material = m;
+        this.transitionType = t;
+    }
+
 
     public override string ToString()
     {
-        if (layer == Layer.Base) return direction.ToString() + layer.ToString() + material.ToString();
+        if (layer == Layer.Base) return direction.ToString() + layer.ToString() + material.ToString() + transitionType.ToString();
         if (layer == Layer.Overlay) return direction.ToString() + layer.ToString() + season.ToString();
         throw new System.Exception("Unset layer not allowed"); // this line should never be reached
     }

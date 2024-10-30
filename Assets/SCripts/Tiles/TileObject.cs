@@ -23,7 +23,7 @@ public class TileObject : MonoBehaviour
 
     private void Start()
     {
-
+        //TileManagerFSM.instance.ProcessTile(this);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
