@@ -4019,8 +4019,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -753, y: 489}
-  m_SizeDelta: {x: 318.784, y: 59.713}
+  m_AnchoredPosition: {x: -728.177, y: 489}
+  m_SizeDelta: {x: 368.4299, y: 59.713}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &206098212
 MonoBehaviour:
@@ -4072,7 +4072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad0511ca5b4fae4480cad41c9f781b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayDebugInfo: 1
+  displayDebugInfo: 0
   scoreText: {fileID: 1587748122}
   debugInfo: {fileID: 705224756}
 --- !u!1 &206676856
@@ -27726,7 +27726,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35.546997, y: -4.8532715}
+  m_AnchoredPosition: {x: -68, y: -4.8532715}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1587748122
@@ -27751,8 +27751,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0 Months
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cf3d38004d749490a93b10e85a14683a, type: 2}
-  m_sharedMaterial: {fileID: -9188023430420202209, guid: cf3d38004d749490a93b10e85a14683a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: add4055c5cb2d4ac6969ab338bf8e718, type: 2}
+  m_sharedMaterial: {fileID: -1409062520694874123, guid: add4055c5cb2d4ac6969ab338bf8e718, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -28134,7 +28134,7 @@ Transform:
   m_GameObject: {fileID: 1626794935}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.8064404, y: 0.22872257, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -28168,14 +28168,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.6327212
-    width: 0.4879032
-    height: 0.4545075
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.4375
+  orthographic size: 5.625
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
