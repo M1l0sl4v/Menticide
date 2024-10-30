@@ -44,7 +44,7 @@ public class Draw : MonoBehaviour
     void Update()
     {
         HandleInput();
-        Debug.Log(drawBarPrefab);
+        //Debug.Log(drawBarPrefab);
     }
 
     void HandleInput()
