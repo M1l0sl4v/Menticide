@@ -70,5 +70,6 @@ public class TreeSpawner : MonoBehaviour
     public void AdvanceTreePool()
     {
         if (++treePoolIndex == treePool.Length) treePoolIndex = 0;
+        TreeObject.layerToUse = 0;
     }
 }
