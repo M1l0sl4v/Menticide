@@ -15,7 +15,7 @@ public class playermovement : MonoBehaviour
     // Rate at which speed decreases back to the original value
     public float speedDecayRate = 1f;
 
-    private float _originalSpeed; // Store the initial speed
+    public float _originalSpeed; // Store the initial speed
     private Vector2 _direction = Vector2.up; // Current movement direction
     private bool _isCollidingWithWall = false; // Flag to check if the player is colliding with a wall
 
@@ -28,7 +28,11 @@ public class playermovement : MonoBehaviour
     public float invincibilityDuration;
     private float invincibilityLeft;
     public static playermovement instance;
-    
+
+
+    //player statis effects
+
+
     [SerializeField] private AudioClip takeDamageSound;
 
 
@@ -155,7 +159,22 @@ public class playermovement : MonoBehaviour
             _isCollidingWithWall = false;
         }
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("AcidPool"))
+        {
+            playerStatisEffect.ApplyEffect(playerStatisEffect.Effects.Slow);
+            playerStatisEffect.ApplyEffect(playerStatisEffect.Effects.Poison);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("AcidPool"))
+        {
+            playerStatisEffect.RemoveEffect(playerStatisEffect.Effects.Slow);
+            playerStatisEffect.RemoveEffect(playerStatisEffect.Effects.Poison);
+        }
+    }
     private IEnumerator SlideAlongWall(Collision2D collision, Vector2 reflectedDirection)
     {
         // Get the EdgeCollider2D component from the collided wall

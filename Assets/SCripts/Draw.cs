@@ -159,6 +159,15 @@ public class Draw : MonoBehaviour
             currentLine = null;
         }
     }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+    }
 
     IEnumerator DestroyLineAfterDelay(GameObject lineObject, float delay)
     {
