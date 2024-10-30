@@ -263,5 +263,13 @@ public class Score : MonoBehaviour
         highScore = 0;
     }
 
+    public static void RemoveEntry(string name)
+    {
+        while (topNames.Contains(name))
+        {
+            topScores.RemoveAt(topNames.IndexOf(name));
+            topNames.Remove(name);
+        }
+    }
     
 }

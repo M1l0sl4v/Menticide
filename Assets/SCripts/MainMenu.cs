@@ -3,13 +3,33 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
     public TMP_Text splashText;
+    public Transform loadingWheel;
+
+    public TMP_InputField inputField;
+
+    public bool splashFadeOut;
+    public bool wheelFadeOut;
+
+    public void FixedUpdate()
+    {
+        if (splashFadeOut)
+        {
+            splashText.color = new Color(255, 0, 0, splashText.color.a - 0.02f);
+        }
+
+        if (wheelFadeOut)
+        {
+            loadingWheel.gameObject.GetComponent<Image>().color = new Color(255, 255, 255, loadingWheel.gameObject.GetComponent<Image>().color.a - 0.02f);
+        }
+    }
 
     public void PlayGame(){
-        SceneManager.LoadScene(1);
+        StartCoroutine(StartSequence());
     }
 
     public void QuitGame(){
@@ -42,13 +62,27 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator DelayThenQuit()
     {
-        yield return new WaitForSeconds(2.01f);
+        yield return new WaitForSeconds(1.5f);
         Application.Quit();
     }
 
     IEnumerator StartSequence()
     {
         Blackout.instance.On();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.0f);
+        splashText.gameObject.SetActive(true);
+        SetRandomSplashText();
+        loadingWheel.gameObject.SetActive(true);
+        loadingWheel.GetComponent<LoadingWheel>().active = true;
+        yield return new WaitForSeconds(2.5f);
+        splashFadeOut = true;
+        wheelFadeOut = true;
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene(1);
+    }
+
+    public void ClearName()
+    {
+        Score.RemoveEntry(inputField.text);
     }
 }

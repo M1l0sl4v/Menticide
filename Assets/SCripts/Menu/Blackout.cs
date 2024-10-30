@@ -6,12 +6,7 @@ using UnityEngine.UI;
 public class Blackout : MonoBehaviour
 {
     public static Blackout instance;
-    public Animator animator;
     private Image image;
-
-
-    private float start;
-    private float end;
 
     private enum Fade
     {
@@ -25,7 +20,6 @@ public class Blackout : MonoBehaviour
     void Awake()
     {
         instance = this;
-        animator = GetComponent<Animator>();
         image = GetComponent<Image>();
     }
 
@@ -56,15 +50,12 @@ public class Blackout : MonoBehaviour
 
     public void On()
     {
-        start = Time.time;
-        animator.SetTrigger("FadeIn");
         fade = Fade.In;
         GetComponent<Image>().raycastTarget = true;
     }
 
     public void Off()
     {
-        animator.SetTrigger("FadeOut");
         fade = Fade.Out;
         GetComponent<Image>().raycastTarget = false;
     }
