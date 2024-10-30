@@ -56,7 +56,7 @@ public class tree : MonoBehaviour
         yield return new WaitForSeconds(delay);
         if (leafsinstance != null)
         {
-            Destroy(leafsinstance.gameObject);  
+            Destroy(leafs.gameObject);  
         }
     }
 

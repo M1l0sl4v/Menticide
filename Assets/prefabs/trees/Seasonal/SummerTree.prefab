@@ -163,7 +163,7 @@ MonoBehaviour:
   despawnDistanceTree: 10
   leafs: {fileID: 5752905677984127925, guid: 0b1abe69d988140e1a88da2fe3a22bc0, type: 3}
   ruscleSound: {fileID: 8300000, guid: 7b24b07ab9dae4b99bdd741d1b9d0b04, type: 3}
-  delay: 0.5
+  delay: 0.001
   treespawner1: {fileID: 0}
   treespawner2: {fileID: 0}
 --- !u!61 &7627912645700626820
