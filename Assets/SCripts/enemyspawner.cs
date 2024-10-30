@@ -26,7 +26,7 @@ public class enemyespawner : MonoBehaviour
         spawnTime = Time.time + timeBetweenSpawn;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // delay on start, then incriments
         if(Time.time > spawnTime)
@@ -58,7 +58,7 @@ public class enemyespawner : MonoBehaviour
         }
         else //this is the common enemy
         {
-            Debug.Log("ENEMY SHOULD BE SPAWNING");
+           // Debug.Log("ENEMY SHOULD BE SPAWNING");
             int prefabIndex = Random.Range(0, enemytype1.Count);
             ObjectPoolManager.SpawnObject(enemytype1[prefabIndex], spawnPossition, ObjectPoolManager.PoolType.Enemytype1);
         }

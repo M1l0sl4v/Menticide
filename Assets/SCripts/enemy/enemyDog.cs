@@ -63,6 +63,7 @@ public class enemyDog : MonoBehaviour
     {
         if (other.gameObject.CompareTag("cullingField"))
         {
+            
             ObjectPoolManager.ReturnObjectToPool(gameObject);
         }
         else if (other.gameObject.CompareTag("Player"))
@@ -85,6 +86,10 @@ public class enemyDog : MonoBehaviour
 
     private void idle()
     {
+        if (surprised == false)
+        {
+            findIdleNectPos();
+        }
         surprised = true; // Reset surprise state when idle
                           // Here, we could implement some idle movement logic if needed
         transform.position = Vector2.MoveTowards(transform.position, targetCellWorldPos, enemyspeedNormal * Time.deltaTime);
@@ -164,10 +169,12 @@ public class enemyDog : MonoBehaviour
             int prefabIndex = Random.Range(0, noticeSounds.Count);
             float pitch = Random.Range(.7f, 1.3f);
             AudioManager.instance.enemyFX(noticeSounds[prefabIndex], transform, 1f, pitch);
-            e = Instantiate(exlimation, transform); // Show exclamation mark
+            GameObject e = Instantiate(exlimation, transform); // Show exclamation mark
             e.transform.parent = transform;
+            Destroy(e, 1f);
             surprised = false; // Avoid re-triggerings
             animator.SetTrigger("stun");
+            calculatePathToPlayer();
         }
 
         if (e == null)
@@ -222,5 +229,11 @@ public class enemyDog : MonoBehaviour
             }
         }
         targetCellWorldPos = tilemap.GetCellCenterWorld(nextCell);
+    }
+
+    void OnDisable()
+    {
+        lineOfSight = true;
+        surprised = true;
     }
 }
