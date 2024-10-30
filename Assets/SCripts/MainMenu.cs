@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
     }
 
     public void QuitGame(){
-        Application.Quit();
+        StartCoroutine(DelayThenQuit());
     }
 
     public string RandomSplashText(){
@@ -38,5 +38,17 @@ public class MainMenu : MonoBehaviour
 
     public void SetRandomSplashText() {
         splashText.text = RandomSplashText();
+    }
+
+    IEnumerator DelayThenQuit()
+    {
+        yield return new WaitForSeconds(2.01f);
+        Application.Quit();
+    }
+
+    IEnumerator StartSequence()
+    {
+        Blackout.instance.On();
+        yield return new WaitForSeconds(2f);
     }
 }

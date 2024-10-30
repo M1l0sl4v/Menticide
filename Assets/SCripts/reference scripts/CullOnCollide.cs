@@ -8,7 +8,7 @@ public class CullingCollider : MonoBehaviour
         Destroy(other.gameObject);
 
         // for reuse mechanic in future implementations 
-        // other.gameObject.SetActive(false);
+        // other.gameObject.SetOnlyActive(false);
 
     }
 }

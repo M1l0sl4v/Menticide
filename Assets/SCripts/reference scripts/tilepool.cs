@@ -36,7 +36,7 @@ public class tilepool : MonoBehaviour
         for(int i = 0;i < amountToPool; i++)
         {
           //  tmp = Instantiate(objectsToPool);
-          //  tmp.SetActive(false);
+          //  tmp.SetOnlyActive(false);
           //  pooledObjects.Add(tmp);
         }
     }//this can be comented back in
