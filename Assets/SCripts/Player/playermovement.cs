@@ -149,6 +149,11 @@ public class playermovement : MonoBehaviour
                 StartCoroutine(SlideAlongWall(collision, reflectedDirection));
             }
         }
+        if (collision.gameObject.CompareTag("AcidPool"))
+        {
+            playerStatisEffect.ApplyEffect(playerStatisEffect.Effects.Slow);
+            playerStatisEffect.ApplyEffect(playerStatisEffect.Effects.Poison);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -158,17 +163,6 @@ public class playermovement : MonoBehaviour
         {
             _isCollidingWithWall = false;
         }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("AcidPool"))
-        {
-            playerStatisEffect.ApplyEffect(playerStatisEffect.Effects.Slow);
-            playerStatisEffect.ApplyEffect(playerStatisEffect.Effects.Poison);
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
         if (collision.gameObject.CompareTag("AcidPool"))
         {
             playerStatisEffect.RemoveEffect(playerStatisEffect.Effects.Slow);

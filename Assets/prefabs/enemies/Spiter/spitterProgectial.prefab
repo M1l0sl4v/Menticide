@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c26a4c2fb6d4e698f8bb203afdedbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HowMuchDamage: 0
+  HowMuchDamage: 1
   bulletSpeed: 3
   BounceOffWall: 1
   LifeSpan: 3
