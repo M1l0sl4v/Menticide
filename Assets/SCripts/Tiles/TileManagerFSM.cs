@@ -20,6 +20,7 @@ public class TileManagerFSM : MonoBehaviour
     // Base Material transition
     public int minPathLength;
     public int maxPathLength;
+    public PathMaterial nextMaterial;
     private int currentPathLength;
     private int distanceInPath;
     private int transitionTilesLeft;
@@ -86,6 +87,9 @@ public class TileManagerFSM : MonoBehaviour
         SetEnums();
 
         currentPathLength = UnityEngine.Random.Range(minPathLength, maxPathLength + 1);
+        pathMaterial = (PathMaterial)UnityEngine.Random.Range(1, 5);
+        nextMaterial = NewMaterial(pathMaterial);
+        season = Season.Summer;
 
         // Compile big list
         masterList = ConcatArrays(
@@ -159,6 +163,13 @@ public class TileManagerFSM : MonoBehaviour
             if (!tileCache.ContainsKey(sprite.ToString())) tileCache.Add(sprite.ToString(), new List<Sprite>());
             tileCache[sprite.ToString()].Add(sprite.sprite);
         }
+
+
+        // Adjust to new material
+        foreach (TileObject tile in FindObjectsOfType<TileObject>())
+        {
+            ProcessTile(tile);
+        }
     }
 
     void Update()
@@ -174,18 +185,25 @@ public class TileManagerFSM : MonoBehaviour
         if (Score.instance.DistanceInSeason() >= seasons.transitionAfter && UnityEngine.Random.value < NextSeasonChance()) seasonToUse = PeekNextSeason();
         else seasonToUse = season;
 
-        // Check for material to use
-        PathMaterial materialToUse;
-        materialToUse = pathMaterial;
-
         // Check for transition
-        if (transitionTilesLeft > 0)
+        if (transitionTilesLeft == 16)
         {
-            if (--transitionTilesLeft <= 0)
-            {
-                transition = TransitionType.None;
-            }
+            transition = TransitionType.FadeOut;
         }
+        else if (transitionTilesLeft == 8)
+        {
+            transition = TransitionType.FadeIn;
+            pathMaterial = nextMaterial;
+            nextMaterial = NewMaterial(nextMaterial);
+            currentPathLength = UnityEngine.Random.Range(minPathLength, maxPathLength + 1);
+            distanceInPath = 0;
+        }
+        else if (transitionTilesLeft <= 0)
+        {
+            transition = TransitionType.None;
+        }
+
+        
 
         // List to contain options
         List<Sprite> spriteChoices = new();
@@ -194,35 +212,43 @@ public class TileManagerFSM : MonoBehaviour
         if (StaticDebugTools.instance.tileManagerAlgorithm == StaticDebugTools.Algorithm.Cache)
         {
             if (tile.layer == Layer.Overlay) spriteChoices = tileCache[CacheKey(tile.direction, tile.layer, seasonToUse)];
-            if (tile.layer == Layer.Base) spriteChoices = tileCache[CacheKey(tile.direction, tile.layer, materialToUse, transition)];
+            if (tile.layer == Layer.Base) spriteChoices = tileCache[CacheKey(tile.direction, tile.layer, pathMaterial, transition)];
         }
         
 
         // "PICKER" ALGORITHM
         if (StaticDebugTools.instance.tileManagerAlgorithm == StaticDebugTools.Algorithm.Picker)
         {
-            // Check for no overlay in summer, else populate spriteChoices
-            if (tile.layer == Layer.Overlay && season == Season.Summer)
-            {
-                tile.SetSprite(null);
-                return;
-            }
-            else
-            {
-                foreach (TileSprite sprite in masterList)
-                {
-                    if (sprite.layer != tile.layer) continue;
-                    if (sprite.direction != tile.direction) continue;
-                    if (tile.layer == Layer.Overlay && sprite.season != seasonToUse) continue;
-                    if (tile.layer == Layer.Base && sprite.material != materialToUse) continue;
-                    spriteChoices.Add(sprite.sprite);
-                }
-            }
+            //// Check for no overlay in summer, else populate spriteChoices
+            //if (tile.layer == Layer.Overlay && season == Season.Summer)
+            //{
+            //    tile.SetSprite(null);
+            //    return;
+            //}
+            //else
+            //{
+            //    foreach (TileSprite sprite in masterList)
+            //    {
+            //        if (sprite.layer != tile.layer) continue;
+            //        if (sprite.direction != tile.direction) continue;
+            //        if (tile.layer == Layer.Overlay && sprite.season != seasonToUse) continue;
+            //        if (tile.layer == Layer.Base && sprite.material != pathMaterial) continue;
+            //        spriteChoices.Add(sprite.sprite);
+            //    }
+            //}
+            Debug.LogWarning("\"Picker\" algorithm is no longer supported! Switching to \"Cache\"");
+            StaticDebugTools.instance.ChangeAlgorithm((int)StaticDebugTools.Algorithm.Cache);
         }
 
         // Check for empty list, else fetch random sprite from spriteChoices
         if (spriteChoices.Count == 0) tile.SetSprite(null);
         else tile.SetSprite(spriteChoices[UnityEngine.Random.Range(0, spriteChoices.Count)]);
+
+        // Decrement
+        if (transitionTilesLeft > 0)
+        {
+            transitionTilesLeft--;
+        }
 
     }
 
@@ -308,17 +334,9 @@ public class TileManagerFSM : MonoBehaviour
 
         if (distanceInPath == currentPathLength - 1)
         {
-            SetTransition(TransitionType.FadeOut);
-            transitionTilesLeft = 4;
+            transitionTilesLeft = 16; // this has to be double the expected value cause I coded it weird
         }
-        else if (distanceInPath >= currentPathLength)
-        {
-            SetTransition(TransitionType.FadeIn);
-            pathMaterial = NewMaterial(pathMaterial);
-            transitionTilesLeft = 4;
-            currentPathLength = UnityEngine.Random.Range(minPathLength, maxPathLength + 1);
-            distanceInPath = 0;
-        }
+
     }
 
     public void SetTransition(TransitionType transition)

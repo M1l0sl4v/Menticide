@@ -38,7 +38,7 @@ public class Score : MonoBehaviour
     TMP_Text debugTotalDist;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         instance = this;
 
