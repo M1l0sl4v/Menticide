@@ -11625,6 +11625,9 @@ MonoBehaviour:
   rareenemychance: 1
   enemytype1:
   - {fileID: 5075196644585124462, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
+  - {fileID: 5075196644585124462, guid: 1934c3e1bb1fbb049a7e1c60562cc129, type: 3}
+  - {fileID: 5075196644585124462, guid: 5e2c6e1be8611554f88d7dd45c4f56c4, type: 3}
+  - {fileID: 5075196644585124462, guid: 4d0cd7fbc08876d43ab76066c018fc77, type: 3}
   enemytype2: []
 --- !u!212 &594896785
 SpriteRenderer:
@@ -24602,6 +24605,9 @@ MonoBehaviour:
   rareenemychance: 1
   enemytype1:
   - {fileID: 5075196644585124462, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
+  - {fileID: 5075196644585124462, guid: 1934c3e1bb1fbb049a7e1c60562cc129, type: 3}
+  - {fileID: 5075196644585124462, guid: 5e2c6e1be8611554f88d7dd45c4f56c4, type: 3}
+  - {fileID: 5075196644585124462, guid: 4d0cd7fbc08876d43ab76066c018fc77, type: 3}
   enemytype2: []
 --- !u!212 &1388212427
 SpriteRenderer:

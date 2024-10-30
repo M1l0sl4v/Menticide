@@ -166,4 +166,10 @@ public class enemyDog : MonoBehaviour
         }
         targetCellWorldPos = tilemap.GetCellCenterWorld(nextCell);
     }
+    void OnEnable()
+    {
+        calculatePathToPlayer();
+        lineOfSight = true;
+        surprised = true;
+    }
 }
