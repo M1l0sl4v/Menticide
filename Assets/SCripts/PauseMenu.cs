@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public static PauseMenu instance;
-
-    public bool paused;
     
+    public bool paused;
+    public TMP_Text pauseText;
+    private float minAplha = 0f;
+    private float maxAplha = 1f;
+    private bool fading = true;
     public GameObject pauseMenu;
     // Start is called before the first frame update
     void Awake()
@@ -26,10 +31,29 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(paused);
     }
 
+    void FixedUpdate()
+    {
+        // yeah this doesn't work cause the game is paused when it would run but that's fine
+        if (paused)
+        {
+            if (fading)
+            {
+                pauseText.color = new Color(1, 0, 0, pauseText.color.a - 0.025f);
+                if (pauseText.color.a <= minAplha) fading = false;
+            }
+            else
+            {
+                pauseText.color = new Color(1, 0, 0, pauseText.color.a + 0.025f);
+                if (pauseText.color.a >= maxAplha) fading = true;
+            }
+        }
+    }
+
     public void Pause()
     {
         Time.timeScale = 0f;
         paused = true;
+        pauseText.color = Color.red;
     }
 
     public void Unpause()
@@ -42,6 +66,11 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = Mathf.Abs(Time.timeScale - 1.0f);
         paused = !paused;
+    }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void Quit()

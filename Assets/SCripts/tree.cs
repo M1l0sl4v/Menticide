@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class tree : MonoBehaviour
 {
@@ -38,26 +39,38 @@ public class tree : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             leafspawn();
-            AudioManager.instance.environmentFX(ruscleSound, transform ,1f, 1f);
+            float randomPitch = Random.Range(.9f, 1.3f);
+            AudioManager.instance.environmentFX(ruscleSound, transform ,1f, randomPitch);
             StartCoroutine(DestroyLeavesCoroutine(delay));
         }
 
         if (other.CompareTag("cullingField"))
         {
+            ClearParticles();
             ObjectPoolManager.ReturnObjectToPool(gameObject);
         }
         
     }
 
-    private IEnumerator DestroyLeavesCoroutine(float delay)
+    public IEnumerator DestroyLeavesCoroutine(float delay)
     {
         yield return new WaitForSeconds(delay);
         if (leafsinstance != null)
         {
-            Destroy(leafsinstance.gameObject);  
+            //Destroy(leafsinstance);  
+            leafsinstance.Clear();
         }
     }
 
+    public void ClearParticles()
+    {
+        if (leafsinstance != null)
+        {
+            //Destroy(leafsinstance);  
+            Debug.LogWarning("Cleared leaves");
+            leafsinstance.Clear();
+        }
+    }
 
     private void leafspawn()
     {

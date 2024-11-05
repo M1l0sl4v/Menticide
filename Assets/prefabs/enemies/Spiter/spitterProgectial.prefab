@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7165759844224077150}
   - component: {fileID: -457513553282591855}
   - component: {fileID: 2551704763067418881}
+  - component: {fileID: 7418715549006502611}
   m_Layer: 9
   m_Name: spitterProgectial
   m_TagString: Untagged
@@ -94,8 +95,8 @@ SpriteRenderer:
   m_SortingLayerID: 867422893
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.44860756, g: 0.7075472, b: 0.28368637, a: 1}
+  m_Sprite: {fileID: 570535844, guid: d3bb7bd814fa346b5a7f09273ac5a784, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -168,7 +169,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
+    oldSize: {x: 0.25, y: 0.25}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -226,3 +227,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AcidRate: 0.1
   AcidPools: {fileID: 1979853868796116234, guid: 8f571abdf422b4a7686222e4ff2fa0ba, type: 3}
+--- !u!95 &7418715549006502611
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4849040362571287685}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8d6606dad22bd4931bdc59909e35d92c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

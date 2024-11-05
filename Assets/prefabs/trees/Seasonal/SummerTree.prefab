@@ -11,9 +11,12 @@ GameObject:
   - component: {fileID: 5928237817742109657}
   - component: {fileID: 2676902261688520762}
   - component: {fileID: 6130171139222252423}
+  - component: {fileID: -2831507538825389935}
+  - component: {fileID: 8027570642429368799}
+  - component: {fileID: 7627912645700626820}
   m_Layer: 0
   m_Name: SummerTree
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,3 +109,105 @@ MonoBehaviour:
   - {fileID: 1571530404, guid: ac4b1ce8e3b398b47a7025a1a354fcf1, type: 3}
   - {fileID: -2084454616, guid: 2b740e35850979343944e41ef0ca013e, type: 3}
   - {fileID: 1247237189, guid: 4d3ff24a59c920a4898e85bf686b5ab5, type: 3}
+--- !u!114 &-2831507538825389935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4089663407155386498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 1
+  m_ApplyToSortingLayers: fbc7ed4c00000000add2b3331b969d8455b17c0c05bbfafd59286e48
+  m_ShapePath:
+  - {x: -0.1428749, y: -0.79070204, z: 0}
+  - {x: -0.13454871, y: -0.3911879, z: 0}
+  - {x: -0.3787297, y: -0.16694006, z: 0}
+  - {x: -0.4484957, y: 0.07225764, z: 0}
+  - {x: -0.33722305, y: 0.29735684, z: 0}
+  - {x: -0.16110551, y: 0.42692235, z: 0}
+  - {x: 0, y: 0.45098728, z: 0}
+  - {x: 0.1993314, y: 0.32640517, z: 0}
+  - {x: 0.29401383, y: 0.18687318, z: 0}
+  - {x: 0.3189303, y: -0.06727435, z: 0}
+  - {x: 0.23919769, y: -0.3214219, z: 0}
+  - {x: 0.11959884, y: -0.3911879, z: 0}
+  - {x: 0.16779137, y: -0.790702, z: 0}
+  m_ShapePathHash: -1306092770
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 645792
+  m_LocalBounds:
+    m_Center: {x: -0.06478268, y: -0.16985738, z: 0}
+    m_Extent: {x: 0.383713, y: 0.62084466, z: 0}
+--- !u!114 &8027570642429368799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4089663407155386498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434acf63bf94c463cb0274ad6457dcc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnDistanceTree: 10
+  leafs: {fileID: 5752905677984127925, guid: 0b1abe69d988140e1a88da2fe3a22bc0, type: 3}
+  ruscleSound: {fileID: 8300000, guid: 7b24b07ab9dae4b99bdd741d1b9d0b04, type: 3}
+  delay: 0.001
+  treespawner1: {fileID: 0}
+  treespawner2: {fileID: 0}
+--- !u!61 &7627912645700626820
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4089663407155386498}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.037374616, y: -0.03986633}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4601648, y: 1.5415378}
+  m_EdgeRadius: 0

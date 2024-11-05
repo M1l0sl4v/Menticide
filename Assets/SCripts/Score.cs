@@ -102,6 +102,7 @@ public class Score : MonoBehaviour
                 spawner.AdvanceTreePool();
             }
         }
+
     }
 
 
@@ -255,7 +256,7 @@ public class Score : MonoBehaviour
         SaveHighScore();
     }
 
-    public void ClearSavedHighScores()
+    public static void ClearSavedHighScores()
     {
         PlayerPrefs.DeleteKey("highscores");
         topNames.Clear();
@@ -263,5 +264,13 @@ public class Score : MonoBehaviour
         highScore = 0;
     }
 
+    public static void RemoveEntry(string name)
+    {
+        while (topNames.Contains(name))
+        {
+            topScores.RemoveAt(topNames.IndexOf(name));
+            topNames.Remove(name);
+        }
+    }
     
 }

@@ -10,30 +10,39 @@ public class enemyespawner : MonoBehaviour
     public float spawnRadius;
     public bool showGizmo;
     
-    private float timeBetweenSpawn;
-    private float spawnTime;
-    public float minSpawnTime;
-    public float maxSpawnTime;
-    public float rareenemychance;
+    public float timeBetweenSpawnAttempt;
+    public static float spawnChance;
+    public static float spawnScaling;
+    public float rareenemychance; // currently unused
     public List<GameObject> enemytype1;
     public List<GameObject> enemytype2;
 
+    private float elapsedTime;
+
+    public float setSpawnChance;
+    public bool submit;
 
  
     private void Start()
     {
-        timeBetweenSpawn = Random.Range(minSpawnTime, maxSpawnTime);
-        spawnTime = Time.time + timeBetweenSpawn;
+        spawnChance = 0.01f;
+        spawnScaling = 0;
     }
 
     void Update()
     {
-        // delay on start, then incriments
-        if(Time.time > spawnTime)
+        if (submit)
         {
-            timeBetweenSpawn = Random.Range(minSpawnTime, maxSpawnTime);
+            spawnChance = setSpawnChance;
+            submit = false;
+        }
+
+        elapsedTime += Time.deltaTime;
+        // delay on start, then incriments
+        if(elapsedTime >= timeBetweenSpawnAttempt && Random.value < spawnChance)
+        {
+            elapsedTime = 0;
             Spawn();
-            spawnTime = Time.time + timeBetweenSpawn; 
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -58,7 +67,7 @@ public class enemyespawner : MonoBehaviour
         }
         else //this is the common enemy
         {
-            Debug.Log("ENEMY SHOULD BE SPAWNING");
+           // Debug.Log("ENEMY SHOULD BE SPAWNING");
             int prefabIndex = Random.Range(0, enemytype1.Count);
             ObjectPoolManager.SpawnObject(enemytype1[prefabIndex], spawnPossition, ObjectPoolManager.PoolType.Enemytype1);
         }
@@ -67,6 +76,11 @@ public class enemyespawner : MonoBehaviour
         //with a new spawn type or enemy type. we will have to fiddle with the percentages, but this should be a pretty decent system, i hope. 
     }
    
+    public static void IncreaseChance()
+    {
+        spawnChance += spawnScaling;
+    }
+
     private void OnDrawGizmos()
     {
         if (showGizmo)
