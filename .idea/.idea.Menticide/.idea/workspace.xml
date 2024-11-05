@@ -5,56 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="181a9b39-c2d7-40b0-b7bc-d00f50f0c591" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/SCripts/enemyDog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/enemyDog.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/HeartIdle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/HeartIdle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Heartdestroy.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Heartdestroy.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Ment_UIBrainIcon_v2a-Sheet_0.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Ment_UIBrainIcon_v2a-Sheet_0.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Ment_UIEnemySpotted_v1b-Sheet_0.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Ment_UIEnemySpotted_v1b-Sheet_0.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Path.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Path.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Path_scroll.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Path_scroll.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Player.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Player.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Player_flashing.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Player_flashing.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Player_running.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Player_running.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Tree.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Tree.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Tree1.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Tree1.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/background.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/background.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/dognotice.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/dognotice.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/dogwalking.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/dogwalking.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/enemydog.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/enemydog.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/enemynotice.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/enemynotice.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/barren2_0 1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/barren2_0 1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/barren3_0.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/barren3_0.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/facetree_0 - Copy.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/facetree_0 - Copy.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/greentree_0.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/greentree_0.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/halfgreen2_0.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/halfgreen2_0.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/halfgreen_0.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/halfgreen_0.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/treespawner (1).prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/treespawner (1).prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/treespawner.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/treespawner.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/tree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/tree.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/FallenDog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/FallenDog.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/MalignantDog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/MalignantDog.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/NecroticDog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/NecroticDog.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/NormalDog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/NormalDog.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,20 +47,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "sdfyuytf",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/builds/clarkfest build/10:16 buildmacos.app/Contents/MacOS/My project" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/builds/10:16 sprint/macos build/10:16 buildmacos.app/Contents/MacOS" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2022.3.16f1/Unity.app/Contents/MacOS/Unity" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;$PROJECT_DIR$&quot; -debugCodeOptimization" />
@@ -160,6 +125,7 @@
       <workItem from="1727754234390" duration="7524000" />
       <workItem from="1727843118584" duration="1016000" />
       <workItem from="1728333937457" duration="12646000" />
+      <workItem from="1729746435991" duration="45136000" />
     </task>
     <servers />
   </component>

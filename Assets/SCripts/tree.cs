@@ -47,7 +47,8 @@ public class tree : MonoBehaviour
         if (other.CompareTag("cullingField"))
         {
             ClearParticles();
-            ObjectPoolManager.ReturnObjectToPool(gameObject);
+           // ObjectPoolManager.ReturnObjectToPool(gameObject);
+           Destroy(gameObject);
         }
         
     }
