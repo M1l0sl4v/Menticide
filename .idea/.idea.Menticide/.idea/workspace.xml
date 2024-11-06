@@ -5,7 +5,72 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="181a9b39-c2d7-40b0-b7bc-d00f50f0c591" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/SCripts/SettingsMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SCripts/SettingsMenu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SCripts/enemy/enemyHealth.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SCripts/enemy/enemyHealth.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SCripts/healthPicups.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SCripts/lineScripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SCripts/lineScripts/SlashingColistions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SCripts/lineScripts/SlashingColistions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/art/cerserSprites.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/art/cerserSprites/cursor_002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/art/cerserSprites/cursor_003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/art/cerserSprites/cursor_004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/art/cerserSprites/cursor_005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/art/cerserSprites/cursor_006.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/art/cerserSprites/cursor_006.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/art/cerserSprites/cursor_007.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/art/cerserSprites/cursor_007.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefabs/enemies/Capsule.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefabs/enemies/Capsule.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefabs/enemies/enemyHealth.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefabs/enemies/enemyHealth.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefabs/healthPicups.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefabs/healthPicups/HealthPickUp.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefabs/healthPicups/HealthPickUp.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/Draw.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/Draw.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/lineScripts/Draw.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/ObjectPoolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/ObjectPoolManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/Player/playermovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/Player/playermovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/StaticDebugTools.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/StaticDebugTools.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SCripts/enemy/enemyDog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/enemy/enemyDog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/enemy/spitter/EnemySpitter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/enemy/spitter/EnemySpitter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/enemy/spitter/dropAcid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/enemy/spitter/dropAcid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/lineScripts/Draw.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/lineScripts/Draw.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/progectial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/progectial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art/Fonts/TTF/Pixeled SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/Fonts/TTF/Pixeled SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art/Fonts/TTF/pixelopera/PixelOperator-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/Fonts/TTF/pixelopera/PixelOperator-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art/Fonts/TTF/pixelopera/PixelOperatorMono SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/Fonts/TTF/pixelopera/PixelOperatorMono SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art/cerserSprites/cursor_002.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/cerserSprites/cursor_002.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art/cerserSprites/cursor_003.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/cerserSprites/cursor_003.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art/cerserSprites/cursor_004.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/cerserSprites/cursor_004.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art/cerserSprites/cursor_005.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/cerserSprites/cursor_005.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art/shader and mats/materials/Shader Graphs_Fog.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/shader and mats/materials/Shader Graphs_Fog.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art/sprites/treesprites/NormalMap.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/sprites/treesprites/NormalMap.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art/sprites/treesprites/NormalMap_1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/sprites/treesprites/NormalMap_1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art/sprites/treesprites/Tree64_v1c_small1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/sprites/treesprites/Tree64_v1c_small1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art/sprites/treesprites/Tree64_v1c_small2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/sprites/treesprites/Tree64_v1c_small2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art/sprites/treesprites/winter_tree_v1a.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/sprites/treesprites/winter_tree_v1a.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/effects/fall leaves 1.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/effects/fall leaves 1.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/effects/leaves falling dark green.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/effects/leaves falling dark green.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/effects/leaves falling.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/effects/leaves falling.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/effects/leaves fallinglight green.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/effects/leaves fallinglight green.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/effects/spring leaves.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/effects/spring leaves.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/effects/summer leaves.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/effects/summer leaves.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/FallenDog.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/FallenDog.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/enemies/Spiter/spitter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/enemies/Spiter/spitter.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/line stuff/8309bd55dd92ca3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/line stuff/8309bd55dd92ca3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/line stuff/circle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/line stuff/circle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/line stuff/flesh_tile_by_slycherrychunks_dj4e8g-fullview.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/line stuff/flesh_tile_by_slycherrychunks_dj4e8g-fullview.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/line stuff/pxArt (11).png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/line stuff/pxArt (11).png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/line stuff/pxArt (9).png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/line stuff/pxArt (9).png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/barren2_0 1.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/trees/barren2_0 1.prefab.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +94,8 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/SCripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/milojustice/Documents/GitHub/Menticide/Assets/SCripts/enemy/enemyDog.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/milojustice/Documents/GitHub/Menticide/Assets/SCripts/enemy/enemyDog.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a19d22dcf90a4588a1b2c49c248263ed174000/df/e5a0741b/MonoBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -39,19 +106,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2022.3.16f1/Unity.app/Contents/MacOS/Unity" />
@@ -109,7 +176,7 @@
       <workItem from="1727754234390" duration="7524000" />
       <workItem from="1727843118584" duration="1016000" />
       <workItem from="1728333937457" duration="12646000" />
-      <workItem from="1730912391702" duration="1082000" />
+      <workItem from="1730912391702" duration="1744000" />
     </task>
     <servers />
   </component>
