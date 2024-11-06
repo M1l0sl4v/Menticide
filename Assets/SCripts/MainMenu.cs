@@ -35,7 +35,7 @@ public class MainMenu : MonoBehaviour
     }
 
     public void QuitGame(){
-        StartCoroutine(DelayThenQuit());
+        Invoke("DelayThenQuit", 1.5f);
     }
 
     public string RandomSplashText(){
@@ -63,9 +63,9 @@ public class MainMenu : MonoBehaviour
         splashText.text = RandomSplashText();
     }
 
-    IEnumerator DelayThenQuit()
+    private void DelayThenQuit()
     {
-        yield return new WaitForSeconds(1.5f);
+        //yield return new WaitForSeconds(1.5f);
         Application.Quit();
     }
 
