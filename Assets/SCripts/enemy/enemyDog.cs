@@ -31,6 +31,7 @@ public class enemyDog : MonoBehaviour
         enemyStartPos = transform.position;
         player = GameObject.FindGameObjectWithTag("Player");
         targetCellWorldPos = transform.position;
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -63,7 +64,11 @@ public class enemyDog : MonoBehaviour
         {
             ObjectPoolManager.ReturnObjectToPool(gameObject);
         }
-        else if (other.gameObject.CompareTag("Player"))
+
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
         {
             playermovement.instance.TakeDamage(1);
         }
@@ -109,8 +114,8 @@ public class enemyDog : MonoBehaviour
             e = Instantiate(exlimation, transform); // Show exclamation mark
             e.transform.parent = transform;
             surprised = false; // Avoid re-triggerings
-            // animator.SetTrigger("stun");
-            // calculatePathToPlayer();
+            //animator.SetTrigger("stun");
+            calculatePathToPlayer();
         }
 
         if (e == null)

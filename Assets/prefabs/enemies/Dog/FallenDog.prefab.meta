@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/prefabs/enemies/Dog/FallenDog.prefab.meta
 guid: 4d0cd7fbc08876d43ab76066c018fc77
+========
+guid: fa481e79c49b14f6cbda95ecae91ecc2
+>>>>>>>> Lucian:Assets/prefabs/effects/fall leaves 1.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

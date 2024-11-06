@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/art/sprites/treesprites/winter_tree_v1a.png.meta
-guid: f652aecbdc1599a4aa2c9f880b5f4c71
-========
-guid: c47b62f895fff4c71bda6daf2b35b8e0
->>>>>>>> Lucian:Assets/art/cerserSprites/cursor_005.png.meta
+guid: 64d017ce25a174fc0adc4052ee11eff7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -86,19 +82,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1

@@ -75,18 +75,20 @@ public class progectial : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    public static void CreateProjectile(GameObject projectile, Vector3 position, Quaternion direction,float Speed)
+    public static void CreateProjectile(GameObject projectile, Vector3 position, Quaternion direction,float Speed,GameObject parentObject)
     {
         float temp = Speed;
         projectile.GetComponent<progectial>().bulletSpeed += temp;
-        Instantiate(projectile, position, direction);
+        GameObject CreatedProgectial = Instantiate(projectile, position, direction);
+        CreatedProgectial.transform.SetParent(parentObject.transform);
         projectile.GetComponent<progectial>().bulletSpeed -= temp;
     }
-    public static void CreateProjectileCluster(GameObject projectile, Vector3 position, Quaternion direction, float Speed,float SpeedVar)
+    public static void CreateProjectileCluster(GameObject projectile, Vector3 position, Quaternion direction, float Speed,float SpeedVar, GameObject parentObject)
     {
         float temp = Random.Range(0, SpeedVar);
         projectile.GetComponent<progectial>().bulletSpeed += temp +Speed;
-        Instantiate(projectile, position, direction);
+        GameObject CreatedProgectial = Instantiate(projectile, position, direction);
+        CreatedProgectial.transform.SetParent(parentObject.transform);
         projectile.GetComponent<progectial>().bulletSpeed -= temp+ Speed;
     }
 

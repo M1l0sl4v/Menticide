@@ -22,8 +22,14 @@ public class Draw : MonoBehaviour
 
     private List<Vector3> linePositions = new List<Vector3>();
     public float segments = 10f;
-    private int drawBarMax = 100;
-    private int drawBarcurrent;
+    private float drawBarMax = 1f;
+    private float drawBarcurrent;
+    private Image drawBarImage;
+    private bool fillingUp = false;
+
+    public GameObject swipeObject;
+
+
 
     void Start()
     {
@@ -39,6 +45,7 @@ public class Draw : MonoBehaviour
         pauseMenu = FindAnyObjectByType<PauseMenu>();
         
         drawBarcurrent = drawBarMax;
+        drawBarImage =  drawBarPrefab.GetComponentInChildren<Image>();
     }
 
     void Update()
@@ -49,7 +56,7 @@ public class Draw : MonoBehaviour
 
     void HandleInput()
     {
-        if (Input.GetMouseButtonDown(0) && !pauseMenu.paused)
+        if (Input.GetMouseButtonDown(0) && !pauseMenu.paused && drawBarcurrent>=0 && fillingUp == false)
         {
             StartDrawing();
         }
@@ -61,14 +68,49 @@ public class Draw : MonoBehaviour
         if (currentLine != null)
         {
             ContinueDrawing();
+
         }
-        else
-        {
-            if (drawBarcurrent < drawBarMax)
+        else if (drawBarcurrent < drawBarMax)
             {
-                drawBarcurrent++;
-            }
+                drawBarcurrent+=0.01f;
+                updateDrawBar();
+                if (drawBarcurrent <= 0.01f)
+                {
+                    fillingUp = true;
+                }
+                else if (drawBarcurrent >= drawBarMax -0.03f)
+                {
+                    fillingUp = false;
+                }
         }
+        if (Input.GetMouseButtonDown(1) && !pauseMenu.paused)
+        {
+            StartSwipeing();
+        }
+        else if (Input.GetMouseButtonUp(1))
+        {
+            StopSwipeing();
+        }
+        if (swipeObject.activeSelf == true)
+        {
+            ContinueSwipeing();
+        }
+    }
+    void StartSwipeing() {
+        swipeObject.SetActive(true);
+    }
+    void StopSwipeing()
+    {
+        swipeObject.SetActive(false);
+    }
+    void ContinueSwipeing()
+    {
+        swipeObject.transform.position = GetMousePosWithZ();
+    }
+
+    void updateDrawBar()
+    {
+        drawBarImage.fillAmount = drawBarcurrent;
     }
 
     void StartDrawing()
@@ -103,6 +145,7 @@ public class Draw : MonoBehaviour
 
     void ContinueDrawing()
     {
+        updateDrawBar();
         // Update the second point of the line to follow the mouse position
         Vector3 mousePos = GetMousePosWithZ();
         Debug.Log(drawBarPrefab);
@@ -114,9 +157,13 @@ public class Draw : MonoBehaviour
 
             currentLine.positionCount = smoothLinePositions.Count;
             currentLine.SetPositions(smoothLinePositions.ToArray());
-            drawBarcurrent--;
+            drawBarcurrent-=0.1f;
         }
         currentLine.SetPosition(currentLine.positionCount - 1, mousePos);
+        if(drawBarcurrent <= 0)
+        {
+            StopDrawing();
+        }
     }
 
     void StopDrawing()

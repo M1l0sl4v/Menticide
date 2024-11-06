@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/prefabs/line stuff/flesh_tile_by_slycherrychunks_dj4e8g-fullview.jpg.meta
 guid: 512de0e5a37ad4973b0b3d42c399f526
+========
+guid: 2fa04f7b1515f4a9bb22a30d29bb2055
+>>>>>>>> Lucian:Assets/art/cerserSprites/cursor_002.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,8 +73,8 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
+    maxTextureSize: 32
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
