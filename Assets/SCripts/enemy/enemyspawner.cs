@@ -39,7 +39,7 @@ public class enemyespawner : MonoBehaviour
 
         elapsedTime += Time.deltaTime;
         // delay on start, then incriments
-        if(elapsedTime >= timeBetweenSpawnAttempt && Random.value < spawnChance)
+        if(elapsedTime >= timeBetweenSpawnAttempt && Random.value < spawnChance && !PauseMenu.instance.paused)
         {
             elapsedTime = 0;
             Spawn();

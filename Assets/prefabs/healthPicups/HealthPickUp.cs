@@ -20,7 +20,8 @@ public class HealthPickUp : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            playermovement.instance.TakeDamage(1);
+            playermovement.instance.AddHealth(1);
+            Debug.LogWarning("healthup");
             ObjectPoolManager.ReturnObjectToPool(gameObject);
         }
     }
