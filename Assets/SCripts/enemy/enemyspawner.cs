@@ -17,7 +17,12 @@ public class enemyspawner : MonoBehaviour
     [HideInInspector]public float rareenemychance; // currently unused
     public List<GameObject> enemytype1;
     [HideInInspector]public List<GameObject> enemytype2;
-
+    public enum ScalingType
+    {
+        Constant,
+        Seasonal
+    }
+    public ScalingType scalingType;
     private float elapsedTime;
 
  
@@ -48,7 +53,7 @@ public class enemyspawner : MonoBehaviour
             Spawn();
         }
     }
-    
+
     public void Spawn()
     {
         float randomAngle = Random.Range(-90f, 90f);
@@ -76,9 +81,8 @@ public class enemyspawner : MonoBehaviour
    
     public void IncreaseChance()
     {
-        spawnChance += spawnScaling;
+            spawnChance += spawnScaling;
     }
-
     private void OnDrawGizmos()
     {
         if (showGizmo)
