@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -68,13 +69,27 @@ public class PauseMenu : MonoBehaviour
         paused = !paused;
     }
 
-    public void Menu()
+    public void Menu(float delay)
     {
+        Blackout.instance.On();
+        StartCoroutine(_Menu(delay));
+    }
+
+    IEnumerator _Menu(float delay)
+    {
+        yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(0);
     }
 
-    public void Quit()
+    public void Quit(float delay)
     {
+        Blackout.instance.On();
+        StartCoroutine(_Quit(delay));
+    }
+
+    IEnumerator _Quit(float delay)
+    {
+        yield return new WaitForSeconds(delay);
         Application.Quit();
     }
 }
