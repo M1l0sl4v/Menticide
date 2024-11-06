@@ -3099,7 +3099,7 @@ Transform:
   m_GameObject: {fileID: 154867861}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.1852, y: -12, z: 0}
+  m_LocalPosition: {x: 2.1852, y: -10.3, z: 0}
   m_LocalScale: {x: 96.91715, y: 2.8943, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9506,13 +9506,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRadius: 5
   showGizmo: 1
-  timeBetweenSpawnAttempt: 0.1
+  timeBetweenSpawnAttempt: 0.5
   spawnChance: 0.05
-  spawnScaling: 0.001
+  spawnScaling: 0.025
   rareenemychance: 1
   enemytype1:
   - {fileID: 1608566518411204025, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
   enemytype2: []
+  scalingType: 1
 --- !u!212 &408147800
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11643,9 +11644,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRadius: 5
   showGizmo: 1
-  timeBetweenSpawnAttempt: 0.1
+  timeBetweenSpawnAttempt: 0.5
   spawnChance: 0.05
-  spawnScaling: 0.001
+  spawnScaling: 0.025
   rareenemychance: 1
   enemytype1:
   - {fileID: 5075196644585124462, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
@@ -11653,6 +11654,7 @@ MonoBehaviour:
   - {fileID: 5075196644585124462, guid: 5e2c6e1be8611554f88d7dd45c4f56c4, type: 3}
   - {fileID: 5075196644585124462, guid: 4d0cd7fbc08876d43ab76066c018fc77, type: 3}
   enemytype2: []
+  scalingType: 1
 --- !u!212 &594896785
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24796,9 +24798,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRadius: 5
   showGizmo: 1
-  timeBetweenSpawnAttempt: 0.1
+  timeBetweenSpawnAttempt: 0.5
   spawnChance: 0.05
-  spawnScaling: 0.001
+  spawnScaling: 0.025
   rareenemychance: 1
   enemytype1:
   - {fileID: 5075196644585124462, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
@@ -24806,6 +24808,7 @@ MonoBehaviour:
   - {fileID: 5075196644585124462, guid: 5e2c6e1be8611554f88d7dd45c4f56c4, type: 3}
   - {fileID: 5075196644585124462, guid: 4d0cd7fbc08876d43ab76066c018fc77, type: 3}
   enemytype2: []
+  scalingType: 1
 --- !u!212 &1388212427
 SpriteRenderer:
   m_ObjectHideFlags: 0

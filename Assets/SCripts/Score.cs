@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Score : MonoBehaviour
 {
@@ -39,6 +40,8 @@ public class Score : MonoBehaviour
 
     // enemy spawners (for spawn rate scaling)
     private enemyspawner[] spawners;
+
+    //public UnityEvent scoreIncrease;
 
     // Start is called before the first frame update
     void Awake()
@@ -108,9 +111,11 @@ public class Score : MonoBehaviour
             }
         }
 
+        //scoreIncrease.Invoke();
+
         foreach (var spawner in spawners)
         {
-            spawner.IncreaseChance();
+            if (spawner.scalingType == enemyspawner.ScalingType.Constant) spawner.IncreaseChance();
         }
     }
 
