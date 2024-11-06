@@ -32,7 +32,7 @@ public class StaticDebugTools : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         if (FindObjectsOfType<StaticDebugTools>().Length > 1) Destroy(GameObject.FindGameObjectWithTag("Static"));
         gameObject.tag = "Untagged";
-        instance = this;
+        if (!instance) instance = this;
     }
 
     // Update is called once per frame

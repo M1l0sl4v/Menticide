@@ -5,56 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="181a9b39-c2d7-40b0-b7bc-d00f50f0c591" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/SCripts/enemyDog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/enemyDog.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/HeartIdle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/HeartIdle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Heartdestroy.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Heartdestroy.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Ment_UIBrainIcon_v2a-Sheet_0.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Ment_UIBrainIcon_v2a-Sheet_0.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Ment_UIEnemySpotted_v1b-Sheet_0.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Ment_UIEnemySpotted_v1b-Sheet_0.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Path.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Path.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Path_scroll.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Path_scroll.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Player.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Player.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Player_flashing.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Player_flashing.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Player_running.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Player_running.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Tree.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Tree.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Tree1.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/Tree1.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/background.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/background.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/dognotice.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/dognotice.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/dogwalking.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/dogwalking.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/enemydog.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/enemydog.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/enemynotice.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animators/enemynotice.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/barren2_0 1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/barren2_0 1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/barren3_0.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/barren3_0.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/facetree_0 - Copy.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/facetree_0 - Copy.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/greentree_0.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/greentree_0.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/halfgreen2_0.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/halfgreen2_0.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/halfgreen_0.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/halfgreen_0.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/treespawner (1).prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/treespawner (1).prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/treespawner.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/treespawner.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Menticide/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Menticide/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/StaticDebugTools.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/StaticDebugTools.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,9 +30,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/SCripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/cameraBounds.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/colliderforce.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/resolution.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a19d22dcf90a4588a1b2c49c248263ed174000/df/e5a0741b/MonoBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -160,6 +110,7 @@
       <workItem from="1727754234390" duration="7524000" />
       <workItem from="1727843118584" duration="1016000" />
       <workItem from="1728333937457" duration="12646000" />
+      <workItem from="1730912391702" duration="688000" />
     </task>
     <servers />
   </component>
