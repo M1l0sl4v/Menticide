@@ -25573,6 +25573,8 @@ MonoBehaviour:
   lineSoundGroup: {fileID: 0}
   segments: 10
   swipeObject: {fileID: 206658521}
+  AddAmount: 0.02
+  LowerAmount: 0.1
 --- !u!4 &1435355290
 Transform:
   m_ObjectHideFlags: 0

@@ -22,12 +22,17 @@ public class Draw : MonoBehaviour
 
     private List<Vector3> linePositions = new List<Vector3>();
     public float segments = 10f;
-    private float drawBarMax = 1f;
     private float drawBarcurrent;
     private Image drawBarImage;
     private bool fillingUp = false;
 
     public GameObject swipeObject;
+
+
+    public float AddAmount = 0.01f;
+    public float LowerAmount = 0.1f;
+    private float drawBarMax = 1f;
+
 
 
 
@@ -71,7 +76,7 @@ public class Draw : MonoBehaviour
         }
         else if (drawBarcurrent < drawBarMax)
             {
-                drawBarcurrent+=0.01f;
+                drawBarcurrent+= AddAmount;
                 updateDrawBar();
                 if (drawBarcurrent <= 0.01f)
                 {
@@ -154,7 +159,7 @@ public class Draw : MonoBehaviour
 
             currentLine.positionCount = smoothLinePositions.Count;
             currentLine.SetPositions(smoothLinePositions.ToArray());
-            drawBarcurrent-=0.1f;
+            drawBarcurrent-= LowerAmount;
         }
         currentLine.SetPosition(currentLine.positionCount - 1, mousePos);
         if(drawBarcurrent <= 0)
