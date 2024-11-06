@@ -67,7 +67,6 @@ public class tree : MonoBehaviour
         if (leafsinstance != null)
         {
             //Destroy(leafsinstance);  
-            Debug.LogWarning("Cleared leaves");
             leafsinstance.Clear();
         }
     }
