@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cde71641f79c9c34eb128104d4a24804
+guid: a0e43fd7a49b3df44bd765a4d7af229f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -82,19 +82,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -119,11 +106,50 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ment_DirtTileset_v4d (1)_0
+      name: Ment_LeavesTilesetSheet_v8c_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +163,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 951467d1787678942864206d46b31333
-      internalID: 1414472540
+      spriteID: fdfaad5e7cbbcba42a8f138ca643dfff
+      internalID: -1781780732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ment_DirtTileset_v4d (1)_1
+      name: Ment_LeavesTilesetSheet_v8c_1
       rect:
         serializedVersion: 2
         x: 32
@@ -158,14 +184,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 345cb9c4667ed9b41bb94536c057a03e
-      internalID: -847575424
+      spriteID: 3b21b1e0611757745bd0d87d5b3c44c9
+      internalID: -834127891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ment_DirtTileset_v4d (1)_2
+      name: Ment_LeavesTilesetSheet_v8c_2
       rect:
         serializedVersion: 2
         x: 64
@@ -179,14 +205,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75093b0b4d83410498636eeddc08ffa3
-      internalID: 988915263
+      spriteID: 1bf91935489e89e4aa3eb9e4b634c875
+      internalID: -557730392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ment_DirtTileset_v4d (1)_3
+      name: Ment_LeavesTilesetSheet_v8c_3
       rect:
         serializedVersion: 2
         x: 96
@@ -200,14 +226,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 306b7abb6e8fdb749bb9ea82eb6f0757
-      internalID: -742987174
+      spriteID: 0e7ac5a7a22613d41844eb25fe8024a3
+      internalID: -1549952760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ment_DirtTileset_v4d (1)_4
+      name: Ment_LeavesTilesetSheet_v8c_4
       rect:
         serializedVersion: 2
         x: 0
@@ -221,14 +247,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0af3f1e3a0071694890c646f78171dad
-      internalID: 1096724981
+      spriteID: e9b7c2c439f6c2348b92f5d244cd4e9d
+      internalID: 764720465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ment_DirtTileset_v4d (1)_5
+      name: Ment_LeavesTilesetSheet_v8c_5
       rect:
         serializedVersion: 2
         x: 32
@@ -242,14 +268,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: def6540f7f81e7c49822732a01da10f9
-      internalID: -2080046925
+      spriteID: 09ff49e18a60e5f43a6085d6fa699029
+      internalID: 1750311888
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ment_DirtTileset_v4d (1)_6
+      name: Ment_LeavesTilesetSheet_v8c_6
       rect:
         serializedVersion: 2
         x: 64
@@ -263,14 +289,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21494011f84925b45b39da08b5168cf0
-      internalID: -1493723553
+      spriteID: 93ddff78d82bcfb4eb35a9584453213c
+      internalID: -1885160774
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ment_DirtTileset_v4d (1)_7
+      name: Ment_LeavesTilesetSheet_v8c_7
       rect:
         serializedVersion: 2
         x: 96
@@ -284,14 +310,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a04d4a0af08eda4d8cd0b1e5091960b
-      internalID: 811823147
+      spriteID: 973a0852bedbc9746b648a2e5b6f3328
+      internalID: -489186571
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ment_DirtTileset_v4d (1)_8
+      name: Ment_LeavesTilesetSheet_v8c_8
       rect:
         serializedVersion: 2
         x: 0
@@ -305,14 +331,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d1feaee79027be46a39f8792ef96953
-      internalID: -758621675
+      spriteID: d1969357f7746e246873a21a3816e1e6
+      internalID: -257445845
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ment_DirtTileset_v4d (1)_9
+      name: Ment_LeavesTilesetSheet_v8c_9
       rect:
         serializedVersion: 2
         x: 32
@@ -326,14 +352,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aaa9459c74a366842b7f08be5d4b4654
-      internalID: 530245666
+      spriteID: 85b000df0ce49054dba6455c73e8ed1d
+      internalID: -1825700586
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ment_DirtTileset_v4d (1)_10
+      name: Ment_LeavesTilesetSheet_v8c_10
       rect:
         serializedVersion: 2
         x: 64
@@ -347,14 +373,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80935e10c8668ac4e84c8f0d684d9f37
-      internalID: 1381074132
+      spriteID: e47bbf1f7330d554998117b9673546cc
+      internalID: 1199492274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ment_DirtTileset_v4d (1)_11
+      name: Ment_LeavesTilesetSheet_v8c_11
       rect:
         serializedVersion: 2
         x: 96
@@ -368,14 +394,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cba5769146653e4da4428af66f6a092
-      internalID: 1823846273
+      spriteID: 13f9fada71baa4f43afbcd6c7d06f2e0
+      internalID: 645339162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ment_DirtTileset_v4d (1)_12
+      name: Ment_LeavesTilesetSheet_v8c_12
       rect:
         serializedVersion: 2
         x: 0
@@ -389,14 +415,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09c1cdca5ef64d944a19586334bf4dd2
-      internalID: -771095854
+      spriteID: bd8e8e845f2aec347b7edeb7d2ddcecc
+      internalID: 1651654012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ment_DirtTileset_v4d (1)_13
+      name: Ment_LeavesTilesetSheet_v8c_13
       rect:
         serializedVersion: 2
         x: 32
@@ -410,14 +436,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3255b4431d04d4e4aa48d99e55e54a35
-      internalID: -1992428047
+      spriteID: 9a9c7912899ef014abd63a4ce3aaebe2
+      internalID: -179611575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ment_DirtTileset_v4d (1)_14
+      name: Ment_LeavesTilesetSheet_v8c_14
       rect:
         serializedVersion: 2
         x: 64
@@ -431,14 +457,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f8fc197722a92944b7fc0773a175ddc
-      internalID: 405306765
+      spriteID: c43a16e0d88b9b14e815b1f9514931b7
+      internalID: -1800115870
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ment_DirtTileset_v4d (1)_15
+      name: Ment_LeavesTilesetSheet_v8c_15
       rect:
         serializedVersion: 2
         x: 96
@@ -452,8 +478,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edebc87e699d9c94b8dc981414aab395
-      internalID: -657427554
+      spriteID: f69e924a74f454a45828380fdb2b0ac6
+      internalID: 1405543776
       vertices: []
       indices: 
       edges: []
@@ -469,22 +495,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Ment_DirtTileset_v4d (1)_0: 1414472540
-      Ment_DirtTileset_v4d (1)_1: -847575424
-      Ment_DirtTileset_v4d (1)_10: 1381074132
-      Ment_DirtTileset_v4d (1)_11: 1823846273
-      Ment_DirtTileset_v4d (1)_12: -771095854
-      Ment_DirtTileset_v4d (1)_13: -1992428047
-      Ment_DirtTileset_v4d (1)_14: 405306765
-      Ment_DirtTileset_v4d (1)_15: -657427554
-      Ment_DirtTileset_v4d (1)_2: 988915263
-      Ment_DirtTileset_v4d (1)_3: -742987174
-      Ment_DirtTileset_v4d (1)_4: 1096724981
-      Ment_DirtTileset_v4d (1)_5: -2080046925
-      Ment_DirtTileset_v4d (1)_6: -1493723553
-      Ment_DirtTileset_v4d (1)_7: 811823147
-      Ment_DirtTileset_v4d (1)_8: -758621675
-      Ment_DirtTileset_v4d (1)_9: 530245666
+      Ment_LeavesTilesetSheet_v8c_0: -1781780732
+      Ment_LeavesTilesetSheet_v8c_1: -834127891
+      Ment_LeavesTilesetSheet_v8c_10: 1199492274
+      Ment_LeavesTilesetSheet_v8c_11: 645339162
+      Ment_LeavesTilesetSheet_v8c_12: 1651654012
+      Ment_LeavesTilesetSheet_v8c_13: -179611575
+      Ment_LeavesTilesetSheet_v8c_14: -1800115870
+      Ment_LeavesTilesetSheet_v8c_15: 1405543776
+      Ment_LeavesTilesetSheet_v8c_2: -557730392
+      Ment_LeavesTilesetSheet_v8c_3: -1549952760
+      Ment_LeavesTilesetSheet_v8c_4: 764720465
+      Ment_LeavesTilesetSheet_v8c_5: 1750311888
+      Ment_LeavesTilesetSheet_v8c_6: -1885160774
+      Ment_LeavesTilesetSheet_v8c_7: -489186571
+      Ment_LeavesTilesetSheet_v8c_8: -257445845
+      Ment_LeavesTilesetSheet_v8c_9: -1825700586
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

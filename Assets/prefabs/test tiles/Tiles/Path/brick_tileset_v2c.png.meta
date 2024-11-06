@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 889ed4e63562ce24ab6fadcb601bfd19
+guid: c49e2c7795c8b6b44a5852dce950f333
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,11 +119,50 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: paved_tileset_v4a_0
+      name: brick_tileset_v2c_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +176,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e4e88f3ac750c94497f5e4f7ea515d3
-      internalID: 718569817
+      spriteID: 531b5f46b57eac744b5fa260eb54fa19
+      internalID: 1505695072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paved_tileset_v4a_1
+      name: brick_tileset_v2c_1
       rect:
         serializedVersion: 2
         x: 32
@@ -158,14 +197,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 327b4fca662b0474ba02f704639121de
-      internalID: 908044536
+      spriteID: c7935c2cbbc88b64ba8f640a02badfcd
+      internalID: 1950277376
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paved_tileset_v4a_2
+      name: brick_tileset_v2c_2
       rect:
         serializedVersion: 2
         x: 64
@@ -179,35 +218,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6e7f50583462b648bc9ebd14f8a71b4
-      internalID: -1140378033
+      spriteID: 2d7ceef54c54ad640ac25e8cdbf70d97
+      internalID: 1846227203
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paved_tileset_v4a_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f9c22ceedd4cd744a653cffa7123bc1
-      internalID: 1828019687
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paved_tileset_v4a_4
+      name: brick_tileset_v2c_3
       rect:
         serializedVersion: 2
         x: 0
@@ -221,14 +239,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e509084e88a5dd241a1dd382260b600d
-      internalID: 336086153
+      spriteID: b6684999afbfcb340a1ba16b1b7bd950
+      internalID: 313624396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paved_tileset_v4a_5
+      name: brick_tileset_v2c_4
       rect:
         serializedVersion: 2
         x: 32
@@ -242,14 +260,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fffa0272ad70d542918f44d97386a74
-      internalID: 186856161
+      spriteID: a3a9c4f6a5a36224bb8877d1bda385ae
+      internalID: 1442356940
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paved_tileset_v4a_6
+      name: brick_tileset_v2c_5
       rect:
         serializedVersion: 2
         x: 64
@@ -263,35 +281,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a001f89db4fb4004f832222b099a6ebc
-      internalID: 695817314
+      spriteID: a643aa37857c52a4cb95e184103561a3
+      internalID: 162736887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paved_tileset_v4a_7
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 27e9d8de2134e2441bec25cb5aa8a6e8
-      internalID: -1757174640
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paved_tileset_v4a_8
+      name: brick_tileset_v2c_6
       rect:
         serializedVersion: 2
         x: 0
@@ -305,14 +302,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 808504c7bdfc49443be12fcf86da3e83
-      internalID: 1494729916
+      spriteID: e9797e7ab8603e4448911b4bed0432de
+      internalID: -1454497257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paved_tileset_v4a_9
+      name: brick_tileset_v2c_7
       rect:
         serializedVersion: 2
         x: 32
@@ -326,14 +323,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2497fe1c66f627b48ae82fc8a269d0d2
-      internalID: -1037572226
+      spriteID: b53193be1d885894bafd3d628a0104c4
+      internalID: -129164783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paved_tileset_v4a_10
+      name: brick_tileset_v2c_8
       rect:
         serializedVersion: 2
         x: 64
@@ -347,35 +344,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bc1705bc61b6bf489573e4fd94f145a
-      internalID: -160454380
+      spriteID: f3c3aab4c32fcee49989fc492257fc39
+      internalID: 1188701872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paved_tileset_v4a_11
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 629a3be181d3e1a4b81ad37d788b1557
-      internalID: -1112829578
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paved_tileset_v4a_12
+      name: brick_tileset_v2c_9
       rect:
         serializedVersion: 2
         x: 0
@@ -389,14 +365,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9be76fa490492304bbb02277ad8f131c
-      internalID: -1154624319
+      spriteID: 6636b2b25bcc6e040bcaec3b45901b29
+      internalID: -1985949961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paved_tileset_v4a_13
+      name: brick_tileset_v2c_10
       rect:
         serializedVersion: 2
         x: 32
@@ -410,14 +386,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5ffe49948e26f4449ca80172a0c6001
-      internalID: -1018766227
+      spriteID: 5f64faa5f4fde7044b3905c00e03d97c
+      internalID: -556304886
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paved_tileset_v4a_14
+      name: brick_tileset_v2c_11
       rect:
         serializedVersion: 2
         x: 64
@@ -431,35 +407,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42804fc1c3f0fc64ca6dd514776e9526
-      internalID: -2083197341
+      spriteID: a3bd2f97fd0a5ab4aa72da2c0ce49c1d
+      internalID: 403776839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paved_tileset_v4a_15
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65772c1f6d6fc1b448793a934100d813
-      internalID: -1187098008
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paved_tileset_v4a_16
+      name: brick_tileset_v2c_12
       rect:
         serializedVersion: 2
         x: 0
@@ -473,14 +428,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 861c7ed0e15f39e4e8c35fd1c20e490c
-      internalID: -2079630660
+      spriteID: 8b24a5b03b7ca584b8ebd4996e9633c6
+      internalID: 1624289906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paved_tileset_v4a_17
+      name: brick_tileset_v2c_13
       rect:
         serializedVersion: 2
         x: 32
@@ -494,14 +449,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f86891ed03c8bc046b1bfa3036050484
-      internalID: -882728946
+      spriteID: 24104011ba8ed64449bc40d5804f5cae
+      internalID: 590620317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paved_tileset_v4a_18
+      name: brick_tileset_v2c_14
       rect:
         serializedVersion: 2
         x: 64
@@ -515,29 +470,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08e5ccf4e5326e549bc9367dd0348759
-      internalID: -412793474
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paved_tileset_v4a_19
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ca2f8dbed57897340987aa07ec6ea99d
-      internalID: -1023224297
+      spriteID: 9d396946e111b2943af0eb36d40aef74
+      internalID: -1800866943
       vertices: []
       indices: 
       edges: []
@@ -553,26 +487,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      paved_tileset_v4a_0: 718569817
-      paved_tileset_v4a_1: 908044536
-      paved_tileset_v4a_10: -160454380
-      paved_tileset_v4a_11: -1112829578
-      paved_tileset_v4a_12: -1154624319
-      paved_tileset_v4a_13: -1018766227
-      paved_tileset_v4a_14: -2083197341
-      paved_tileset_v4a_15: -1187098008
-      paved_tileset_v4a_16: -2079630660
-      paved_tileset_v4a_17: -882728946
-      paved_tileset_v4a_18: -412793474
-      paved_tileset_v4a_19: -1023224297
-      paved_tileset_v4a_2: -1140378033
-      paved_tileset_v4a_3: 1828019687
-      paved_tileset_v4a_4: 336086153
-      paved_tileset_v4a_5: 186856161
-      paved_tileset_v4a_6: 695817314
-      paved_tileset_v4a_7: -1757174640
-      paved_tileset_v4a_8: 1494729916
-      paved_tileset_v4a_9: -1037572226
+      brick_tileset_v2c_0: 1505695072
+      brick_tileset_v2c_1: 1950277376
+      brick_tileset_v2c_10: -556304886
+      brick_tileset_v2c_11: 403776839
+      brick_tileset_v2c_12: 1624289906
+      brick_tileset_v2c_13: 590620317
+      brick_tileset_v2c_14: -1800866943
+      brick_tileset_v2c_2: 1846227203
+      brick_tileset_v2c_3: 313624396
+      brick_tileset_v2c_4: 1442356940
+      brick_tileset_v2c_5: 162736887
+      brick_tileset_v2c_6: -1454497257
+      brick_tileset_v2c_7: -129164783
+      brick_tileset_v2c_8: 1188701872
+      brick_tileset_v2c_9: -1985949961
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

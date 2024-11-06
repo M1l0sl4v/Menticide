@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8252160ced074fe479b230bf2c37451a
+guid: 889ed4e63562ce24ab6fadcb601bfd19
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,11 +119,50 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: snow_v1a_0
+      name: paved_tileset_v4a_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +176,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: caf3a7c795fa1f34c840770190ca7d5e
-      internalID: -873403072
+      spriteID: 0e4e88f3ac750c94497f5e4f7ea515d3
+      internalID: 718569817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snow_v1a_1
+      name: paved_tileset_v4a_1
       rect:
         serializedVersion: 2
         x: 32
@@ -158,14 +197,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0155b9e6ea92c448a208da739228b53
-      internalID: -506757466
+      spriteID: 327b4fca662b0474ba02f704639121de
+      internalID: 908044536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snow_v1a_2
+      name: paved_tileset_v4a_2
       rect:
         serializedVersion: 2
         x: 64
@@ -179,14 +218,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa94dbffcf03f814b8ce73e05157ae3c
-      internalID: 1489802797
+      spriteID: f6e7f50583462b648bc9ebd14f8a71b4
+      internalID: -1140378033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snow_v1a_3
+      name: paved_tileset_v4a_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9c22ceedd4cd744a653cffa7123bc1
+      internalID: 1828019687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paved_tileset_v4a_4
       rect:
         serializedVersion: 2
         x: 0
@@ -200,14 +260,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8453c687fb0561043bbe69a7855e59fa
-      internalID: -967141280
+      spriteID: e509084e88a5dd241a1dd382260b600d
+      internalID: 336086153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snow_v1a_4
+      name: paved_tileset_v4a_5
       rect:
         serializedVersion: 2
         x: 32
@@ -221,14 +281,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5210b6e78decc254a9343128cc5acb54
-      internalID: -1293361089
+      spriteID: 0fffa0272ad70d542918f44d97386a74
+      internalID: 186856161
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snow_v1a_5
+      name: paved_tileset_v4a_6
       rect:
         serializedVersion: 2
         x: 64
@@ -242,14 +302,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 203bc3e15de4ce543bfcc93f6b051de3
-      internalID: 491520582
+      spriteID: a001f89db4fb4004f832222b099a6ebc
+      internalID: 695817314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snow_v1a_6
+      name: paved_tileset_v4a_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27e9d8de2134e2441bec25cb5aa8a6e8
+      internalID: -1757174640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paved_tileset_v4a_8
       rect:
         serializedVersion: 2
         x: 0
@@ -263,14 +344,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fded12e8613177e43beab34d35b53749
-      internalID: -2039541799
+      spriteID: 808504c7bdfc49443be12fcf86da3e83
+      internalID: 1494729916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snow_v1a_7
+      name: paved_tileset_v4a_9
       rect:
         serializedVersion: 2
         x: 32
@@ -284,14 +365,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51c0b4f7ff0ecfb40a6b7c4f65b9d710
-      internalID: 925051112
+      spriteID: 2497fe1c66f627b48ae82fc8a269d0d2
+      internalID: -1037572226
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snow_v1a_8
+      name: paved_tileset_v4a_10
       rect:
         serializedVersion: 2
         x: 64
@@ -305,14 +386,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e108ce07df9f8b444b7c139a4b56d3dd
-      internalID: 1555022523
+      spriteID: 9bc1705bc61b6bf489573e4fd94f145a
+      internalID: -160454380
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snow_v1a_9
+      name: paved_tileset_v4a_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629a3be181d3e1a4b81ad37d788b1557
+      internalID: -1112829578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paved_tileset_v4a_12
       rect:
         serializedVersion: 2
         x: 0
@@ -326,14 +428,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c7c5cbe252bc7543bb1a1721094341a
-      internalID: -635423726
+      spriteID: 9be76fa490492304bbb02277ad8f131c
+      internalID: -1154624319
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snow_v1a_10
+      name: paved_tileset_v4a_13
       rect:
         serializedVersion: 2
         x: 32
@@ -347,14 +449,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76b6c7492d2313242bfda8fc398a9a15
-      internalID: 1554707496
+      spriteID: b5ffe49948e26f4449ca80172a0c6001
+      internalID: -1018766227
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snow_v1a_11
+      name: paved_tileset_v4a_14
       rect:
         serializedVersion: 2
         x: 64
@@ -368,14 +470,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e55cda177d2fa14db187d4c1a6bea28
-      internalID: 1291246803
+      spriteID: 42804fc1c3f0fc64ca6dd514776e9526
+      internalID: -2083197341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snow_v1a_12
+      name: paved_tileset_v4a_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65772c1f6d6fc1b448793a934100d813
+      internalID: -1187098008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paved_tileset_v4a_16
       rect:
         serializedVersion: 2
         x: 0
@@ -389,14 +512,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2763acb5be3d311458c5994434001324
-      internalID: 1505613003
+      spriteID: 861c7ed0e15f39e4e8c35fd1c20e490c
+      internalID: -2079630660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snow_v1a_13
+      name: paved_tileset_v4a_17
       rect:
         serializedVersion: 2
         x: 32
@@ -410,14 +533,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3d20b572bdf13d4f835ff4b1e6e506a
-      internalID: -355905285
+      spriteID: f86891ed03c8bc046b1bfa3036050484
+      internalID: -882728946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snow_v1a_14
+      name: paved_tileset_v4a_18
       rect:
         serializedVersion: 2
         x: 64
@@ -431,8 +554,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7679b075f1ad5304190dfda44a14e354
-      internalID: -454035931
+      spriteID: 08e5ccf4e5326e549bc9367dd0348759
+      internalID: -412793474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paved_tileset_v4a_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca2f8dbed57897340987aa07ec6ea99d
+      internalID: -1023224297
       vertices: []
       indices: 
       edges: []
@@ -448,21 +592,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      snow_v1a_0: -873403072
-      snow_v1a_1: -506757466
-      snow_v1a_10: 1554707496
-      snow_v1a_11: 1291246803
-      snow_v1a_12: 1505613003
-      snow_v1a_13: -355905285
-      snow_v1a_14: -454035931
-      snow_v1a_2: 1489802797
-      snow_v1a_3: -967141280
-      snow_v1a_4: -1293361089
-      snow_v1a_5: 491520582
-      snow_v1a_6: -2039541799
-      snow_v1a_7: 925051112
-      snow_v1a_8: 1555022523
-      snow_v1a_9: -635423726
+      paved_tileset_v4a_0: 718569817
+      paved_tileset_v4a_1: 908044536
+      paved_tileset_v4a_10: -160454380
+      paved_tileset_v4a_11: -1112829578
+      paved_tileset_v4a_12: -1154624319
+      paved_tileset_v4a_13: -1018766227
+      paved_tileset_v4a_14: -2083197341
+      paved_tileset_v4a_15: -1187098008
+      paved_tileset_v4a_16: -2079630660
+      paved_tileset_v4a_17: -882728946
+      paved_tileset_v4a_18: -412793474
+      paved_tileset_v4a_19: -1023224297
+      paved_tileset_v4a_2: -1140378033
+      paved_tileset_v4a_3: 1828019687
+      paved_tileset_v4a_4: 336086153
+      paved_tileset_v4a_5: 186856161
+      paved_tileset_v4a_6: 695817314
+      paved_tileset_v4a_7: -1757174640
+      paved_tileset_v4a_8: 1494729916
+      paved_tileset_v4a_9: -1037572226
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
