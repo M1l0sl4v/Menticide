@@ -25565,14 +25565,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawBarPrefab: {fileID: 1348545298}
-  wallMaterial: {fileID: 2100000, guid: 5199a331da0cd470386a73fc1a392098, type: 2}
+  wallMaterial: {fileID: 2100000, guid: 271f3d987175448acb11a57060512135, type: 2}
   wallWidth: 0.3
   wallTag: Wall
   drawingSoundClip: {fileID: 8300000, guid: f129a093b2aee4cd89d174559bf43e92, type: 3}
   lineLifetime: 5
   lineSoundGroup: {fileID: 0}
   segments: 10
-  drawBarMax: 1
   swipeObject: {fileID: 206658521}
 --- !u!4 &1435355290
 Transform:
