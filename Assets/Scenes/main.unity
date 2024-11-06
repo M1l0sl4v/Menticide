@@ -9471,7 +9471,7 @@ GameObject:
   - component: {fileID: 408147800}
   - component: {fileID: 408147799}
   m_Layer: 0
-  m_Name: spawner (3)
+  m_Name: Spitter Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9506,13 +9506,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRadius: 5
   showGizmo: 1
-  timeBetweenSpawnAttempt: 0
+  timeBetweenSpawnAttempt: 0.1
+  spawnChance: 0.05
+  spawnScaling: 0.001
   rareenemychance: 1
   enemytype1:
   - {fileID: 1608566518411204025, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
   enemytype2: []
-  setSpawnChance: 0
-  submit: 0
 --- !u!212 &408147800
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11623,7 +11623,7 @@ GameObject:
   - component: {fileID: 594896785}
   - component: {fileID: 594896784}
   m_Layer: 0
-  m_Name: spawner (1)
+  m_Name: Dog Spawner L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11643,7 +11643,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRadius: 5
   showGizmo: 1
-  timeBetweenSpawnAttempt: 0
+  timeBetweenSpawnAttempt: 0.1
+  spawnChance: 0.05
+  spawnScaling: 0.001
   rareenemychance: 1
   enemytype1:
   - {fileID: 5075196644585124462, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
@@ -11651,8 +11653,6 @@ MonoBehaviour:
   - {fileID: 5075196644585124462, guid: 5e2c6e1be8611554f88d7dd45c4f56c4, type: 3}
   - {fileID: 5075196644585124462, guid: 4d0cd7fbc08876d43ab76066c018fc77, type: 3}
   enemytype2: []
-  setSpawnChance: 0
-  submit: 0
 --- !u!212 &594896785
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12611,7 +12611,7 @@ Transform:
   m_GameObject: {fileID: 652660659}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: -0.003329947}
+  m_LocalPosition: {x: 1.78, y: 4, z: -0.003329947}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24825,7 +24825,7 @@ GameObject:
   - component: {fileID: 1388212427}
   - component: {fileID: 1388212426}
   m_Layer: 0
-  m_Name: spawner (2)
+  m_Name: Dog Spawner R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24845,7 +24845,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRadius: 5
   showGizmo: 1
-  timeBetweenSpawnAttempt: 0
+  timeBetweenSpawnAttempt: 0.1
+  spawnChance: 0.05
+  spawnScaling: 0.001
   rareenemychance: 1
   enemytype1:
   - {fileID: 5075196644585124462, guid: 0fa306f384c9543e79c6ff0870c030f8, type: 3}
@@ -24853,8 +24855,6 @@ MonoBehaviour:
   - {fileID: 5075196644585124462, guid: 5e2c6e1be8611554f88d7dd45c4f56c4, type: 3}
   - {fileID: 5075196644585124462, guid: 4d0cd7fbc08876d43ab76066c018fc77, type: 3}
   enemytype2: []
-  setSpawnChance: 0
-  submit: 0
 --- !u!212 &1388212427
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25618,6 +25618,7 @@ MonoBehaviour:
   lineLifetime: 5
   lineSoundGroup: {fileID: 0}
   segments: 10
+  drawBarMax: 1
   swipeObject: {fileID: 206658521}
 --- !u!4 &1435355290
 Transform:
@@ -28492,7 +28493,7 @@ Transform:
   m_GameObject: {fileID: 1626794935}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.2057781, y: 1.7013984, z: -10}
+  m_LocalPosition: {x: 0, y: 1.4178753, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -28526,14 +28527,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.63666946
-    width: 0.4909091
-    height: 0.4598402
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.4375
+  orthographic size: 5.625
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2

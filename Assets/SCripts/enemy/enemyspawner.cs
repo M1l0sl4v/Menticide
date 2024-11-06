@@ -5,37 +5,30 @@ using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class enemyespawner : MonoBehaviour
+public class enemyspawner : MonoBehaviour
 {
+
     public float spawnRadius;
     public bool showGizmo;
     
     public float timeBetweenSpawnAttempt;
-    public static float spawnChance;
-    public static float spawnScaling;
-    public float rareenemychance; // currently unused
+    public float spawnChance;
+    public float spawnScaling;
+    [HideInInspector]public float rareenemychance; // currently unused
     public List<GameObject> enemytype1;
-    public List<GameObject> enemytype2;
+    [HideInInspector]public List<GameObject> enemytype2;
 
     private float elapsedTime;
-
-    public float setSpawnChance;
-    public bool submit;
 
  
     private void Start()
     {
-        spawnChance = 0.01f;
-        spawnScaling = 0;
+        spawnChance = 0.0f;
+        spawnScaling = 0;;
     }
 
     void Update()
     {
-        if (submit)
-        {
-            spawnChance = setSpawnChance;
-            submit = false;
-        }
 
         elapsedTime += Time.deltaTime;
         // delay on start, then incriments
@@ -45,6 +38,7 @@ public class enemyespawner : MonoBehaviour
             Spawn();
         }
 
+        // For debugging
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Spawn();
@@ -59,7 +53,7 @@ public class enemyespawner : MonoBehaviour
         
         
         float spawnChance = Random.value; // a stupid way of making rare enemies spawn every now and then
-        if (spawnChance > rareenemychance) // this is the rare enemy
+        if (false && spawnChance > rareenemychance) // this is the rare enemy
         {
             int prefabIndex = Random.Range(0, enemytype2.Count);//rare enemy
             ObjectPoolManager.SpawnObject(enemytype2[prefabIndex], spawnPossition, ObjectPoolManager.PoolType.Enemytype2);
@@ -76,7 +70,7 @@ public class enemyespawner : MonoBehaviour
         //with a new spawn type or enemy type. we will have to fiddle with the percentages, but this should be a pretty decent system, i hope. 
     }
    
-    public static void IncreaseChance()
+    public void IncreaseChance()
     {
         spawnChance += spawnScaling;
     }

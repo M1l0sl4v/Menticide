@@ -22,7 +22,7 @@ public class Draw : MonoBehaviour
 
     private List<Vector3> linePositions = new List<Vector3>();
     public float segments = 10f;
-    private float drawBarMax = 1f;
+    public float drawBarMax = 1f;
     private float drawBarcurrent;
     private Image drawBarImage;
     private bool fillingUp = false;

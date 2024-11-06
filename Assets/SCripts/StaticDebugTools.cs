@@ -42,7 +42,10 @@ public class StaticDebugTools : MonoBehaviour
 
         if (damagePlayer > 0)
         {
+            bool before = playerInvincibility;
+            playerInvincibility = false;
             playermovement.instance.TakeDamage(damagePlayer);
+            playerInvincibility = before;
             damagePlayer = 0;
         }
 

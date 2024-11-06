@@ -37,6 +37,9 @@ public class Score : MonoBehaviour
     TMP_Text debugYearDist;
     TMP_Text debugTotalDist;
 
+    // enemy spawners (for spawn rate scaling)
+    private enemyspawner[] spawners;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -48,6 +51,8 @@ public class Score : MonoBehaviour
         debugSeasonDist = debugInfo.Find("units in season").GetComponent<TMP_Text>();
         debugYearDist = debugInfo.Find("units in year").GetComponent<TMP_Text>();
         debugTotalDist = debugInfo.Find("units total").GetComponent<TMP_Text>();
+
+        spawners = FindObjectsOfType<enemyspawner>();
     }
 
     // Update is called once per frame
@@ -103,6 +108,10 @@ public class Score : MonoBehaviour
             }
         }
 
+        foreach (var spawner in spawners)
+        {
+            spawner.IncreaseChance();
+        }
     }
 
 
