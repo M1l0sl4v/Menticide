@@ -72,7 +72,12 @@ public class playermovement : MonoBehaviour
             invincibilityLeft = invincibilityDuration;
         }
     }
-
+    public void AddHealth(int amount)//health buffs
+    {
+        health += amount;
+        uiHearts.updateHealth(health);
+    }
+    
 
     private IEnumerator DamageSequence()
     {

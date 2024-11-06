@@ -50,7 +50,7 @@ public class EnemySpitter : MonoBehaviour
         Vector3 direction = player.transform.position - transform.position + new Vector3(0, shootAhead, 0);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
         Quaternion rotation = Quaternion.Euler(0, 0, angle);
-        progectial.CreateProjectile(progectialSpitter, transform.position, rotation, bulletSpeed);
+        progectial.CreateProjectile(progectialSpitter, transform.position, rotation, bulletSpeed, gameObject);
     }
     void ShootCluster(int HowMany,int spread,int Speeds)
     {
@@ -59,7 +59,7 @@ public class EnemySpitter : MonoBehaviour
             Vector3 direction = player.transform.position - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90 + Random.Range(-spread, spread);
             Quaternion rotation = Quaternion.Euler(0, 0, angle);
-            progectial.CreateProjectileCluster(progectialSpitter, transform.position, rotation, Speeds,0);
+            progectial.CreateProjectileCluster(progectialSpitter, transform.position, rotation, Speeds,0,gameObject);
         }
     }
     void ShootShotgun(int HowMany, int Speed)
@@ -69,7 +69,7 @@ public class EnemySpitter : MonoBehaviour
             Vector3 direction = player.transform.position - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90 + i;
             Quaternion rotation = Quaternion.Euler(0, 0, angle);
-            progectial.CreateProjectile(progectialSpitter, transform.position, rotation, Speed);
+            progectial.CreateProjectile(progectialSpitter, transform.position, rotation, Speed, gameObject);
         }
     }
     void EnemyStates(States states)

@@ -6,6 +6,7 @@ public class dropAcid : MonoBehaviour
 {
     public float AcidRate = .5f;
     public GameObject AcidPools;
+    private GameObject pool;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,12 @@ public class dropAcid : MonoBehaviour
     IEnumerator SpitterShoot()
     {
         yield return new WaitForSeconds(AcidRate);
-        Instantiate(AcidPools, transform.position, Quaternion.identity);
+        pool = Instantiate(AcidPools, transform.position, Quaternion.identity);
+        pool.transform.SetParent(gameObject.transform.parent);
         StartCoroutine(SpitterShoot());
+    }
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
     }
 }

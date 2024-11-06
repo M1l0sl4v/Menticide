@@ -115,7 +115,7 @@ public class ObjectPoolManager : MonoBehaviour
         
         //this is called when it finds an inactive object in the pool. it then 
 
-        if (spawnableObj == null)
+        if (spawnableObj == null && objectToSpawn != null)
         {
 
             //starts the parent method, sorting the prefab

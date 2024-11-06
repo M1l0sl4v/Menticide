@@ -112,7 +112,7 @@ public class enemyDog : MonoBehaviour
             e = Instantiate(exlimation, transform); // Show exclamation mark
             e.transform.parent = transform;
             surprised = false; // Avoid re-triggerings
-            animator.SetTrigger("stun");
+            //animator.SetTrigger("stun");
             calculatePathToPlayer();
         }
 
@@ -171,7 +171,7 @@ public class enemyDog : MonoBehaviour
     }
     void OnEnable()
     {
-        calculatePathToPlayer();
+        Invoke("calculatePathToPlayer",1f);
         lineOfSight = true;
         surprised = true;
     }

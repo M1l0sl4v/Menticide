@@ -25,8 +25,10 @@ public class Draw : MonoBehaviour
     private float drawBarMax = 1f;
     private float drawBarcurrent;
     private Image drawBarImage;
+    private bool fillingUp = false;
 
     public GameObject swipeObject;
+
 
 
     void Start()
@@ -53,7 +55,7 @@ public class Draw : MonoBehaviour
 
     void HandleInput()
     {
-        if (Input.GetMouseButtonDown(0) && !pauseMenu.paused && drawBarcurrent >= 0)
+        if (Input.GetMouseButtonDown(0) && !pauseMenu.paused && drawBarcurrent>=0 && fillingUp == false)
         {
             StartDrawing();
         }
@@ -65,14 +67,20 @@ public class Draw : MonoBehaviour
         if (currentLine != null)
         {
             ContinueDrawing();
+
         }
-        else
-        {
-            if (drawBarcurrent < drawBarMax)
+        else if (drawBarcurrent < drawBarMax)
             {
                 drawBarcurrent+=0.01f;
                 updateDrawBar();
-            }
+                if (drawBarcurrent <= 0.01f)
+                {
+                    fillingUp = true;
+                }
+                else if (drawBarcurrent >= drawBarMax -0.03f)
+                {
+                    fillingUp = false;
+                }
         }
         if (Input.GetMouseButtonDown(1) && !pauseMenu.paused)
         {
