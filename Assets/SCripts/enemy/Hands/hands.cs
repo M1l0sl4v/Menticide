@@ -6,17 +6,22 @@ using UnityEngine;
 public class hands : MonoBehaviour
 {
     public float speed;
-    private Vector2 direction = Vector2.up; // Current movement direction
+    private Vector3 endPos;
+    public float moveSmooth;
+    private Transform playerTransform;
+    private GameObject player;
 
     void Start()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+        playerTransform = player.GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.transform.Translate( direction* speed * Time.deltaTime);
+        endPos = playerTransform.position;
+        transform.position = Vector3.Lerp(transform.position, endPos,Time.deltaTime*moveSmooth);
     }
 
 
