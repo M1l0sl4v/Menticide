@@ -23,19 +23,23 @@ public class enemyspawner : MonoBehaviour
  
     private void Start()
     {
-        spawnChance = 0.0f;
-        spawnScaling = 0;;
+
     }
 
+    
     void Update()
     {
 
         elapsedTime += Time.deltaTime;
         // delay on start, then incriments
-        if(elapsedTime >= timeBetweenSpawnAttempt && Random.value < spawnChance && !PauseMenu.instance.paused)
+
+        if(elapsedTime >= timeBetweenSpawnAttempt)
         {
+            if (Random.value < spawnChance)
+            {
+                Spawn();
+            }
             elapsedTime = 0;
-            Spawn();
         }
 
         // For debugging
