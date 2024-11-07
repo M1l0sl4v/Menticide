@@ -31,8 +31,13 @@ public class DeathSequence : MonoBehaviour
     public float highScorePulseSpeed;
     private float highScoreCurSize;
     private bool growing;
-    public TMP_InputField inputField;
     public GameObject leaderboard;
+
+    [Header("Name Input")]
+    public TMP_InputField inputField;
+    public float inputDelay;
+    private bool inputActive;
+    private float inputAlpha;
 
     [Header("Buttons")]
     public GameObject menuButtons;
@@ -85,6 +90,17 @@ public class DeathSequence : MonoBehaviour
             scoreTextAlpha += fadeInSpeed;
         }
 
+        if (inputActive && inputAlpha < 0.274f)
+        {
+            inputField.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 0, 1, inputAlpha);
+        }
+
+        if (inputActive && inputAlpha < 1)
+        {
+            inputField.placeholder.color = new Color(1, 0, 0, inputAlpha);
+            inputAlpha += fadeInSpeed;
+        }
+
         //timeElapsed += Time.deltaTime;
         //foreach (var element in deathScreenElements)
         //{
@@ -124,6 +140,8 @@ public class DeathSequence : MonoBehaviour
         deathMessageObject.color = Color.black;
         scoreText.color = Color.black;
         highScoreText.color = Color.black;
+        inputField.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0);
+        inputField.placeholder.color = Color.black;
         PopulateLeaderboard();
 
         // Show death message
@@ -138,14 +156,24 @@ public class DeathSequence : MonoBehaviour
         if (ScoreManager.instance.ScoreAsInt() > ScoreManager.highScore) isHighScore = true;
         scoreText.text = "You survived " + ScoreManager.instance.ScoreAsString();
 
+        // Show name input
+        yield return new WaitForSeconds(inputDelay);
+        inputActive = true;
+
         // Show menu buttons
-        yield return new WaitForSeconds(endScreenDelay);
-        UIStack.Push(menuButtons);
-        menuActive = true;
-        inputField.Select();
+        //yield return new WaitForSeconds(endScreenDelay);
+        //UIStack.Push(menuButtons);
+        //menuActive = true;
+        //inputField.Select();
 
 
         yield return null;
+    }
+
+    public void ActivateMenuButtons()
+    {
+        UIStack.Push(menuButtons);
+        menuActive = true;
     }
 
     public void Retry()
@@ -167,6 +195,7 @@ public class DeathSequence : MonoBehaviour
             inputField.interactable = false;
             SaveScore();
             PopulateLeaderboard();
+            ActivateMenuButtons();
             ScoreManager.SaveHighScore();
         }
     }
@@ -181,8 +210,8 @@ public class DeathSequence : MonoBehaviour
         int curPos = 0;
         foreach (Transform t in leaderboard.transform)
         {
-            t.Find("Name").GetComponent<TMP_Text>().text = curPos < ScoreManager.highScores.names.Count ? ScoreManager.highScores.names[curPos] : "";
-            t.Find("Score").GetComponent<TMP_Text>().text = curPos < ScoreManager.highScores.scores.Count ? ScoreManager.ScoreToMessage(ScoreManager.highScores.scores[curPos]) : "";
+            t.Find("Name").GetComponent<TMP_Text>().text = curPos < ScoreManager.highScores.entryCount ? ScoreManager.highScores.names[curPos] : "";
+            t.Find("Score").GetComponent<TMP_Text>().text = curPos < ScoreManager.highScores.entryCount ? ScoreManager.ScoreToMessage(ScoreManager.highScores.scores[curPos]) : "";
 
             curPos++;
         }

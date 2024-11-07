@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -48,6 +49,11 @@ public class ScoreManager : MonoBehaviour
         public List<int> scores;
         public List<string> names;
         public int entryCount;
+
+        public override string ToString()
+        {
+            return JsonUtility.ToJson(this);
+        }
     }
     public static HighScoresSimple highScores;
     private const string scoresName = "HighScores.json";
@@ -101,7 +107,6 @@ public class ScoreManager : MonoBehaviour
         spawners = FindObjectsOfType<enemyspawner>();
 
         LoadHighScore();
-
     }
 
     // Update is called once per frame
