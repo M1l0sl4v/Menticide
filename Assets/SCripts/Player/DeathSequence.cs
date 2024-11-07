@@ -135,8 +135,8 @@ public class DeathSequence : MonoBehaviour
         yield return new WaitForSeconds(scoreDelay);
         scoreTextActive = true;
         // Check for high score
-        if (Score.instance.ScoreAsInt() > Score.highScore) isHighScore = true;
-        scoreText.text = "You survived " + Score.instance.ScoreAsString();
+        if (ScoreManager.instance.ScoreAsInt() > ScoreManager.highScore) isHighScore = true;
+        scoreText.text = "You survived " + ScoreManager.instance.ScoreAsString();
 
         // Show menu buttons
         yield return new WaitForSeconds(endScreenDelay);
@@ -167,13 +167,14 @@ public class DeathSequence : MonoBehaviour
             inputField.interactable = false;
             SaveScore();
             PopulateLeaderboard();
-            Score.instance.SaveHighScore();
+            ScoreManager.SaveHighScore();
+            Debug.LogWarning(PlayerPrefs.GetString("highscores"));
         }
     }
 
     public void SaveScore()
     {
-        Score.AddScore(inputField.text, Score.instance.ScoreAsInt());
+        ScoreManager.AddScore(inputField.text, ScoreManager.instance.ScoreAsInt());
     }
 
     public void PopulateLeaderboard()
@@ -181,8 +182,8 @@ public class DeathSequence : MonoBehaviour
         int curPos = 0;
         foreach (Transform t in leaderboard.transform)
         {
-            t.Find("Name").GetComponent<TMP_Text>().text = curPos < Score.topNames.Count ? Score.topNames[curPos] : "";
-            t.Find("Score").GetComponent<TMP_Text>().text = curPos < Score.topScores.Count ? Score.ScoreToMessage(Score.topScores[curPos]) : "";
+            t.Find("Name").GetComponent<TMP_Text>().text = curPos < ScoreManager.topNames.Count ? ScoreManager.topNames[curPos] : "";
+            t.Find("Score").GetComponent<TMP_Text>().text = curPos < ScoreManager.topScores.Count ? ScoreManager.ScoreToMessage(ScoreManager.topScores[curPos]) : "";
 
             curPos++;
         }

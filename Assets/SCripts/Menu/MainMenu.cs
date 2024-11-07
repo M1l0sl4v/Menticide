@@ -86,13 +86,13 @@ public class MainMenu : MonoBehaviour
 
     public void RemoveName()
     {
-        Score.RemoveEntry(inputField.text);
+        ScoreManager.RemoveEntry(inputField.text);
         StartCoroutine(ResetRemoveText());
     }
 
     public void ClearScores()
     {
-        Score.ClearSavedHighScores();
+        ScoreManager.ClearSavedHighScores();
     }
 
     IEnumerator ResetRemoveText()

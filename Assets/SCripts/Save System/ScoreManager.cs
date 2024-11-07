@@ -4,9 +4,43 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Score : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
     // High score
+    public class HighScores
+    {
+        public class NameScorePair
+        {
+            public string name;
+            public int score;
+
+            public NameScorePair(string name, int score)
+            {
+                this.name = name;
+                this.score = score;
+            }
+        }
+
+        private List<NameScorePair> scores;
+
+        public HighScores(List<NameScorePair> scores)
+        {
+            this.scores = scores;
+        }
+
+        public void AddScore(NameScorePair score)
+        {
+            scores.Add(score);
+        }
+        public void RemoveScore(NameScorePair score)
+        {
+            scores.Remove(score);
+        }
+        public NameScorePair GetScoreAtRank(int rank)
+        {
+            return scores[rank - 1];
+        }
+    }
     public static int highScore = 0;
 
     public static List<int> topScores = new List<int>();
@@ -24,11 +58,11 @@ public class Score : MonoBehaviour
     private int distanceInSeason;
     private int distanceInYear;
    
-    // Score display
+    // ScoreManager display
     public TMP_Text scoreText;
 
     // instance
-    public static Score instance;
+    public static ScoreManager instance;
 
     // Debug info variables
     public Transform debugInfo;
@@ -227,7 +261,7 @@ public class Score : MonoBehaviour
     }
 
 
-    private static string HighScoresToCSV()
+    public static string HighScoresToCSV()
     {
         string csv = "";
 
@@ -239,7 +273,7 @@ public class Score : MonoBehaviour
         return csv;
     }
 
-    public void SaveHighScore()
+    public static void SaveHighScore()
     {
         PlayerPrefs.SetString("highscores", HighScoresToCSV());
     }
@@ -268,6 +302,7 @@ public class Score : MonoBehaviour
     private void OnApplicationQuit()
     {
         SaveHighScore();
+        PlayerPrefs.Save();
     }
 
     public static void ClearSavedHighScores()
@@ -276,6 +311,7 @@ public class Score : MonoBehaviour
         topNames.Clear();
         topScores.Clear();
         highScore = 0;
+        PlayerPrefs.Save();
     }
 
     public static void RemoveEntry(string name)

@@ -51,12 +51,12 @@ public class StaticDebugTools : MonoBehaviour
 
         if (resetHighScores)
         {
-            Score.ClearSavedHighScores();
+            ScoreManager.ClearSavedHighScores();
             resetHighScores = false;
         }
 
-        topNames = Score.topNames;
-        topScores = Score.topScores;
+        topNames = ScoreManager.topNames;
+        topScores = ScoreManager.topScores;
     }
 
     public void ChangeAlgorithm(int algorithm)

@@ -165,7 +165,7 @@ public class TileRow : MonoBehaviour
         {
             if (!DeathSequence.controlLock)
             {
-                Score.instance.IncreaseScore();
+                ScoreManager.instance.IncreaseScore();
                 TileManagerFSM.instance.IncreasePathDistance();
             }
 
