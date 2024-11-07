@@ -90,7 +90,7 @@ public class DeathSequence : MonoBehaviour
             scoreTextAlpha += fadeInSpeed;
         }
 
-        if (inputActive && inputAlpha < 0.274f)
+        if (inputActive && inputAlpha < 0.174f)
         {
             inputField.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 0, 1, inputAlpha);
         }
@@ -159,6 +159,8 @@ public class DeathSequence : MonoBehaviour
         // Show name input
         yield return new WaitForSeconds(inputDelay);
         inputActive = true;
+        yield return new WaitForSeconds(inputDelay * (2 / 3));
+        inputField.Select();
 
         // Show menu buttons
         //yield return new WaitForSeconds(endScreenDelay);
@@ -197,6 +199,9 @@ public class DeathSequence : MonoBehaviour
             PopulateLeaderboard();
             ActivateMenuButtons();
             ScoreManager.SaveHighScore();
+
+            inputField.transform.GetChild(0).GetComponent<Image>().color = Color.clear;
+            inputField.text = "Saved!";
         }
     }
 
