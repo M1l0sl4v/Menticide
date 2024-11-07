@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,7 +8,7 @@ using UnityEngine.Events;
 public class ScoreManager : MonoBehaviour
 {
     // High score
-    public class HighScores
+    public class HighScoresExperimental
     {
         public class NameScorePair
         {
@@ -23,7 +24,7 @@ public class ScoreManager : MonoBehaviour
 
         private List<NameScorePair> scores;
 
-        public HighScores(List<NameScorePair> scores)
+        public HighScoresExperimental(List<NameScorePair> scores)
         {
             this.scores = scores;
         }
@@ -41,10 +42,18 @@ public class ScoreManager : MonoBehaviour
             return scores[rank - 1];
         }
     }
-    public static int highScore = 0;
 
-    public static List<int> topScores = new List<int>();
-    public static List<string> topNames = new List<string>();
+    public struct HighScoresSimple
+    {
+        public List<int> scores;
+        public List<string> names;
+        public int entryCount;
+    }
+    public static HighScoresSimple highScores;
+    private const string scoresName = "HighScores.json";
+
+
+    public static int highScore = 0;
 
     
     // Toggle debug info
@@ -90,6 +99,9 @@ public class ScoreManager : MonoBehaviour
         debugTotalDist = debugInfo.Find("units total").GetComponent<TMP_Text>();
 
         spawners = FindObjectsOfType<enemyspawner>();
+
+        LoadHighScore();
+
     }
 
     // Update is called once per frame
@@ -231,33 +243,36 @@ public class ScoreManager : MonoBehaviour
     public static void AddScore(string name, int score)
     {
         // Check for empty list
-        if (topScores.Count == 0)
+        if (highScores.scores.Count == 0)
         {
-            topScores.Add(score);
-            topNames.Add(name);
+            highScores.scores.Add(score);
+            highScores.names.Add(name);
+            highScores.entryCount++;
         }
         // Check for high score
         else if (score > highScore)
         {
-            topScores.Insert(0, score);
-            topNames.Insert(0, name);
+            highScores.scores.Insert(0, score);
+            highScores.names.Insert(0, name);
+            highScores.entryCount++;
         }
         // Add score in middle
         else
         {
-            for (int i = topScores.Count - 1; i >= 0; i--)
+            for (int i = highScores.scores.Count - 1; i >= 0; i--)
             {
                 // if score to be added is less than the score to the left, add it to the right
-                if (score <= topScores[i])
+                if (score <= highScores.scores[i])
                 {
-                    topScores.Insert(i+1, score);
-                    topNames.Insert(i+1, name);
+                    highScores.scores.Insert(i+1, score);
+                    highScores.names.Insert(i+1, name);
+                    highScores.entryCount++;
                     break;
                 }
             }
         }
         // Update new high score
-        highScore = topScores[0];
+        highScore = highScores.scores[0];
     }
 
 
@@ -265,38 +280,33 @@ public class ScoreManager : MonoBehaviour
     {
         string csv = "";
 
-        for (int i = 0; i < topScores.Count; i++)
+        for (int i = 0; i < highScores.scores.Count; i++)
         {
-            csv += topNames[i] + ',' + topScores[i] + '\n';
+            csv += highScores.names[i] + ',' + highScores.scores[i] + '\n';
         }
 
         return csv;
     }
 
+    public static string HighScoresToJSON()
+    {
+        return JsonUtility.ToJson(highScores);
+    }
+
     public static void SaveHighScore()
     {
-        PlayerPrefs.SetString("highscores", HighScoresToCSV());
+        File.WriteAllText(Path.Combine(Application.persistentDataPath, scoresName), HighScoresToJSON());
+        Debug.Log("Saved scores to " + Path.Combine(Application.persistentDataPath, scoresName));
     }
 
     public void LoadHighScore()
     {
-        topNames.Clear();
-        topScores.Clear();
+        string path = Path.Combine(Application.persistentDataPath, scoresName);
 
-        if (!string.IsNullOrWhiteSpace(PlayerPrefs.GetString("highscores")))
+        if (File.Exists(path))
         {
-            string csv = PlayerPrefs.GetString("highscores");
-            foreach (string line in csv.TrimEnd('\n').Split("\n"))
-            {
-                string[] strings = line.Split(",");
-                string name = strings[0];
-                int score = int.Parse(strings[1]);
-
-                topNames.Add(name);
-                topScores.Add(score);
-            }
-
-            highScore = topScores[0];
+            highScores = JsonUtility.FromJson<HighScoresSimple>(File.ReadAllText(path));
+            highScore = highScores.entryCount > 0 ? highScores.scores[0] : 0;
         }
     }
     private void OnApplicationQuit()
@@ -307,19 +317,18 @@ public class ScoreManager : MonoBehaviour
 
     public static void ClearSavedHighScores()
     {
-        PlayerPrefs.DeleteKey("highscores");
-        topNames.Clear();
-        topScores.Clear();
+        highScores = new HighScoresSimple();
+        File.Delete(Path.Combine(Application.persistentDataPath, scoresName));
         highScore = 0;
-        PlayerPrefs.Save();
     }
 
     public static void RemoveEntry(string name)
     {
-        while (topNames.Contains(name))
+        while (highScores.names.Contains(name))
         {
-            topScores.RemoveAt(topNames.IndexOf(name));
-            topNames.Remove(name);
+            highScores.scores.RemoveAt(highScores.names.IndexOf(name));
+            highScores.names.Remove(name);
+            highScores.entryCount--;
         }
     }
     

@@ -168,7 +168,6 @@ public class DeathSequence : MonoBehaviour
             SaveScore();
             PopulateLeaderboard();
             ScoreManager.SaveHighScore();
-            Debug.LogWarning(PlayerPrefs.GetString("highscores"));
         }
     }
 
@@ -182,8 +181,8 @@ public class DeathSequence : MonoBehaviour
         int curPos = 0;
         foreach (Transform t in leaderboard.transform)
         {
-            t.Find("Name").GetComponent<TMP_Text>().text = curPos < ScoreManager.topNames.Count ? ScoreManager.topNames[curPos] : "";
-            t.Find("Score").GetComponent<TMP_Text>().text = curPos < ScoreManager.topScores.Count ? ScoreManager.ScoreToMessage(ScoreManager.topScores[curPos]) : "";
+            t.Find("Name").GetComponent<TMP_Text>().text = curPos < ScoreManager.highScores.names.Count ? ScoreManager.highScores.names[curPos] : "";
+            t.Find("Score").GetComponent<TMP_Text>().text = curPos < ScoreManager.highScores.scores.Count ? ScoreManager.ScoreToMessage(ScoreManager.highScores.scores[curPos]) : "";
 
             curPos++;
         }
@@ -202,6 +201,13 @@ public class DeathSequence : MonoBehaviour
         string output = "";
         foreach (T t in array) { output += t.ToString() + " "; }
         Debug.LogWarning(array.Length + " items: " + output);
+    }
+
+    public static void LogCollection(IEnumerable enumerable)
+    {
+        string output = "";
+        foreach (var item in enumerable) { output += item.ToString() + " "; }
+        Debug.LogWarning(output);
     }
 
 }

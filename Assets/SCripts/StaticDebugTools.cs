@@ -55,8 +55,8 @@ public class StaticDebugTools : MonoBehaviour
             resetHighScores = false;
         }
 
-        topNames = ScoreManager.topNames;
-        topScores = ScoreManager.topScores;
+        topNames = ScoreManager.highScores.names;
+        topScores = ScoreManager.highScores.scores;
     }
 
     public void ChangeAlgorithm(int algorithm)
