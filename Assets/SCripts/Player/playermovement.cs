@@ -8,7 +8,7 @@ public class playermovement : MonoBehaviour
 {
     // Movement speed of the player
     public float speed = 5f;
-
+    public float maxSpeed;
     // Multiplier for speed increase when colliding with a wall
     public float speedMultiplier = 1.5f;
 
@@ -95,7 +95,7 @@ public class playermovement : MonoBehaviour
             speed -= speedDecayRate * Time.deltaTime;
             if (speed < _originalSpeed)
             {
-                speed = Mathf.Clamp(_originalSpeed,5,100);
+                speed = Mathf.Clamp(_originalSpeed,5,maxSpeed);
             }
         }
 
@@ -124,7 +124,11 @@ public class playermovement : MonoBehaviour
         GetComponent<Animator>().SetFloat("I Frames", invincibilityLeft);
         moveWASD();
 
-
+        // Limit speed
+        if (!StaticDebugTools.instance.playerMoveSpeedOverride)
+        {
+            speed = Mathf.Clamp(speed, 5, maxSpeed);
+        }
     }
 //this sets the player back to zero
 //i am using this method to move everything else back, but it is not working great
