@@ -25572,9 +25572,8 @@ MonoBehaviour:
   lineLifetime: 5
   lineSoundGroup: {fileID: 0}
   segments: 10
+  drawBarMax: 1
   swipeObject: {fileID: 206658521}
-  AddAmount: 0.02
-  LowerAmount: 0.1
 --- !u!4 &1435355290
 Transform:
   m_ObjectHideFlags: 0
@@ -28482,14 +28481,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.3448276
-    width: 0.99999994
-    height: 0.31034482
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.21875
+  orthographic size: 5.625
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -35484,10 +35483,10 @@ RectTransform:
   m_Children:
   - {fileID: 206098210}
   - {fileID: 705224756}
+  - {fileID: 1348545299}
   - {fileID: 884997895}
   - {fileID: 196417513}
   - {fileID: 1085790849}
-  - {fileID: 1348545299}
   - {fileID: 228500110}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
