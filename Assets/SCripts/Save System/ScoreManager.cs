@@ -295,7 +295,8 @@ public class ScoreManager : MonoBehaviour
 
     public static void SaveHighScore()
     {
-        File.WriteAllText(Path.Combine(Application.persistentDataPath, scoresName), HighScoresToJSON());
+        //File.WriteAllText(Path.Combine(Application.persistentDataPath, scoresName), HighScoresToJSON());
+        SaveSystem.SaveData(highScores, scoresName);
         Debug.Log("Saved scores to " + Path.Combine(Application.persistentDataPath, scoresName));
     }
 
@@ -318,7 +319,7 @@ public class ScoreManager : MonoBehaviour
     public static void ClearSavedHighScores()
     {
         highScores = new HighScoresSimple();
-        File.Delete(Path.Combine(Application.persistentDataPath, scoresName));
+        SaveSystem.SaveData(highScores, scoresName);
         highScore = 0;
     }
 
@@ -329,6 +330,7 @@ public class ScoreManager : MonoBehaviour
             highScores.scores.RemoveAt(highScores.names.IndexOf(name));
             highScores.names.Remove(name);
             highScores.entryCount--;
+            SaveSystem.SaveData(highScores, scoresName);
         }
     }
     
