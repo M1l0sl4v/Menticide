@@ -103,7 +103,7 @@ MonoBehaviour:
   fireRate: 3
   idleDelay: 0.5
   bulletSpeed: 2
-  shootAhead: 5
+  shootAhead: 9
 --- !u!61 &-8292145478084314359
 BoxCollider2D:
   m_ObjectHideFlags: 0

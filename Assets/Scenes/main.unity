@@ -1297,7 +1297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67de40336b0e4d42ad8d88102442181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInvincibility: 1
+  playerInvincibility: 0
   playerMoveSpeedOverride: 0
   overrideValue: 10
   damagePlayer: 0
@@ -3950,7 +3950,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 102.7879, y: -225}
+  m_AnchoredPosition: {x: 102.788086, y: -232.41003}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196417514
@@ -4017,10 +4017,10 @@ RectTransform:
   - {fileID: 1587748121}
   m_Father: {fileID: 1969046016}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -728.177, y: 489}
-  m_SizeDelta: {x: 368.4299, y: 59.713}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 231.823, y: -99}
+  m_SizeDelta: {x: 368.42993, y: 59.713013}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &206098212
 MonoBehaviour:
@@ -22452,6 +22452,63 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1001 &1279318553
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1608566518411204025, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
+      propertyPath: m_Name
+      value: spitter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698853777551251083, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.8181696
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698853777551251083, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.9653335
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698853777551251083, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698853777551251083, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698853777551251083, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698853777551251083, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698853777551251083, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698853777551251083, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698853777551251083, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698853777551251083, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
 --- !u!1 &1282427979
 GameObject:
   m_ObjectHideFlags: 0
@@ -24150,10 +24207,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1969046016}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 192, y: 432}
-  m_SizeDelta: {x: 41.638, y: 113.365}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 192, y: -156}
+  m_SizeDelta: {x: 41.638, y: 113.36499}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1348545300
 MonoBehaviour:
@@ -28533,14 +28590,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.5996441
+    width: 0.5888767
+    height: 0.54048043
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.625
+  orthographic size: 4.21875
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -29803,7 +29860,7 @@ MonoBehaviour:
   highScorePulseSpeed: 0.002
   leaderboard: {fileID: 1812341789}
   inputField: {fileID: 1221489459}
-  inputDelay: 0.75
+  inputDelay: 0
   menuButtons: {fileID: 549975766}
   buttons:
   - {fileID: 1189622256}
@@ -31981,7 +32038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f658ddd1e3914f39af2db81f89a4977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5.5
+  speed: 5.3
   moveSmooth: 1
 --- !u!61 &1782422999
 BoxCollider2D:
@@ -38587,3 +38644,4 @@ SceneRoots:
   - {fileID: 1969046016}
   - {fileID: 652660663}
   - {fileID: 1782422997}
+  - {fileID: 1279318553}
