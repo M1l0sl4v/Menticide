@@ -13,6 +13,8 @@ public class tree : MonoBehaviour
     
     public TreeSpawner treespawner1;
     public TreeSpawner treespawner2;
+
+    public bool hasLeafs = true;
     
     
     private Coroutine destroyLeavesCoroutine;
@@ -40,7 +42,7 @@ public class tree : MonoBehaviour
         {
             leafspawn();
             float randomPitch = Random.Range(.9f, 1.3f);
-            AudioManager.instance.environmentFX(ruscleSound, transform ,1f, randomPitch);
+            AudioManager.instance.environmentFX(ruscleSound, transform ,.8f, randomPitch);
             StartCoroutine(DestroyLeavesCoroutine(delay));
         }
 
@@ -73,8 +75,15 @@ public class tree : MonoBehaviour
 
     private void leafspawn()
     {
-       
-        leafsinstance = Instantiate(leafs, transform.position , Quaternion.identity, transform);
+        if (hasLeafs)
+        {
+            leafsinstance = Instantiate(leafs, transform.position , Quaternion.identity, transform);
+
+        }
+        else
+        {
+            return;
+        }
     }
     
 }
