@@ -56,7 +56,7 @@ public class Draw : MonoBehaviour
 
     void HandleInput()
     {
-        if (Input.GetMouseButtonDown(0) && !pauseMenu.paused && drawBarcurrent>=0 && fillingUp == false)
+        if (Input.GetMouseButtonDown(0) && !pauseMenu.paused && drawBarcurrent>=0 && fillingUp == false && !DeathSequence.controlLock)
         {
             StartDrawing();
         }
