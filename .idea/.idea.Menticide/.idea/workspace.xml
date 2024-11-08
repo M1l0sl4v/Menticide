@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="181a9b39-c2d7-40b0-b7bc-d00f50f0c591" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Menticide/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Menticide/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCripts/trees/tree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/trees/tree.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/WeatherManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/WeatherManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/lineScripts/Draw.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/lineScripts/Draw.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/art/sprites/treesprites/winter_tree_v1a.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/sprites/treesprites/winter_tree_v1a.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/Seasonal/SummerTree.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/trees/Seasonal/SummerTree.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/Seasonal/WinterTree.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/trees/Seasonal/WinterTree.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

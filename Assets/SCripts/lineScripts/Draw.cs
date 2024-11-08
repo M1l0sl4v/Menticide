@@ -22,12 +22,17 @@ public class Draw : MonoBehaviour
 
     private List<Vector3> linePositions = new List<Vector3>();
     public float segments = 10f;
-    public float drawBarMax = 1f;
     private float drawBarcurrent;
     private Image drawBarImage;
     private bool fillingUp = false;
 
     public GameObject swipeObject;
+
+
+    public float AddAmount = 0.01f;
+    public float LowerAmount = 0.1f;
+    private float drawBarMax = 1f;
+
 
 
 
@@ -51,12 +56,11 @@ public class Draw : MonoBehaviour
     void Update()
     {
         HandleInput();
-        //Debug.Log(drawBarPrefab);
     }
 
     void HandleInput()
     {
-        if (Input.GetMouseButtonDown(0) && !pauseMenu.paused && drawBarcurrent>=0 && fillingUp == false && !DeathSequence.controlLock)
+        if (Input.GetMouseButtonDown(0) && !pauseMenu.paused && drawBarcurrent>=0 && fillingUp == false)
         {
             StartDrawing();
         }
@@ -72,7 +76,7 @@ public class Draw : MonoBehaviour
         }
         else if (drawBarcurrent < drawBarMax)
             {
-                drawBarcurrent+=0.01f;
+                drawBarcurrent+= AddAmount;
                 updateDrawBar();
                 if (drawBarcurrent <= 0.01f)
                 {
@@ -117,7 +121,6 @@ public class Draw : MonoBehaviour
     {
         GameObject lineObject = new GameObject("Line");
         currentLine = lineObject.AddComponent<LineRenderer>();
-        Debug.Log("Started Drawing");
 
         // Set the order in layer
         currentLine.sortingOrder = 6;
@@ -148,7 +151,6 @@ public class Draw : MonoBehaviour
         updateDrawBar();
         // Update the second point of the line to follow the mouse position
         Vector3 mousePos = GetMousePosWithZ();
-        Debug.Log(drawBarPrefab);
         if (linePositions.Count < 2 || Vector3.Distance(linePositions[linePositions.Count - 2], mousePos) > 1)
         {
             linePositions.Insert(linePositions.Count - 1, mousePos);
@@ -157,12 +159,11 @@ public class Draw : MonoBehaviour
 
             currentLine.positionCount = smoothLinePositions.Count;
             currentLine.SetPositions(smoothLinePositions.ToArray());
-            drawBarcurrent-=0.1f;
+            drawBarcurrent-= LowerAmount;
         }
         currentLine.SetPosition(currentLine.positionCount - 1, mousePos);
         if(drawBarcurrent <= 0)
         {
-            Debug.LogWarning("DEPLETED");
             StopDrawing();
         }
     }
@@ -178,7 +179,6 @@ public class Draw : MonoBehaviour
 
             currentLine.positionCount = smoothLinePositions.Count;
             currentLine.SetPositions(smoothLinePositions.ToArray());
-            drawBarcurrent--;
             // Stop playing the drawing sound
             audioSource.Stop();
             //remve mouse line

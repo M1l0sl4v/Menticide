@@ -25612,8 +25612,9 @@ MonoBehaviour:
   lineLifetime: 5
   lineSoundGroup: {fileID: 0}
   segments: 10
-  drawBarMax: 1
   swipeObject: {fileID: 206658521}
+  AddAmount: 0.002
+  LowerAmount: 0.1
 --- !u!4 &1435355290
 Transform:
   m_ObjectHideFlags: 0
@@ -28521,9 +28522,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.5996441
-    width: 0.7068063
-    height: 0.54048043
+    y: 0.62407404
+    width: 0.6164383
+    height: 0.5625
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

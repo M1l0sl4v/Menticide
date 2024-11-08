@@ -141,7 +141,7 @@ public class WeatherManager : MonoBehaviour
    public void sunny()
    {
       setWeatherObjects(false,false,false,false,false,false,true);
-      playerLight.color = new Color(1f, 0.9f, 0.4f,1);
+      playerLight.color = new Color(1f, 0.9f, 0.6f,1);
    }
    public void rainy()
    {
