@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/prefabs/effects/summer leaves.prefab.meta
 guid: 15eeb5479a88e499da4e6d8f81811b73
+========
+guid: 4d0cd7fbc08876d43ab76066c018fc77
+>>>>>>>> Lucian:Assets/prefabs/enemies/Dog/FallenDog.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

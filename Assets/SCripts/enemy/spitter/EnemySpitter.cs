@@ -10,13 +10,19 @@ public class EnemySpitter : MonoBehaviour
     public float idleDelay = 3f;
     public int bulletSpeed = 10;
     public int shootAhead = 10;
+    public int typeOfShootState=0;
 
     public enum States
     {
         Idle,
         Atack
     }
-
+    public enum typeOfShoot
+    {
+        Shoot,
+        ShootCluster,
+        ShootShotgun
+    }
     private GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -79,7 +85,18 @@ public class EnemySpitter : MonoBehaviour
                 StartCoroutine(Idle());
                 break;
             case States.Atack:
-                StartCoroutine(SpitterShootNorm());
+                switch (typeOfShootState)
+                {
+                    case 0:
+                        StartCoroutine(SpitterShootNorm());
+                        break;
+                    case 1:
+                        StartCoroutine(SpitterShootCluster());
+                        break;
+                    case 3:
+                        StartCoroutine(SpitterShootShotgun());
+                        break;
+                }
                 break;
         }
 

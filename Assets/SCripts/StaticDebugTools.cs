@@ -32,7 +32,7 @@ public class StaticDebugTools : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         if (FindObjectsOfType<StaticDebugTools>().Length > 1) Destroy(GameObject.FindGameObjectWithTag("Static"));
         gameObject.tag = "Untagged";
-        instance = this;
+        if (!instance) instance = this;
     }
 
     // Update is called once per frame
@@ -42,18 +42,21 @@ public class StaticDebugTools : MonoBehaviour
 
         if (damagePlayer > 0)
         {
+            bool before = playerInvincibility;
+            playerInvincibility = false;
             playermovement.instance.TakeDamage(damagePlayer);
+            playerInvincibility = before;
             damagePlayer = 0;
         }
 
         if (resetHighScores)
         {
-            Score.ClearSavedHighScores();
+            ScoreManager.ClearSavedHighScores();
             resetHighScores = false;
         }
 
-        topNames = Score.topNames;
-        topScores = Score.topScores;
+        topNames = ScoreManager.highScores.names;
+        topScores = ScoreManager.highScores.scores;
     }
 
     public void ChangeAlgorithm(int algorithm)

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/prefabs/line stuff/pxArt (11).png.meta
 guid: 91e588ab532cb45d783ce380337abc1a
+========
+guid: e0ef30ddda6c244d38e8051afbdbacde
+>>>>>>>> Lucian:Assets/art/cerserSprites/cursor_003.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

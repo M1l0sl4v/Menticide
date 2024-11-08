@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.VFX;
 
 public class seasons : MonoBehaviour
 {
@@ -11,7 +13,8 @@ public class seasons : MonoBehaviour
     private int nextSeason;
 
     public GameObject backGround;
-
+    //public UnityEvent seasonChanged;
+    private enemyspawner[] spawners;
     public static int monthLength = 50;
     public static int seasonLength = 150; // should be 3x month length
     public static int transitionAfter = 100; // start the season change after this long, lasting until end of season
@@ -28,6 +31,7 @@ public class seasons : MonoBehaviour
         instance = this;
         backGround.GetComponent<Renderer>().material.color = new Color(14f / 255, 48f / 255, 7f / 255, 1);
         summer();
+        spawners = FindObjectsOfType<enemyspawner>();
     }
 
     // Update is called once per frame
@@ -56,7 +60,11 @@ public class seasons : MonoBehaviour
                         default:
                             return;
                     }
-        Debug.Log("seasoncahnged");
+        //seasonChanged.Invoke();
+        foreach (var spawner in spawners)
+        {
+            if (spawner.scalingType == enemyspawner.ScalingType.Seasonal) spawner.IncreaseChance();
+        }
         WeatherManager.instance.ChangeWeather();//call the weather from that season
     }
     

@@ -66,7 +66,7 @@ public class TreeSpawner : MonoBehaviour
         }
     }
 
-    // Advances pool to next season, called from Score/IncreaseScore
+    // Advances pool to next season, called from ScoreManager/IncreaseScore
     public void AdvanceTreePool()
     {
         if (++treePoolIndex == treePool.Length) treePoolIndex = 0;

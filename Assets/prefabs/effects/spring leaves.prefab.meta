@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/prefabs/effects/spring leaves.prefab.meta
 guid: e7cffcd035b454772b2bc7ae0c35c0ba
+========
+guid: 15eeb5479a88e499da4e6d8f81811b73
+>>>>>>>> Lucian:Assets/prefabs/effects/summer leaves.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

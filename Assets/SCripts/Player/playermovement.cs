@@ -8,7 +8,7 @@ public class playermovement : MonoBehaviour
 {
     // Movement speed of the player
     public float speed = 5f;
-
+    public float maxSpeed;
     // Multiplier for speed increase when colliding with a wall
     public float speedMultiplier = 1.5f;
 
@@ -24,7 +24,7 @@ public class playermovement : MonoBehaviour
 
     static public int maxHealth = 3;
     public int health;
-    public uiHearts uiHearts;
+    public UIHearts uiHearts;
     public float invincibilityDuration;
     private float invincibilityLeft;
     public static playermovement instance;
@@ -54,37 +54,17 @@ public class playermovement : MonoBehaviour
         if (invincibilityLeft <= 0 && !DeathSequence.controlLock && !StaticDebugTools.instance.playerInvincibility)
         {
             AudioManager.instance.environmentFX(takeDamageSound, transform, 1f, 1f);
-
-            for (int i = health - 1; i > (health - 1) - amount; i--)
-            {
-                if (i >= 0) uiHearts.hearts[i].GetComponent<Animator>().SetTrigger("HeartLost");
-            }
-            health -= amount;
-
-            //uiHearts.hearts[health - 1].GetComponent<Animator>().SetTrigger("HeartLost");
-            StartCoroutine(DamageSequence());
-            if (health <= 0)
-            {
-                DeathSequence.instance.StartDeathSequence();
-            }
-
+            uiHearts.RemoveHeart(amount);
+            
             // Begin i-frames
             invincibilityLeft = invincibilityDuration;
         }
     }
     public void AddHealth(int amount)//health buffs
     {
-        health += amount;
-        uiHearts.updateHealth(health);
+        uiHearts.AddHeart(amount);
     }
     
-
-    private IEnumerator DamageSequence()
-    {
-        yield return new WaitForSeconds(0.417f); // length of Heartdestroy
-        uiHearts.updateHealth(health);
-    }
-
     private void Update()
     {
         
@@ -95,7 +75,7 @@ public class playermovement : MonoBehaviour
             speed -= speedDecayRate * Time.deltaTime;
             if (speed < _originalSpeed)
             {
-                speed = Mathf.Clamp(_originalSpeed,5,100);
+                speed = Mathf.Clamp(_originalSpeed,5,maxSpeed);
             }
         }
 
@@ -124,7 +104,11 @@ public class playermovement : MonoBehaviour
         GetComponent<Animator>().SetFloat("I Frames", invincibilityLeft);
         moveWASD();
 
-
+        // Limit speed
+        if (!StaticDebugTools.instance.playerMoveSpeedOverride)
+        {
+            speed = Mathf.Clamp(speed, 5, maxSpeed);
+        }
     }
 //this sets the player back to zero
 //i am using this method to move everything else back, but it is not working great

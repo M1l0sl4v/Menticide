@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/prefabs/line stuff/pxArt (9).png.meta
+guid: 457c387e552e344faa20b74a4636a4dc
+========
 guid: 0c67a8f210ce24b509b6e67ff2cdd804
+>>>>>>>> Lucian:Assets/art/cerserSprites/cursor_004.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +52,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 960
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1

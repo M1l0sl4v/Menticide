@@ -183,7 +183,7 @@ public class TileManagerFSM : MonoBehaviour
     {
         // Check for season transition
         Season seasonToUse;
-        if (Score.instance.DistanceInSeason() >= seasons.transitionAfter && UnityEngine.Random.value < NextSeasonChance()) seasonToUse = PeekNextSeason();
+        if (ScoreManager.instance.DistanceInSeason() >= seasons.transitionAfter && UnityEngine.Random.value < NextSeasonChance()) seasonToUse = PeekNextSeason();
         else seasonToUse = season;
 
         // Check for transition
@@ -257,7 +257,7 @@ public class TileManagerFSM : MonoBehaviour
     private float NextSeasonChance()
     {
         float transitionDuration = seasons.seasonLength - seasons.transitionAfter;
-        int distanceInTransition = Score.instance.DistanceInSeason() - seasons.transitionAfter;
+        int distanceInTransition = ScoreManager.instance.DistanceInSeason() - seasons.transitionAfter;
         return Mathf.Clamp(distanceInTransition / transitionDuration, 0f, 1f);
     }
 

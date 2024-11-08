@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6130171139222252423}
   - component: {fileID: -1378471675825382553}
   - component: {fileID: 1436361276517969773}
+  - component: {fileID: -6329837633658946370}
+  - component: {fileID: 8317104531599078942}
   m_Layer: 0
   m_Name: WinterTree
   m_TagString: Tree
@@ -159,7 +161,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnDistanceTree: 10
   leafs: {fileID: 0}
-  ruscleSound: {fileID: 0}
+  ruscleSound: {fileID: 8300000, guid: d085bcdac0a06448382249c576fd80df, type: 3}
   delay: 0.5
   treespawner1: {fileID: 0}
   treespawner2: {fileID: 0}
+  hasLeafs: 0
+--- !u!114 &-6329837633658946370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4089663407155386498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67d724650ce63426eb6e78151299a93b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeTime: 0.1
+  shakeAmount: 0.05
+--- !u!61 &8317104531599078942
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4089663407155386498}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2}
+  m_EdgeRadius: 0
