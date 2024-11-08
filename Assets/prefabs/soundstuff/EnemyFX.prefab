@@ -144,4 +144,4 @@ MonoBehaviour:
   maxDistance: 15
   minDistance: 1
   maxVolumeDb: 1
-  minVolumeDb: -10
+  minVolumeDb: -15

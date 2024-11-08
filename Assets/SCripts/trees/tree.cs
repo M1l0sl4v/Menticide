@@ -51,7 +51,7 @@ public class tree : MonoBehaviour
                 leafspawn();
             }
             float randomPitch = Random.Range(.9f, 1.3f);
-            AudioManager.instance.environmentFX(ruscleSound, transform ,1f, randomPitch);
+            AudioManager.instance.environmentFX(ruscleSound, transform ,.5f, randomPitch);
             StartCoroutine(DestroyLeavesCoroutine(delay));
             
             if (destroyLeavesCoroutine != null)
