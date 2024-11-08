@@ -9160,7 +9160,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 7877837618308437015, guid: 1563ec55dad5940e1b3b282d4b69f38b, type: 2}
-  m_audioClip: {fileID: 8300000, guid: c3fbca367264047838dd2355aee82ddc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bd206dcd435e246429cdfad1b31c62c9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -22440,63 +22440,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1001 &1279318553
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1608566518411204025, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
-      propertyPath: m_Name
-      value: spitter
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698853777551251083, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.8181696
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698853777551251083, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.9653335
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698853777551251083, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698853777551251083, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698853777551251083, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698853777551251083, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698853777551251083, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698853777551251083, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698853777551251083, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698853777551251083, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
 --- !u!1 &1282427979
 GameObject:
   m_ObjectHideFlags: 0
@@ -28578,14 +28521,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.5996441
+    width: 0.7068063
+    height: 0.54048043
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.625
+  orthographic size: 4.21875
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -32009,7 +31952,7 @@ Transform:
   m_GameObject: {fileID: 1782422994}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5, z: 0}
+  m_LocalPosition: {x: 0, y: -18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38633,4 +38576,3 @@ SceneRoots:
   - {fileID: 1969046016}
   - {fileID: 652660663}
   - {fileID: 1782422997}
-  - {fileID: 1279318553}

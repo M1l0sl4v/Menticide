@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeTime: 0.1
-  shakeAmount: 0.1
+  shakeAmount: 0.05
 --- !u!61 &8317104531599078942
 BoxCollider2D:
   m_ObjectHideFlags: 0
