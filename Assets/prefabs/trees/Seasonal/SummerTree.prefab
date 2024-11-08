@@ -166,7 +166,7 @@ MonoBehaviour:
   delay: 0.001
   treespawner1: {fileID: 0}
   treespawner2: {fileID: 0}
-  hasLeafs: 0
+  hasLeafs: 1
 --- !u!61 &7627912645700626820
 BoxCollider2D:
   m_ObjectHideFlags: 0

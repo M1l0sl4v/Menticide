@@ -7,20 +7,12 @@ using Random = UnityEngine.Random;
 public class tree : MonoBehaviour
 {
     public float despawnDistanceTree = 10;
-    [SerializeField] private ParticleSystem leafs;
+    [SerializeField] public ParticleSystem leafs;
     [SerializeField] private AudioClip ruscleSound;
-    public float delay = 2f;
+    public float delay = 1f;
     
-    public TreeSpawner treespawner1;
-    public TreeSpawner treespawner2;
-
     public bool hasLeafs = true;
     
-    
-    private Coroutine destroyLeavesCoroutine;
-    
-    private ParticleSystem leafsinstance;
-
     void Update()
     {
         //checks distance to player and despawns when it gets too far away.
@@ -41,9 +33,10 @@ public class tree : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             leafspawn();
-            float randomPitch = Random.Range(.9f, 1.3f);
+            float randomPitch = Random.Range(.9f, 1.2f);
             AudioManager.instance.environmentFX(ruscleSound, transform ,.8f, randomPitch);
             StartCoroutine(DestroyLeavesCoroutine(delay));
+            Debug.Log("playerhit");
         }
 
         if (other.CompareTag("cullingField"))
@@ -57,19 +50,21 @@ public class tree : MonoBehaviour
     public IEnumerator DestroyLeavesCoroutine(float delay)
     {
         yield return new WaitForSeconds(delay);
-        if (leafsinstance != null)
+        if (leafs != null)
         {
-            //Destroy(leafsinstance);  
-            leafsinstance.Clear();
+            leafs.Stop();
+            leafs.Clear();
+            Destroy(leafs.gameObject);  
         }
     }
 
     public void ClearParticles()
     {
-        if (leafsinstance != null)
+        if (leafs != null)
         {
-            //Destroy(leafsinstance);  
-            leafsinstance.Clear();
+            leafs.Stop();
+            leafs.Clear();
+            Destroy(leafs.gameObject);  
         }
     }
 
@@ -77,7 +72,7 @@ public class tree : MonoBehaviour
     {
         if (hasLeafs)
         {
-            leafsinstance = Instantiate(leafs, transform.position , Quaternion.identity, transform);
+            leafs = Instantiate(leafs, transform.position , Quaternion.identity, transform);
 
         }
         else

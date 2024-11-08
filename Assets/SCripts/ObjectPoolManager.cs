@@ -138,6 +138,7 @@ public class ObjectPoolManager : MonoBehaviour
             pool.InactiveObjects.Remove(spawnableObj);  
             spawnableObj.SetActive(true);
         }
+        
 
         return spawnableObj;
     }

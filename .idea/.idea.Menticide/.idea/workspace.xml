@@ -5,11 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="181a9b39-c2d7-40b0-b7bc-d00f50f0c591" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Menticide/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Menticide/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/ObjectPoolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/ObjectPoolManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/Player/playermovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/Player/playermovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/audio/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/audio/AudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/enemy/Dog/enemyDog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/enemy/Dog/enemyDog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/objectShake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/objectShake.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/trees/tree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/trees/tree.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/art/shader and mats/1.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/shader and mats/1.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/art/shader and mats/materials/GLitch Effect.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/shader and mats/materials/GLitch Effect.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/art/shader and mats/materials/Shader Graphs_Fog.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/shader and mats/materials/Shader Graphs_Fog.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/art/shader and mats/shaders/Glitch.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/shader and mats/shaders/Glitch.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/mainmixer.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sounds/mainmixer.mixer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/FallenDog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/FallenDog.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/MalignantDog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/MalignantDog.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/NecroticDog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/NecroticDog.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/NormalDog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/NormalDog.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/soundstuff/EnemyFX.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/soundstuff/EnemyFX.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/Seasonal/SpringTree.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/trees/Seasonal/SpringTree.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/Seasonal/SummerTree.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/trees/Seasonal/SummerTree.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +46,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/SCripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/milojustice/Documents/GitHub/Menticide/Assets/SCripts/MainMenu.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/milojustice/Documents/GitHub/Menticide/Assets/SCripts/MainMenu.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SCripts/cameraShake.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/milojustice/Documents/GitHub/Menticide/Assets/SCripts/enemy/enemyDog.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/milojustice/Documents/GitHub/Menticide/Assets/SCripts/enemy/enemyDog.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SCripts/lineScripts/Draw.cs" root0="FORCE_HIGHLIGHTING" />

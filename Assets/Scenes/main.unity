@@ -707,6 +707,7 @@ GameObject:
   - component: {fileID: 39125469}
   - component: {fileID: 39125471}
   - component: {fileID: 39125470}
+  - component: {fileID: 39125472}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -784,6 +785,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &39125472
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39125468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1001 &41005537
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1297,7 +1315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67de40336b0e4d42ad8d88102442181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInvincibility: 1
+  playerInvincibility: 0
   playerMoveSpeedOverride: 0
   overrideValue: 10
   damagePlayer: 0
@@ -23941,6 +23959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   envirofxObject: {fileID: 4841542676470499439, guid: 3b0f2867d7dc94765b2affd9c3263405, type: 3}
   enemyfxObject: {fileID: 5250871102250748721, guid: a1dc8d667aa4a4b8c9fee87c6dd631c8, type: 3}
+  playerfxObject: {fileID: 4841542676470499439, guid: cc86445c226854fa28cd9c47231ac240, type: 3}
   audioEmpty: {fileID: 1325118026}
 --- !u!114 &1332601558
 MonoBehaviour:
@@ -24420,6 +24439,7 @@ GameObject:
   - component: {fileID: 1355525256}
   - component: {fileID: 1355525257}
   - component: {fileID: 1355525258}
+  - component: {fileID: 1355525259}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -24511,6 +24531,18 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 294031784}
   m_ConfineScreenEdges: 1
   m_Damping: 0
+--- !u!114 &1355525259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355525254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12ca9c5e93414429f971da927f8d01ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1369471963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28522,14 +28554,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.04436229
-    width: 1
-    height: 0.9097736
+    y: 0.040034812
+    width: 0.99999994
+    height: 0.9203655
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.21875
+  orthographic size: 6.328125
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -29595,6 +29627,8 @@ MonoBehaviour:
   speedDecayRate: 0
   _originalSpeed: 0
   resetTriggerDistance: 300
+  screenshakeAmount: 5
+  screenshakeTime: 2
   health: 0
   uiHearts: {fileID: 196417510}
   invincibilityDuration: 1

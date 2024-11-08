@@ -109,7 +109,7 @@ public class enemyDog : MonoBehaviour
         if (surprised)
         {
             int prefabIndex = Random.Range(0, noticeSounds.Count);
-            float pitch = Random.Range(1f, 1.3f);
+            float pitch = Random.Range(1f, 1.2f);
             AudioManager.instance.enemyFX(noticeSounds[prefabIndex], transform, 1f, pitch);
             e = Instantiate(exlimation, transform); // Show exclamation mark
             e.transform.parent = transform;

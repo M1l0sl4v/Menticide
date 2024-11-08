@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-6062043147486474338
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 884f39ab36ffd46dea210ef6ebc8cd0d
+  m_EffectName: Attenuation
+  m_MixLevel: 38867d125c9194d509676409a4a7cb51
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-3668474477576355475
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -14,6 +28,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-2777465977745647220
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: playerFX
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 1933ecb478e8c470eb780361faaabea0
+  m_Children: []
+  m_Volume: 9c42beac67682447189adadb501cf18a
+  m_Pitch: 4b8420146c9c740b6894f8502c85aca5
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -6062043147486474338}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &-907846920457441527
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -76,6 +109,7 @@ AudioMixerController:
     - edb64798b62ef400084bd19da9fdc0b0
     - 073b1f720be2d4816a6f99dffd9e77fb
     - 486a8fa56630046b0a57574ffc3eaa0d
+    - 1933ecb478e8c470eb780361faaabea0
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -93,6 +127,7 @@ AudioMixerGroupController:
   - {fileID: -570749532139490037}
   - {fileID: 9032807892600366102}
   - {fileID: 7877837618308437015}
+  - {fileID: -2777465977745647220}
   m_Volume: dc43974daeed34ee0a251e0999aa3fe5
   m_Pitch: a759ed0040dc247cd93c6122386c18b4
   m_Send: 00000000000000000000000000000000
@@ -127,10 +162,11 @@ AudioMixerSnapshotController:
   m_SnapshotID: 04afe7c4c54fe4a47bfb598612c4f366
   m_FloatValues:
     9ca6881175bdd492891693bd20b2b0b9: -2.0763636
-    04453e253843e4bbcba417f1a43ebb1a: -2.5738313
+    04453e253843e4bbcba417f1a43ebb1a: -0.02577656
     39f41f4988509446b8c7a03783bf0792: 3.5924087
     656f80eaa23d8407081e8b477cdb4aeb: -23.61511
-    b93c571c3d27945ef8ce2a20bae3d18e: -12.498478
+    b93c571c3d27945ef8ce2a20bae3d18e: -15.421314
+    9c42beac67682447189adadb501cf18a: -4.9356413
     dc43974daeed34ee0a251e0999aa3fe5: -0.27209902
     58519fcd127f94c5cb5626d8ca9e1005: -0.16685188
     8703ad7e0506d497a944c0112f764aaa: -14.816608

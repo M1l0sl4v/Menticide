@@ -12,14 +12,6 @@ public class objectShake : MonoBehaviour
 
     private Vector2 ogPosition;
 
-
-    private void FixedUpdate()
-    {
-
-    }
-
-    
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         ogPosition = transform.localPosition;
@@ -57,13 +49,6 @@ public class objectShake : MonoBehaviour
         }
         
         transform.localPosition = ogPosition;
-        
-    }
-    
-    
-    
-    void Update()
-    {
         
     }
 }
