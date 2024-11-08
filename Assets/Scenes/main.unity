@@ -1297,7 +1297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67de40336b0e4d42ad8d88102442181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInvincibility: 0
+  playerInvincibility: 1
   playerMoveSpeedOverride: 0
   overrideValue: 10
   damagePlayer: 0
@@ -25605,7 +25605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawBarPrefab: {fileID: 1348545298}
-  wallMaterial: {fileID: 2100000, guid: 271f3d987175448acb11a57060512135, type: 2}
+  wallMaterial: {fileID: 2100000, guid: 664483079e8da4b8686b434974002eda, type: 2}
   wallWidth: 0.3
   wallTag: Wall
   drawingSoundClip: {fileID: 8300000, guid: f129a093b2aee4cd89d174559bf43e92, type: 3}
@@ -28522,9 +28522,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.62407404
-    width: 0.6164383
-    height: 0.5625
+    y: 0.04436229
+    width: 1
+    height: 0.9097736
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
