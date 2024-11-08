@@ -7,11 +7,25 @@ using Random = UnityEngine.Random;
 public class tree : MonoBehaviour
 {
     public float despawnDistanceTree = 10;
-    [SerializeField] public ParticleSystem leafs;
+    private ParticleSystem leafs;
     [SerializeField] private AudioClip ruscleSound;
     public float delay = 1f;
+    public bool hasLeaves = true;
     
-    public bool hasLeafs = true;
+    private Coroutine destroyLeavesCoroutine;
+    
+    void OnEnable()
+    {
+        if (leafs == null)
+        {
+            leafs = GetComponentInChildren<ParticleSystem>();  // Find the child ParticleSystem
+        }
+        
+        if (leafs != null)
+        {
+            leafs.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        }
+    }
     
     void Update()
     {
@@ -32,52 +46,57 @@ public class tree : MonoBehaviour
         //Debug.Log("wow");
         if (other.CompareTag("Player"))
         {
-            leafspawn();
-            float randomPitch = Random.Range(.9f, 1.2f);
-            AudioManager.instance.environmentFX(ruscleSound, transform ,.8f, randomPitch);
+            if (hasLeaves)
+            {
+                leafspawn();
+            }
+            float randomPitch = Random.Range(.9f, 1.3f);
+            AudioManager.instance.environmentFX(ruscleSound, transform ,1f, randomPitch);
             StartCoroutine(DestroyLeavesCoroutine(delay));
-            Debug.Log("playerhit");
+            
+            if (destroyLeavesCoroutine != null)
+            {
+                StopCoroutine(destroyLeavesCoroutine);
+            }
         }
 
         if (other.CompareTag("cullingField"))
-        {
+        { 
             ClearParticles();
-            ObjectPoolManager.ReturnObjectToPool(gameObject);
+           ObjectPoolManager.ReturnObjectToPool(gameObject);
+           if (leafs != null)
+           {
+               leafs.Clear();
+           }
         }
         
     }
-
-    public IEnumerator DestroyLeavesCoroutine(float delay)
+    private IEnumerator DestroyLeavesCoroutine(float delay)
     {
         yield return new WaitForSeconds(delay);
-        if (leafs != null)
-        {
-            leafs.Stop();
-            leafs.Clear();
-            Destroy(leafs.gameObject);  
-        }
+        ClearParticles();
     }
-
-    public void ClearParticles()
-    {
-        if (leafs != null)
-        {
-            leafs.Stop();
-            leafs.Clear();
-            Destroy(leafs.gameObject);  
-        }
-    }
+    
 
     private void leafspawn()
     {
-        if (hasLeafs)
+        if (leafs != null)
         {
-            leafs = Instantiate(leafs, transform.position , Quaternion.identity, transform);
-
+            leafs.transform.position = transform.position;
+            leafs.Play();
+            
         }
         else
         {
-            return;
+            Debug.LogWarning("Leaf particle system is not assigned.");
+        }
+    }
+    private void ClearParticles()
+    {
+        // Stop the particle system and clear it
+        if (leafs != null)
+        {
+            leafs.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         }
     }
     

@@ -18,7 +18,6 @@ public class objectShake : MonoBehaviour
         if (other.CompareTag("Player"))
         { 
             shakeObject();
-            Debug.Log("hitplayer");
         }
         
     }
@@ -42,8 +41,6 @@ public class objectShake : MonoBehaviour
             transform.localPosition = ogPosition + new Vector2(offsetX, offsetY);
             
             elapsed += Time.deltaTime;
-            
-            Debug.Log("shaken");
             
             yield return null;
         }
