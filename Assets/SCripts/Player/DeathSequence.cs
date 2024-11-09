@@ -43,7 +43,7 @@ public class DeathSequence : MonoBehaviour
     public GameObject menuButtons;
     public TMP_Text[] buttons; // menu button text
     public float endScreenDelay;
-    public Image tutorialToggle;
+
 
     private float deathMessageAlpha;
     private bool deathMessageActive;
@@ -73,7 +73,6 @@ public class DeathSequence : MonoBehaviour
             {
                 button.color = new Color(1, 0, 0, buttonAlpha);
             }
-            tutorialToggle.color = new Color(1, 0, buttonAlpha);
             buttonAlpha += fadeInSpeed;
         }
 

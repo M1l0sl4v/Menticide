@@ -12,12 +12,21 @@ public class objectShake : MonoBehaviour
 
     private Vector2 ogPosition;
 
+
+    private void FixedUpdate()
+    {
+
+    }
+
+    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         ogPosition = transform.localPosition;
         if (other.CompareTag("Player"))
         { 
             shakeObject();
+            Debug.Log("hitplayer");
         }
         
     }
@@ -42,10 +51,19 @@ public class objectShake : MonoBehaviour
             
             elapsed += Time.deltaTime;
             
+            Debug.Log("shaken");
+            
             yield return null;
         }
         
         transform.localPosition = ogPosition;
+        
+    }
+    
+    
+    
+    void Update()
+    {
         
     }
 }

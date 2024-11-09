@@ -34,19 +34,19 @@ public class enemyspawner : MonoBehaviour
     
     void Update()
     {
-        if (!Tutorial.instance.disabledForTutorial)
-        {
-            elapsedTime += Time.deltaTime;
 
-            if (elapsedTime >= timeBetweenSpawnAttempt)
+        elapsedTime += Time.deltaTime;
+        // delay on start, then incriments
+
+        if(elapsedTime >= timeBetweenSpawnAttempt)
+        {
+            if (Random.value < spawnChance)
             {
-                if (Random.value < spawnChance)
-                {
-                    Spawn();
-                }
-                elapsedTime = 0;
+                Spawn();
             }
+            elapsedTime = 0;
         }
+
         // For debugging
         if (Input.GetKeyDown(KeyCode.Space))
         {

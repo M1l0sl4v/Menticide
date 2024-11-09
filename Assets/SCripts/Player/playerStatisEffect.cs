@@ -54,7 +54,7 @@ public class playerStatisEffect
     {
         if (isActive)
         {
-            playermovement.speed = 3;
+            playermovement.speed = 1;
         }
 
         else

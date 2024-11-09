@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea26b69f370dc4fa3823573f60429b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 15
+  maxDistance: 8
   minDistance: 1
   maxVolumeDb: 1
-  minVolumeDb: -15
+  minVolumeDb: -10
