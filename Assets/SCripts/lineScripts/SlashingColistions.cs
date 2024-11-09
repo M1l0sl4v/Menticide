@@ -11,7 +11,7 @@ public class SlashingColistions : MonoBehaviour
         {
             Debug.Log("hihihi");
             enemyHealth health = collision.gameObject.GetComponentInChildren<enemyHealth>();
-            health.TakeDamage(10);
+            if (health) health.TakeDamage(10);
         }
     }
 }
