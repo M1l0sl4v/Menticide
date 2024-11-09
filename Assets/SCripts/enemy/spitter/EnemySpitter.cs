@@ -10,13 +10,19 @@ public class EnemySpitter : MonoBehaviour
     public float idleDelay = 3f;
     public int bulletSpeed = 10;
     public int shootAhead = 10;
+    public int typeOfShootState=0;
 
     public enum States
     {
         Idle,
         Atack
     }
-
+    public enum typeOfShoot
+    {
+        Shoot,
+        ShootCluster,
+        ShootShotgun
+    }
     private GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -32,13 +38,15 @@ public class EnemySpitter : MonoBehaviour
     }
     IEnumerator SpitterShootCluster()
     {
-        yield return new WaitForSeconds(fireRate);
         ShootCluster(5, 10, 0);
+        yield return new WaitForSeconds(fireRate);
+        EnemyStates(States.Atack);
     }
     IEnumerator SpitterShootShotgun()
     {
-        yield return new WaitForSeconds(fireRate);
         ShootShotgun(5,3);
+        yield return new WaitForSeconds(fireRate);
+        EnemyStates(States.Atack);
     }
     IEnumerator Idle()
     {
@@ -56,7 +64,7 @@ public class EnemySpitter : MonoBehaviour
     {
         for(int i=0; i < HowMany; i++)
         {
-            Vector3 direction = player.transform.position - transform.position;
+            Vector3 direction = player.transform.position - transform.position + new Vector3(0, shootAhead, 0);
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90 + Random.Range(-spread, spread);
             Quaternion rotation = Quaternion.Euler(0, 0, angle);
             progectial.CreateProjectileCluster(progectialSpitter, transform.position, rotation, Speeds,0,gameObject);
@@ -66,7 +74,7 @@ public class EnemySpitter : MonoBehaviour
     {
         for (int i = HowMany *-1; i < HowMany; i+=2)
         {
-            Vector3 direction = player.transform.position - transform.position;
+            Vector3 direction = player.transform.position - transform.position + new Vector3(0, shootAhead, 0);
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90 + i;
             Quaternion rotation = Quaternion.Euler(0, 0, angle);
             progectial.CreateProjectile(progectialSpitter, transform.position, rotation, Speed, gameObject);
@@ -79,7 +87,18 @@ public class EnemySpitter : MonoBehaviour
                 StartCoroutine(Idle());
                 break;
             case States.Atack:
-                StartCoroutine(SpitterShootNorm());
+                switch (typeOfShootState)
+                {
+                    case 0:
+                        StartCoroutine(SpitterShootNorm());
+                        break;
+                    case 1:
+                        StartCoroutine(SpitterShootCluster());
+                        break;
+                    case 3:
+                        StartCoroutine(SpitterShootShotgun());
+                        break;
+                }
                 break;
         }
 

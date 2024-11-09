@@ -21,7 +21,6 @@ public class HealthPickUp : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playermovement.instance.AddHealth(1);
-            Debug.LogWarning("healthup");
             ObjectPoolManager.ReturnObjectToPool(gameObject);
         }
     }

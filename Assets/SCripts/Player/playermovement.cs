@@ -21,14 +21,10 @@ public class playermovement : MonoBehaviour
 
     public float resetTriggerDistance;
     //distance at which the player is reset
-    
-    //screenshake stuff
-    public float screenshakeAmount;
-    public float screenshakeTime;
 
     static public int maxHealth = 3;
     public int health;
-    public uiHearts uiHearts;
+    public UIHearts uiHearts;
     public float invincibilityDuration;
     private float invincibilityLeft;
     public static playermovement instance;
@@ -57,38 +53,18 @@ public class playermovement : MonoBehaviour
     {
         if (invincibilityLeft <= 0 && !DeathSequence.controlLock && !StaticDebugTools.instance.playerInvincibility)
         {
-            AudioManager.instance.playerFX(takeDamageSound, transform, 1f, 1f);
-            cameraShake.instance.shakeCamera(screenshakeAmount, screenshakeTime);
-            for (int i = health - 1; i > (health - 1) - amount; i--)
-            {
-                if (i >= 0) uiHearts.hearts[i].GetComponent<Animator>().SetTrigger("HeartLost");
-            }
-            health -= amount;
-
-            //uiHearts.hearts[health - 1].GetComponent<Animator>().SetTrigger("HeartLost");
-            StartCoroutine(DamageSequence());
-            if (health <= 0)
-            {
-                DeathSequence.instance.StartDeathSequence();
-            }
-
+            AudioManager.instance.environmentFX(takeDamageSound, transform, 1f, 1f);
+            uiHearts.RemoveHeart(amount);
+            
             // Begin i-frames
             invincibilityLeft = invincibilityDuration;
         }
     }
     public void AddHealth(int amount)//health buffs
     {
-        health += amount;
-        uiHearts.updateHealth(health);
+        uiHearts.AddHeart(amount);
     }
     
-
-    private IEnumerator DamageSequence()
-    {
-        yield return new WaitForSeconds(0.417f); // length of Heartdestroy
-        uiHearts.updateHealth(health);
-    }
-
     private void Update()
     {
         

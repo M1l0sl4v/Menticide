@@ -26,8 +26,8 @@ public class StatusEffectManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(damageTickRate);
             playermovement.instance.TakeDamage(damageAmount);
+            yield return new WaitForSeconds(damageTickRate);
         }
     }
 }

@@ -25,6 +25,9 @@ public class enemyDog : MonoBehaviour
     public Animator animator;
     private Tilemap tilemap;
 
+    public float stopAttacingTime=.1f;
+
+
     private void Start()
     {
         tilemap = GameObject.FindGameObjectWithTag("enemyTilemap").GetComponent<Tilemap>();
@@ -64,16 +67,23 @@ public class enemyDog : MonoBehaviour
         {
             ObjectPoolManager.ReturnObjectToPool(gameObject);
         }
+        if (other.gameObject.CompareTag("Player"))
+        {
+            playermovement.instance.TakeDamage(1);
+            StartCoroutine(stunDog());
+        }
 
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            playermovement.instance.TakeDamage(1);
-        }
     }
-
+    IEnumerator stunDog()
+    {
+        var enemyspeedChaseTem = enemyspeedChase;
+        enemyspeedChase = 0;
+        yield return new WaitForSeconds(stopAttacingTime);
+        enemyspeedChase = enemyspeedChaseTem;
+    }
     private void enemyAi()
     {
         if (lineOfSight)
@@ -109,7 +119,7 @@ public class enemyDog : MonoBehaviour
         if (surprised)
         {
             int prefabIndex = Random.Range(0, noticeSounds.Count);
-            float pitch = Random.Range(1f, 1.2f);
+            float pitch = Random.Range(1f, 1.3f);
             AudioManager.instance.enemyFX(noticeSounds[prefabIndex], transform, 1f, pitch);
             e = Instantiate(exlimation, transform); // Show exclamation mark
             e.transform.parent = transform;
