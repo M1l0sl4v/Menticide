@@ -55,7 +55,8 @@ public class playermovement : MonoBehaviour
     
     public void TakeDamage(int amount)
     {
-        if (invincibilityLeft <= 0 && !DeathSequence.controlLock && !StaticDebugTools.instance.playerInvincibility)
+        if (invincibilityLeft <= 0 && !DeathSequence.controlLock && !StaticDebugTools.instance.playerInvincibility &&
+            (Tutorial.instance.CurrentPhase() == Tutorial.Phase.None || Tutorial.instance.CurrentPhase() == Tutorial.Phase.Complete))
         {
             AudioManager.instance.playerFX(takeDamageSound, transform, 1f, 1f);
             cameraShake.instance.shakeCamera(screenshakeAmount, screenshakeTime);
