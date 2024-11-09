@@ -24250,7 +24250,7 @@ MonoBehaviour:
   movementTooltip: Move left and right with directional keys
   delayBeforeDrawPhase: 3
   lineDrawingObjects: {fileID: 583403454}
-  fillSpeed: 0.02
+  fillSpeed: 0.5
   drawAmountToProgress: 10
   drawAmount: 0
   lineDrawTooltip: Click and drag to create barriers
@@ -28903,15 +28903,15 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.005319149
     y: 0
-    width: 1
+    width: 0.98912525
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.625
+  orthographic size: 6.328125
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2

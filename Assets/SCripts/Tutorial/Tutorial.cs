@@ -155,7 +155,7 @@ public class Tutorial : MonoBehaviour
                 tutorialText.text = lineDrawTooltip;
 
                 // Fill and flip line
-                demoLine.fillAmount += fillSpeed;
+                demoLine.fillAmount += fillSpeed * Time.deltaTime;
                 if (demoLine.fillAmount >= 1 && refillCooldownLeft <= 0)
                 {
                     demoLine.fillAmount = 0;
