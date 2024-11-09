@@ -14,8 +14,6 @@ public class Tutorial : MonoBehaviour
     [Header("General")]
     public GameObject tutorialObjects;
     public TMP_Text tutorialText;
-    public GameObject tutorialToggle;
-    public Sprite[] buttonSprites;
     private bool phaseShiftTriggered;
     public bool disabledForTutorial;
 
@@ -254,11 +252,4 @@ public class Tutorial : MonoBehaviour
         enemiesTooltip = "Good luck!";
         Invoke("Complete", 3f);
     }
-
-    public void ToggleTutorial()
-    {
-        startWithTutorial = !startWithTutorial;
-        tutorialToggle.GetComponent<Image>().sprite = startWithTutorial ? buttonSprites[0] : buttonSprites[1];
-    }
-
 }

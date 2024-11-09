@@ -37,7 +37,7 @@ public class seasons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        backGround.GetComponent<Renderer>().material.color = Color.Lerp(backGround.GetComponent<Renderer>().material.color, colorTransition, 1f * Time.deltaTime);
+        backGround.GetComponent<SpriteRenderer>().color = Color.Lerp(backGround.GetComponent<SpriteRenderer>().color, colorTransition, 1f * Time.deltaTime);
 
     }
 //switch statement cycles through the seasons and calls their methods. just calling this method changes the season.
