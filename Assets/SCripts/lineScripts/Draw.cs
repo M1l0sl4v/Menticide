@@ -60,7 +60,7 @@ public class Draw : MonoBehaviour
 
     void HandleInput()
     {
-        if (Input.GetMouseButtonDown(0) && !pauseMenu.paused && drawBarcurrent>=0 && fillingUp == false)
+        if (Input.GetMouseButtonDown(0) && !pauseMenu.paused && drawBarcurrent>=0 && fillingUp == false && !DeathSequence.controlLock)
         {
             StartDrawing();
         }
@@ -160,6 +160,9 @@ public class Draw : MonoBehaviour
             currentLine.positionCount = smoothLinePositions.Count;
             currentLine.SetPositions(smoothLinePositions.ToArray());
             drawBarcurrent-= LowerAmount;
+
+            // Track drawing amount for tutorial
+            if (Tutorial.instance.CurrentPhase() == Tutorial.Phase.Drawing) { Tutorial.instance.drawAmount++; }
         }
         currentLine.SetPosition(currentLine.positionCount - 1, mousePos);
         if(drawBarcurrent <= 0)

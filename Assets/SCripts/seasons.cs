@@ -29,7 +29,7 @@ public class seasons : MonoBehaviour
     void Start()
     {
         instance = this;
-        backGround.GetComponent<Renderer>().material.color = new Color(14f / 255, 48f / 255, 7f / 255, 1);
+        backGround.GetComponent<SpriteRenderer>().color = new Color(14f / 255, 48f / 255, 7f / 255, 1);
         summer();
         spawners = FindObjectsOfType<enemyspawner>();
     }

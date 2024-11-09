@@ -134,6 +134,9 @@ public class ScoreManager : MonoBehaviour
 
         // Toggle debug info display
         debugInfo.gameObject.SetActive(displayDebugInfo);
+
+        // Disable score display during tutorial
+        scoreText.transform.parent.gameObject.SetActive(!Tutorial.instance.disabledForTutorial);
     }
 
 

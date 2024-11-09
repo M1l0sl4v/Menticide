@@ -163,7 +163,8 @@ public class TileRow : MonoBehaviour
     {
         if (collision.gameObject.tag == "cullingField")
         {
-            if (!DeathSequence.controlLock)
+            // Disable progression during tutorial and when dead
+            if (!DeathSequence.controlLock && !Tutorial.instance.disabledForTutorial)
             {
                 ScoreManager.instance.IncreaseScore();
                 TileManagerFSM.instance.IncreasePathDistance();
