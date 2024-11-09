@@ -53,6 +53,10 @@ public class DeathSequence : MonoBehaviour
 
     private float scoreTextAlpha;
     private bool scoreTextActive;
+    [Header("ReturnToMenu")]
+    public float menuAfter;
+    private float timeUntilMenu;
+    private bool countdown;
 
 
 
@@ -100,6 +104,12 @@ public class DeathSequence : MonoBehaviour
         {
             inputField.placeholder.color = new Color(1, 0, 0, inputAlpha);
             inputAlpha += fadeInSpeed;
+        }
+
+        if (countdown)
+        {
+            timeUntilMenu -= Time.deltaTime;
+            if (timeUntilMenu <= 0) Menu();
         }
 
         //timeElapsed += Time.deltaTime;
@@ -162,7 +172,7 @@ public class DeathSequence : MonoBehaviour
         inputActive = true;
         yield return new WaitForSeconds(inputDelay * (2 / 3));
         inputField.Select();
-
+        Invoke("Menu", 20f);
         // Show menu buttons
         //yield return new WaitForSeconds(endScreenDelay);
         //UIStack.Push(menuButtons);
