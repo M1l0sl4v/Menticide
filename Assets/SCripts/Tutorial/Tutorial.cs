@@ -130,7 +130,7 @@ public class Tutorial : MonoBehaviour
                 timeUntilSwap -= Time.deltaTime;
                 if (timeUntilSwap <= 0)
                 {
-                    currentSet = currentSet == 1 ? 0 : 1;
+                    currentSet = ++currentSet == leftKeySprites.Length ? 0 : currentSet;
                     leftButton.sprite = leftKeySprites[currentSet];
                     rightButton.sprite = rightKeySprites[currentSet];
                     timeUntilSwap = graphicSwapSpeed;
@@ -229,7 +229,10 @@ public class Tutorial : MonoBehaviour
     private void Complete()
     {
         SetPhase(Phase.Complete);
+        startWithTutorial = false;
+        TutorialToggle.instance.SyncState();
         playermovement.instance.AddHealth(playermovement.instance.health - playermovement.maxHealth);
+        hands.instance.Activate();
     }
 
     private void SpawnDog1()

@@ -5,23 +5,31 @@ using UnityEngine;
 
 public class hands : MonoBehaviour
 {
+    public static hands instance;
     public float speed;
     private Vector3 endPos;
     public float moveSmooth;
-    private Transform playerTransform;
-    private GameObject player;
+    private bool active;
+    private float initDistanceFromPlayer;
 
+    void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        playerTransform = player.GetComponent<Transform>();
+        initDistanceFromPlayer = Vector2.Distance(playermovement.instance.transform.position, transform.position);
+        if (!Tutorial.startWithTutorial) active = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        endPos = playerTransform.position;
-        transform.position = Vector3.Lerp(transform.position, endPos,Time.deltaTime*moveSmooth);
+        if (active)
+        {
+            endPos = playermovement.instance.transform.position;
+            transform.position = Vector3.Lerp(transform.position, endPos, Time.deltaTime*moveSmooth);
+        }
     }
 
 
@@ -30,7 +38,13 @@ public class hands : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playermovement.instance.TakeDamage(1);
-            Debug.Log("Player Hit");
         }
+    }
+
+    public void Activate()
+    {
+        Vector3 playerPos = playermovement.instance.transform.position;
+        transform.position = new Vector3(playerPos.x, playerPos.y - initDistanceFromPlayer, playerPos.z);
+        active = true;
     }
 }

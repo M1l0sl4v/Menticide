@@ -5,8 +5,14 @@ using UnityEngine.UI;
 
 public class TutorialToggle : MonoBehaviour
 {
+    public static TutorialToggle instance;
     public Image toggleButton;
     public Sprite[] buttonSprites;
+
+    void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
