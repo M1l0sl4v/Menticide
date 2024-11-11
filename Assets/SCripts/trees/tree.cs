@@ -11,6 +11,8 @@ public class tree : MonoBehaviour
     [SerializeField] private AudioClip ruscleSound;
     public float delay = 1f;
     public bool hasLeaves = true;
+
+    private float randomPitch;
     
     private Coroutine destroyLeavesCoroutine;
     
@@ -49,8 +51,15 @@ public class tree : MonoBehaviour
             if (hasLeaves)
             {
                 leafspawn();
+                randomPitch = Random.Range(.9f, 1.3f);
             }
-            float randomPitch = Random.Range(.9f, 1.3f);
+
+            else
+            {
+                randomPitch = Random.Range(.5f, .65f);
+            }
+           
+            
             AudioManager.instance.environmentFX(ruscleSound, transform ,.5f, randomPitch);
             StartCoroutine(DestroyLeavesCoroutine(delay));
             

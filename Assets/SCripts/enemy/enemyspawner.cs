@@ -47,11 +47,6 @@ public class enemyspawner : MonoBehaviour
                 elapsedTime = 0;
             }
         }
-        // For debugging
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Spawn();
-        }
     }
 
     public void Spawn()

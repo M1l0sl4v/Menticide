@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="181a9b39-c2d7-40b0-b7bc-d00f50f0c591" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/SCripts/Save System/ScoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/Save System/ScoreManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Menticide/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Menticide/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/enemy/enemyspawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/enemy/enemyspawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/trees/tree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/trees/tree.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/animators/spitter/Ment_SpitterProjectile_v3a-Sheet_0.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/animators/spitter/Ment_SpitterProjectile_v3a-Sheet_0.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/animators/spitter/New Animation.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/animators/spitter/New Animation.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/enemies/Spiter/AcidPool.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/enemies/Spiter/AcidPool.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/enemies/Spiter/spitterProgectial.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/enemies/Spiter/spitterProgectial.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +70,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/builds/charlie test builds/macos/10:16 buildmacos.app/Contents/MacOS/Menticide" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/builds/expo/mac/expo final.app/Contents/MacOS/Menticide" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/builds/charlie test builds/macos/10:16 buildmacos.app/Contents/MacOS" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -128,7 +134,7 @@
       <workItem from="1727843118584" duration="1016000" />
       <workItem from="1728333937457" duration="12646000" />
       <workItem from="1730912391702" duration="3125000" />
-      <workItem from="1731179400989" duration="536000" />
+      <workItem from="1731179400989" duration="2029000" />
     </task>
     <servers />
   </component>
