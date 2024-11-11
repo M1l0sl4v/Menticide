@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="181a9b39-c2d7-40b0-b7bc-d00f50f0c591" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Menticide/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Menticide/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCripts/ObjectPoolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/ObjectPoolManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCripts/Player/playermovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/Player/playermovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCripts/audio/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/audio/AudioManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCripts/enemy/Dog/enemyDog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/enemy/Dog/enemyDog.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCripts/objectShake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/objectShake.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCripts/trees/tree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/trees/tree.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sounds/mainmixer.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sounds/mainmixer.mixer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/FallenDog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/FallenDog.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/MalignantDog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/MalignantDog.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/NecroticDog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/NecroticDog.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/NormalDog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/enemies/Dog/NormalDog.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/soundstuff/EnemyFX.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/soundstuff/EnemyFX.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/Seasonal/SpringTree.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/trees/Seasonal/SpringTree.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/trees/Seasonal/SummerTree.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/trees/Seasonal/SummerTree.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCripts/Save System/ScoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCripts/Save System/ScoreManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +63,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/builds/charlie test builds/macos/10:16 buildmacos.app/Contents/MacOS/Menticide" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/builds/charlie test builds/macos/10:16 buildmacos.app/Contents/MacOS" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2022.3.16f1/Unity.app/Contents/MacOS/Unity" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;$PROJECT_DIR$&quot; -debugCodeOptimization" />
@@ -134,6 +128,7 @@
       <workItem from="1727843118584" duration="1016000" />
       <workItem from="1728333937457" duration="12646000" />
       <workItem from="1730912391702" duration="3125000" />
+      <workItem from="1731179400989" duration="536000" />
     </task>
     <servers />
   </component>

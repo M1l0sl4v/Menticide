@@ -304,8 +304,7 @@ public class ScoreManager : MonoBehaviour
     public static void SaveHighScore()
     {
         //File.WriteAllText(Path.Combine(Application.persistentDataPath, scoresName), HighScoresToJSON());
-        SaveSystem.SaveData(highScores, scoresName);
-        Debug.Log("Saved scores to " + Path.Combine(Application.persistentDataPath, scoresName));
+        SaveSystem.SaveData(highScores, scoresName, true);
     }
 
     public void LoadHighScore()
