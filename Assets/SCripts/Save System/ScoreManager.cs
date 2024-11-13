@@ -251,7 +251,7 @@ public class ScoreManager : MonoBehaviour
     public static void AddScore(string name, int score)
     {
         // Check for empty list
-        if (highScores.scores.Count == 0)
+        if (highScores.entryCount == 0)
         {
             highScores.scores.Add(score);
             highScores.names.Add(name);
@@ -315,6 +315,12 @@ public class ScoreManager : MonoBehaviour
         {
             highScores = JsonUtility.FromJson<HighScoresSimple>(File.ReadAllText(path));
             highScore = highScores.entryCount > 0 ? highScores.scores[0] : 0;
+        }
+        else
+        {
+            highScores.scores = new();
+            highScores.names = new();
+            highScores.entryCount = 0;
         }
     }
     private void OnApplicationQuit()
