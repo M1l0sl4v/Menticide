@@ -4,18 +4,6 @@ using UnityEngine;
 
 public class SlashingColistions : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log(collision.gameObject.ToString());
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            Debug.Log("hihihi");
-            enemyHealth health = collision.gameObject.GetComponentInChildren<enemyHealth>();
-            health.TakeDamage(10);
-<<<<<<< Updated upstream
-=======
-        }
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -23,7 +11,6 @@ public class SlashingColistions : MonoBehaviour
             Debug.Log("hihihi");
             enemyHealth health = collision.gameObject.GetComponentInChildren<enemyHealth>();
             health.TakeDamage(10);
->>>>>>> Stashed changes
         }
     }
 }
