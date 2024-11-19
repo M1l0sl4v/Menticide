@@ -12,6 +12,11 @@ public class hands : MonoBehaviour
     private bool active;
     private float initDistanceFromPlayer;
 
+    public float backOffDistance;
+    public float backOffDuration;
+    public float chaseCoolDown;
+
+    private bool isBackingOff;
     void Awake()
     {
         instance = this;
@@ -38,6 +43,7 @@ public class hands : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playermovement.instance.TakeDamage(1);
+            StartCoroutine(backOffRoutine());
         }
     }
 
@@ -47,4 +53,26 @@ public class hands : MonoBehaviour
         transform.position = new Vector3(playerPos.x, playerPos.y - initDistanceFromPlayer, playerPos.z);
         active = true;
     }
+
+    private IEnumerator backOffRoutine()
+    {
+        isBackingOff = true;
+        
+        Vector3 directionAwayFromPlayer = (transform.position - playermovement.instance.transform.position).normalized;
+        Vector3 backOffPositon = transform.position + directionAwayFromPlayer * backOffDistance;
+
+        float timer = 0;
+        while (timer < backOffDuration)
+        {
+            transform.position = Vector3.Lerp(transform.position, backOffPositon, Time.deltaTime * moveSmooth);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        
+        yield return new WaitForSeconds(chaseCoolDown);
+        
+        isBackingOff = false;
+    }
+    
+    
 }

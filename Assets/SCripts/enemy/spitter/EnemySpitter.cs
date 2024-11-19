@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -83,5 +84,13 @@ public class EnemySpitter : MonoBehaviour
                 break;
         }
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("cullingField"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
