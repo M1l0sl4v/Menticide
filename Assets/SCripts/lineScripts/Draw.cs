@@ -32,7 +32,7 @@ public class Draw : MonoBehaviour
     public float AddAmount = 0.01f;
     public float LowerAmount = 0.1f;
     private float drawBarMax = 1f;
-
+    public float barFlashSpeed = .3f;
 
 
 
@@ -75,17 +75,18 @@ public class Draw : MonoBehaviour
 
         }
         else if (drawBarcurrent < drawBarMax)
+        {
+            drawBarcurrent+= AddAmount;
+            updateDrawBar();
+            if (drawBarcurrent <= 0.01f)
             {
-                drawBarcurrent+= AddAmount;
-                updateDrawBar();
-                if (drawBarcurrent <= 0.01f)
-                {
-                    fillingUp = true;
-                }
-                else if (drawBarcurrent >= drawBarMax -0.03f)
-                {
-                    fillingUp = false;
-                }
+                fillingUp = true;
+                StartCoroutine(barFlashing());
+            }
+            else if (drawBarcurrent >= drawBarMax -0.03f)
+            {
+                fillingUp = false;
+            }
         }
         if (Input.GetMouseButtonDown(1) && !pauseMenu.paused)
         {
@@ -98,6 +99,16 @@ public class Draw : MonoBehaviour
         if (swipeObject.activeSelf == true)
         {
             ContinueSwipeing();
+        }
+    }
+    IEnumerator barFlashing()
+    {
+        while (fillingUp)
+        {
+            drawBarImage.color = Color.cyan;
+            yield return new WaitForSeconds(barFlashSpeed);
+            drawBarImage.color = Color.white;
+            yield return new WaitForSeconds(barFlashSpeed);
         }
     }
     void StartSwipeing() {
