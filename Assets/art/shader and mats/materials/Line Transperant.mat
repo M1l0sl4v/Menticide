@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: line glitch
+  m_Name: Line Transperant
   m_Shader: {fileID: -6465566751694194690, guid: 7c21a514613fa439e9a4eeb945110271, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -54,7 +54,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Opacity: 1
+    - _Opacity: 0.085
     - _QueueControl: 0
     - _QueueOffset: 0
     - _glitchSpeed: 0
