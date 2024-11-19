@@ -101,10 +101,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progectialSpitter: {fileID: 4849040362571287685, guid: 51638caf0b6974ca69498ede23fb2d5e, type: 3}
-  fireRate: 2
+  fireRate: 0.5
   idleDelay: 0.5
-  bulletSpeed: 5
-  shootAhead: 9
+  bulletSpeed: 2
+  shootAhead: 8
   singleShot: 0
 --- !u!61 &-8292145478084314359
 BoxCollider2D:
