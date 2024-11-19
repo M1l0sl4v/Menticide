@@ -159,8 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434acf63bf94c463cb0274ad6457dcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despawnDistanceTree: 10
-  leafs: {fileID: 0}
+  despawnDistanceTree: 30
   ruscleSound: {fileID: 8300000, guid: d085bcdac0a06448382249c576fd80df, type: 3}
   delay: 0.5
   hasLeaves: 0

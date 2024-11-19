@@ -72,4 +72,12 @@ public class TreeSpawner : MonoBehaviour
         if (++treePoolIndex == treePool.Length) treePoolIndex = 0;
         TreeObject.layerToUse = 0;
     }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(1f, 0f, 0f, 0.3f); 
+        Vector3 bottomLeft = new Vector3(xMin, yMin, 0);
+        Vector3 topRight = new Vector3(xMax, yMax, 0);
+        Gizmos.DrawCube((bottomLeft + topRight) / 2, topRight - bottomLeft); 
+    }
 }

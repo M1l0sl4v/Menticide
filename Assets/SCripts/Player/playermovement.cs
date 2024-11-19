@@ -4,6 +4,8 @@ using System.Diagnostics.Contracts;
 using UnityEngine;
 using TMPro;
 using System.Diagnostics.CodeAnalysis;
+using Unity.VisualScripting;
+
 public class playermovement : MonoBehaviour
 {
     // Movement speed of the player

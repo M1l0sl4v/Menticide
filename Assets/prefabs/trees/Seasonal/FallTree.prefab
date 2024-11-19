@@ -125,10 +125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434acf63bf94c463cb0274ad6457dcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despawnDistanceTree: 10
-  leafs: {fileID: 2108076204147754855}
+  despawnDistanceTree: 30
   ruscleSound: {fileID: 8300000, guid: 7b24b07ab9dae4b99bdd741d1b9d0b04, type: 3}
   delay: 1
+  hasLeaves: 1
 --- !u!114 &3749682699600363301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,11 +274,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19882fcd318bb40feb915a5c6441f4cb, type: 3}
---- !u!198 &2108076204147754855 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5752905677984127925, guid: 19882fcd318bb40feb915a5c6441f4cb, type: 3}
-  m_PrefabInstance: {fileID: 5951235433848118482}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7941610484823597323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4368858533132877273, guid: 19882fcd318bb40feb915a5c6441f4cb, type: 3}

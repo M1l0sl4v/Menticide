@@ -1352,7 +1352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67de40336b0e4d42ad8d88102442181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInvincibility: 0
+  playerInvincibility: 1
   playerMoveSpeedOverride: 0
   overrideValue: 10
   damagePlayer: 0
@@ -14362,12 +14362,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b618e3304b3b4938814b195d3a49394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMin: -30
-  xMax: 30
-  yMin: 8
-  yMax: 10
-  spawnmin: 0.05
-  spawnmax: 0.1
+  xMin: -15.7
+  xMax: -2.54
+  yMin: 10.55
+  yMax: 16.58
+  spawnmin: 0.04
+  spawnmax: 0.06
   Tree:
   - {fileID: 3482516811903228533, guid: e8a90b75e56f14b4db67e65f5df64479, type: 3}
   treeChance: 0
@@ -18109,12 +18109,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b618e3304b3b4938814b195d3a49394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMin: -30
-  xMax: 30
-  yMin: 8
-  yMax: 10
-  spawnmin: 0.05
-  spawnmax: 0.1
+  xMin: 2.34
+  xMax: 13.8
+  yMin: 10.72
+  yMax: 16.68
+  spawnmin: 0.04
+  spawnmax: 0.06
   Tree:
   - {fileID: 3482516811903228533, guid: e8a90b75e56f14b4db67e65f5df64479, type: 3}
   treeChance: 0
