@@ -7,7 +7,13 @@ using UnityEngine.UI;
 public class Draw : MonoBehaviour
 {
     public GameObject drawBarPrefab;
+
     public Material wallMaterial;
+
+    public Material wallMaterialClear;
+    public Material wallMaterialOpake;
+
+
     public float wallWidth = 0.3f;
     public string wallTag = "Wall";
     public AudioClip drawingSoundClip; // Assign an audio clip in the Inspector
@@ -78,7 +84,7 @@ public class Draw : MonoBehaviour
         {
             drawBarcurrent+= AddAmount;
             updateDrawBar();
-            if (drawBarcurrent <= 0.01f)
+            if (drawBarcurrent <= 0.01f && fillingUp == false)
             {
                 fillingUp = true;
                 StartCoroutine(barFlashing());
@@ -136,7 +142,7 @@ public class Draw : MonoBehaviour
         // Set the order in layer
         currentLine.sortingOrder = 6;
 
-        currentLine.material = wallMaterial;
+        currentLine.material = wallMaterialClear;
         currentLine.startWidth = wallWidth;
         currentLine.endWidth = wallWidth;
         currentLine.textureMode = LineTextureMode.Tile;
@@ -186,6 +192,10 @@ public class Draw : MonoBehaviour
     {
         if (currentLine != null)
         {
+            currentLine.material = wallMaterialOpake;
+            currentLine.startWidth = wallWidth;
+            currentLine.endWidth = wallWidth;
+            currentLine.textureMode = LineTextureMode.Tile;
             Vector3 mousePos = GetMousePosWithZ();
             linePositions.Insert(linePositions.Count - 1, mousePos);
             List<Vector3> smoothLinePositions = makeLineSmoth(linePositions.GetRange(0, linePositions.Count - 1));

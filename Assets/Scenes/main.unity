@@ -4015,7 +4015,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196417509}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -26026,6 +26026,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drawBarPrefab: {fileID: 1348545298}
   wallMaterial: {fileID: 2100000, guid: 664483079e8da4b8686b434974002eda, type: 2}
+  wallMaterialClear: {fileID: 2100000, guid: 85a676703452b428b912b2a03131fd75, type: 2}
+  wallMaterialOpake: {fileID: 2100000, guid: 664483079e8da4b8686b434974002eda, type: 2}
   wallWidth: 0.3
   wallTag: Wall
   drawingSoundClip: {fileID: 8300000, guid: f129a093b2aee4cd89d174559bf43e92, type: 3}
@@ -26035,6 +26037,7 @@ MonoBehaviour:
   swipeObject: {fileID: 206658521}
   AddAmount: 0.0015
   LowerAmount: 0.1
+  barFlashSpeed: 0.3
 --- !u!4 &1435355290
 Transform:
   m_ObjectHideFlags: 0
@@ -29065,9 +29068,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 1.2693157
+    width: 0.67184037
+    height: 0.7524834
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
