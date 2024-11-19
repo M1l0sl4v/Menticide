@@ -86,7 +86,7 @@ public class EnemySpitter : MonoBehaviour
                 {
                     StartCoroutine(SpitterShootNorm());
                 }
-                else
+                else if (!singleShot)
                 {
                     StartCoroutine(SpitterShootShotgun());
                 }
