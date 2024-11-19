@@ -9626,6 +9626,7 @@ MonoBehaviour:
   rareenemychance: 1
   enemytype1:
   - {fileID: 1608566518411204025, guid: 8a0adba8aad7e43c6adc631bf40bd9bd, type: 3}
+  - {fileID: 1608566518411204025, guid: c9e8982905d39455f97c291369071e9f, type: 3}
   enemytype2: []
   scalingType: 1
 --- !u!212 &408147800

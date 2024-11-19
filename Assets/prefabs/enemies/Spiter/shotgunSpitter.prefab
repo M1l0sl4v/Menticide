@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -8292145478084314359}
   - component: {fileID: 2178985255294761722}
   m_Layer: 0
-  m_Name: spitter1
+  m_Name: shotgunSpitter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,8 +102,9 @@ MonoBehaviour:
   progectialSpitter: {fileID: 4849040362571287685, guid: 51638caf0b6974ca69498ede23fb2d5e, type: 3}
   fireRate: 3
   idleDelay: 0.5
-  bulletSpeed: 2
+  bulletSpeed: 1
   shootAhead: 9
+  singleShot: 0
 --- !u!61 &-8292145478084314359
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -140,7 +141,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.25, y: 1.15625}
+    oldSize: {x: 0.3125, y: 0.2890625}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -159,7 +160,7 @@ Animator:
   m_GameObject: {fileID: 1608566518411204025}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9b2f5dd13f3b56441b19556d44cd1af1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6cadd02e1f76f47008a711b42f8dc7b4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

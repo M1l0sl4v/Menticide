@@ -12,6 +12,8 @@ public class EnemySpitter : MonoBehaviour
     public int bulletSpeed = 10;
     public int shootAhead = 10;
 
+    public bool singleShot;
+
     public enum States
     {
         Idle,
@@ -80,7 +82,14 @@ public class EnemySpitter : MonoBehaviour
                 StartCoroutine(Idle());
                 break;
             case States.Atack:
-                StartCoroutine(SpitterShootNorm());
+                if (singleShot)
+                {
+                    StartCoroutine(SpitterShootNorm());
+                }
+                else
+                {
+                    StartCoroutine(SpitterShootShotgun());
+                }
                 break;
         }
 
