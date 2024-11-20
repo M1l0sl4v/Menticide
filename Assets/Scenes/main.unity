@@ -26028,9 +26028,9 @@ MonoBehaviour:
   wallMaterial: {fileID: 2100000, guid: 664483079e8da4b8686b434974002eda, type: 2}
   wallWidth: 0.3
   wallTag: Wall
-  drawingSoundClip: {fileID: 8300000, guid: f129a093b2aee4cd89d174559bf43e92, type: 3}
+  drawingSoundClip: {fileID: 8300000, guid: c753c229007224f95b97014b53c72c32, type: 3}
   lineLifetime: 5
-  lineSoundGroup: {fileID: 0}
+  lineSoundGroup: {fileID: 8631173602495373303, guid: 1563ec55dad5940e1b3b282d4b69f38b, type: 2}
   segments: 10
   swipeObject: {fileID: 206658521}
   AddAmount: 0.0015
@@ -28947,7 +28947,7 @@ Transform:
   m_GameObject: {fileID: 1626794935}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.293791, y: 2.7748127, z: -10}
+  m_LocalPosition: {x: 0, y: 1.4178753, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -28981,14 +28981,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.7129367
-    width: 0.51859725
-    height: 0.5184136
+    y: 0
+    width: 1
+    height: 0.9996459
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.4375
+  orthographic size: 6.328125
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -30192,7 +30192,7 @@ MonoBehaviour:
   health: 0
   uiHearts: {fileID: 196417510}
   invincibilityDuration: 1
-  takeDamageSound: {fileID: 8300000, guid: 53f7f0fdf6e954dae9a8be8a8080fa96, type: 3}
+  takeDamageSound: {fileID: 8300000, guid: 83422b3fcce97482b90f06522a4978e7, type: 3}
   Camera: {fileID: 0}
 --- !u!212 &1675774498
 SpriteRenderer:

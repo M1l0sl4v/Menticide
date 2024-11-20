@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   despawnDistanceTree: 30
-  ruscleSound: {fileID: 8300000, guid: d085bcdac0a06448382249c576fd80df, type: 3}
+  ruscleSound: {fileID: 8300000, guid: 42083977f055c48998b670bc2544fc9f, type: 3}
   delay: 0.5
   hasLeaves: 0
 --- !u!114 &-6329837633658946370
