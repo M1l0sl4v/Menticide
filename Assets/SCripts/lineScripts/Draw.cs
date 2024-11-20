@@ -7,7 +7,13 @@ using UnityEngine.UI;
 public class Draw : MonoBehaviour
 {
     public GameObject drawBarPrefab;
+
     public Material wallMaterial;
+
+    public Material wallMaterialClear;
+    public Material wallMaterialOpake;
+
+
     public float wallWidth = 0.3f;
     public string wallTag = "Wall";
     public AudioClip drawingSoundClip; // Assign an audio clip in the Inspector
@@ -32,7 +38,7 @@ public class Draw : MonoBehaviour
     public float AddAmount = 0.01f;
     public float LowerAmount = 0.1f;
     private float drawBarMax = 1f;
-
+    public float barFlashSpeed = .3f;
 
 
 
@@ -75,17 +81,18 @@ public class Draw : MonoBehaviour
 
         }
         else if (drawBarcurrent < drawBarMax)
+        {
+            drawBarcurrent+= AddAmount;
+            updateDrawBar();
+            if (drawBarcurrent <= 0.01f && fillingUp == false)
             {
-                drawBarcurrent+= AddAmount;
-                updateDrawBar();
-                if (drawBarcurrent <= 0.01f)
-                {
-                    fillingUp = true;
-                }
-                else if (drawBarcurrent >= drawBarMax -0.03f)
-                {
-                    fillingUp = false;
-                }
+                fillingUp = true;
+                StartCoroutine(barFlashing());
+            }
+            else if (drawBarcurrent >= drawBarMax -0.03f)
+            {
+                fillingUp = false;
+            }
         }
         if (Input.GetMouseButtonDown(1) && !pauseMenu.paused)
         {
@@ -98,6 +105,16 @@ public class Draw : MonoBehaviour
         if (swipeObject.activeSelf == true)
         {
             ContinueSwipeing();
+        }
+    }
+    IEnumerator barFlashing()
+    {
+        while (fillingUp)
+        {
+            drawBarImage.color = Color.cyan;
+            yield return new WaitForSeconds(barFlashSpeed);
+            drawBarImage.color = Color.white;
+            yield return new WaitForSeconds(barFlashSpeed);
         }
     }
     void StartSwipeing() {
@@ -125,7 +142,7 @@ public class Draw : MonoBehaviour
         // Set the order in layer
         currentLine.sortingOrder = 6;
 
-        currentLine.material = wallMaterial;
+        currentLine.material = wallMaterialClear;
         currentLine.startWidth = wallWidth;
         currentLine.endWidth = wallWidth;
         currentLine.textureMode = LineTextureMode.Tile;
@@ -175,6 +192,10 @@ public class Draw : MonoBehaviour
     {
         if (currentLine != null)
         {
+            currentLine.material = wallMaterialOpake;
+            currentLine.startWidth = wallWidth;
+            currentLine.endWidth = wallWidth;
+            currentLine.textureMode = LineTextureMode.Tile;
             Vector3 mousePos = GetMousePosWithZ();
             linePositions.Insert(linePositions.Count - 1, mousePos);
             List<Vector3> smoothLinePositions = makeLineSmoth(linePositions.GetRange(0, linePositions.Count - 1));

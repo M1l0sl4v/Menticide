@@ -468,9 +468,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5713269032518351904}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f23b7463d083841bcbfb6a0079a4b7de, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f0d850cf30544b92bbb3ab834a4cafe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthBar: {fileID: 1818624875622215166}
-  text: {fileID: 6740431518910078048}
+  HealthBar: {fileID: 0}
+  text: {fileID: 0}
   totalHealth: 100
+  enemy: {fileID: 0}
