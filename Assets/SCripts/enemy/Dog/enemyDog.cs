@@ -25,8 +25,6 @@ public class enemyDog : MonoBehaviour
     public Animator animator;
     private Tilemap tilemap;
 
-    public float stopAttacingTime = 5f;
-
     private void Start()
     {
         tilemap = GameObject.FindGameObjectWithTag("enemyTilemap").GetComponent<Tilemap>();
@@ -66,19 +64,14 @@ public class enemyDog : MonoBehaviour
         {
             ObjectPoolManager.ReturnObjectToPool(gameObject);
         }
-        if (other.gameObject.CompareTag("Player"))
-        {
-            playermovement.instance.TakeDamage(1);
-            StartCoroutine(stunDog());
-        }
 
     }
-    IEnumerator stunDog()
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        var enemyspeedChaseTem = enemyspeedChase;
-        enemyspeedChase = 0;
-        yield return new WaitForSeconds(stopAttacingTime);
-        enemyspeedChase = enemyspeedChaseTem;
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playermovement.instance.TakeDamage(1);
+        }
     }
 
     private void enemyAi()
