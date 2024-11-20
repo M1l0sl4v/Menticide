@@ -1,89 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9075444741592167543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d613f08f173d4dd895bb07b3230baa9, type: 3}
-  m_Name: FullScreenPassRendererFeature
-  m_EditorClassIdentifier: 
-  m_Active: 0
-  injectionPoint: 600
-  fetchColorBuffer: 0
-  requirements: 0
-  passMaterial: {fileID: 2100000, guid: 2b9fcf5c59f1b472a8b330fde5d859e0, type: 2}
-  passIndex: 0
-  bindDepthStencilAttachment: 0
-  m_Version: 1
---- !u!114 &-5717567609851689001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d613f08f173d4dd895bb07b3230baa9, type: 3}
-  m_Name: FullScreenPassRendererFeature
-  m_EditorClassIdentifier: 
-  m_Active: 1
-  injectionPoint: 600
-  fetchColorBuffer: 1
-  requirements: 0
-  passMaterial: {fileID: 2100000, guid: 7183b346516b34773b098c85888fbace, type: 2}
-  passIndex: 0
-  bindDepthStencilAttachment: 0
-  m_Version: 1
---- !u!114 &-1818434493338566412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d26b8cda2614cfd49b62617c9c17c63c, type: 3}
-  m_Name: CRTRendererFeature
-  m_EditorClassIdentifier: 
-  m_Active: 1
-  shader: {fileID: 4800000, guid: 6f2fcdc189458914eb8a323f19e3a27b, type: 3}
-  injectionPoint: 550
-  preset: 6
-  pixelResolutionX: 480
-  pixelResolutionY: 270
-  screenBend: 1.51
-  screenOverscan: 0.43
-  vignetteSize: 5.65
-  vignetteSmooth: 8.57
-  vignetteRound: 50
-  blur: 0.66
-  bleed: 1.7
-  smidge: 0
-  scanlinesStrength: 7.04
-  apertureStrength: 0.6
-  shadowlines: -44.9
-  shadowlinesSpeed: -0.4
-  shadowlinesAlpha: 0
-  noiseSize: 50
-  noiseSpeed: 0.71
-  noiseAlpha: 0.085
-  brightness: 0
-  contrast: 1
-  gamma: 1
-  red: 1
-  green: 1
-  blue: 1
-  chromaticAberration: 0
-  redOffset: {x: 0.047, y: 0.047}
-  blueOffset: {x: 0, y: -0.065799996}
-  greenOffset: {x: -0.047, y: 0.047}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,16 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11145981673336645838492a2d98e247, type: 3}
-  m_Name: New 2D Renderer Data
+  m_Name: ExampleCRTFilter2DRenderer
   m_EditorClassIdentifier: 
   debugShaders:
     debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7, type: 3}
     hdrDebugViewPS: {fileID: 4800000, guid: 573620ae32aec764abd4d728906d2587, type: 3}
   m_RendererFeatures:
-  - {fileID: -9075444741592167543}
-  - {fileID: -5717567609851689001}
-  - {fileID: -1818434493338566412}
-  m_RendererFeatureMap: 894bb65e178b0d82d7c782438d1ea7b0f4c03c79769fc3e6
+  - {fileID: 2820282000497542982}
+  m_RendererFeatureMap: 4687157689a72327
   m_UseNativeRenderPass: 0
   m_TransparencySortMode: 0
   m_TransparencySortAxis: {x: 0, y: 1, z: 0}
@@ -148,3 +62,47 @@ MonoBehaviour:
   m_DefaultLitMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_DefaultUnlitMaterial: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_DefaultMaskMaterial: {fileID: 2100000, guid: 15d0c3709176029428a0da2f8cecf0b5, type: 2}
+--- !u!114 &2820282000497542982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d26b8cda2614cfd49b62617c9c17c63c, type: 3}
+  m_Name: CRT Filter
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  shader: {fileID: 4800000, guid: 6f2fcdc189458914eb8a323f19e3a27b, type: 3}
+  injectionPoint: 550
+  preset: 2
+  pixelResolutionX: 290
+  pixelResolutionY: 210
+  screenBend: 0
+  screenOverscan: 0
+  vignetteSize: 5.7
+  vignetteSmooth: 4.3
+  vignetteRound: 50
+  blur: 0.5
+  bleed: 1.1
+  smidge: 14
+  scanlinesStrength: 9
+  apertureStrength: 1
+  shadowlines: 0
+  shadowlinesSpeed: 0
+  shadowlinesAlpha: 0
+  noiseSize: 0
+  noiseSpeed: 0
+  noiseAlpha: 0
+  brightness: 0
+  contrast: 1.12
+  gamma: 1.18
+  red: 1.15
+  green: 1.16
+  blue: 1.18
+  chromaticAberration: 0
+  redOffset: {x: 0.15, y: 0.15}
+  blueOffset: {x: 0, y: -0.21}
+  greenOffset: {x: -0.15, y: 0.15}

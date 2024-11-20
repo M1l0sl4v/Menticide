@@ -26030,7 +26030,7 @@ MonoBehaviour:
   wallTag: Wall
   drawingSoundClip: {fileID: 8300000, guid: c753c229007224f95b97014b53c72c32, type: 3}
   lineLifetime: 5
-  lineSoundGroup: {fileID: 8631173602495373303, guid: 1563ec55dad5940e1b3b282d4b69f38b, type: 2}
+  lineSoundGroup: {fileID: -570749532139490037, guid: 1563ec55dad5940e1b3b282d4b69f38b, type: 2}
   segments: 10
   swipeObject: {fileID: 206658521}
   AddAmount: 0.0015

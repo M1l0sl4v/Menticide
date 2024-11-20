@@ -143,5 +143,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDistance: 15
   minDistance: 1
-  maxVolumeDb: 1
-  minVolumeDb: -15
+  maxVolumeDb: 0
+  minVolumeDb: -10
