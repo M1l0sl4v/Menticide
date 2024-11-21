@@ -1,46 +1,48 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class uiHearts : MonoBehaviour
+public class UIHearts : MonoBehaviour
 {
-    public GameObject heartUii;
-    public List<Image> hearts;
-    private Image editorImage;
-    // Start is called before the first frame update
-    public void StartHealth(int health)
+    public GameObject heartPrefab;
+    public List<GameObject> hearts = new List<GameObject>();
+    public void StartHealth(int initialHealth)
     {
-        editorImage = GetComponent<Image>();
-        editorImage.enabled = false;
-        for (int i = 0; i < health; i++)
+        AddHeart(initialHealth);
+    }
+    public void AddHeart(int howMuch)
+    {
+        for (int i = 0; i < howMuch; i++)
         {
-            GameObject h = Instantiate(heartUii, transform);
-            hearts.Add(h.GetComponent<Image>());
+            GameObject heart = Instantiate(heartPrefab, transform);
+            hearts.Add(heart);
+            Animator animator = heart.GetComponent<Animator>();
+            if (animator != null)
+            {
+                animator.SetTrigger("HeartAdd");
+            }
         }
     }
-    // called when player is damaged
-    public void updateHealth(int health)
+    public void RemoveHeart(int howMuch)
     {
-        int heartFill = health;
-        foreach (Image i in hearts)
+        for (int i = 0; i < howMuch; i++)
         {
-            /*i.fillAmount = heartFill;
-            heartFill -= 1;*/
-            
-            
-            if (heartFill > 0)
+            GameObject lastHeart = hearts[hearts.Count - 1];
+            hearts.RemoveAt(hearts.Count - 1);
+            Animator animator = lastHeart.GetComponent<Animator>();
+            if (animator != null)
             {
-                i.fillAmount = 1; 
+                animator.SetTrigger("HeartLost");
+                Destroy(lastHeart, 0.4f);
             }
-            else if (i.fillAmount != 0) 
+            else
             {
-                //i.GetComponentInParent<Animator>().SetTrigger("HeartLost");
-                i.fillAmount = 0;
+                Destroy(lastHeart);
             }
-            heartFill -= 1;
-            
+            if (hearts.Count < 1)
+            {
+                DeathSequence.instance.StartDeathSequence();
+            }
         }
     }
-
 }

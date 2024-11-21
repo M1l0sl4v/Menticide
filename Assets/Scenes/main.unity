@@ -3953,7 +3953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0e10ee357d44f4fac58d0f88affe1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heartUii: {fileID: 1615541235688368361, guid: 27b2addcaec9e488c90d94ca99867f68, type: 3}
+  heartPrefab: {fileID: 1615541235688368361, guid: 27b2addcaec9e488c90d94ca99867f68, type: 3}
   hearts: []
 --- !u!114 &196417511
 MonoBehaviour:
@@ -4015,7 +4015,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196417509}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -26025,7 +26025,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawBarPrefab: {fileID: 1348545298}
-  wallMaterial: {fileID: 2100000, guid: 664483079e8da4b8686b434974002eda, type: 2}
+  wallMaterialClear: {fileID: 0}
+  wallMaterialOpake: {fileID: 0}
   wallWidth: 0.3
   wallTag: Wall
   drawingSoundClip: {fileID: 8300000, guid: c753c229007224f95b97014b53c72c32, type: 3}
@@ -26033,8 +26034,9 @@ MonoBehaviour:
   lineSoundGroup: {fileID: -570749532139490037, guid: 1563ec55dad5940e1b3b282d4b69f38b, type: 2}
   segments: 10
   swipeObject: {fileID: 206658521}
-  AddAmount: 0.0015
+  AddAmount: 1
   LowerAmount: 0.1
+  barFlashSpeed: 0.3
 --- !u!4 &1435355290
 Transform:
   m_ObjectHideFlags: 0
@@ -28981,14 +28983,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 0.99976414
+    y: 1.2693157
+    width: 0.67184037
+    height: 0.7524834
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.328125
+  orthographic size: 4.21875
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -30387,7 +30389,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 9215
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
