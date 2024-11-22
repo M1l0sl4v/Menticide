@@ -64,6 +64,7 @@ public class MainMenu : MonoBehaviour
             "At the bottom of the barrel, with his back against a wall.",
             "He is filled with thoughts of yesterday.",
             "The spiral continues.",
+            "Theres nothing more you can leave behind, so forget about seeing, get into your mind.",
         };
         return textOptions[Random.Range(0, textOptions.Length)];
     }
