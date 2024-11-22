@@ -26034,8 +26034,8 @@ MonoBehaviour:
   lineSoundGroup: {fileID: -570749532139490037, guid: 1563ec55dad5940e1b3b282d4b69f38b, type: 2}
   segments: 10
   swipeObject: {fileID: 206658521}
-  AddAmount: 1
-  LowerAmount: 0.1
+  AddAmount: 0.5
+  LowerAmount: 0.07
   barFlashSpeed: 0.3
 --- !u!4 &1435355290
 Transform:
