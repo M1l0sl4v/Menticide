@@ -62,7 +62,8 @@ public class MainMenu : MonoBehaviour
             "Who is in control?",
             "Its not gonna matter when hes dead and gone.",
             "At the bottom of the barrel, with his back against a wall.",
-            "He is filled with thoughts of yesterday."
+            "He is filled with thoughts of yesterday.",
+            "The spiral continues.",
         };
         return textOptions[Random.Range(0, textOptions.Length)];
     }

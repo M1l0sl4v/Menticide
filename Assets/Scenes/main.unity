@@ -1352,7 +1352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67de40336b0e4d42ad8d88102442181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInvincibility: 1
+  playerInvincibility: 0
   playerMoveSpeedOverride: 0
   overrideValue: 10
   damagePlayer: 0
@@ -26025,8 +26025,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawBarPrefab: {fileID: 1348545298}
-  wallMaterialClear: {fileID: 0}
-  wallMaterialOpake: {fileID: 0}
+  wallMaterialClear: {fileID: 2100000, guid: 4dbe6987b8908463a9909867d5b6f05a, type: 2}
+  wallMaterialOpake: {fileID: 2100000, guid: 664483079e8da4b8686b434974002eda, type: 2}
   wallWidth: 0.3
   wallTag: Wall
   drawingSoundClip: {fileID: 8300000, guid: c753c229007224f95b97014b53c72c32, type: 3}
@@ -28983,14 +28983,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 1.2693157
-    width: 0.67184037
-    height: 0.7524834
+    y: 0
+    width: 1
+    height: 0.99976414
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.21875
+  orthographic size: 6.328125
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -30339,12 +30339,19 @@ MonoBehaviour:
   blackoutPanel: {fileID: 884997894}
   deathMessageObject: {fileID: 1082920590}
   deathMessages:
-  - Game Over...
-  - You Died...
-  - Try Again...
-  - Succumbed...
-  - Fallen...
-  - Slain...
+  - Game Over.
+  - A victem of himself.
+  - There is always tomorrow.
+  - You failed him.
+  - Would you let yourself down like that?
+  - The sun never came up.
+  - He never escaped his mind.
+  - He caught up to himself.
+  - Couldn't escape the spiral.
+  - You can only be a victem if you admit defeat.
+  - He thought he found a better way.
+  - He cursed his keeper, and tried to be free.
+  - Screaming at a wall.
   deathMessageDelay: 0.75
   scoreText: {fileID: 2080097443}
   scoreDelay: 0.75
