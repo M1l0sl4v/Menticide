@@ -275,7 +275,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 8
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -946,6 +946,7 @@ MonoBehaviour:
   timeToSkip: 1
   barProgress: 0
   progressBar: {fileID: 67896062}
+  fogMaterial: {fileID: -876546973899608171, guid: 9661467c445684ffeb87949f5d454e83, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

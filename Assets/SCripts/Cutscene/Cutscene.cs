@@ -16,9 +16,14 @@ public class Cutscene : MonoBehaviour
     public float timeToSkip;
     public float barProgress;
     public Image progressBar;
+    [Header("Misc")]
+    public Material fogMaterial;
+    private float prevOpacity;
     // Start is called before the first frame update
     void Start()
     {
+        prevOpacity = fogMaterial.GetFloat("_opacity");
+
         player.clip = clip;
         Invoke("PlayVideo", beforeVideoPadding);
     }
@@ -33,11 +38,11 @@ public class Cutscene : MonoBehaviour
         else barProgress = 0f;
 
         UpdateBar();
+        fogMaterial.SetFloat("_opacity", 0f);
 
         if (barProgress >= timeToSkip)
         {
             LoadNext();
-            //Invoke("LoadNext", 1.5f);
             //Blackout.instance.On();
         }
     }
@@ -49,7 +54,7 @@ public class Cutscene : MonoBehaviour
 
     void LoadNext()
     {
-        Debug.LogWarning("switching scene");
+        fogMaterial.SetFloat("_opacity", prevOpacity);
         SceneManager.LoadScene(2);
     }
 
