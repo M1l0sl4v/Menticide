@@ -205,6 +205,8 @@ public class WeatherManager : MonoBehaviour
       fallLeaf.SetActive(fall);
       springLeaf.SetActive(spring);
       summerLeaf.SetActive(summerLeaves);
+      fogOpacity = 0.05f;
+
    }
 
    private void OnValidate()
