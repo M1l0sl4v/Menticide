@@ -9,40 +9,6 @@ using UnityEngine.Events;
 public class ScoreManager : MonoBehaviour
 {
     // High score
-    public class HighScoresExperimental
-    {
-        public class NameScorePair
-        {
-            public string name;
-            public int score;
-
-            public NameScorePair(string name, int score)
-            {
-                this.name = name;
-                this.score = score;
-            }
-        }
-
-        private List<NameScorePair> scores;
-
-        public HighScoresExperimental(List<NameScorePair> scores)
-        {
-            this.scores = scores;
-        }
-
-        public void AddScore(NameScorePair score)
-        {
-            scores.Add(score);
-        }
-        public void RemoveScore(NameScorePair score)
-        {
-            scores.Remove(score);
-        }
-        public NameScorePair GetScoreAtRank(int rank)
-        {
-            return scores[rank - 1];
-        }
-    }
 
     public struct HighScoresSimple
     {
@@ -57,6 +23,13 @@ public class ScoreManager : MonoBehaviour
     }
     public static HighScoresSimple highScores;
     private const string scoresName = "HighScores.json";
+    public enum LeaderboardType
+    {
+        Local,
+        Global
+    }
+    public LeaderboardType leaderboardType;
+    public static LeaderboardType _leaderboardType;
 
 
     public static int highScore = 0;
@@ -106,9 +79,13 @@ public class ScoreManager : MonoBehaviour
 
         spawners = FindObjectsOfType<enemyspawner>();
 
-        LoadHighScore();
+        _leaderboardType = leaderboardType;
     }
 
+    private void Start()
+    {
+        LoadHighScore();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -250,37 +227,46 @@ public class ScoreManager : MonoBehaviour
 
     public static void AddScore(string name, int score)
     {
-        // Check for empty list
-        if (highScores.entryCount == 0)
+        switch (_leaderboardType)
         {
-            highScores.scores.Add(score);
-            highScores.names.Add(name);
-            highScores.entryCount++;
-        }
-        // Check for high score
-        else if (score > highScore)
-        {
-            highScores.scores.Insert(0, score);
-            highScores.names.Insert(0, name);
-            highScores.entryCount++;
-        }
-        // Add score in middle
-        else
-        {
-            for (int i = highScores.scores.Count - 1; i >= 0; i--)
-            {
-                // if score to be added is less than the score to the left, add it to the right
-                if (score <= highScores.scores[i])
+            case LeaderboardType.Local:
+                // Check for empty list
+                if (highScores.entryCount == 0)
                 {
-                    highScores.scores.Insert(i+1, score);
-                    highScores.names.Insert(i+1, name);
+                    highScores.scores.Add(score);
+                    highScores.names.Add(name);
                     highScores.entryCount++;
-                    break;
                 }
-            }
+                // Check for high score
+                else if (score > highScore)
+                {
+                    highScores.scores.Insert(0, score);
+                    highScores.names.Insert(0, name);
+                    highScores.entryCount++;
+                }
+                // Add score in middle
+                else
+                {
+                    for (int i = highScores.scores.Count - 1; i >= 0; i--)
+                    {
+                        // if score to be added is less than the score to the left, add it to the right
+                        if (score <= highScores.scores[i])
+                        {
+                            highScores.scores.Insert(i + 1, score);
+                            highScores.names.Insert(i + 1, name);
+                            highScores.entryCount++;
+                            break;
+                        }
+                    }
+                }
+                // Update new high score
+                highScore = highScores.scores[0];
+                break;
+            case LeaderboardType.Global:
+                GlobalLeaderboard.AddFetch(name, score);
+                break;
         }
-        // Update new high score
-        highScore = highScores.scores[0];
+        
     }
 
 
@@ -309,20 +295,37 @@ public class ScoreManager : MonoBehaviour
 
     public void LoadHighScore()
     {
-        string path = Path.Combine(Application.persistentDataPath, scoresName);
+        switch (_leaderboardType)
+        {
+            case LeaderboardType.Local:
+                string path = Path.Combine(Application.persistentDataPath, scoresName);
 
-        if (File.Exists(path))
-        {
-            highScores = JsonUtility.FromJson<HighScoresSimple>(File.ReadAllText(path));
-            highScore = highScores.entryCount > 0 ? highScores.scores[0] : 0;
+                if (File.Exists(path))
+                {
+                    highScores = JsonUtility.FromJson<HighScoresSimple>(File.ReadAllText(path));
+                    highScore = highScores.entryCount > 0 ? highScores.scores[0] : 0;
+                }
+                else
+                {
+                    highScores.scores = new();
+                    highScores.names = new();
+                    highScores.entryCount = 0;
+                }
+                break;
+            case LeaderboardType.Global:
+                GlobalLeaderboard.FetchScores();
+                Invoke("FillHighScore", 1f);
+                break;
         }
-        else
-        {
-            highScores.scores = new();
-            highScores.names = new();
-            highScores.entryCount = 0;
-        }
+        
     }
+
+    private void FillHighScore()
+    {
+        highScore = highScores.entryCount > 0 ? highScores.scores[0] : 0;
+    }
+
+
     private void OnApplicationQuit()
     {
         SaveHighScore();

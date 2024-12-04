@@ -207,7 +207,7 @@ public class DeathSequence : MonoBehaviour
         {
             inputField.interactable = false;
             SaveScore();
-            PopulateLeaderboard();
+            Invoke("PopulateLeaderboard", 1f);
             ActivateMenuButtons();
             ScoreManager.SaveHighScore();
 
@@ -215,7 +215,6 @@ public class DeathSequence : MonoBehaviour
             inputField.text = "Saved!";
         }
     }
-
     public void SaveScore()
     {
         ScoreManager.AddScore(inputField.text, ScoreManager.instance.ScoreAsInt());

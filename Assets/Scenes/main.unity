@@ -21928,15 +21928,15 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
+  m_ContentType: 9
   m_InputType: 0
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 0
-  m_RegexValue: 
+  m_CharacterValidation: 6
+  m_RegexValue: '[^*",]'
   m_GlobalPointSize: 14
   m_CharacterLimit: 14
   m_OnEndEdit:
@@ -24191,6 +24191,7 @@ GameObject:
   - component: {fileID: 1332601559}
   - component: {fileID: 1332601561}
   - component: {fileID: 1332601560}
+  - component: {fileID: 1332601562}
   m_Layer: 0
   m_Name: game controller
   m_TagString: Untagged
@@ -24355,6 +24356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d50a07b296f83e4d9cff4e71ee09e4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leaderboardType: 1
   displayDebugInfo: 0
   scoreText: {fileID: 1587748122}
   debugInfo: {fileID: 705224756}
@@ -24374,6 +24376,18 @@ MonoBehaviour:
   buttonSprites:
   - {fileID: -1000391206, guid: f2f8f9ae96fb1c2468f89d79f96cda48, type: 3}
   - {fileID: 1853543932, guid: f2f8f9ae96fb1c2468f89d79f96cda48, type: 3}
+--- !u!114 &1332601562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332601551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d3821ea52eb145429551cee861db0c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1341835689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28951,7 +28965,7 @@ Transform:
   m_GameObject: {fileID: 1626794935}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.1257534, y: 2.0889282, z: -10}
+  m_LocalPosition: {x: 0, y: 1.4178753, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -28985,14 +28999,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.6436781
-    width: 0.52047414
-    height: 0.52047414
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.4375
+  orthographic size: 5.625
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
