@@ -32605,6 +32605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5.3
   moveSmooth: 1
+  slam: {fileID: 8300000, guid: d95e9d91f933e48f6a70cfdea3864633, type: 3}
   backOffDistance: 10
   backOffDuration: 15
   chaseCoolDown: 12

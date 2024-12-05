@@ -11,6 +11,7 @@ public class hands : MonoBehaviour
     public float moveSmooth;
     private bool active;
     private float initDistanceFromPlayer;
+    [SerializeField] private AudioClip slam;
 
     public float backOffDistance;
     public float backOffDuration;
@@ -72,6 +73,11 @@ public class hands : MonoBehaviour
         yield return new WaitForSeconds(chaseCoolDown);
         
         isBackingOff = false;
+    }
+
+    public void handSlam()
+    {
+        AudioManager.instance.enemyFX(slam, transform ,1f, 1);
     }
     
     
