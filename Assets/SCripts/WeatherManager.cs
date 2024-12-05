@@ -206,6 +206,7 @@ public class WeatherManager : MonoBehaviour
       springLeaf.SetActive(spring);
       summerLeaf.SetActive(summerLeaves);
       fogOpacity = 0.05f;
+      fogMaterial.SetFloat("_opacity", fogOpacity);
 
    }
 

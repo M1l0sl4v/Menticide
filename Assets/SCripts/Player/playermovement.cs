@@ -39,7 +39,6 @@ public class playermovement : MonoBehaviour
     //player statis effects
 
 
-    [SerializeField] private AudioClip takeDamageSound;
 
 
 
@@ -60,7 +59,6 @@ public class playermovement : MonoBehaviour
         if (invincibilityLeft <= 0 && !DeathSequence.controlLock && !StaticDebugTools.instance.playerInvincibility &&
             (Tutorial.instance.CurrentPhase() == Tutorial.Phase.None || Tutorial.instance.CurrentPhase() == Tutorial.Phase.Complete))
         {
-            AudioManager.instance.playerFX(takeDamageSound, transform, 1f, 1f);
             cameraShake.instance.shakeCamera(screenshakeAmount, screenshakeTime);
             uiHearts.RemoveHeart(amount);
 

@@ -6,6 +6,10 @@ public class UIHearts : MonoBehaviour
 {
     public GameObject heartPrefab;
     public List<GameObject> hearts = new List<GameObject>();
+    [SerializeField] private AudioClip takeDamageSound;
+    [SerializeField] private AudioClip deathSound;
+
+
     public void StartHealth(int initialHealth)
     {
         AddHeart(initialHealth);
@@ -41,7 +45,14 @@ public class UIHearts : MonoBehaviour
             }
             if (hearts.Count < 1)
             {
+                AudioManager.instance.playerFX(deathSound, transform ,1f, 1);
+
                 DeathSequence.instance.StartDeathSequence();
+            }
+
+            if (hearts.Count >= 1)
+            {
+                AudioManager.instance.playerFX(takeDamageSound, transform, 1f, 1f);
             }
         }
     }

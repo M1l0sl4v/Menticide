@@ -3955,6 +3955,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heartPrefab: {fileID: 1615541235688368361, guid: 27b2addcaec9e488c90d94ca99867f68, type: 3}
   hearts: []
+  takeDamageSound: {fileID: 8300000, guid: 83422b3fcce97482b90f06522a4978e7, type: 3}
+  deathSound: {fileID: 8300000, guid: 43aa2b37a1ec04b9eadde3eeb6a28872, type: 3}
 --- !u!114 &196417511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21202,6 +21204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSeason: 0
   backGround: {fileID: 1128357899}
+  seasonTransition: {fileID: 0}
   summerColorNotWork: {r: 0, g: 0, b: 1, a: 1}
   fallColorNotWork: {r: 0, g: 1, b: 0, a: 1}
   winterColorNotWork: {r: 1, g: 0, b: 1, a: 1}
@@ -24257,6 +24260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSeason: 0
   backGround: {fileID: 1128357899}
+  seasonTransition: {fileID: 8300000, guid: 32c70b21949a64654b543af098bdd642, type: 3}
   summerColorNotWork: {r: 0, g: 0, b: 1, a: 1}
   fallColorNotWork: {r: 0, g: 1, b: 0, a: 1}
   winterColorNotWork: {r: 1, g: 0, b: 1, a: 1}
@@ -28965,7 +28969,7 @@ Transform:
   m_GameObject: {fileID: 1626794935}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.4178753, z: -10}
+  m_LocalPosition: {x: -10.249769, y: 2.7689695, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -28999,14 +29003,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.7150943
+    width: 0.51380044
+    height: 0.51367927
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.625
+  orthographic size: 8.4375
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -30210,7 +30214,6 @@ MonoBehaviour:
   health: 0
   uiHearts: {fileID: 196417510}
   invincibilityDuration: 1
-  takeDamageSound: {fileID: 8300000, guid: 83422b3fcce97482b90f06522a4978e7, type: 3}
   Camera: {fileID: 0}
 --- !u!212 &1675774498
 SpriteRenderer:

@@ -18,6 +18,7 @@ public class seasons : MonoBehaviour
     public static int monthLength = 50;
     public static int seasonLength = 150; // should be 3x month length
     public static int transitionAfter = 100; // start the season change after this long, lasting until end of season
+    [SerializeField] private AudioClip seasonTransition;
 
     public Color summerColorNotWork = Color.blue;
     public Color fallColorNotWork = Color.green;
@@ -43,6 +44,9 @@ public class seasons : MonoBehaviour
 //switch statement cycles through the seasons and calls their methods. just calling this method changes the season.
     public void seasonChange()
     {
+        
+        AudioManager.instance.playerFX(seasonTransition, transform ,1f, 1f);
+
             switch (nextSeason)
                     {
                         case 1:

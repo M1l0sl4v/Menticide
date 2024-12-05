@@ -54,6 +54,7 @@ public class Cutscene : MonoBehaviour
 
     void LoadNext()
     {
+
         fogMaterial.SetFloat("_opacity", prevOpacity);
         SceneManager.LoadScene(2);
     }
