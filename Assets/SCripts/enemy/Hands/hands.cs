@@ -77,7 +77,7 @@ public class hands : MonoBehaviour
 
     public void handSlam()
     {
-        AudioManager.instance.enemyFX(slam, transform ,1f, 1);
+        AudioManager.instance.enemyFX(slam, transform ,.7f, 1);
     }
     
     
