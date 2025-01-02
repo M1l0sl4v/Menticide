@@ -5,6 +5,7 @@ using UnityEngine;
 using TMPro;
 using System.Diagnostics.CodeAnalysis;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class playermovement : MonoBehaviour
 {
@@ -221,6 +222,11 @@ public class playermovement : MonoBehaviour
     {
         Vector3 moveVec = new Vector3(Input.GetAxis("Horizontal"), 0,0);
         transform.position += moveVec * speed * Time.deltaTime;
+
+        if (Input.GetKey(KeyCode.R))
+        {
+            SceneManager.LoadScene(1);
+        }
     }
     void movePointAndClick()
     {

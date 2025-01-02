@@ -66,11 +66,11 @@ MonoBehaviour:
   blur: 0
   bleed: 0
   smidge: 0
-  scanlinesStrength: 0.79
+  scanlinesStrength: 0.08
   apertureStrength: 0
   shadowlines: 50
-  shadowlinesSpeed: 10.7
-  shadowlinesAlpha: 0.227
+  shadowlinesSpeed: 20
+  shadowlinesAlpha: 0.06
   noiseSize: 0
   noiseSpeed: 0
   noiseAlpha: 0
