@@ -23,7 +23,7 @@ public class UIHearts : MonoBehaviour
             Animator animator = heart.GetComponent<Animator>();
             if (animator != null)
             {
-                animator.SetTrigger("HeartAdd");
+               // animator.SetTrigger("HeartAdd");
             }
         }
     }
