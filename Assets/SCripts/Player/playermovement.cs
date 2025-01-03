@@ -225,7 +225,7 @@ public class playermovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.R))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
     void movePointAndClick()
