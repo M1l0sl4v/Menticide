@@ -14369,8 +14369,8 @@ MonoBehaviour:
   xMax: -2.54
   yMin: 10.55
   yMax: 16.58
-  spawnmin: 0.04
-  spawnmax: 0.06
+  spawnmin: 0.01
+  spawnmax: 0.04
   Tree:
   - {fileID: 3482516811903228533, guid: e8a90b75e56f14b4db67e65f5df64479, type: 3}
   treeChance: 0
@@ -14428,7 +14428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1443216c4aa94b9fbb90a822c39bf89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMin: 0.25
+  xMin: 1.01
   xMax: 13
   yMin: 17.45
   yMax: 10.27
@@ -18170,8 +18170,8 @@ MonoBehaviour:
   xMax: 13.8
   yMin: 10.72
   yMax: 16.68
-  spawnmin: 0.04
-  spawnmax: 0.06
+  spawnmin: 0.01
+  spawnmax: 0.04
   Tree:
   - {fileID: 3482516811903228533, guid: e8a90b75e56f14b4db67e65f5df64479, type: 3}
   treeChance: 0
@@ -29060,9 +29060,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 1.4248121
-    width: 1.0243386
-    height: 1.0234963
+    y: 0.6319445
+    width: 0.5253906
+    height: 0.5253906
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -30271,6 +30271,8 @@ MonoBehaviour:
   health: 0
   uiHearts: {fileID: 196417510}
   invincibilityDuration: 1
+  slowSpeed: 3
+  speedChangeRate: 10
   Camera: {fileID: 0}
 --- !u!212 &1675774498
 SpriteRenderer:
@@ -32541,7 +32543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xMin: -13
-  xMax: -0.36
+  xMax: -1.21
   yMin: 17.45
   yMax: 10.27
   spawnmin: 3

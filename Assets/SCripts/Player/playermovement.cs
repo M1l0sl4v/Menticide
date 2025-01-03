@@ -37,10 +37,10 @@ public class playermovement : MonoBehaviour
     public static playermovement instance;
 
 
-    //player statis effects
-
-
-
+    //player slowing variables
+    public float slowSpeed; 
+    public float speedChangeRate; 
+    private int treeCollisionCount;
 
 
     private Vector3 _target;
@@ -74,20 +74,10 @@ public class playermovement : MonoBehaviour
 
     private void Update()
     {
-        
-        //Debug.Log(speed);
-        // Gradually decrease the speed back to the original value if not colliding with a wall
-        if (!_isCollidingWithWall && speed > _originalSpeed)
-        {
-            speed -= speedDecayRate * Time.deltaTime;
-            if (speed < _originalSpeed)
-            {
-                speed = Mathf.Clamp(_originalSpeed,5,maxSpeed);
-            }
-        }
+        Debug.Log(speed);
+        HandleSpeed();
 
-        //movePointAndClick();
-        // Move the player in the current direction
+       // Move the player in the current direction
         transform.Translate(_direction * speed * Time.deltaTime);
 
         //pointAmount.text = ((int)transform.position.y).ToString();
@@ -114,7 +104,7 @@ public class playermovement : MonoBehaviour
         // Limit speed
         if (!StaticDebugTools.instance.playerMoveSpeedOverride)
         {
-            speed = Mathf.Clamp(speed, 5, maxSpeed);
+            speed = Mathf.Clamp(speed, 0, maxSpeed);
         }
     }
 //this sets the player back to zero
@@ -122,11 +112,8 @@ public class playermovement : MonoBehaviour
     public void playerReset()
     {
        GameManager.instance.backToZero(resetTriggerDistance);
-        seasons.instance.seasonChange();
+       seasons.instance.seasonChange();
     }
-    
-    
-    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Handle collision with walls
@@ -144,16 +131,16 @@ public class playermovement : MonoBehaviour
                 // Update the direction and speed
                 _direction = reflectedDirection.normalized;
                 _isCollidingWithWall = true;
-                speed = _originalSpeed * speedMultiplier;
 
                 // Start the sliding coroutine
                 StartCoroutine(SlideAlongWall(collision, reflectedDirection));
             }
+            HandleSpeed();
         }
         if (collision.gameObject.CompareTag("AcidPool"))
         {
-            playerStatisEffect.ApplyEffect(playerStatisEffect.Effects.Slow);
-            playerStatisEffect.ApplyEffect(playerStatisEffect.Effects.Poison);
+           // playerStatisEffect.ApplyEffect(playerStatisEffect.Effects.Slow);
+          //  playerStatisEffect.ApplyEffect(playerStatisEffect.Effects.Poison);
         }
     }
 
@@ -166,9 +153,10 @@ public class playermovement : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("AcidPool"))
         {
-            playerStatisEffect.RemoveEffect(playerStatisEffect.Effects.Slow);
-            playerStatisEffect.RemoveEffect(playerStatisEffect.Effects.Poison);
+          //  playerStatisEffect.RemoveEffect(playerStatisEffect.Effects.Slow);
+         //   playerStatisEffect.RemoveEffect(playerStatisEffect.Effects.Poison);
         }
+        HandleSpeed();
     }
     private IEnumerator SlideAlongWall(Collision2D collision, Vector2 reflectedDirection)
     {
@@ -239,4 +227,42 @@ public class playermovement : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, _target, speed * Time.deltaTime);
         transform.Translate(_direction * speed * Time.deltaTime);
     }
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Tree"))
+        {
+            treeCollisionCount++;
+        }
+        HandleSpeed();
+    }
+    
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Tree"))
+        {
+            StartCoroutine(DelayTreeCollisionCountDecrease());
+        }
+    }
+
+    private IEnumerator DelayTreeCollisionCountDecrease()
+    {
+        yield return new WaitForSeconds(0.1f);
+        treeCollisionCount = Mathf.Max(treeCollisionCount - 1, 0);
+        HandleSpeed();
+    }
+    
+    private void HandleSpeed()
+    {
+        float targetSpeed = _isCollidingWithWall
+            ? _originalSpeed * speedMultiplier 
+            : (treeCollisionCount > 0 ? slowSpeed : _originalSpeed);
+        
+        speed = Mathf.Lerp(speed, targetSpeed, speedChangeRate * Time.deltaTime);
+        speed = Mathf.Clamp(speed, 0, maxSpeed);
+    }
+
+    //instead of changing the speed in update or in the collision methods, the speed is all handled in the handlespeed 
+    //method. It checks to see if the player is sliding along a wall or colliding with a tree. It needs to be tuned but 
+    //its pretty consistant
 }
