@@ -14384,6 +14384,60 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8176814249895226974, guid: 80bd3e6377f514b7ebd9d7ddb8178787, type: 3}
   m_PrefabInstance: {fileID: 1424954648}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &809483207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 809483208}
+  - component: {fileID: 809483209}
+  m_Layer: 0
+  m_Name: Pickup Spawner (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &809483208
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809483207}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.6704769, y: 8.530405, z: 5.647147}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1180109631}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &809483209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809483207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1443216c4aa94b9fbb90a822c39bf89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xMin: 0.25
+  xMax: 13
+  yMin: 17.45
+  yMax: 10.27
+  spawnmin: 3
+  spawnmax: 4
+  pickUps:
+  - {fileID: 6666358899520513168, guid: 377e32928019540a4b8c3232649ed7f1, type: 3}
+  pickupChance: 0
+  tilemap: {fileID: 1836558848}
 --- !u!1001 &819647499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21418,6 +21472,8 @@ Transform:
   - {fileID: 408147798}
   - {fileID: 799384007}
   - {fileID: 1007118043}
+  - {fileID: 1757777129}
+  - {fileID: 809483208}
   - {fileID: 1555025441}
   - {fileID: 1906809971716491626}
   - {fileID: 5210532952811196884}
@@ -32440,6 +32496,60 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1757777128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1757777129}
+  - component: {fileID: 1757777130}
+  m_Layer: 0
+  m_Name: Pickup Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1757777129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757777128}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.6704769, y: 8.530405, z: 5.647147}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1180109631}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1757777130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757777128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1443216c4aa94b9fbb90a822c39bf89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xMin: -13
+  xMax: -0.36
+  yMin: 17.45
+  yMax: 10.27
+  spawnmin: 3
+  spawnmax: 4
+  pickUps:
+  - {fileID: 6666358899520513168, guid: 377e32928019540a4b8c3232649ed7f1, type: 3}
+  pickupChance: 0
+  tilemap: {fileID: 1836558848}
 --- !u!1 &1760823857
 GameObject:
   m_ObjectHideFlags: 0

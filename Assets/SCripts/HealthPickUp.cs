@@ -22,7 +22,7 @@ public class HealthPickUp : MonoBehaviour
         {
             playermovement.instance.AddHealth(1);
             Debug.LogWarning("healthup");
-            ObjectPoolManager.ReturnObjectToPool(gameObject);
+            Destroy(gameObject);
         }
     }
 
