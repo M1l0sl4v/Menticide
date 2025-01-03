@@ -74,7 +74,7 @@ public class playermovement : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(speed);
+        //Debug.Log(speed);
         HandleSpeed();
 
        // Move the player in the current direction

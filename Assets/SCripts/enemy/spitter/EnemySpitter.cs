@@ -19,6 +19,8 @@ public class EnemySpitter : MonoBehaviour
         Idle,
         Atack
     }
+    
+    private Animator animator;
 
     private GameObject player;
     // Start is called before the first frame update
@@ -26,9 +28,11 @@ public class EnemySpitter : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         EnemyStates(States.Idle);
+        animator = gameObject.GetComponent<Animator>();
     }
     IEnumerator SpitterShootNorm()
     {
+        TriggerAttackAnimation();
         Shoot();
         yield return new WaitForSeconds(fireRate);
         EnemyStates(States.Atack);
@@ -40,11 +44,13 @@ public class EnemySpitter : MonoBehaviour
     }
     IEnumerator SpitterShootShotgun()
     {
+        TriggerAttackAnimation();
         yield return new WaitForSeconds(fireRate);
         ShootShotgun(5,3);
     }
     IEnumerator Idle()
     {
+        TriggerIdleAnimation();
         yield return new WaitForSeconds(idleDelay);
         EnemyStates(States.Atack);
     }
@@ -94,7 +100,21 @@ public class EnemySpitter : MonoBehaviour
         }
 
     }
+    void TriggerAttackAnimation()
+    {
+        if (animator)
+        {
+            animator.SetTrigger("Attack");
+        }
+    }
 
+    void TriggerIdleAnimation()
+    {
+        if (animator)
+        {
+            animator.SetTrigger("Idle");
+        }
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("cullingField"))
