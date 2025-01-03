@@ -32,10 +32,10 @@ public class EnemySpitter : MonoBehaviour
     }
     IEnumerator SpitterShootNorm()
     {
-        TriggerAttackAnimation();
+        //TriggerAttackAnimation();
         Shoot();
         yield return new WaitForSeconds(fireRate);
-        EnemyStates(States.Atack);
+        EnemyStates(States.Idle);
     }
     IEnumerator SpitterShootCluster()
     {
@@ -44,13 +44,14 @@ public class EnemySpitter : MonoBehaviour
     }
     IEnumerator SpitterShootShotgun()
     {
-        TriggerAttackAnimation();
+        //TriggerAttackAnimation();
         yield return new WaitForSeconds(fireRate);
         ShootShotgun(5,3);
+        EnemyStates(States.Idle);
     }
     IEnumerator Idle()
     {
-        TriggerIdleAnimation();
+        //TriggerIdleAnimation();
         yield return new WaitForSeconds(idleDelay);
         EnemyStates(States.Atack);
     }
@@ -85,9 +86,11 @@ public class EnemySpitter : MonoBehaviour
     {
         switch (states) {
             case States.Idle:
+                TriggerIdleAnimation();
                 StartCoroutine(Idle());
                 break;
             case States.Atack:
+                TriggerAttackAnimation();
                 if (singleShot)
                 {
                     StartCoroutine(SpitterShootNorm());
@@ -112,7 +115,7 @@ public class EnemySpitter : MonoBehaviour
     {
         if (animator)
         {
-            animator.SetTrigger("Idle");
+            animator.SetTrigger("Idle");            
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
