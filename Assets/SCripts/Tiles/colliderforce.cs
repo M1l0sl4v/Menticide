@@ -6,14 +6,14 @@ public class colliderforce : MonoBehaviour
 {
     public float pushforce = 10f;
     
-    public void OnTriggerStay(Collider other)
+    public void OnCollisionEnter2D (Collision2D collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Rigidbody rb = other.GetComponent<Rigidbody>();
-            Vector3 pushDirection = other.transform.position - transform.position; 
-            rb.AddForce(pushDirection.normalized * pushforce, ForceMode.Impulse); // Adjust the force value as needed
-            Debug.Log("player touched");
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+            Vector2 pushDirection = (collision.transform.position - transform.position).normalized;
+            rb.AddForce(pushDirection * pushforce, ForceMode2D.Impulse);
+            Debug.Log("Player touched and pushed");
         }
     }
 }

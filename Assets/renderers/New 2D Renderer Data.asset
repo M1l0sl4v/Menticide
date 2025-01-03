@@ -70,7 +70,7 @@ MonoBehaviour:
   apertureStrength: 0
   shadowlines: 50
   shadowlinesSpeed: 20
-  shadowlinesAlpha: 0.06
+  shadowlinesAlpha: 0.02
   noiseSize: 0
   noiseSpeed: 0
   noiseAlpha: 0
