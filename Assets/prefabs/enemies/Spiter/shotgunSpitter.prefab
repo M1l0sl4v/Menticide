@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progectialSpitter: {fileID: 4849040362571287685, guid: 51638caf0b6974ca69498ede23fb2d5e, type: 3}
-  fireRate: 0.5
-  idleDelay: 0.5
+  fireRate: 3
+  idleDelay: 0.8
   bulletSpeed: 2
   shootAhead: 8
   singleShot: 0
