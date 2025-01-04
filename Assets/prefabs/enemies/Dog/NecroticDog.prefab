@@ -112,6 +112,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 298dffb9cb6aa4453b70cce92e018cab, type: 3}
   sp: {fileID: 1700632340610863045}
   animator: {fileID: 3540727608563179546}
+  stopAttacingTime: 5
 --- !u!61 &1546645933743141903
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -155,7 +156,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5163374, y: 1.1756598}
+  m_Size: {x: 1.2, y: 1.1756598}
   m_EdgeRadius: 0
 --- !u!95 &3540727608563179546
 Animator:
