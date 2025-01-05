@@ -8,10 +8,6 @@ public class spikeScript : MonoBehaviour
     public bool canGrow = true;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("cullingField"))
-        {
-            ObjectPoolManager.ReturnObjectToPool(gameObject);
-        }
         if (other.gameObject.CompareTag("Player"))
         {
             playermovement.instance.TakeDamage(1);
@@ -20,7 +16,6 @@ public class spikeScript : MonoBehaviour
         if (other.gameObject.CompareTag("Wall"))
         {
             transform.localScale = new Vector3(.3f, 0, 1f);
-            Debug.Log("wall hit it");
         }
     }
 }

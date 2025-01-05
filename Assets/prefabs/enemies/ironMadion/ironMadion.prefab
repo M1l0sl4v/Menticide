@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2731270091467590746}
   - component: {fileID: 4714981344616111237}
   - component: {fileID: 8927647365366749545}
+  - component: {fileID: 3109457277995455608}
   m_Layer: 9
   m_Name: spike (3)
   m_TagString: Untagged
@@ -144,6 +145,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.86}
   m_EdgeRadius: 0
+--- !u!50 &3109457277995455608
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518335088123875722}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2831527974532716641
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,6 +184,7 @@ GameObject:
   - component: {fileID: 785427891604078124}
   - component: {fileID: 8182453431393568059}
   - component: {fileID: 8675561921671002223}
+  - component: {fileID: 4959758916668291255}
   m_Layer: 9
   m_Name: spike (1)
   m_TagString: Untagged
@@ -288,6 +317,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.86}
   m_EdgeRadius: 0
+--- !u!50 &4959758916668291255
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2831527974532716641}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &4165478832448514917
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,6 +356,7 @@ GameObject:
   - component: {fileID: 6183829189764849086}
   - component: {fileID: 2262102387991540278}
   - component: {fileID: 1674181830445263578}
+  - component: {fileID: 7447691884887029453}
   m_Layer: 9
   m_Name: spike (2)
   m_TagString: Untagged
@@ -432,6 +489,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.86}
   m_EdgeRadius: 0
+--- !u!50 &7447691884887029453
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4165478832448514917}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &5360235855632374676
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,6 +528,7 @@ GameObject:
   - component: {fileID: 349585770129476179}
   - component: {fileID: 4555388304618294537}
   - component: {fileID: 3192165479854520958}
+  - component: {fileID: 5255313387047497248}
   m_Layer: 9
   m_Name: spike (5)
   m_TagString: Untagged
@@ -576,6 +661,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.86}
   m_EdgeRadius: 0
+--- !u!50 &5255313387047497248
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5360235855632374676}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6447522424025696159
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,6 +880,7 @@ GameObject:
   - component: {fileID: 8613320928683352703}
   - component: {fileID: 6167395658701856060}
   - component: {fileID: 890134385559007276}
+  - component: {fileID: 3090687804728445408}
   m_Layer: 9
   m_Name: spike
   m_TagString: Untagged
@@ -900,6 +1013,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.86}
   m_EdgeRadius: 0
+--- !u!50 &3090687804728445408
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8791407214006694738}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8973983118759994652
 GameObject:
   m_ObjectHideFlags: 0
