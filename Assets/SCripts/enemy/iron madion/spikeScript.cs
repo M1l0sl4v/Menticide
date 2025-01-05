@@ -17,5 +17,10 @@ public class spikeScript : MonoBehaviour
             playermovement.instance.TakeDamage(1);
             transform.localScale = new Vector3(.3f, 0, 1f);
         }
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            transform.localScale = new Vector3(.3f, 0, 1f);
+            Debug.Log("wall hit it");
+        }
     }
 }

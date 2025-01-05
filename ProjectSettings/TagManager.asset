@@ -11,6 +11,7 @@ TagManager:
   - AcidPool
   - Enemy
   - Tree
+  - ironMaiden
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - CullingField
   - Enemies
   - Wall
-  - 
+  - ironMaiden
   - 
   - Weather
   - 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +18,6 @@ public class ironMadion : MonoBehaviour
     private void OnEnable()
     {
         animator.SetTrigger("openIronMadion");
-
         StartCoroutine(growSpike());
     }
     private void OnDisable()
@@ -38,6 +38,14 @@ public class ironMadion : MonoBehaviour
                 spike.transform.localScale = new Vector3(.3f, Mathf.Lerp(spike.transform.localScale.y, targetScale.y, Time.deltaTime * growRate),1f);
             }
             yield return new WaitForSeconds(growSpeed);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("cullingField"))
+        {
+            Destroy(gameObject);
         }
     }
 }

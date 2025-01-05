@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -17,6 +18,10 @@ public class pickupSpawner : MonoBehaviour
     public List<GameObject> pickUps;
     public float pickupChance;
     public Tilemap tilemap;
+    public Color color;
+
+    public GameObject pickupEmpty;
+    
     void Update()
     {
        // delay on start, then incriments
@@ -38,16 +43,19 @@ public class pickupSpawner : MonoBehaviour
         float spawnChance = Random.value;
         if (spawnChance > pickupChance) 
         {
-            Instantiate(pickUps[Random.Range(0, pickUps.Count)], spawnposition, Quaternion.identity);
+            GameObject newPickup = Instantiate(pickUps[Random.Range(0, pickUps.Count)], spawnposition, Quaternion.identity);
+            Transform parentTransform = pickupEmpty.transform;
+            newPickup.transform.SetParent(parentTransform);
         }
         else
         {
             Debug.Log("no tree");
         }
     }
+    
     private void OnDrawGizmos()
     {
-        Gizmos.color = new Color(0.17f, 1f, 0.28f, 0.53f); 
+        Gizmos.color = color; 
         Vector3 bottomLeft = new Vector3(xMin, yMin, 0);
         Vector3 topRight = new Vector3(xMax, yMax, 0);
         Gizmos.DrawCube((bottomLeft + topRight) / 2, topRight - bottomLeft); 

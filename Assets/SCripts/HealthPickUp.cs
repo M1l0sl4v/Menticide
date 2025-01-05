@@ -24,6 +24,11 @@ public class HealthPickUp : MonoBehaviour
             Debug.LogWarning("healthup");
             Destroy(gameObject);
         }
+
+        if (collision.gameObject.CompareTag("cullingField"))
+        {
+            Destroy(gameObject);
+        }
     }
 
 }
