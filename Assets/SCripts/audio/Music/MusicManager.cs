@@ -27,7 +27,7 @@ public class MusicManager : MonoBehaviour
         StartCoroutine(AnimateMusicCrossfade(musicLibrary.GetClipFromName(trackName), fadeDuration));
     }
     
-    public void PauseMusic()
+    public void pauseMusic()
     {
         if (musicSource.isPlaying)
         {
@@ -35,7 +35,7 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-    public void UnpauseMusic()
+    public void unPauseMusic()
     {
         if (!musicSource.isPlaying)
         {

@@ -45,8 +45,8 @@ public class UIHearts : MonoBehaviour
             }
             if (hearts.Count < 1)
             {
-                AudioManager.instance.playerFX(deathSound, transform ,1f, 1);
-
+                MusicManager.instance.pauseMusic();
+                AudioManager.instance.playerFX(deathSound, transform, 1f, 1);
                 DeathSequence.instance.StartDeathSequence();
             }
 

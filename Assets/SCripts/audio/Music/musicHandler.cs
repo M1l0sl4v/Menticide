@@ -18,15 +18,24 @@ public class SceneHandler : MonoBehaviour
     {
         if (newScene.name == "Main Menu") mainMenuScene();
         else if (newScene.name == "main") mainScene();
+        else if (newScene.name == "Cutscene") cutScene();
     }
 
+    public void cutScene()
+    {
+        MusicManager.instance.pauseMusic();
+    }
+    
+    
     public void mainMenuScene()
     {
+        MusicManager.instance.unPauseMusic();
         MusicManager.instance.PlayMusic("Menu");
     }
 
     public void mainScene()
     {
+        MusicManager.instance.unPauseMusic();
         MusicManager.instance.PlayMusic("Gameplay");
     }
 }

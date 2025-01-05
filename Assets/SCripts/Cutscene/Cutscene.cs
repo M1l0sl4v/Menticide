@@ -23,7 +23,8 @@ public class Cutscene : MonoBehaviour
     void Start()
     {
         prevOpacity = fogMaterial.GetFloat("_opacity");
-
+        
+        
         player.clip = clip;
         Invoke("PlayVideo", beforeVideoPadding);
     }
