@@ -199,6 +199,7 @@ public class DeathSequence : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         controlLock = false;
+        ambianceManager.instance.stopAmbiance();
     }
 
     public void DecideBehavior()

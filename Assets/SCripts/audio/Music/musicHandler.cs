@@ -44,6 +44,7 @@ public class SceneHandler : MonoBehaviour
     public void mainScene()
     {
         MusicManager.instance.PlayMusic("Gameplay");
+        ambianceManager.instance.PlayAmbiance("Summer Ambiance");
 
     }
 }
