@@ -32,6 +32,8 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame(){
         StartCoroutine(StartSequence());
+        MusicManager.instance.pauseMusic();
+
     }
 
     public void QuitGame(){

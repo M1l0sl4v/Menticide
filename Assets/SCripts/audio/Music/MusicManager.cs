@@ -8,6 +8,9 @@ public class MusicManager : MonoBehaviour
 
     [SerializeField] private musicLibrary musicLibrary;
     [SerializeField] private AudioSource musicSource;
+
+    public float percent = 0;
+    
     
     private void Awake()
     {
@@ -31,7 +34,13 @@ public class MusicManager : MonoBehaviour
     {
         if (musicSource.isPlaying)
         {
-            musicSource.Pause();
+            float fadeTime = .4f;
+            while (percent < 1)
+            {
+                percent += Time.deltaTime * 1 / fadeTime;
+                musicSource.volume = Mathf.Lerp(1f, 0, percent);
+            }
+            musicSource.Stop();
         }
     }
 
@@ -39,16 +48,22 @@ public class MusicManager : MonoBehaviour
     {
         if (!musicSource.isPlaying)
         {
+            float fadeTime = .4f;
+            while (percent < 1)
+            {
+                percent += Time.deltaTime * 1 / fadeTime;
+                musicSource.volume = Mathf.Lerp(0, 1f, percent);
+            }
             musicSource.UnPause();
         }
     }
 
     IEnumerator AnimateMusicCrossfade(AudioClip nextTrack, float fadeTime = .2f)
     {
-        float percent = 0;
+        percent = 0;
         while (percent < 1)
         {
-            percent += Time.deltaTime * 1 / fadeTime;
+            percent += Time.deltaTime * 1 / .1f;
             musicSource.volume = Mathf.Lerp(1f, 0, percent);
             yield return null;
         }

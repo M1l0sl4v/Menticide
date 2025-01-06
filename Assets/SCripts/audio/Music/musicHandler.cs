@@ -16,27 +16,35 @@ public class SceneHandler : MonoBehaviour
 
     private void OnSceneChanged(Scene oldScene, Scene newScene)
     {
-        if (newScene.name == "Main Menu") mainMenuScene();
-        else if (newScene.name == "main") mainScene();
-        else if (newScene.name == "Cutscene") cutScene();
+        switch (newScene.name)
+        {
+            case "Main Menu":
+                mainMenuScene();
+                break;
+            case "main":
+                mainScene();
+                break;
+            case "Cutscene":
+                cutScene();
+                break;
+            default:
+                Debug.LogWarning($"Scene '{newScene.name}' does not have a specific handler.");
+                break;
+        }
     }
-
-    public void cutScene()
-    {
-        MusicManager.instance.pauseMusic();
-    }
-    
     
     public void mainMenuScene()
     {
-        MusicManager.instance.unPauseMusic();
         MusicManager.instance.PlayMusic("Menu");
     }
+    public void cutScene()
+    {
 
+    }
     public void mainScene()
     {
-        MusicManager.instance.unPauseMusic();
         MusicManager.instance.PlayMusic("Gameplay");
+
     }
 }
 
