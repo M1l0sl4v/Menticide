@@ -16,16 +16,22 @@ public class HealthPickUp : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
+        {
+            playermovement.instance.AddHealth(1);
+            Debug.LogWarning("healthup");
+            Destroy(gameObject);
+        }
+        if (other.gameObject.CompareTag("Wall"))
         {
             playermovement.instance.AddHealth(1);
             Debug.LogWarning("healthup");
             Destroy(gameObject);
         }
 
-        if (collision.gameObject.CompareTag("cullingField"))
+        if (other.gameObject.CompareTag("cullingField"))
         {
             Destroy(gameObject);
         }

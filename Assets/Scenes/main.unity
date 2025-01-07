@@ -29184,9 +29184,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 0.99916095
-    height: 1
+    y: 0.63304347
+    width: 0.5264188
+    height: 0.52630436
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -30394,6 +30394,7 @@ MonoBehaviour:
   screenshakeTime: 2
   health: 0
   uiHearts: {fileID: 196417510}
+  gainHealth: {fileID: 8300000, guid: 6c56a8db62a3543ca8667ca0561abd03, type: 3}
   invincibilityDuration: 1
   slowSpeed: 3
   speedChangeRate: 10

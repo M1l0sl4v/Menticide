@@ -32,6 +32,7 @@ public class playermovement : MonoBehaviour
     static public int maxHealth = 3;
     public int health;
     public UIHearts uiHearts;
+    public AudioClip gainHealth;
     public float invincibilityDuration;
     private float invincibilityLeft;
     public static playermovement instance;
@@ -70,7 +71,8 @@ public class playermovement : MonoBehaviour
     public void AddHealth(int amount)//health buffs
     {
         uiHearts.AddHeart(amount);
-    }
+        AudioManager.instance.playerFX(gainHealth, transform,.6f,1f);
+    } 
 
     private void Update()
     {
