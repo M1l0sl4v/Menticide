@@ -45,20 +45,24 @@ public class seasons : MonoBehaviour
     public void seasonChange()
     {
         
-        AudioManager.instance.playerFX(seasonTransition, transform ,1f, 1f);
+        AudioManager.instance.playerFX(seasonTransition, transform ,.7f, 1f);
 
             switch (nextSeason)
                     {
                         case 1:
+                            ambianceManager.instance.PlayAmbiance("Summer Ambiance");
                             summer();
                             break;
                         case 2:
+                            ambianceManager.instance.PlayAmbiance("Fall Ambiance");
                             fall();
                             break;
                         case 3:
+                            ambianceManager.instance.PlayAmbiance("Winter Ambiance");
                             winter();
                             break;
                         case 4:
+                            ambianceManager.instance.PlayAmbiance("Spring Ambiance");
                             spring();
                             break;
                         default:

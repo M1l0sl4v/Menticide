@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ironMadion : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class ironMadion : MonoBehaviour
     public float growSpeed;
     public float growRate;
     public Vector3 targetScale = new Vector3(0f, 5f, 0f);
+    public AudioClip open;
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -47,5 +49,11 @@ public class ironMadion : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void openSound()
+    {
+        float pitch = Random.Range(.7f, 1f);
+        AudioManager.instance.enemyFX(open, transform,1f,pitch);
     }
 }

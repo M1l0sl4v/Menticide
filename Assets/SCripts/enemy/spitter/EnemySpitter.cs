@@ -11,6 +11,7 @@ public class EnemySpitter : MonoBehaviour
     public float idleDelay = .6f;
     public int bulletSpeed = 10;
     public int shootAhead = 10;
+    public AudioClip spit;
 
     public bool singleShot;
 
@@ -124,5 +125,11 @@ public class EnemySpitter : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void spitSound()
+    {
+        float pitch = Random.Range(1f, 1.2f);
+        AudioManager.instance.enemyFX(spit, transform,1f,pitch);
     }
 }

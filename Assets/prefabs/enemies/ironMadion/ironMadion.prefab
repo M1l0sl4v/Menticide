@@ -802,6 +802,7 @@ MonoBehaviour:
   growSpeed: 0.5
   growRate: 50
   targetScale: {x: 1, y: 5, z: 1}
+  open: {fileID: 8300000, guid: e5ce69b6cb6444336b70da32b0671a4c, type: 3}
 --- !u!95 &2785218920128649091
 Animator:
   serializedVersion: 5

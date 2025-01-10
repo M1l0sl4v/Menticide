@@ -105,6 +105,7 @@ MonoBehaviour:
   idleDelay: 0.8
   bulletSpeed: 2
   shootAhead: 8
+  spit: {fileID: 8300000, guid: 85b70c41c3f4c49ab8f8dbf58e994228, type: 3}
   singleShot: 1
 --- !u!61 &-8292145478084314359
 BoxCollider2D:

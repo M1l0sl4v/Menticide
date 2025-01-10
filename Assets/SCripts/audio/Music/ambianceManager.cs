@@ -38,7 +38,7 @@ public class ambianceManager : MonoBehaviour
             while (percent < 1)
             {
                 percent += Time.deltaTime * 1 / fadeTime;
-                musicSource.volume = Mathf.Lerp(.5f, 0, percent);
+                musicSource.volume = Mathf.Lerp(.3f, 0, percent);
             }
             musicSource.Stop();
         }
@@ -64,7 +64,7 @@ public class ambianceManager : MonoBehaviour
         while (percent < 1)
         {
             percent += Time.deltaTime * 1 / .1f;
-            musicSource.volume = Mathf.Lerp(.5f, 0, percent);
+            musicSource.volume = Mathf.Lerp(.3f, 0, percent);
             yield return null;
         }
  
@@ -75,7 +75,7 @@ public class ambianceManager : MonoBehaviour
         while (percent < 1)
         {
             percent += Time.deltaTime * 1 / fadeTime;
-            musicSource.volume = Mathf.Lerp(0, .5f, percent);
+            musicSource.volume = Mathf.Lerp(0, .3f, percent);
             yield return null;
         }
     }
