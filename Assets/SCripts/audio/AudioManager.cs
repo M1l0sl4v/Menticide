@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
    [SerializeField] private AudioSource envirofxObject;
    [SerializeField] private AudioSource enemyfxObject;
    [SerializeField] private AudioSource playerfxObject;
+   [SerializeField] private AudioSource UIFXObject;
 
    
    public static AudioManager instance;
@@ -48,6 +49,19 @@ public class AudioManager : MonoBehaviour
         }
    }
    public void playerFX(AudioClip clip, Transform spawnPossition, float volume, float pitch)
+   {
+       if (!DeathSequence.controlLock)
+       {
+           AudioSource audioSource = Instantiate(playerfxObject, spawnPossition.transform.position, quaternion.identity, audioEmpty.transform); // spawns gameobject to play the sound
+           audioSource.clip = clip; //assigns the passed audioclip
+           audioSource.volume = volume;
+           audioSource.Play();
+           audioSource.pitch = pitch;
+           float cliplength = audioSource.clip.length;
+           Destroy(audioSource.gameObject, clip.length);
+       }
+   }
+   public void UIFX(AudioClip clip, Transform spawnPossition, float volume, float pitch)
    {
        if (!DeathSequence.controlLock)
        {
