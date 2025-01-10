@@ -207,7 +207,7 @@ public class playermovement : MonoBehaviour
         Vector3 moveVec = new Vector3(Input.GetAxis("Horizontal"), 0,0);
         transform.position += moveVec * speed * Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.R))
+        if (Input.GetKey(KeyCode.R) && !DeathSequence.controlLock && (Tutorial.instance.CurrentPhase() == Tutorial.Phase.None || Tutorial.instance.CurrentPhase() == Tutorial.Phase.Complete))
         {
             SceneManager.LoadScene(2);
         }

@@ -13,6 +13,11 @@ public class hands : MonoBehaviour
     private float initDistanceFromPlayer;
     [SerializeField] private AudioClip slam;
 
+    public GameObject rightHandHitbox;
+    public GameObject leftHandHitbox;
+    public float hitBoxCooldown;
+    
+    
     public float backOffDistance;
     public float backOffDuration;
     public float chaseCoolDown;
@@ -82,12 +87,19 @@ public class hands : MonoBehaviour
 
     public void leftHandSlam()
     {
-        
+        StartCoroutine(ActivateHitboxForDuration(leftHandHitbox));
     }
 
     public void rightHandSlam()
     {
-        
-    }  
+        StartCoroutine(ActivateHitboxForDuration(rightHandHitbox));
+    }
+
+    private IEnumerator ActivateHitboxForDuration(GameObject hitbox)
+    {
+        hitbox.SetActive(true);
+        yield return new WaitForSeconds(hitBoxCooldown);
+        hitbox.SetActive(false);
+    }
     
 }

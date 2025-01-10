@@ -163,6 +163,7 @@ MonoBehaviour:
   ruscleSound: {fileID: 8300000, guid: 42083977f055c48998b670bc2544fc9f, type: 3}
   delay: 0.5
   hasLeaves: 0
+  treeSmash: {fileID: 3767673255558846736, guid: 3cb4c1ddd8bbc49be961f820bec2db1a, type: 3}
 --- !u!114 &-6329837633658946370
 MonoBehaviour:
   m_ObjectHideFlags: 0

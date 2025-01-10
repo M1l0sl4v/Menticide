@@ -11,6 +11,8 @@ public class tree : MonoBehaviour
     [SerializeField] private AudioClip ruscleSound;
     public float delay = 1f;
     public bool hasLeaves = true;
+    public GameObject treeSmash;
+    public AudioClip treeBreakSound;
 
     private float randomPitch;
     
@@ -67,6 +69,14 @@ public class tree : MonoBehaviour
             {
                 StopCoroutine(destroyLeavesCoroutine);
             }
+        }
+
+        if (other.CompareTag("handSlams"))
+        {
+            ObjectPoolManager.ReturnObjectToPool(gameObject);
+            Instantiate(treeSmash, transform.position, Quaternion.identity);
+            randomPitch = Random.Range(.9f, 1.3f);
+            AudioManager.instance.environmentFX(ruscleSound, transform ,.5f, randomPitch);
         }
 
         if (other.CompareTag("cullingField"))

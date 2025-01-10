@@ -13,6 +13,7 @@ TagManager:
   - Tree
   - ironMaiden
   - Hands
+  - handSlams
   layers:
   - Default
   - TransparentFX
