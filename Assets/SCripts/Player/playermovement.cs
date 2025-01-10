@@ -81,22 +81,16 @@ public class playermovement : MonoBehaviour
 
        // Move the player in the current direction
         transform.Translate(_direction * speed * Time.deltaTime);
-
-        //pointAmount.text = ((int)transform.position.y).ToString();
-        //this checks at certain intervuls, this will be changed later depending on what we want.
-        //if (transform.position.y >= resetTriggerDistance)
-        //{
-        //    playerReset();
-        //}
+        
 
         // DEBUG: Kill player
-        if (Input.GetKeyDown(KeyCode.BackQuote))
+        /*if (Input.GetKeyDown(KeyCode.BackQuote))
         {
             bool before = StaticDebugTools.instance.playerInvincibility;
             StaticDebugTools.instance.playerInvincibility = false;
             TakeDamage(health);
             StaticDebugTools.instance.playerInvincibility = before;
-        }
+        }*/
         // i-frames
         if (invincibilityLeft > 0) invincibilityLeft -= Time.deltaTime;
         if (invincibilityLeft < 0) invincibilityLeft = 0;

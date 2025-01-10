@@ -79,6 +79,15 @@ public class hands : MonoBehaviour
     {
         AudioManager.instance.enemyFX(slam, transform ,.7f, 1);
     }
-    
+
+    public void leftHandSlam()
+    {
+        
+    }
+
+    public void rightHandSlam()
+    {
+        
+    }  
     
 }

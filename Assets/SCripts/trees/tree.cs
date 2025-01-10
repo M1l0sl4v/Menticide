@@ -78,7 +78,6 @@ public class tree : MonoBehaviour
                leafs.Clear();
            }
         }
-        
     }
     private IEnumerator DestroyLeavesCoroutine(float delay)
     {

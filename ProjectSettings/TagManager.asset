@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Tree
   - ironMaiden
+  - Hands
   layers:
   - Default
   - TransparentFX

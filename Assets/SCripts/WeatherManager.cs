@@ -81,9 +81,10 @@ public class WeatherManager : MonoBehaviour
       Debug.Log(currentWeather);
       
       // all of this sets the lighitng and fog back to "normal" before the seasons change, just for consistancy.
+      playerLight.color = new Color(1, 1, 1, 1);
+
       Vector2 fogSpeed = new Vector2(0.5f, 0.5f); 
       fogMaterial.SetVector("_fogSpeed", fogSpeed); 
-      playerLight.color = new Color(1, 1, 1, 1);
       fogOpacity = 0.03f;
       fogMaterial.SetFloat("_opacity", fogOpacity);
       

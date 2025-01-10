@@ -8,7 +8,7 @@ public class EnemySpitter : MonoBehaviour
 {
     public GameObject progectialSpitter;
     public float fireRate = 1f;
-    public float idleDelay = 3f;
+    public float idleDelay = .6f;
     public int bulletSpeed = 10;
     public int shootAhead = 10;
 
@@ -45,8 +45,8 @@ public class EnemySpitter : MonoBehaviour
     IEnumerator SpitterShootShotgun()
     {
         //TriggerAttackAnimation();
-        yield return new WaitForSeconds(fireRate);
         ShootShotgun(5,3);
+        yield return new WaitForSeconds(fireRate);
         EnemyStates(States.Idle);
     }
     IEnumerator Idle()

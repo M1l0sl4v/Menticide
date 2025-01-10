@@ -17,14 +17,17 @@ public class Cutscene : MonoBehaviour
     public float barProgress;
     public Image progressBar;
     [Header("Misc")]
+    private float fogOpacity;
+    private float crtOpacity;
+    public Material crtMaterial;
     public Material fogMaterial;
     private float prevOpacity;
     // Start is called before the first frame update
     void Start()
     {
-        prevOpacity = fogMaterial.GetFloat("_opacity");
-        
-        
+        fogOpacity = 0.03f;
+        fogMaterial.SetFloat("_opacity", fogOpacity);
+
         player.clip = clip;
         Invoke("PlayVideo", beforeVideoPadding);
     }
